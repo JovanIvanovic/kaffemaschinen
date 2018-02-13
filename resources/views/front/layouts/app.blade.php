@@ -12,6 +12,8 @@
     <title>@yield('meta_title', $metaTitle)</title>
     <meta name="description" content="@yield('meta_description', $metaDescription)"/>
 
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700ii%7CRoboto:300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=cyrillic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('front/assets/css/font-awesome.min.css') }}">
