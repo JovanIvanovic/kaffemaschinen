@@ -4,7 +4,7 @@
         <div class="col-12 text-center">
 
         <span class="pull-right">
-            <a href="#" title="Schoengebraucht Company" target="_blank">Schoengebraucht</a> &copy; {{ date('Y') }}
+            <a href="#" title="Kaffemaschinen Company" target="_blank">Kaffemaschinen</a> &copy; {{ date('Y') }}
         </span>
         </div>
     </div>

@@ -16,7 +16,7 @@ class PageController extends Base
     public function home()
     {
         $dataGrid = DataGrid::model(PageHome::query())
-            ->column('heading', ['sortable' => true, 'label' => __('lang.heading')])
+            ->column('title', ['sortable' => true, 'label' => __('lang.title')])
             ->linkColumn(__('lang.edit'), [], function ($model) {
                 return "<a href='" . route('admin.home.edit', $model->id) . "' >".__('lang.edit')."</a>";
             })
@@ -38,10 +38,9 @@ class PageController extends Base
     public function homeStore(Request $request)
     {
         $this->validate($request, [
-            'heading' => 'required',
-            'body' => 'required',
+            'title' => 'required',
+            'description' => 'required',
             'button' => 'required',
-            'url' => 'required|url',
             'color' => 'required',
             'image' => 'required|mimes:jpeg,jpg,png|max:2048'
         ]);
@@ -55,10 +54,9 @@ class PageController extends Base
 
 
         PageHome::create([
-            'heading' => strtoupper($request->heading),
-            'body' => $request->body,
+            'title' => $request->title,
+            'description' => $request->description,
             'button' => $request->button,
-            'url' => $request->url,
             'color' => $request->color,
             'image' => $dbPath
         ]);
@@ -69,9 +67,9 @@ class PageController extends Base
 
     public function homeEdit($id)
     {
-        $banner = PageHome::findOrFail($id);
+        $popup = PageHome::findOrFail($id);
         return view('admin.page.home.edit')
-            ->with('banner', $banner);
+            ->with('popup', $popup);
     }
 
 
@@ -85,13 +83,13 @@ class PageController extends Base
             'color' => 'required',
         ]);
 
-        $banner = PageHome::findorfail($id);
-        $banner->heading = $request->heading;
-        $banner->button = $request->button;
-        $banner->body = $request->body;
-        $banner->url = $request->url;
-        $banner->color = $request->color;
-        $banner->update();
+        $popup = PageHome::findorfail($id);
+        $popup->heading = $request->heading;
+        $popup->button = $request->button;
+        $popup->body = $request->body;
+        $popup->url = $request->url;
+        $popup->color = $request->color;
+        $popup->update();
 
         return redirect()->route('admin.page.home');
 

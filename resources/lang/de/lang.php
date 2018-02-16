@@ -64,7 +64,7 @@ return [
     'banner-name' => 'Banner Titel',
     'color' => 'Farbe',
     'statistics' => 'Statistik',
-
+    'title' => 'Titel',
 
     'order-view' => 'Bestellansicht',
     'order-basic-info' => 'Grundinformationen bestellen',
@@ -87,8 +87,8 @@ return [
     'admin-password-label' => 'Passwort',
     'admin-email-label' => 'E-Mail-Addresse',
     'admin-create-admin-user-button-title' => 'Benutzer hinzufügen',
-    'admin-create-new-banner' => 'Neuen Banner erstellen',
-    'admin-edit-banner' => ' Banner aktualisieren',
+    'admin-create-new-popup' => 'Neuen Popup erstellen',
+    'admin-edit-popup' => ' Popup aktualisieren',
     'admin-update-text' => 'Text aktualisieren',
     'created-at' => 'Erstellt am',
     'last-login' => 'Letzte Anmeldung',
