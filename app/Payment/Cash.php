@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dragantic91
- * Date: 21-Dec-17
- * Time: 18:46
- */
 
 namespace App\Payment;
-
 
 class Cash extends Payment implements PaymentInterface
 {

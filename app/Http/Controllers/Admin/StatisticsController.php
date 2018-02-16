@@ -1,11 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dragantic91
- * Date: 11/25/2017
- * Time: 12:33 PM
- */
+
 namespace App\Http\Controllers\Admin;
+
 use App\Models\Database\Configuration;
 use App\Models\Database\Order;
 use App\Models\Database\Visitor;
@@ -13,6 +9,7 @@ use Carbon\Carbon;
 use DateTime;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
+
 class StatisticsController extends AdminController
 {
     /**

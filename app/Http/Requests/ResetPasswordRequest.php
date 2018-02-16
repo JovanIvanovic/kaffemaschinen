@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dragantic91
- * Date: 21-Jan-18
- * Time: 13:57
- */
 
 namespace App\Http\Requests;
-
 
 use Illuminate\Foundation\Http\FormRequest;
 

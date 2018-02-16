@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dragantic91
- * Date: 15-Dec-17
- * Time: 17:38
- */
+
 namespace App\Payment;
 
 use Illuminate\Support\Facades\Facade as LaravelFacade;

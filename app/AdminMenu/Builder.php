@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dragantic91
- * Date: 11/27/2017
- * Time: 4:50 PM
- */
 
 namespace App\AdminMenu;
 

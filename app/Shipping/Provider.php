@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dragantic91
- * Date: 15-Dec-17
- * Time: 16:57
- */
 
 namespace App\Shipping;
-
 
 use Illuminate\Support\ServiceProvider;
 use App\Shipping\Facade as ShippingFacade;

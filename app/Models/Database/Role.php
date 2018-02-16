@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dragantic91
- * Date: 11/20/2017
- * Time: 1:23 PM
- */
 
 namespace App\Models\Database;
-
 
 class Role extends BaseModel
 {

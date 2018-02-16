@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dragantic91
- * Date: 11/26/2017
- * Time: 12:17 PM
- */
-
 namespace App\Models\Database;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -18,7 +11,7 @@ class Product extends BaseModel
 
     protected $dates = ['deleted_at'];
     protected $appends = ['image'];
-    protected $fillable =['type', 'name', 'slug', 'product_no', 'description', 'status', 'in_stock', 'track_stock', 'qty', 'is_taxable', 'page_title', 'page_description', 'price', 'discount', 'discount_price', 'delivery', 'delivery_price', 'new_product', 'hit_product'];
+    protected $fillable =['type', 'name', 'slug', 'product_no', 'description', 'status', 'in_stock', 'track_stock', 'qty', 'is_taxable', 'page_title', 'page_description', 'price', 'discount', 'discount_price', 'delivery', 'delivery_price', 'new_product', 'hit_product', 'orderable', 'has_packaging', 'packaging'];
 
     public static function getCollection()
     {
@@ -39,7 +32,7 @@ class Product extends BaseModel
             $model->slug = $count ? "{$slug}-{$count}" : $slug;
         });
     }
-
+    
     public static function getProductsBySlug($slug)
     {
         $model = new static;

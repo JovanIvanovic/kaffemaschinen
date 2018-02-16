@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dragantic91
- * Date: 06-Dec-17
- * Time: 16:39
- */
 
 namespace App\Http\ViewComposers;
-
 
 use App\Models\Database\Category;
 use App\Models\Database\Configuration;

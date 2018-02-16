@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dragantic91
- * Date: 05-Dec-17
- * Time: 16:25
- */
 
 namespace App\Models\Database;
-
 
 use Illuminate\Support\Collection;
 

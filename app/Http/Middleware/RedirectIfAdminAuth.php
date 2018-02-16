@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dragantic91
- * Date: 11/20/2017
- * Time: 12:35 PM
- */
 
 namespace App\Http\Middleware;
-
 
 use Illuminate\Support\Facades\Auth;
 use Closure;

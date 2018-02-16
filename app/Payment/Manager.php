@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dragantic91
- * Date: 15-Dec-17
- * Time: 17:40
- */
 
 namespace App\Payment;
-
 
 use Illuminate\Support\Collection;
 

@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dragantic91
- * Date: 13-Dec-17
- * Time: 12:33
- */
 
 namespace App\Tabs;
-
 
 use Illuminate\Support\ServiceProvider;
 

@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dragantic91
- * Date: 13-Dec-17
- * Time: 12:35
- */
 
 namespace App\Tabs;
-
 
 class Tab
 {

@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dragantic91
- * Date: 21-Dec-17
- * Time: 18:51
- */
 
 namespace App\Payment;
-
 
 class Stripe extends Payment implements PaymentInterface
 {

@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dragantic91
- * Date: 11/24/2017
- * Time: 3:06 PM
- */
 
 namespace App\Mail;
-
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;

@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dragantic91
- * Date: 14-Dec-17
- * Time: 10:54
- */
 
 namespace App\Http\Controllers\Front;
-
 
 use App\Http\Controllers\Controller;
 use App\Models\Database\Product;

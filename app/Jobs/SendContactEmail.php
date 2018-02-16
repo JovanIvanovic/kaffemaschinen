@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dragantic91
- * Date: 11/24/2017
- * Time: 3:04 PM
- */
 
 namespace App\Jobs;
 

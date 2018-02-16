@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dragantic91
- * Date: 11/26/2017
- * Time: 11:29 AM
- */
 
 namespace App\Models\Database;
-
 
 class Order extends BaseModel
 {

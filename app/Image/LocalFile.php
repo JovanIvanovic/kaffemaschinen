@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dragantic91
- * Date: 11/22/2017
- * Time: 6:25 PM
- */
 
 namespace App\Image;
 

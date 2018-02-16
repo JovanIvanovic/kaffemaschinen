@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dragantic91
- * Date: 07-Dec-17
- * Time: 17:24
- */
+
 namespace App\Models\Database;
 
 use App\Image\LocalFile;

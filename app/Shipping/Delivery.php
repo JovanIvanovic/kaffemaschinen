@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dragantic91
- * Date: 18-Dec-17
- * Time: 13:36
- */
 
 namespace App\Shipping;
-
 
 use Illuminate\Support\Facades\Session;
 

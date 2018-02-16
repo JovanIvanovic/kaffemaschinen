@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dragantic91
- * Date: 09-Dec-17
- * Time: 12:42
- */
 
 namespace App\Models\Database;
-
 
 class UserViewedProduct extends BaseModel
 {

@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dragantic91
- * Date: 11/22/2017
- * Time: 1:37 PM
- */
 
 namespace App\Http\Controllers\Front;
-
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ChangePasswordRequest;
