@@ -62,42 +62,52 @@
                     {!! $product->description !!}
                 </div>
 
-                @if($product->qty
-                < 1) <div class="prod-info text-center" style="font-size: 30px; color: #de5421;">
-                    {{ __('front.sold-out') }}
-            </div>
+
+            @if ($product->has_packaging == true)
+                <div class="prod-info">
+                    {{ __('front.packaging') }} : &nbsp;{{ $product->packaging }}
+                </div>
+            @endif
+
+            @if ($product->orderable == false) 
+                <a class="prod-add" href="{{ route('contact') }}">
+                    Contact us
+                </a>
             @else
-            <div class="prod-info">
-                {{ __('front.delivery') }} : &nbsp;{{ $product->delivery == 1 ? 'Ja' : 'Nein' }}
-            </div>
+                @if($product->qty < 1 || $product->in_stock == 0)
+                    <div class="prod-info text-center" style="font-size: 30px; color: #de5421;">
+                        {{ __('front.sold-out') }}
+                    </div>
+                @else
 
-            <div class="prod-info">
-                <p class="prod-price">
-                    @if($product->discount == 1)
-                    <span class="prodlist-i-price">
-                                <b>CHF {{ number_format($product->discount_price, 2) }}</b><br>
-                                <span style="text-decoration:line-through">CHF {{ number_format($product->price,2) }}</span><span class="price-off">-{{ number_format(100-($product->discount_price/$product->price*100), 0) }}%</span><br>
-                    </span>
-                    @else
-                    <b>CHF {{ number_format($product->price,2) }}</b><br>
-                    <del></del> @endif inkl. MwSt 7,7%
-                </p>
+                <div class="prod-info">
+                    <p class="prod-price">
+                        @if($product->discount == 1)
+                        <span class="prodlist-i-price">
+                                    <b>CHF {{ number_format($product->discount_price, 2) }}</b><br>
+                                    <span style="text-decoration:line-through">CHF {{ number_format($product->price,2) }}</span><span class="price-off">-{{ number_format(100-($product->discount_price/$product->price*100), 0) }}%</span><br>
+                        </span>
+                        @else
+                        <b>CHF {{ number_format($product->price,2) }}</b><br>
+                        <del></del> @endif inkl. MwSt 7,7%
+                    </p>
 
-                <form method="post" action="{{ route('cart.add-to-cart') }}">
-                    {{ csrf_field() }}
-                    <input type="hidden" name="slug" value="{{ $product->slug }}" />
-                    <p class="prod-qnt">
-                        <input id="prodQnt" class="prod-qty" name="qty" value="1" type="text" data-max="{{ $product->qty }}">
-                        <a id="prodPlus" class="prod-plus"><i class="fa fa-angle-up"></i></a>
-                        <a id="prodMinus" class="prod-minus"><i class="fa fa-angle-down"></i></a>
-                    </p>
-                    <p class="prod-addwrap">
-                        <button type="submit" class="prod-add" href="{{ route('cart.add-to-cart', $product->id) }}">
-                                In den Warenkorb
-                            </button>
-                    </p>
-                </form>
-            </div>
+                    <form method="post" action="{{ route('cart.add-to-cart') }}">
+                        {{ csrf_field() }}
+                        <input type="hidden" name="slug" value="{{ $product->slug }}" />
+                        <p class="prod-qnt">
+                            <input id="prodQnt" class="prod-qty" name="qty" value="1" type="text" data-max="{{ $product->qty }}">
+                            <a id="prodPlus" class="prod-plus"><i class="fa fa-angle-up"></i></a>
+                            <a id="prodMinus" class="prod-minus"><i class="fa fa-angle-down"></i></a>
+                        </p>
+                        <p class="prod-addwrap">
+                            <button type="submit" class="prod-add" href="{{ route('cart.add-to-cart', $product->id) }}">
+                                    In den Warenkorb
+                                </button>
+                        </p>
+                    </form>
+                </div>
+                @endif
             @endif
 
                 <div class="row">

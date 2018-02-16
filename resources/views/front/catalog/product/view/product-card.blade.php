@@ -16,7 +16,7 @@
     <h3>
         <a href="{{ route('product.view', $product->slug)}}" title="{{ $product->name }}">{{ $product->name }}</a>
     </h3>
-    @if($product->qty < 1)
+    @if($product->qty < 1 || $product->in_stock == 0)
         <p class="prod-i-price">
             <b>{{ __('front.sold-out') }}</b>
         </p>

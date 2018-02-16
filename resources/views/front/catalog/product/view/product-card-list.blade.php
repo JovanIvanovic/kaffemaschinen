@@ -19,7 +19,7 @@
         <div class="prodlist-i-txt">
             {!! substr($product->description, 0, 200) !!}...
         </div>
-        @if($product->qty < 1)
+        @if($product->qty < 1 || $product->in_stock == 0)
             <div class="prodlist-i-action">
                 <span class="prodlist-i-price">
                     <b>{{ __('front.sold-out') }}</b>

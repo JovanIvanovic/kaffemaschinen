@@ -62,6 +62,20 @@
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
     <script>
         $(document).ready(function () {
+            $("input[name=orderable_toggle]").on('change', function () {
+                if ($('#orderable').val() == 1) {
+                    $('#orderable').val(0);
+                } else {
+                    $('#orderable').val(1);
+                }
+            });
+            $("input[name=has_packaging_toggle]").on('change', function () {
+                if ($('#has_packaging').val() == 1) {
+                    $('#has_packaging').val(0);
+                } else {
+                    $('#has_packaging').val(1);
+                }
+            });
             $("input[name=new_product_toggle]").on('change', function () {
                 if ($('#new_product').val() == 1) {
                     $('#new_product').val(0);
