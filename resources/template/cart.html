@@ -1,0 +1,367 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>Cart | Kaffemaschinen.ch</title>
+
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700ii%7CRoboto:300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=cyrillic" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/ion.rangeSlider.css">
+    <link rel="stylesheet" href="assets/css/ion.rangeSlider.skinFlat.css">
+    <link rel="stylesheet" href="assets/css/jquery.bxslider.css">
+    <link rel="stylesheet" href="assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="assets/css/flexslider.css">
+    <link rel="stylesheet" href="assets/css/swiper.css">
+    <link rel="stylesheet" href="assets/css/swiper.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/media.css">
+
+</head>
+<body>
+<!-- Header - start -->
+    <header class="header">
+
+        <!-- Topbar - start -->
+        <div class="header_top">
+            <div class="container">
+                <!-- Search - start -->
+                <div class="topsearch">
+                    <form class="topsearch-form" action="#">
+                        <input type="text" placeholder="Suche...">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+                <!-- Search - end -->
+
+
+                <ul class="topsearch_auth">
+
+                    <li class="topauth">
+                        <a href="reg.html">
+                            <i class="fa fa-lock"></i>
+                            <span class="shop-menu-ttl">Registrierung </span>
+                        </a>
+                        <span style="color: #fff">/</span>
+                        <a href="login.html">
+                            <span class="shop-menu-ttl"> Login</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <div class="h-cart">
+                            <a href="cart.html">
+                                <i class="fa fa-shopping-cart"></i>
+                                <span class="shop-menu-ttl">Warenkorb</span>
+                                (<b>0</b>)
+                            </a>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+
+        <!-- Topmenu - start -->
+        <div class="header-bottom">
+            <div class="container">
+                <nav class="topmenu">
+
+
+                    <!-- Main menu - start -->
+                    <button type="button" class="mainmenu-btn">Menu</button>
+
+                    <ul class="mainmenu sections-show">
+                        <li>
+                            <a href="index.html">
+                            Home
+                        </a>
+                        </li>
+                        <li>
+                            <a href="lavazza.html">
+                            Lavazza
+                        </a>
+                        </li>
+                        <li>
+                            <a href="borbone.html">
+                            Borbone
+                        </a>
+                        </li>
+                        <li>
+                            <a href="gastro.html">
+                            Gastro
+                        </a>
+                        </li>
+                        <li>
+                            <a href="kaffebohnen.html">
+                            Kaffeebohnen
+                        </a>
+                        </li>
+
+                        <li>
+                            <a href="zuberhor.html">
+                            Zubehör
+                        </a>
+                        </li>
+                    </ul>
+                    <!-- Main menu - end -->
+
+
+
+                </nav>
+            </div>
+        </div>
+        <!-- Topmenu - end -->
+
+    </header>
+<!-- Header - end -->
+
+
+<!-- Main Content - start -->
+<main>
+    <section class="container stylization maincont" style="padding-top: 50px;" id="pozadina">
+
+
+        <h1 class="main-ttl"><span>Warenkorb</span></h1>
+        <!-- Cart Items - start -->
+        <form action="#">
+
+            <div class="cart-items-wrap">
+                <table class="cart-items">
+                    <thead>
+                    <tr>
+                        <td class="cart-image" style="text-align: center;">Foto</td>
+                        <td class="cart-ttl">Artikel</td>
+                        <td class="cart-price">Preis</td>
+                        <td class="cart-quantity">Menge</td>
+                        <td class="cart-summ">Betrag</td>
+                        <td class="cart-del">&nbsp;</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="cart-image">
+                            <a href="product.html">
+                                <img src="assets/img/cart/1.jpg">
+                            </a>
+                        </td>
+                        <td class="cart-ttl">
+                            <a href="product.html">Similique delectus totam</a>
+                            <p>Color: Red</p>
+                            <p>Size: XS</p>
+                        </td>
+                        <td class="cart-price">
+                            <b>CHF 220</b>
+                        </td>
+                        <td class="cart-quantity">
+                            <p class="cart-qnt">
+                                <input value="1" type="text">
+                                <a href="#" class="cart-plus"><i class="fa fa-angle-up"></i></a>
+                                <a href="#" class="cart-minus"><i class="fa fa-angle-down"></i></a>
+                            </p>
+                        </td>
+                        <td class="cart-summ">
+                            <b>CHF 220</b>
+                        </td>
+                        <td class="cart-del">
+                            <a href="#" class="cart-remove"></a>
+                        </td>
+                    </tr>
+                                        <tr>
+                        <td class="cart-image">
+                            <a href="product.html">
+                                <img src="assets/img/cart/1.jpg">
+                            </a>
+                        </td>
+                        <td class="cart-ttl">
+                            <a href="product.html">Offer Name</a>
+                            <p class="offer_muted">Product One - <del>CHF 255</del></p>
+                            <p class="offer_muted">Product Two - <del>CHF 255</del></p>
+                            <p class="offer_muted">Product Three - <del>CHF 255</del></p>
+                        </td>
+                        <td class="cart-price">
+                            <b>CHF 220</b>
+                        </td>
+                        <td class="cart-quantity">
+                            <p class="cart-qnt">
+                                <input value="1" type="text">
+                                <a href="#" class="cart-plus"><i class="fa fa-angle-up"></i></a>
+                                <a href="#" class="cart-minus"><i class="fa fa-angle-down"></i></a>
+                            </p>
+                        </td>
+                        <td class="cart-summ">
+                            <b>CHF 220</b>
+                        </td>
+                        <td class="cart-del">
+                            <a href="#" class="cart-remove"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cart-image">
+                            <a href="product.html">
+                                <img src="assets/img/cart/2.jpg">
+                            </a>
+                        </td>
+                        <td class="cart-ttl">
+                            <a href="product.html">Eveniet nobis minus</a>
+                        </td>
+                        <td class="cart-price">
+                            <b>CHF 150</b>
+                        </td>
+                        <td class="cart-quantity">
+                            <p class="cart-qnt">
+                                <input value="1" type="text">
+                                <a href="#" class="cart-plus"><i class="fa fa-angle-up"></i></a>
+                                <a href="#" class="cart-minus"><i class="fa fa-angle-down"></i></a>
+                            </p>
+                        </td>
+                        <td class="cart-summ">
+                            <b>CHF 150</b>
+                        </td>
+                        <td class="cart-del">
+                            <a href="#" class="cart-remove"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cart-image">
+                            <a href="product.html">
+                                <img src="assets/img/cart/3.jpg">
+                            </a>
+                        </td>
+                        <td class="cart-ttl">
+                            <a href="product.html">Quod soluta corrupti</a>
+                        </td>
+                        <td class="cart-price">
+                            <b>CHF 195</b>
+                        </td>
+                        <td class="cart-quantity">
+                            <p class="cart-qnt">
+                                <input value="1" type="text">
+                                <a href="#" class="cart-plus"><i class="fa fa-angle-up"></i></a>
+                                <a href="#" class="cart-minus"><i class="fa fa-angle-down"></i></a>
+                            </p>
+                        </td>
+                        <td class="cart-summ">
+                            <b>CHF 195</b>
+                        </td>
+                        <td class="cart-del">
+                            <a href="#" class="cart-remove"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cart-image">
+                            <a href="product.html">
+                                <img src="assets/img/cart/4.jpg">
+                            </a>
+                        </td>
+                        <td class="cart-ttl">
+                            <a href="product.html">Perferendis recusandae</a>
+                            <p>Color: Blue</p>
+                            <p>Size: XS</p>
+                        </td>
+                        <td class="cart-price">
+                            <b>CHF 250</b>
+                        </td>
+                        <td class="cart-quantity">
+                            <p class="cart-qnt">
+                                <input value="1" type="text">
+                                <a href="#" class="cart-plus"><i class="fa fa-angle-up"></i></a>
+                                <a href="#" class="cart-minus"><i class="fa fa-angle-down"></i></a>
+                            </p>
+                        </td>
+                        <td class="cart-summ">
+                            <b>CHF 250</b>
+                        </td>
+                        <td class="cart-del">
+                            <a href="#" class="cart-remove"></a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <ul class="cart-total">
+                <li class="cart-summ">
+                TOTAL: <b>CHF 815</b>
+                <p class="cart_pdv">MwSt: 7.7%</p>
+                </li>
+            </ul>
+            <div class="cart-submit">
+                <a href="#" class="cart-submit-btn">Bezahlen</a>
+                <a href="#" class="cart-clear">Warenkorb leeren </a>
+            </div>
+        </form>
+        <!-- Cart Items - end -->
+
+    </section>
+</main>
+<!-- Main Content - end -->
+
+
+<!-- Footer - start -->
+<footer class="footer-wrap">
+    
+
+    <div class="container f-menu-list">
+        <div class="row">
+            <div class="f-menu">
+                <ul class="nav nav-pills nav-stacked">
+                     <li><a href="#">AGB's</a></li>
+                     <li><a href="#">Impressum</a></li>
+                     <li><a href="contacts.html"><i class="fa fa-envelope-open-o" aria-hidden="true"></i>Kontaktformular</a></li>
+                </ul>
+            </div>
+            <div class="f-menu">
+<!--
+                <h3>
+                   Social Media
+                </h3>
+-->
+                <ul class="nav nav-pills nav-stacked">
+                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i>Facebook</a></li>
+                    
+                </ul>
+            </div>
+            
+            <div class="f-subscribe">
+                <h3>Newsletter abonnieren</h3>
+                <form class="f-subscribe-form" action="#">
+                    <input placeholder="Ihre Emailadresse" type="text">
+                    <button type="submit"><i class="fa fa-paper-plane"></i></button>
+                </form>
+                <p>Geben Sie Ihre Emailadresse ein, wenn Sie unseren Newsletter erhalten möchten. Abonnieren Sie jetzt!</p>
+            </div>
+        </div>
+    </div>
+
+    
+
+</footer>
+<!-- Footer - end -->
+
+
+<!-- jQuery plugins/scripts - start -->
+<script src="assets/js/jquery-1.11.2.min.js"></script>
+<script src="assets/js/jquery.bxslider.min.js"></script>
+<script src="assets/js/fancybox/fancybox.js"></script>
+<script src="assets/js/fancybox/helpers/jquery.fancybox-thumbs.js"></script>
+<script src="assets/js/jquery.flexslider-min.js"></script>
+<script src="assets/js/swiper.jquery.min.js"></script>
+<script src="assets/js/jquery.waypoints.min.js"></script>
+<script src="assets/js/progressbar.min.js"></script>
+<script src="assets/js/ion.rangeSlider.min.js"></script>
+<script src="assets/js/chosen.jquery.min.js"></script>
+<script src="assets/js/jQuery.Brazzers-Carousel.js"></script>
+<script src="assets/js/plugins.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhAYvx0GmLyN5hlf6Uv_e9pPvUT3YpozE"></script>
+<script src="assets/js/gmap.js"></script>
+<!-- jQuery plugins/scripts - end -->
+
+</body>
+</html>
