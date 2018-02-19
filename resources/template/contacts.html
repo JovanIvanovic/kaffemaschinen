@@ -26,44 +26,48 @@
 
 <body>
     <!-- Header - start -->
-    <header class="header">
+        <header class="header">
 
         <!-- Topbar - start -->
         <div class="header_top">
             <div class="container">
-                <ul class="contactinfo nav nav-pills">
-                    <li>
-                        domain
+                <!-- Search - start -->
+                <div class="topsearch">
+                    <form class="topsearch-form" action="#">
+                        <input type="text" placeholder="Suche...">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+                <!-- Search - end -->
+
+
+                <ul class="topsearch_auth">
+
+                    <li class="topauth">
+                        <a href="reg.html">
+                            <i class="fa fa-lock"></i>
+                            <span class="shop-menu-ttl">Registrierung </span>
+                        </a>
+                        <span style="color: #fff">/</span>
+                        <a href="login.html">
+                            <span class="shop-menu-ttl"> Login</span>
+                        </a>
                     </li>
 
-                </ul>
-                <div class="shop-menu">
-                    <ul>
-
-                        <li class="topauth">
-                            <a href="reg.html">
-                            <i class="fa fa-lock"></i>
-                            <span class="shop-menu-ttl">Registrierung</span>
-                        </a>
-                            <a href="login.html">
-                            <span class="shop-menu-ttl">Login</span>
-                        </a>
-                        </li>
-
-                        <li>
-                            <div class="h-cart">
-                                <a href="cart.html">
+                    <li>
+                        <div class="h-cart">
+                            <a href="cart.html">
                                 <i class="fa fa-shopping-cart"></i>
                                 <span class="shop-menu-ttl">Warenkorb</span>
                                 (<b>0</b>)
                             </a>
-                            </div>
-                        </li>
+                        </div>
+                    </li>
 
-                    </ul>
-                </div>
+                </ul>
             </div>
         </div>
+
 
         <!-- Topmenu - start -->
         <div class="header-bottom">
@@ -76,7 +80,7 @@
 
                     <ul class="mainmenu sections-show">
                         <li>
-                            <a href="index.html">
+                            <a href="index.html" class="active">
                             Home
                         </a>
                         </li>
@@ -109,14 +113,7 @@
                     </ul>
                     <!-- Main menu - end -->
 
-                    <!-- Search - start -->
-                    <div class="topsearch">
-                        <form class="topsearch-form" action="#">
-                            <input type="text" placeholder="Search products">
-                            <button type="submit"><i class="fa fa-search"></i></button>
-                        </form>
-                    </div>
-                    <!-- Search - end -->
+
 
                 </nav>
             </div>
@@ -178,15 +175,17 @@
             <div class="row">
                 <div class="f-menu">
                     <ul class="nav nav-pills nav-stacked">
-                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">AGB's</a></li>
                         <li><a href="#">Impressum</a></li>
                         <li><a href="contacts.html"><i class="fa fa-envelope-open-o" aria-hidden="true"></i>Contact Form</a></li>
                     </ul>
                 </div>
                 <div class="f-menu">
+<!--
                     <h3>
                         Social Media
                     </h3>
+-->
                     <ul class="nav nav-pills nav-stacked">
                         <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i>Facebook</a></li>
 
@@ -196,7 +195,7 @@
                 <div class="f-subscribe">
                     <h3>Newsletter abonnieren</h3>
                     <form class="f-subscribe-form" action="#">
-                        <input placeholder="Your e-mail" type="text">
+                        <input placeholder="Ihre Emailadresse" type="text">
                         <button type="submit"><i class="fa fa-paper-plane"></i></button>
                     </form>
                     <p>Geben Sie Ihre Emailadresse ein, wenn Sie unseren Newsletter erhalten möchten. Abonnieren Sie jetzt!</p>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,29 +22,36 @@
     <link rel="stylesheet" href="assets/css/media.css">
 
 </head>
+
 <body>
 <!-- Header - start -->
-<header class="header">
 
     <!-- Topbar - start -->
-    <div class="header_top">
-        <div class="container">
-            <ul class="contactinfo nav nav-pills">
-                <li>
-                   domain
-                </li>
-                
-            </ul>
-            <div class="shop-menu">
-                <ul>
+        <header class="header">
+
+        <!-- Topbar - start -->
+        <div class="header_top">
+            <div class="container">
+                <!-- Search - start -->
+                <div class="topsearch">
+                    <form class="topsearch-form" action="#">
+                        <input type="text" placeholder="Suche...">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+                <!-- Search - end -->
+
+
+                <ul class="topsearch_auth">
 
                     <li class="topauth">
                         <a href="reg.html">
                             <i class="fa fa-lock"></i>
-                            <span class="shop-menu-ttl">Registrierung</span>
+                            <span class="shop-menu-ttl">Registrierung </span>
                         </a>
+                        <span style="color: #fff">/</span>
                         <a href="login.html">
-                            <span class="shop-menu-ttl">Login</span>
+                            <span class="shop-menu-ttl"> Login</span>
                         </a>
                     </li>
 
@@ -60,67 +66,62 @@
                     </li>
 
                 </ul>
-            </div>	</div>
-    </div>
-  
-    <!-- Topmenu - start -->
-    <div class="header-bottom">
-        <div class="container">
-            <nav class="topmenu">
+            </div>
+        </div>
 
 
-                <!-- Main menu - start -->
-                <button type="button" class="mainmenu-btn">Menu</button>
+        <!-- Topmenu - start -->
+        <div class="header-bottom">
+            <div class="container">
+                <nav class="topmenu">
 
-                <ul class="mainmenu sections-show">
-                    <li>
-                        <a href="index.html">
+
+                    <!-- Main menu - start -->
+                    <button type="button" class="mainmenu-btn">Menu</button>
+
+                    <ul class="mainmenu sections-show">
+                        <li>
+                            <a href="index.html">
                             Home
                         </a>
-                    </li>
-                    <li>
-                        <a href="lavazza.html">
+                        </li>
+                        <li>
+                            <a href="lavazza.html">
                             Lavazza
                         </a>
-                    </li>
-                    <li>
-                        <a href="borbone.html">
+                        </li>
+                        <li>
+                            <a href="borbone.html">
                             Borbone
                         </a>
-                    </li>
-                    <li>
-                        <a href="gastro.html">
+                        </li>
+                        <li>
+                            <a href="gastro.html">
                             Gastro
                         </a>
-                    </li>
-                    <li>
-                        <a href="kaffebohnen.html">
+                        </li>
+                        <li>
+                            <a href="kaffebohnen.html">
                             Kaffeebohnen
                         </a>
-                    </li>
-                    
-                    <li>
-                        <a href="zuberhor.html">
+                        </li>
+
+                        <li>
+                            <a href="zuberhor.html">
                             Zubehör
                         </a>
-                    </li>
-                </ul>
-                <!-- Main menu - end -->
+                        </li>
+                    </ul>
+                    <!-- Main menu - end -->
 
-                <!-- Search - start -->
-                <div class="topsearch">
-                    <form class="topsearch-form" action="#">
-                        <input type="text" placeholder="Search products">
-                        <button type="submit"><i class="fa fa-search"></i></button>
-                    </form>
-                </div>
-                <!-- Search - end -->
 
-            </nav>		</div>
-    </div>
-    <!-- Topmenu - end -->
 
-</header>
+                </nav>
+            </div>
+        </div>
+        <!-- Topmenu - end -->
+
+    </header>
 <!-- Header - end -->
 
 
@@ -133,7 +134,6 @@
         <h1 class="main-ttl"><span>Login</span></h1>
         <div class="auth-wrap">
             <div class="auth-col1">
-                <h2>Login</h2>
                 <form method="post" class="login">
                     <p>
                       <input placeholder="E-mail*" type="text" id="username">
@@ -168,15 +168,17 @@
         <div class="row">
             <div class="f-menu">
                 <ul class="nav nav-pills nav-stacked">
-                     <li><a href="#">Privacy Polucy</a></li>
+                     <li><a href="#">AGB's</a></li>
                      <li><a href="#">Impressum</a></li>
-                     <li><a href="contacts.html"><i class="fa fa-envelope-open-o" aria-hidden="true"></i>Contact Form</a></li>
+                     <li><a href="contacts.html"><i class="fa fa-envelope-open-o" aria-hidden="true"></i>Kontaktformular</a></li>
                 </ul>
             </div>
             <div class="f-menu">
+<!--
                 <h3>
                    Social Media
                 </h3>
+-->
                 <ul class="nav nav-pills nav-stacked">
                     <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i>Facebook</a></li>
                     
@@ -186,7 +188,7 @@
             <div class="f-subscribe">
                 <h3>Newsletter abonnieren</h3>
                 <form class="f-subscribe-form" action="#">
-                    <input placeholder="Your e-mail" type="text">
+                    <input placeholder="Ihre Emailadresse" type="text">
                     <button type="submit"><i class="fa fa-paper-plane"></i></button>
                 </form>
                 <p>Geben Sie Ihre Emailadresse ein, wenn Sie unseren Newsletter erhalten möchten. Abonnieren Sie jetzt!</p>
@@ -212,6 +214,7 @@
 <script src="assets/js/ion.rangeSlider.min.js"></script>
 <script src="assets/js/chosen.jquery.min.js"></script>
 <script src="assets/js/jQuery.Brazzers-Carousel.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/plugins.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhAYvx0GmLyN5hlf6Uv_e9pPvUT3YpozE"></script>
