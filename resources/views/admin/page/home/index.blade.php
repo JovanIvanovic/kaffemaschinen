@@ -2,11 +2,11 @@
 @section('content')
     <div class="container">
         <div class="h1">
-            Home Popups
+            Home Banners
 
             <a href="{{ route('admin.home.create') }}"
                class="float-right btn-schoen">
-                {{ __('lang.admin-create-new-popup') }}
+                {{ __('lang.admin-create-new-banner') }}
             </a>
 
         </div>
