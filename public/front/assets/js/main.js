@@ -6,9 +6,35 @@ function pad(n) {
 
 $(document).ready(function () {
 
-    
-    
-    
+
+    $(window).on('load', function () {
+        $('#myModal').modal('show');
+        $('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    responsiveClass:true,
+    responsive:{
+        0:{
+            items:1,
+            nav:false,
+            loop:false,
+            slideBy:2
+        },
+        600:{
+            items:3,
+            nav:false,
+            slideBy:2
+        },
+        1000:{
+            items:3,
+            nav:false,
+            loop:false,
+            slideBy:2
+        }
+    }
+})
+    });
+
 
     // Popular Products Tabs
     $('.fr-pop-tabs li').on('click', 'a', function () {

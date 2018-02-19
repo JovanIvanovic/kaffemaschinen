@@ -1,6 +1,13 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: dragantic91
+ * Date: 11/23/2017
+ * Time: 6:08 PM
+ */
 
 namespace App\Http\Controllers\Front;
+
 
 use App\Http\Controllers\Controller;
 use App\Jobs\SendContactEmail;
@@ -50,14 +57,6 @@ class PageController extends Controller
 
     public function sendWirEmail(Request $request)
     {
-        $this->validate($request,[
-            'name' => 'required',
-            'tel' => 'required',
-            'email' => 'required',
-            'mess' => 'required',
-            'image' => 'required'
-        ]);
-
         $data = $request->all();
 
         $images = $request->image;
@@ -111,13 +110,6 @@ class PageController extends Controller
 
     public function sendContactEmail(Request $request)
     {
-        $this->validate($request,[
-            'name' => 'required',
-            'tel' => 'required',
-            'email' => 'required',
-            'mess' => 'required',
-        ]);
-
         $data = $request->all();
         $contactForm = ([
             'name' => $data['name'],
@@ -143,5 +135,20 @@ class PageController extends Controller
         Subscriber::create($request->all());
         return redirect()->back()
             ->with('notificationText', __('front.subscribe-success-sent'));
+    }
+    public function lavazza() {
+        return view('front.page.lavazza');
+    }
+    public function borbone() {
+        return view('front.page.borbone');
+    }
+    public function gastro() {
+        return view('front.page.gastro');
+    }
+    public function kaffeebohnen() {
+        return view('front.page.kaffeebohnen');
+    }
+    public function zubehör() {
+        return view('front.page.zubehor');
     }
 }
