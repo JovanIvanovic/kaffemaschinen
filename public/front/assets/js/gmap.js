@@ -18,10 +18,11 @@
 	}
 
 	function allstore_add_marker( $marker, map ) {
+		var image = '/front/assets/img/marker.png';
 		var latlng = new google.maps.LatLng( $marker.attr('data-lat'), $marker.attr('data-lng') );
 		var marker = new google.maps.Marker({
 			position	: latlng,
-			icon: $marker.data('marker'),
+			icon: image,
 			map			: map
 		});
 		map.markers.push( marker );

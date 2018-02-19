@@ -76,15 +76,9 @@ use Illuminate\Support\Facades\Cookie;
 
             Route::get('/checkout', ['as' => 'checkout.index', 'uses' => 'CheckoutController@index']);
 
-            Route::get('/lavazza', ['as' => 'lavazza', 'uses' => 'PageController@lavazza']);
+            Route::get('/uber-uns', ['as' => 'about-us', 'uses' => 'PageController@about']);
 
-            Route::get('/borbone', ['as' => 'borbone', 'uses' => 'PageController@borbone']);
-
-            Route::get('/gastro', ['as' => 'gastro', 'uses' => 'PageController@gastro']);
-
-            Route::get('/kaffeebohnen', ['as' => 'kaffeebohnen', 'uses' => 'PageController@kaffeebohnen']);
-
-            Route::get('/zubehör', ['as' => 'zubehör', 'uses' => 'PageController@zubehör']);
+            Route::get('/wir-kaufen', ['as' => 'wir-kaufen', 'uses' => 'PageController@wirKaufen']);
 
             Route::post('/wir-kaufen/send/email', ['as' => 'wir-kaufen.mail', 'uses' => 'PageController@sendWirEmail']);
 

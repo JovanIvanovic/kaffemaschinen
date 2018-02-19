@@ -1,11 +1,11 @@
 
 <!-- Catalog menu - start -->
-{{--<div class="topcatalog">--}}
-    {{--<a href="{{ route('all.category.view') }}" class="topcatalog-btn">Shop</a>--}}
-    {{--<ul class="topcatalog-list">--}}
-        {{--@include('front.layouts.category-tree', ['categories', $categories])--}}
-    {{--</ul>--}}
-{{--</div>--}}
+<div class="topcatalog">
+    <a href="{{ route('all.category.view') }}" class="topcatalog-btn">Shop</a>
+    <ul class="topcatalog-list">
+        @include('front.layouts.category-tree', ['categories', $categories])
+    </ul>
+</div>
 <!-- Catalog menu - end -->
 
 <!-- Main menu - start -->
@@ -16,31 +16,18 @@
         <a href="{{ route('home') }}" class="{{ $menu_home or ''  }}">
             Home
         </a>
-    </li>
     <li>
-        <a href="{{ route('lavazza') }}" class="{{ $menu_home or ''  }}">
-            Lavazza
+        <a href="{{ route('about-us') }}" class="{{ $menu_about_us or ''  }}">
+            Über uns
         </a>
-    </li>
     <li>
-        <a href="{{ route('borbone') }}" class="{{ $menu_home or ''  }}">
-            Borbone
+        <a href="{{ route('wir-kaufen') }}" class="{{ $menu_wir or ''  }}">
+            Wir Kaufen
         </a>
-    </li>
-    <li>
-        <a href="{{ route('gastro') }}" class="{{ $menu_home or ''  }}">
-            Gastro
+    <li class="no-border">
+
+        <a href="{{ route('contact') }}" class="{{ $menu_contact or ''  }}">
+            Kontakt
         </a>
-    </li>
-    <li>
-        <a href="{{ route('kaffeebohnen') }}" class="{{ $menu_home or ''  }}">
-            Kaffeebohnen
-        </a>
-    </li>
-    <li>
-        <a href="{{ route('zubehör') }}" class="{{ $menu_home or ''  }}">
-            Zubehör
-        </a>
-    </li>
 </ul>
 <!-- Main menu - end -->
