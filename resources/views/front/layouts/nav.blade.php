@@ -7,18 +7,28 @@
         <a href="{{ route('home') }}" class="{{ $menu_home or ''  }}">
             Home
         </a>
+    </li>
     <li>
-        <a href="{{ route('about-us') }}" class="{{ $menu_about_us or ''  }}">
-            Über uns
+        <a href="{{ route('category.view', 'lavazza') }}" class="{{ $menu_about_us or ''  }}">
+            Lavazza
         </a>
+    </li>
     <li>
-        <a href="{{ route('wir-kaufen') }}" class="{{ $menu_wir or ''  }}">
-            Wir Kaufen
+        <a href="{{ route('category.view', 'borbone') }}" class="{{ $menu_wir or ''  }}">
+            Borbone
         </a>
-    <li class="no-border">
+    </li>
+    <li>
 
-        <a href="{{ route('contact') }}" class="{{ $menu_contact or ''  }}">
-            Kontakt
+        <a href="{{ route('category.view', 'gastro')  }}" class="{{ $menu_contact or ''  }}">
+            Gastro
         </a>
+    </li>
+    <li>
+
+        <a href="{{ route('category.view', 'zubehör') }}" class="{{ $menu_contact or ''  }}">
+            Zubehör
+        </a>
+    </li>
 </ul>
 <!-- Main menu - end -->
