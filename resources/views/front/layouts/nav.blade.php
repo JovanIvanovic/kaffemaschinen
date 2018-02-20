@@ -1,15 +1,6 @@
 
-<!-- Catalog menu - start -->
-<div class="topcatalog">
-    <a href="{{ route('all.category.view') }}" class="topcatalog-btn">Shop</a>
-    <ul class="topcatalog-list">
-        @include('front.layouts.category-tree', ['categories', $categories])
-    </ul>
-</div>
-<!-- Catalog menu - end -->
-
 <!-- Main menu - start -->
-<button type="button" class="mainmenu-btn" style="width: 50%;">Menu</button>
+<button type="button" class="mainmenu-btn">Menu</button>
 
 <ul class="mainmenu">
     <li>

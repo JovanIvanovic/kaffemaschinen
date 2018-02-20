@@ -30,27 +30,27 @@
     @yield('styles')
 
 </head>
-<body id="body">
+<body>
 <!-- Header - start -->
 <header class="{{ (isset($header)) ? "header-index" : "header" }}">
     <!-- Logo, Shop-menu - start -->
-    <div id="scroller" class="header_top hide">
-        <div class="container-fluid">
-            <div class="toplogo topLogo_scroller">
-                <a href="{{ route('home') }}">
-                    <img src="/front/assets/img/logo.png">
-                </a>
-            </div>
+    <div class="header_top">
+        <div class="container">
+            {{--<div class="toplogo topLogo_scroller">--}}
+                {{--<a href="{{ route('home') }}">--}}
+                    {{--<img src="\front/assets/img/logo.png"/>--}}
+                {{--</a>--}}
+            {{--</div>--}}
             <!-- Search - start -->
-            <div class="shop-menu-search">
-                <form action="{{ route('all.category.view') }}" method="get" role="search">
-                    <input class="menu-search-input" name="q" type="text" placeholder="Search products">
-                    <button class="menu-search-button" type="submit"><i class="fa fa-search"></i></button>
+            <div class="topsearch">
+                <form class="topsearch-form" action="{{ route('all.category.view') }}" method="get" role="search">
+                    <input name="q" type="text" placeholder="Search products">
+                    <button type="submit"><i class="fa fa-search"></i></button>
                 </form>
             </div>
 
-            <div class="shop-menu scroller_shop_menu">
-                <ul>
+
+                <ul class="topsearch_auth">
                     @if(Auth::check())
                         <?php
                         $user = auth()->user();
@@ -76,6 +76,7 @@
                                 <i class="fa fa-lock"></i>
                                 <span class="shop-menu-ttl">Registrierung</span>
                             </a>
+                            <span style="color: #fff">/</span>
                             <a href="{{ route('login') }}">
                                 <span class="shop-menu-ttl">Login</span>
                             </a>
@@ -91,67 +92,66 @@
                         </div>
                     </li>
                 </ul>
-            </div>
         </div>
     </div>
 
 
-    <div class="header-middle">
-        <div class="container header-middle-cont">
-            <div class="toplogo">
-                <a href="{{ route('home') }}">
-                    <img src="/front/assets/img/logo.png">
-                </a>
-            </div>
+    {{--<div class="header-middle">--}}
+        {{--<div class="container header-middle-cont">--}}
+            {{--<div class="toplogo">--}}
+                {{--<a href="{{ route('home') }}">--}}
+                    {{--<img src="/front/assets/img/logo.png">--}}
+                {{--</a>--}}
+            {{--</div>--}}
 
-            <div class="shop-menu-search">
-                <form action="{{ route('all.category.view') }}" method="get" role="search">
-                    <input class="menu-search-input" name="q" type="text" placeholder="Search products">
-                    <button class="menu-search-button" type="submit"><i class="fa fa-search"></i></button>
-                </form>
-            </div>
+            {{--<div class="shop-menu-search">--}}
+                {{--<form action="{{ route('all.category.view') }}" method="get" role="search">--}}
+                    {{--<input class="menu-search-input" name="q" type="text" placeholder="Search products">--}}
+                    {{--<button class="menu-search-button" type="submit"><i class="fa fa-search"></i></button>--}}
+                {{--</form>--}}
+            {{--</div>--}}
 
-            <div class="shop-menu">
-                <ul>
-                    @if(Auth::check())
-                        <li id="thumbnail_photo">
-                            <a href="{{ route('my-account.home') }}">
-                                <img src="{{ $image }}" style="border-radius: 50%; width: 40px; height: 40px">
-                            </a>
-                        </li>
-                        <li class="topauth">
-                            <a href="{{ route('my-account.home') }}">
-                               <span class="shop-menu-ttl">{{ $name }}</span>
-                            </a>
-                            <a href="{{ route('logout') }}">
-                                <span class="shop-menu-ttl">Logout</span>
-                            </a>
-                        </li>
-                    @else
-                        <li class="topauth">
-                            <a href="{{ route('register') }}">
-                                <i class="fa fa-lock"></i>
-                                <span class="shop-menu-ttl">Registrierung</span>
-                            </a>
-                            <a href="{{ route('login') }}">
-                                <span class="shop-menu-ttl">Login</span>
-                            </a>
-                        </li>
-                    @endif
-                    <li>
-                        <div class="h-cart">
-                            <a href="{{ route('cart.view') }}">
-                                <i class="fa fa-shopping-cart"></i>
-                                <span class="shop-menu-ttl">Warenkorb</span>
-                                ({{$cart}})
-                            </a>
-                        </div>
-                    </li>
+            {{--<div class="shop-menu">--}}
+                {{--<ul>--}}
+                    {{--@if(Auth::check())--}}
+                        {{--<li id="thumbnail_photo">--}}
+                            {{--<a href="{{ route('my-account.home') }}">--}}
+                                {{--<img src="{{ $image }}" style="border-radius: 50%; width: 40px; height: 40px">--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
+                        {{--<li class="topauth">--}}
+                            {{--<a href="{{ route('my-account.home') }}">--}}
+                               {{--<span class="shop-menu-ttl">{{ $name }}</span>--}}
+                            {{--</a>--}}
+                            {{--<a href="{{ route('logout') }}">--}}
+                                {{--<span class="shop-menu-ttl">Logout</span>--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
+                    {{--@else--}}
+                        {{--<li class="topauth">--}}
+                            {{--<a href="{{ route('register') }}">--}}
+                                {{--<i class="fa fa-lock"></i>--}}
+                                {{--<span class="shop-menu-ttl">Registrierung</span>--}}
+                            {{--</a>--}}
+                            {{--<a href="{{ route('login') }}">--}}
+                                {{--<span class="shop-menu-ttl">Login</span>--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
+                    {{--@endif--}}
+                    {{--<li>--}}
+                        {{--<div class="h-cart">--}}
+                            {{--<a href="{{ route('cart.view') }}">--}}
+                                {{--<i class="fa fa-shopping-cart"></i>--}}
+                                {{--<span class="shop-menu-ttl">Warenkorb</span>--}}
+                                {{--({{$cart}})--}}
+                            {{--</a>--}}
+                        {{--</div>--}}
+                    {{--</li>--}}
 
-                </ul>
-            </div>
-        </div>
-    </div>
+                {{--</ul>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
     <!-- Logo, Shop-menu - end -->
 
     <!-- Topmenu - start -->
