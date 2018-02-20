@@ -13,9 +13,9 @@ class Order extends BaseModel
         'order_status_id'
     ];
 
-    public function products()
+    public function orderable()
     {
-        return $this->belongsToMany(Product::class)->withTrashed()->withPivot('price', 'qty', 'tax_amount');
+        return $this->morphToMany()->withTrashed()->withPivot('price', 'qty', 'tax_amount');
     }
 
     public function user()

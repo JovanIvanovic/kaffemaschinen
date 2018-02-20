@@ -54,6 +54,13 @@ class Provider extends ServiceProvider
             ->route('admin.product.index');
 
         /**
+         * Add Menu Package
+         */
+        AdminMenuFacade::add('package')
+            ->label(__('lang.package'))
+            ->route('admin.package.index');
+
+        /**
          * Add Menu Sales
          */
         AdminMenuFacade::add('sale')

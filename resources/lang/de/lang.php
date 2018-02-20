@@ -15,6 +15,7 @@ return [
     'view' => 'Ansicht',
     'catalog' => 'Katalog',
     'product' => 'Artikel',
+    'package' => 'Angebot',
     'new-product' => 'Neues Artikel',
     'hit-product' => 'Hit Artikel',
     'category' => 'Kategorien',
@@ -109,6 +110,9 @@ return [
     "product.create.text" => "Artikel erstellen",
     'product-edit-product' => 'Erstellen',
 
+    'package.index.title' => 'Angebotsliste',
+    'package.create.text' => 'Angebot erstellen',
+    'package-edit.package' => 'Erstellen',
 
     'address.configuration.title' => "Adresse Konfigurationsliste",
 

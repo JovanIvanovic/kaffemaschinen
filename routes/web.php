@@ -176,6 +176,7 @@ use Illuminate\Support\Facades\Cookie;
 
             Route::get('buyer', ['as' => 'admin.buyer.index', 'uses' => 'BuyerController@index']);
             Route::resource('newsletter', 'NewsletterController', ['as' => 'admin']);
+            Route::resource('package', 'PackageController', ['as' => 'admin']);
 
             Route::get('csvview',['as'=>'csvview','uses'=>'NewsletterController@csvView']);
 

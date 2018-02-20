@@ -1,13 +1,14 @@
 <?php
 namespace App\Models\Database;
 
+use App\Traits\Orderable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Image\LocalFile;
 use Illuminate\Support\Str;
 
 class Product extends BaseModel
 {
-    use SoftDeletes;
+    use SoftDeletes, Orderable;
 
     protected $dates = ['deleted_at'];
     protected $appends = ['image'];
@@ -123,9 +124,8 @@ class Product extends BaseModel
         return $this->hasMany(ProductImage::class);
     }
 
-    public function orders()
+    public function packages()
     {
-        return $this->hasMany(Order::class);
+        return $this->hasMany(Package::class);
     }
-    
 }
