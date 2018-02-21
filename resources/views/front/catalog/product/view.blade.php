@@ -69,7 +69,7 @@
                 </div>
             @endif
 
-            @if ($product->orderable == false) 
+            @if ($product->contact_only == true)
                 <a class="prod-add" href="{{ route('contact') }}">
                     Contact us
                 </a>

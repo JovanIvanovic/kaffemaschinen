@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Database\Package;
+use App\Models\Database\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\DataGrid\Facade as DataGrid;
@@ -43,7 +44,8 @@ class PackageController extends Controller
     public function store(Request $request)
     {
         try {
-            Package::create($request->all());
+            $package = Package::create($request->all());
+            $package->products()->sync($request->input('products'));
         } catch (\Exception $e) {
             echo 'Error in Saving Package: ', $e->getMessage(), "\n";
         }
@@ -61,7 +63,9 @@ class PackageController extends Controller
 
     public function update(Request $request, $id)
     {
-        Package::findOrFail($id)->update($request->all());
+        $package = Package::findOrFail($id);
+        $package->update($request->all());
+        $package->products()->sync($request->input('products'));
 
         return redirect()->route('admin.package.index');
     }
@@ -74,4 +78,21 @@ class PackageController extends Controller
         return redirect()->route('admin.package.index');
     }
 
+    public function searchProducts(Request $request)
+    {
+        $query = $request->input('query');
+
+        $products = Product::where('name', 'LIKE', "%{$query}%")->orWhere('slug', 'LIKE', "%{$query}%")->get();
+
+        return $products;
+    }
+
+    public function getSingleProduct(Request $request)
+    {
+        $id = $request->input('id');
+
+        $product = Product::find($id);
+
+        return $product;
+    }
 }

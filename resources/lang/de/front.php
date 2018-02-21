@@ -56,6 +56,7 @@ return [
     'product-name' => 'Produktname',
     'product-per-page' => 'Produkt pro Seite',
 
+    'packaging' => 'Stück pro Verpackung',
     'product' => 'Produkt',
     'delivery' => 'Lieferung',
     'delivery_cost' => 'Versandgebühr',

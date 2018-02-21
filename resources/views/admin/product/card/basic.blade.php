@@ -85,11 +85,11 @@
 <div class="row">
     <div class="col-4">
         <div class="form-group">
-            <label for="orderable">{{ __('lang.orderable') }}</label>
+            <label for="contact_only">{{ __('lang.contact-only') }}</label>
             <div class="checkbox">
                 <label style="margin-left: 20px;">
-                    <input id="orderable_toggle" name="orderable_toggle" type="checkbox" data-toggle="toggle" data-on="{{ __('front.yes') }}" data-off="{{ __('front.no') }}" @if ($model['orderable']=== 1) checked @endif />
-                    <input hidden id="orderable" type="number" name="orderable" value="{{ $model['orderable'] }}" />
+                    <input id="contact_only_toggle" name="contact_only_toggle" type="checkbox" data-toggle="toggle" data-on="{{ __('front.yes') }}" data-off="{{ __('front.no') }}" @if ($model['contact_only']=== 1) checked @endif />
+                    <input hidden id="contact_only" type="number" name="contact_only" value="{{ $model['contact_only'] }}" />
                 </label>
             </div>
         </div>

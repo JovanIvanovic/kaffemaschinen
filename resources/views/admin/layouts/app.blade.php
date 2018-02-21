@@ -65,11 +65,10 @@
 <script src="{{ asset('back/js/popper.min.js') }}"></script>
 <script src="{{ asset('back/js/bootstrap.min.js') }}"></script>
 
-
-
 <script src="//cdn.ckeditor.com/4.5.11/basic/ckeditor.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
 <script src="{{ asset('back/js/select2.full.min.js') }}"></script>
+
 @stack('scripts')
 
 </body>

@@ -13,9 +13,14 @@ class Order extends BaseModel
         'order_status_id'
     ];
 
-    public function orderable()
+    public function products()
     {
-        return $this->morphToMany()->withTrashed()->withPivot('price', 'qty', 'tax_amount');
+        return $this->morphedByMany(Product::class, 'orderable', 'order_items')->withTrashed()->withPivot('price', 'qty', 'tax_amount');
+    }
+
+    public function packages()
+    {
+        return $this->morphedByMany(Package::class, 'orderable', 'order_items')->withTrashed()->withPivot('price', 'qty', 'tax_amount');
     }
 
     public function user()

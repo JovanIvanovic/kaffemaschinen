@@ -31,19 +31,20 @@
 
         <div class="row">
             <div class="col-6">
-                @include('admin.forms.autocomplete',['name' => 'product-search','label' => __('front.product')])
+                @include('admin.forms.autocomplete',['placeholder' => __('front.product-search-products'), 'name' => 'product-search', 'label' => __('front.product'), 'class' => 'autocomplete-input'])
             </div>
         </div>
 
-        <div class="product-image-list">
-            <div class="image-preview">
-                <img class="img-thumbnail img-tag img-responsive" src="http://schoengebraucht.ch/uploads/catalog/images/n/7/q/med-1.8_Sa%CC%88ulen_3.jpg"/>
-                <input type="hidden" name="image[]" class="img-relative-path" value=""/>
-            </div>
-        </div>
+        <script>
+            function removeProduct(self) {
+                var productElement = $(self).parent().parent();
+                productElement.remove();
+            }
+        </script>
+        <div class="product-list"></div>
 
         <div class="form-group">
-            <button type="submit" class="btn-schoen">{{ __('lang.create') . ' & ' . __('lang.continue') }}</button>
+            <button type="submit" class="btn-schoen">{{ __('lang.create') }}</button>
             <button type="button"
                     onclick="location='{{ route('admin.package.index') }}'"
 
@@ -52,3 +53,34 @@
         </div>
     </form>
 @endsection
+
+@push('styles')
+    <style>
+        .product-list {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .product-list > .product-item-wrapper {
+            width: calc(100% / 6);
+            float: left;
+            padding-right: 8px;
+            padding-bottom: 8px;
+        }
+
+        .product-list > .product-item-wrapper > .product-item {
+            padding: 4px;
+            border: 1px solid #D9D9D9;
+            border-radius: .25rem;
+            text-align: center;
+        }
+
+        .product-list > .product-item-wrapper > .product-item > img {
+            width: 100%;
+        }
+
+        .product-list > .product-item-wrapper > .product-item > button {
+            margin-top: 8px;
+        }
+    </style>
+@endpush

@@ -157,11 +157,17 @@ use Illuminate\Support\Facades\Cookie;
 
             Route::resource('category', 'CategoryController', ['as' => 'admin']);
 
-            Route::resource('product', 'ProductController', ['as' => 'admin']); //
+            Route::resource('product', 'ProductController', ['as' => 'admin']); 
             Route::post('product-image/upload', ['as' => 'admin.product.upload-image',
                 'uses' => 'ProductController@uploadImage']);
             Route::post('product-image/delete', ['as' => 'admin.product.delete-image',
                 'uses' => 'ProductController@deleteImage']);
+
+            Route::resource('package', 'PackageController', ['as' => 'admin']);
+            Route::post('package/searchProducts', ['as' => 'admin.package.search-products',
+                'uses' => 'PackageController@searchProducts']);
+            Route::post('package/getSingleProduct', ['as' => 'admin.package.get-single-product',
+                'uses' => 'PackageController@getSingleProduct']);
 
             Route::resource('/admin-user', 'AdminUserController', ['as' => 'admin']);
             Route::resource('/change-password', 'ChangePasswordController', ['as' => 'admin']);
@@ -176,7 +182,6 @@ use Illuminate\Support\Facades\Cookie;
 
             Route::get('buyer', ['as' => 'admin.buyer.index', 'uses' => 'BuyerController@index']);
             Route::resource('newsletter', 'NewsletterController', ['as' => 'admin']);
-            Route::resource('package', 'PackageController', ['as' => 'admin']);
 
             Route::get('csvview',['as'=>'csvview','uses'=>'NewsletterController@csvView']);
 

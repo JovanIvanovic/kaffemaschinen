@@ -12,7 +12,7 @@ class Product extends BaseModel
 
     protected $dates = ['deleted_at'];
     protected $appends = ['image'];
-    protected $fillable =['type', 'name', 'slug', 'product_no', 'description', 'status', 'in_stock', 'track_stock', 'qty', 'is_taxable', 'page_title', 'page_description', 'price', 'discount', 'discount_price', 'delivery', 'delivery_price', 'new_product', 'hit_product', 'orderable', 'has_packaging', 'packaging'];
+    protected $fillable =['type', 'name', 'slug', 'product_no', 'description', 'status', 'in_stock', 'track_stock', 'qty', 'is_taxable', 'page_title', 'page_description', 'price', 'discount', 'discount_price', 'delivery', 'delivery_price', 'new_product', 'hit_product', 'contact_only', 'has_packaging', 'packaging'];
 
     public static function getCollection()
     {
@@ -126,6 +126,6 @@ class Product extends BaseModel
 
     public function packages()
     {
-        return $this->hasMany(Package::class);
+        return $this->belongsToMany(Package::class, 'package_products');
     }
 }

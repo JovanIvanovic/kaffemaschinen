@@ -8,6 +8,7 @@ trait Orderable
 {
     public function orders()
     {
-        return $this->morphMany(Order::class, 'orderable');
+        return $this->morphToMany(Order::class, 'orderable', 'order_items');
     }
 }
+

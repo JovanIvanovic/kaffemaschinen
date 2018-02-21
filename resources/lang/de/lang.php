@@ -66,6 +66,10 @@ return [
     'color' => 'Farbe',
     'statistics' => 'Statistik',
     'title' => 'Titel',
+    'has-packaging' => 'Verpackung',
+    'packaging' => 'Menge pro Verpackung',
+    'contact-only' => 'Kontaktformular',
+
 
     'order-view' => 'Bestellansicht',
     'order-basic-info' => 'Grundinformationen bestellen',
