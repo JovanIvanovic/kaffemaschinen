@@ -23,13 +23,10 @@ class HomeController extends Base
             $pageModel = Page::find($pageId);
         }
 
-        $header = 1;
-
         return view('front.home.index')
             ->with('pageModel', $pageModel)
             ->with('hitAndNewProducts', $hitAndNewProducts)
-            ->with('sliders', $sliders)
-            ->with('header', $header);
+            ->with('sliders', $sliders);
 
     }
 }

@@ -15,159 +15,15 @@
                 <ul class="slides">
                     <li>
                         <img src="front/assets/img/slider/slide1.jpg" alt="">
-                        <div class="fr-slider-cont">
-                            <h3>MEGA SALE -30%</h3>
-                            <p>Winter collection for women's. <br>We all have choices for you. Check it out!</p>
-                            <p class="fr-slider-more-wrap">
-                                <a class="fr-slider-more" href="#">View collection</a>
-                            </p>
-                        </div>
                     </li>
 
                 </ul>
             </div>
         </div>
-        <h1 class="main-ttl"><span>Kategorie</span></h1>
         <!-- Catalog Sidebar - start -->
+        <h1 class="main-ttl"><span>Kategorie</span></h1>
         <div class="section-sb">
-
-            <!-- Catalog Categories - start -->
-            <div class="section-sb-current">
-                <h3><a>Kategorie <span id="section-sb-toggle" class="section-sb-toggle"><span class="section-sb-ico"></span></span></a></h3>
-                <ul class="section-sb-list" id="section-sb-list">
-                    <li class="categ-1 has_child">
-                        <a href="#">
-                            <span class="categ-1-label">Lavazza</span>
-                            <span class="section-sb-toggle"><span class="section-sb-ico"></span></span>
-                        </a>
-                        <ul>
-                            <li class="categ-2">
-                                <a href="#">
-                                    <span class="categ-2-label">Point</span>
-                                </a>
-                            </li>
-                            <li class="categ-2">
-                                <a href="#">
-                                    <span class="categ-2-label">Blu</span>
-                                </a>
-                            </li>
-                            <li class="categ-2">
-                                <a href="#">
-                                    <span class="categ-2-label">A modo mio</span>
-                                </a>
-                            </li>
-                            <li class="categ-2">
-                                <a href="#">
-                                    <span class="categ-2-label">Cialde</span>
-                                </a>
-                            </li>
-                            <li class="categ-2">
-                                <a href="#">
-                                    <span class="categ-2-label">Nesrpresso kompatibel</span>
-                                </a>
-                            </li>
-                            <li class="categ-2">
-                                <a href="#">
-                                    <span class="categ-2-label">Kaffemaschinen</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="categ-1 has_child">
-                        <a href="#">
-                            <span class="categ-1-label">Borbone</span>
-                            <span class="section-sb-toggle"><span class="section-sb-ico"></span></span>
-                        </a>
-                        <ul>
-                            <li class="categ-2">
-                                <a href="#">
-                                    <span class="categ-2-label">Cialde</span>
-                                </a>
-                            </li>
-                            <li class="categ-2">
-                                <a href="#">
-                                    <span class="categ-2-label">Nespresso kompatibel</span>
-                                </a>
-                            </li>
-                            <li class="categ-2">
-                                <a href="#">
-                                    <span class="categ-2-label">Lavazza kompatibel</span>
-                                </a>
-                            </li>
-                            <li class="categ-2">
-                                <a href="#">
-                                    <span class="categ-2-label">A modo mio kompatibel</span>
-                                </a>
-                            </li>
-                            <li class="categ-2">
-                                <a href="#">
-                                    <span class="categ-2-label">Dolce Gusto kompatibel</span>
-                                </a>
-                            </li>
-                            <li class="categ-2">
-                                <a href="#">
-                                    <span class="categ-2-label">Donna Regina</span>
-                                </a>
-                            </li>
-                            <li class="categ-2">
-                                <a href="#">
-                                    <span class="categ-2-label">Kafemaschinen</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="categ-1 has_child">
-                        <a href="#">
-                            <span class="categ-1-label">Gastro</span>
-                            <span class="section-sb-toggle"><span class="section-sb-ico"></span></span>
-                        </a>
-                        <ul>
-                            <li class="categ-2">
-                                <a href="#">
-                                    <span class="categ-2-label">Kaffemaschinen</span>
-                                </a>
-                            </li>
-                            <li class="categ-2">
-                                <a href="#">
-                                    <span class="categ-2-label">Kaffem├╝hlen</span>
-                                </a>
-                            </li>
-
-                        </ul>
-                    </li>
-                    <li class="categ-1 has_child">
-                        <a href="#">
-                            <span class="categ-1-label">Kaffeebohnen</span>
-                            <span class="section-sb-toggle"><span class="section-sb-ico"></span></span>
-                        </a>
-                        <ul>
-                            <li class="categ-2">
-                                <a href="#">
-                                    <span class="categ-2-label">Borbone</span>
-                                </a>
-                            </li>
-                            <li class="categ-2">
-                                <a href="#">
-                                    <span class="categ-2-label">Lavazza</span>
-                                </a>
-                            </li>
-                            <li class="categ-2">
-                                <a href="#">
-                                    <span class="categ-2-label">Diverse</span>
-                                </a>
-                            </li>
-
-                        </ul>
-                    </li>
-                    <li class="categ-1">
-                        <a href="#">
-                            <span class="categ-1-label">Zubehör</span>
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
+            @include('front.catalog.category.options')
         </div>
             <!-- Catalog Categories - end -->
         <div class="section-cont">
@@ -180,7 +36,7 @@
                 @foreach($hitAndNewProducts as $product)
                     <?php
                     $image = $product->image;
-                    $imageType = (isset($imageType)) ? $imageType : "medUrl"
+                    $imageType = (isset($imageType)) ? $imageType : "medUrl";
                     ?>
                     <div class="prod-i">
                         <div class="prod-i-top">
