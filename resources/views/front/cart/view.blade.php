@@ -30,7 +30,7 @@
             <h1 class="main-ttl">
                 <span>Warenkorb</span>
             </h1>
-            @if(count($cartProducts) <= 0)
+            @if(count($cartItems) <= 0)
                 <p>{{ __('front.product-no-found') }}</p>
             @else
                 <form method="post" action="{{ route('cart.update.delivery') }}" id="cart-form">
@@ -41,7 +41,6 @@
                                 <tr>
                                     <td class="cart-image cart-foto">{{ __('front.photo') }}</td>
                                     <td class="cart-ttl">{{ __('front.product') }}</td>
-                                    <td class="cart-ttl">{{ __('front.delivery') }}</td>
                                     <td class="cart-price">{{ __('front.price') }}</td>
                                     <td class="cart-quantity" style="text-align: center">{{ __('front.quantity') }}</td>
                                     <td class="cart-summ">{{ __('front.total') }}</td>
@@ -50,68 +49,100 @@
                             </thead>
                             <tbody class="cart_table_body">
                                 <?php $total = 0; $taxTotal = 0;$giftCouponAmount = 0; ?>
-                                @foreach($cartProducts as $product)
+                                @foreach($cartItems as $cartKey => $cartItem)
+                                    <?php $type = explode(':', $cartKey)[0]; ?>
                                     <input type="hidden" name="_method" value="post" />
 
-                                    <tr>
-                                        <td class="cart-image">
-                                            <div class="image-tooltip">
-                                                <a href="{{ route('product.view', $product['slug'])}}">
-                                                    <img alt="{{ $product['name'] }}"
-                                                         class="{{\App\Models\Database\Product::where('id', $product['id'])->first()->main_image->filters}}"
-                                                         src="{{ asset( $product['image']) }}"/>
-                                                </a>
-                                                <span>
-                                                    <img src="{{ asset( $product['image']) }}" alt="{{ $product['name'] }}" width="150px" height="174px">
-                                                </span>
-                                            </div>
-                                        </td>
-
-                                        <td class="cart-ttl">
-                                            <a href="{{ route('product.view', $product['slug'])}}">{{ $product['name'] }}</a>
-                                            <p>Status: <span class="text-success"><strong>{{ __('front.in-stock') }}</strong></span></p>
-                                        </td>
-                                        <td>
-                                            @if($product['delivery'] == 0)
-                                                <div class="checkbox disabled" title="Dieses Produkt kann nicht geliefert werden">
-                                                    <label>
-                                                        <input class="toggle" name="delivery[]"  type="checkbox" disabled>
-                                                    </label>
+                                    @if ($type == 'product')
+                                        <tr>
+                                            <td class="cart-image">
+                                                <div class="image-tooltip">
+                                                    <a href="{{ route('product.view', $cartItem['slug'])}}">
+                                                        <img alt="{{ $cartItem['name'] }}"
+                                                             class="{{\App\Models\Database\Product::where('id', $cartItem['id'])->first()->main_image->filters}}"
+                                                             src="{{ asset( $cartItem['image']) }}"/>
+                                                    </a>
+                                                    <span>
+                                                        <img src="{{ asset( $cartItem['image']) }}" alt="{{ $cartItem['name'] }}" width="150px" height="174px">
+                                                    </span>
                                                 </div>
-                                            @else
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input class="toggle" name="delivery[]" value="{{ $product['id'] }}" type="checkbox">
-                                                    </label>
-                                                </div>
-                                            @endif
-                                        </td>
-                                        <?php $total += ($product['price'] * $product['qty']); ?>
+                                            </td>
 
-                                        <td class="cart-price price">
-                                            <b>CHF <span style="color: #252525;">{{ number_format($product['price'],2) }}</span></b>
-                                        </td>
-                                        <td class="cart-quantity">
-                                            <p class="cart-qnt">
-                                                <input type="text" name="qty" id="qty{{ $product['id'] }}"
-                                                       value="{{ $product['qty']}}">
-                                                <input type="hidden" data-product-id="{{ $product['id'] }}" data-token="{{ csrf_token() }}">
-                                                <a class="cart-plus prod-plus change-qty"><i class="fa fa-angle-up"></i></a>
-                                                <a class="cart-minus prod-minus change-qty"><i class="fa fa-angle-down"></i></a>
-                                            </p>
-                                            <div class="help-block" style="margin: 0; color: red;"></div>
-                                        </td>
-                                        <td class="cart-summ price-and-quantity">
-                                            <b>CHF <span style="color: #252525;" class="paq">{{ number_format($product['price'] * $product['qty'] ,2)}}</span></b>
-                                            <section class="single-tax" style="display: none;">
-                                                <span style="color: #252525;">CHF</span>
-                                                <span style="color: #252525;">{{ $product['delivery_price'] ? $product['delivery_price'] : '' }}</span>
-                                            </section>
-                                        </td>
-                                        <td class="cart-del">
-                                                <a class="cart-remove" href="{{ route('cart.destroy', $product['id'])}}"></a>
-                                        </td>
-                                    </tr>
+                                            <td class="cart-ttl">
+                                                <a href="{{ route('product.view', $cartItem['slug'])}}">{{ $cartItem['name'] }}</a>
+                                                <p>Status: <span class="text-success"><strong>{{ __('front.in-stock') }}</strong></span></p>
+                                            </td>
+                                            <?php $total += ($cartItem['price'] * $cartItem['qty']); ?>
+
+                                            <td class="cart-price price">
+                                                <b>CHF <span style="color: #252525;">{{ number_format($cartItem['price'],2) }}</span></b>
+                                            </td>
+                                            <td class="cart-quantity">
+                                                <p class="cart-qnt">
+                                                    <input type="text" name="qty" id="qty{{ $cartItem['id'] }}"
+                                                           value="{{ $cartItem['qty']}}">
+                                                    <input type="hidden" data-product-id="{{ $cartItem['id'] }}" data-token="{{ csrf_token() }}">
+                                                    <a class="cart-plus prod-plus change-qty"><i class="fa fa-angle-up"></i></a>
+                                                    <a class="cart-minus prod-minus change-qty"><i class="fa fa-angle-down"></i></a>
+                                                </p>
+                                                <div class="help-block" style="margin: 0; color: red;"></div>
+                                            </td>
+                                            <td class="cart-summ price-and-quantity">
+                                                <b>CHF <span style="color: #252525;" class="paq">{{ number_format($cartItem['price'] * $cartItem['qty'] ,2)}}</span></b>
+                                                <section class="single-tax" style="display: none;">
+                                                    <span style="color: #252525;">CHF</span>
+                                                    <span style="color: #252525;">{{ $cartItem['delivery_price'] ? $cartItem['delivery_price'] : '' }}</span>
+                                                </section>
+                                            </td>
+                                            <td class="cart-del">
+                                                <a class="cart-remove" href="{{ route('cart.destroy', ['id' => $cartItem['id'], 'type' => $type])}}"></a>
+                                            </td>
+                                        </tr>
+                                    @elseif ($type == 'package')
+                                        <tr>
+                                            <td class="cart-image">
+                                                <div class="image-tooltip">
+                                                    <a href="#">
+                                                        <img alt="{{ $cartItem['name'] }}"
+                                                             src="{{ asset( $cartItem['image']) }}"/>
+                                                    </a>
+                                                    <span>
+                                                        <img src="{{ asset( $cartItem['image']) }}" alt="{{ $cartItem['name'] }}" width="150px" height="174px">
+                                                    </span>
+                                                </div>
+                                            </td>
+
+                                            <td class="cart-ttl">
+                                                <a href="#">{{ $cartItem['name'] }}</a>
+                                                <p>Status: <span class="text-success"><strong>{{ __('front.in-stock') }}</strong></span></p>
+                                            </td>
+                                            <?php $total += ($cartItem['price'] * $cartItem['qty']); ?>
+
+                                            <td class="cart-price price">
+                                                <b>CHF <span style="color: #252525;">{{ number_format($cartItem['price'],2) }}</span></b>
+                                            </td>
+                                            <td class="cart-quantity">
+                                                <p class="cart-qnt">
+                                                    <input type="text" name="qty" id="qty{{ $cartItem['id'] }}"
+                                                           value="{{ $cartItem['qty']}}">
+                                                    <input type="hidden" data-product-id="{{ $cartItem['id'] }}" data-token="{{ csrf_token() }}">
+                                                    <a class="cart-plus prod-plus change-qty"><i class="fa fa-angle-up"></i></a>
+                                                    <a class="cart-minus prod-minus change-qty"><i class="fa fa-angle-down"></i></a>
+                                                </p>
+                                                <div class="help-block" style="margin: 0; color: red;"></div>
+                                            </td>
+                                            <td class="cart-summ price-and-quantity">
+                                                <b>CHF <span style="color: #252525;" class="paq">{{ number_format($cartItem['price'] * $cartItem['qty'] ,2)}}</span></b>
+                                                <section class="single-tax" style="display: none;">
+                                                    <span style="color: #252525;">CHF</span>
+                                                    <span style="color: #252525;">{{ $cartItem['delivery_price'] ? $cartItem['delivery_price'] : '' }}</span>
+                                                </section>
+                                            </td>
+                                            <td class="cart-del">
+                                                <a class="cart-remove" href="{{ route('cart.destroy', ['id' => $cartItem['id'], 'type' => $type])}}"></a>
+                                            </td>
+                                        </tr>
+                                    @endif
                                 @endforeach
                             </tbody>
                         </table>

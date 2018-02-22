@@ -66,7 +66,7 @@ use Illuminate\Support\Facades\Cookie;
 
             Route::post('/cart/update', ['as' => 'cart.update', 'uses' => 'CartController@update']);
 
-            Route::get('/cart/destroy/{id}', ['as' => 'cart.destroy', 'uses' => 'CartController@destroy']);
+            Route::get('/cart/destroy/{id}/{type}', ['as' => 'cart.destroy', 'uses' => 'CartController@destroy']);
 
             Route::post('/cart/update/delivery', ['as' => 'cart.update.delivery', 'uses' => 'CartController@updateDelivery']);
 
@@ -157,7 +157,7 @@ use Illuminate\Support\Facades\Cookie;
 
             Route::resource('category', 'CategoryController', ['as' => 'admin']);
 
-            Route::resource('product', 'ProductController', ['as' => 'admin']); 
+            Route::resource('product', 'ProductController', ['as' => 'admin']);
             Route::post('product-image/upload', ['as' => 'admin.product.upload-image',
                 'uses' => 'ProductController@uploadImage']);
             Route::post('product-image/delete', ['as' => 'admin.product.delete-image',

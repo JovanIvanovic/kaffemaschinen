@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 21, 2018 at 04:34 PM
+-- Generation Time: Feb 22, 2018 at 10:16 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -639,6 +639,7 @@ CREATE TABLE `packages` (
   `name` varchar(255) NOT NULL,
   `description` text NOT NULL,
   `price` decimal(11,2) NOT NULL,
+  `delivery_price` decimal(11,2) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `deleted_at` timestamp NULL DEFAULT NULL
@@ -648,14 +649,14 @@ CREATE TABLE `packages` (
 -- Dumping data for table `packages`
 --
 
-INSERT INTO `packages` (`id`, `name`, `description`, `price`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'asd', '<p>asd</p>', '123.00', '2018-02-21 14:14:01', '2018-02-21 14:47:17', '2018-02-21 14:47:17'),
-(2, 'asd', '<p>asd</p>', '123.00', '2018-02-21 14:16:13', '2018-02-21 14:47:20', '2018-02-21 14:47:20'),
-(3, 'asd', '<p>asd</p>', '123.00', '2018-02-21 14:18:10', '2018-02-21 14:47:22', '2018-02-21 14:47:22'),
-(4, 'asd', '<p>asd</p>', '123.00', '2018-02-21 14:21:32', '2018-02-21 14:47:30', '2018-02-21 14:47:30'),
-(5, 'asd', '<p>asd</p>', '123.00', '2018-02-21 14:22:15', '2018-02-21 14:47:25', '2018-02-21 14:47:25'),
-(6, '123', '<p>123</p>', '123.00', '2018-02-21 14:22:54', '2018-02-21 14:47:28', '2018-02-21 14:47:28'),
-(7, 'Package', '<p>Package Description</p>', '1300.00', '2018-02-21 15:07:16', '2018-02-21 15:07:16', NULL);
+INSERT INTO `packages` (`id`, `name`, `description`, `price`, `delivery_price`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'asd', '<p>asd</p>', '123.00', NULL, '2018-02-21 14:14:01', '2018-02-21 14:47:17', '2018-02-21 14:47:17'),
+(2, 'asd', '<p>asd</p>', '123.00', NULL, '2018-02-21 14:16:13', '2018-02-21 14:47:20', '2018-02-21 14:47:20'),
+(3, 'asd', '<p>asd</p>', '123.00', NULL, '2018-02-21 14:18:10', '2018-02-21 14:47:22', '2018-02-21 14:47:22'),
+(4, 'asd', '<p>asd</p>', '123.00', NULL, '2018-02-21 14:21:32', '2018-02-21 14:47:30', '2018-02-21 14:47:30'),
+(5, 'asd', '<p>asd</p>', '123.00', NULL, '2018-02-21 14:22:15', '2018-02-21 14:47:25', '2018-02-21 14:47:25'),
+(6, '123', '<p>123</p>', '123.00', NULL, '2018-02-21 14:22:54', '2018-02-21 14:47:28', '2018-02-21 14:47:28'),
+(7, 'Package', '<p>Package Description</p>', '1300.00', NULL, '2018-02-21 15:07:16', '2018-02-21 15:07:16', NULL);
 
 -- --------------------------------------------------------
 
@@ -825,7 +826,7 @@ CREATE TABLE `products` (
   `discount` tinyint(4) DEFAULT NULL,
   `price` decimal(11,2) DEFAULT NULL,
   `discount_price` decimal(10,2) DEFAULT NULL,
-  `delivery` tinyint(4) DEFAULT NULL,
+  `delivery` tinyint(4) DEFAULT '1',
   `delivery_price` decimal(10,2) DEFAULT NULL,
   `new_product` tinyint(4) DEFAULT NULL,
   `hit_product` tinyint(4) DEFAULT NULL,
@@ -2291,7 +2292,33 @@ INSERT INTO `visitors` (`id`, `ip_address`, `url`, `agent`, `user_id`, `created_
 (1240, '127.0.0.1', 'admin/package/7/edit', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-21 15:16:00', '2018-02-21 15:16:00'),
 (1241, '127.0.0.1', 'back/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-21 15:16:02', '2018-02-21 15:16:02'),
 (1242, '127.0.0.1', 'back/js/popper.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-21 15:16:02', '2018-02-21 15:16:02'),
-(1243, '127.0.0.1', 'admin/package/7/edit', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-21 15:17:39', '2018-02-21 15:17:39');
+(1243, '127.0.0.1', 'admin/package/7/edit', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-21 15:17:39', '2018-02-21 15:17:39'),
+(1244, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 08:36:35', '2018-02-22 08:36:35'),
+(1245, '127.0.0.1', 'front/assets/js/header_top.js', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 08:36:42', '2018-02-22 08:36:42'),
+(1246, '127.0.0.1', 'front/assets/img/med-default-product.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 08:36:42', '2018-02-22 08:36:42'),
+(1247, '127.0.0.1', 'cart/view', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 08:36:50', '2018-02-22 08:36:50'),
+(1248, '127.0.0.1', 'front/assets/js/header_top.js', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 08:36:53', '2018-02-22 08:36:53'),
+(1249, '127.0.0.1', 'category', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:02:54', '2018-02-22 09:02:54'),
+(1250, '127.0.0.1', 'front/assets/js/header_top.js', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:02:59', '2018-02-22 09:02:59'),
+(1251, '127.0.0.1', 'front/assets/img/med-default-product.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:02:59', '2018-02-22 09:02:59'),
+(1252, '127.0.0.1', 'product/classic-tv-stand-1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:03:05', '2018-02-22 09:03:05'),
+(1253, '127.0.0.1', 'front/assets/js/header_top.js', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:03:08', '2018-02-22 09:03:08'),
+(1254, '127.0.0.1', 'product/classic-tv-stand-1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:03:49', '2018-02-22 09:03:49'),
+(1255, '127.0.0.1', 'front/assets/js/header_top.js', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:03:50', '2018-02-22 09:03:50'),
+(1256, '127.0.0.1', 'add-to-cart', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:03:54', '2018-02-22 09:03:54'),
+(1257, '127.0.0.1', 'product/classic-tv-stand-1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:03:55', '2018-02-22 09:03:55'),
+(1258, '127.0.0.1', 'front/assets/js/header_top.js', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:03:56', '2018-02-22 09:03:56'),
+(1259, '127.0.0.1', 'cart/view', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:04:00', '2018-02-22 09:04:00'),
+(1260, '127.0.0.1', 'cart/view', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:04:16', '2018-02-22 09:04:16'),
+(1261, '127.0.0.1', 'cart/view', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:04:37', '2018-02-22 09:04:37'),
+(1262, '127.0.0.1', 'cart/view', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:04:51', '2018-02-22 09:04:51'),
+(1263, '127.0.0.1', 'front/assets/js/header_top.js', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:04:53', '2018-02-22 09:04:53'),
+(1264, '127.0.0.1', 'cart/view', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:05:39', '2018-02-22 09:05:39'),
+(1265, '127.0.0.1', 'front/assets/js/header_top.js', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:05:41', '2018-02-22 09:05:41'),
+(1266, '127.0.0.1', 'cart/view', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:08:28', '2018-02-22 09:08:28'),
+(1267, '127.0.0.1', 'front/assets/js/header_top.js', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:08:30', '2018-02-22 09:08:30'),
+(1268, '127.0.0.1', 'cart/view', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:10:07', '2018-02-22 09:10:07'),
+(1269, '127.0.0.1', 'front/assets/js/header_top.js', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:10:09', '2018-02-22 09:10:09');
 
 --
 -- Indexes for dumped tables
@@ -2658,7 +2685,7 @@ ALTER TABLE `user_viewed_products`
 -- AUTO_INCREMENT for table `visitors`
 --
 ALTER TABLE `visitors`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1244;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1270;
 --
 -- Constraints for dumped tables
 --
