@@ -1,4 +1,10 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: dragantic91
+ * Date: 11/30/2017
+ * Time: 1:44 PM
+ */
 
 namespace App\Http\Controllers\Admin;
 
@@ -14,7 +20,7 @@ class AdminUserController extends AdminController
      */
     public function index()
     {
-        $dataGrid = DataGrid::model(AdminUser::query())
+        $dataGrid = DataGrid::model(AdminUser::query()->where('is_super_admin', '=', null)->orWhere('is_super_admin', '=', 0))
             ->setDefaultOrder(['field' => 'id', 'keyword' => 'desc'])
             ->column('id', ['sortable' => true])
             ->column('first_name', ['label' => __('lang.first-name')])
@@ -23,15 +29,7 @@ class AdminUserController extends AdminController
                 return "<a href='". route('admin.admin-user.edit', $model->id)."' >". __('lang.edit')."</a>";
             })
             ->linkColumn('destroy', ['label' => __('lang.destroy')], function ($model) {
-                return "<form id='admin-admin-user-destroy-" . $model->id . "' 
-                                                method='POST' 
-                                                action'#'>
-                                                <input name='_method' type='hidden' value='DELETE' />
-                                                " . csrf_field() . "
-                                                <a href='#'
-                                                    onclick=\"jQuery('#admin-admin-user-destroy-$model->id').submit()\"
-                                                    >".__('lang.destroy')."</a>
-                       </form>";
+                return "<a href='#' onclick='showDeleteModal({$model->id}, \"{$model->first_name}\")'>". __('lang.delete') ."</a>";
             })
             ->setPagination(100);
         return view('admin.admin-user.index')->with('dataGrid', $dataGrid);
@@ -87,6 +85,20 @@ class AdminUserController extends AdminController
         $user = AdminUser::findorfail($id);
 
         $user->update($request->all());
+
+        return redirect()->route('admin.admin-user.index');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $product = AdminUser::find($id);
+        $product->delete();
 
         return redirect()->route('admin.admin-user.index');
     }
