@@ -24,11 +24,7 @@ class CategoryController extends AdminController
                return "<a href='" . route('admin.category.edit', $model->id) . "'>". __('lang.edit') ."</a>";
             })
             ->linkColumn(__('lang.delete'), [], function ($model) {
-                return "<form id='admin-category-destroy-".$model->id."' method='POST'
-                            action='". route('admin.category.destroy', $model->id)."'>
-                            <input name='_method' type='hidden' value='DELETE' />" . csrf_field() .
-                            "<a href='#' onclick=\"jQuery('#admin-category-destroy-$model->id').submit()\">". __('lang.delete') ."</a>
-                        </form>";
+                return "<a href='#' onclick='showDeleteModal({$model->id}, \"{$model->name}\")'>". __('lang.delete') ."</a>";
             })
             ->setPagination(100);
 

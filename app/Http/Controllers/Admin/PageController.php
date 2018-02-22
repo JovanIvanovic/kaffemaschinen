@@ -16,12 +16,12 @@ class PageController extends Base
     public function home()
     {
         $dataGrid = DataGrid::model(PageHome::query())
-            ->column('title', ['sortable' => true, 'label' => __('lang.title')])
+            ->column('heading', ['sortable' => true, 'label' => __('lang.heading')])
             ->linkColumn(__('lang.edit'), [], function ($model) {
                 return "<a href='" . route('admin.home.edit', $model->id) . "' >".__('lang.edit')."</a>";
             })
             ->linkColumn('destroy', ['label' => __('lang.destroy')], function ($model) {
-                return  "<a href=' " . route('admin.home.destroy', $model->id) . " ' >".__('lang.destroy')."</a>";
+                return "<a href='#' onclick='showDeleteModal({$model->id}, \"{$model->heading}\")'>". __('lang.delete') ."</a>";
             })
             ->setPagination(100);
 
@@ -38,9 +38,10 @@ class PageController extends Base
     public function homeStore(Request $request)
     {
         $this->validate($request, [
-            'title' => 'required',
-            'description' => 'required',
+            'heading' => 'required',
+            'body' => 'required',
             'button' => 'required',
+            'url' => 'required|url',
             'color' => 'required',
             'image' => 'required|mimes:jpeg,jpg,png|max:2048'
         ]);
@@ -54,9 +55,10 @@ class PageController extends Base
 
 
         PageHome::create([
-            'title' => $request->title,
-            'description' => $request->description,
+            'heading' => strtoupper($request->heading),
+            'body' => $request->body,
             'button' => $request->button,
+            'url' => $request->url,
             'color' => $request->color,
             'image' => $dbPath
         ]);
@@ -67,9 +69,9 @@ class PageController extends Base
 
     public function homeEdit($id)
     {
-        $popup = PageHome::findOrFail($id);
+        $banner = PageHome::findOrFail($id);
         return view('admin.page.home.edit')
-            ->with('popup', $popup);
+            ->with('banner', $banner);
     }
 
 
@@ -83,13 +85,13 @@ class PageController extends Base
             'color' => 'required',
         ]);
 
-        $popup = PageHome::findorfail($id);
-        $popup->heading = $request->heading;
-        $popup->button = $request->button;
-        $popup->body = $request->body;
-        $popup->url = $request->url;
-        $popup->color = $request->color;
-        $popup->update();
+        $banner = PageHome::findorfail($id);
+        $banner->heading = $request->heading;
+        $banner->button = $request->button;
+        $banner->body = $request->body;
+        $banner->url = $request->url;
+        $banner->color = $request->color;
+        $banner->update();
 
         return redirect()->route('admin.page.home');
 
@@ -101,7 +103,7 @@ class PageController extends Base
         $slider = PageHome::findorfail($id);
         File::delete(public_path($slider->image));
         $slider->delete();
-        return redirect()->back();
+        return redirect()->route('admin.page.home');
     }
 
 
@@ -110,7 +112,7 @@ class PageController extends Base
         $dataGrid = DataGrid::model(PageUberUns::query()->where('key', '=', 'image'))
             ->column('banner_name', ['sortable' => true, 'label' => __('lang.banner-name')])
             ->linkColumn('destroy', ['label' => __('lang.destroy')], function ($model) {
-                return  "<a href=' " . route('admin.uber-uns.destroy', $model->id) . " ' >".__('lang.destroy')."</a>";
+                return "<a href='#' onclick='showDeleteModal({$model->id}, \"{$model->banner_name}\")'>". __('lang.delete') ."</a>";
             })
             ->setPagination(100);
 
@@ -165,13 +167,14 @@ class PageController extends Base
         return redirect()->route('admin.page.uber-uns');
     }
 
+
     public function bannerUberUnsDestroy($id)
     {
         $banner = PageUberUns::findorfail($id);
         File::delete(public_path($banner->value));
         $banner->delete();
 
-        return redirect()->back();
+        return redirect()->route('admin.page.uber-uns');
     }
 
 
