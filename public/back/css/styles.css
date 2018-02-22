@@ -55,3 +55,17 @@ a:hover {
 .card-body {
     padding: 1rem;
 }
+
+.cover-text {
+    text-align: center;
+}
+.cover-text > form > button {
+    color: #ffffff;
+    background-color: #de5421;
+    border: #de5421;
+    width: 100px;
+    margin-right: 20px;
+}
+.cover-text > form > a {
+    width: 100px;
+}

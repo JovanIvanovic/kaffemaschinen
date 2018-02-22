@@ -23,7 +23,6 @@
                 <div class="h1">Produkt bearbeiten</div>
             </div>
         </div>
-
         <?php
         $productCategories = $model->categories()->get()->pluck('id')->toArray();
         ?>
@@ -73,20 +72,6 @@
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
     <script>
         $(document).ready(function () {
-            $("input[name=contact_only_toggle]").on('change', function () {
-                if ($('#contact_only').val() == 1) {
-                    $('#contact_only').val(0);
-                } else {
-                    $('#contact_only').val(1);
-                }
-            });
-            $("input[name=has_packaging_toggle]").on('change', function () {
-                if ($('#has_packaging').val() == 1) {
-                    $('#has_packaging').val(0);
-                } else {
-                    $('#has_packaging').val(1);
-                }
-            });
             $("input[name=new_product_toggle]").on('change', function () {
                 if ($('#new_product').val() == 1) {
                     $('#new_product').val(0);

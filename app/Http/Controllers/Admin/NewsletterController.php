@@ -1,4 +1,10 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: dragantic91
+ * Date: 06-Jan-18
+ * Time: 02:59
+ */
 
 namespace App\Http\Controllers\Admin;
 
@@ -17,15 +23,7 @@ class NewsletterController extends AdminController
             ->column('id', ['sortable' => true])
             ->column('email', ['sortable' => true, 'label' => __('lang.email')])
             ->linkColumn(__('lang.delete'), [], function ($model) {
-                return "<form id='admin-newsletter-destroy-" . $model->id . "'
-                                            method='POST'
-                                            action='" . route('admin.newsletter.destroy', $model->id) . "'>
-                                        <input name='_method' type='hidden' value='DELETE' />
-                                        " . csrf_field() . "
-                                        <a href='#'
-                                            onclick=\"jQuery('#admin-newsletter-destroy-$model->id').submit()\"
-                                            >". __('lang.delete') ."</a>
-                                    </form>";
+                return "<a href='#' onclick='showDeleteModal({$model->id}, \"{$model->email}\")'>". __('lang.delete') ."</a>";
             })
             ->setPagination(100);
 
