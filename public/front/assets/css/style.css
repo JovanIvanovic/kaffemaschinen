@@ -2239,13 +2239,13 @@ Catalog | Gallery View
     position: relative;
 }
 
-.prod-items .prod-i-img:before {
-    display: inline-block;
-    vertical-align: middle;
-    content: "";
-    height: 100%;
-    width: 0;
-}
+/*.prod-items .prod-i-img:before {*/
+    /*display: inline-block;*/
+    /*vertical-align: middle;*/
+    /*content: "";*/
+    /*height: 100%;*/
+    /*width: 0;*/
+/*}*/
 
 .prod-items .prod-i-img img {
     display: inline-block;
@@ -3142,6 +3142,7 @@ Catalog | Gallery View
     padding: 22px 22px 7px 300px;
     margin: 0 0 30px;
     min-height: 170px;
+    background-color: white;
 }
 
 .prod-items .prodlist-i:after {

@@ -7,6 +7,17 @@
 @section('content')
 
     <div class="container">
+        @if ($errors->any())
+            <div class="row justify-content-center text-center">
+                <div class="col-6 alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+        @endif
         <div class="row">
             <div class="col-12">
                 <div class="h1">Produkt bearbeiten</div>

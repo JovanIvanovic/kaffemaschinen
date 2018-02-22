@@ -16,6 +16,11 @@
     <h3>
         <a href="{{ route('product.view', $product->slug)}}" title="{{ $product->name }}">{{ $product->name }}</a>
     </h3>
+    @if ($product->contact_only == 1)
+        <a class="prod-add" href="{{ route('contact') }}">
+            Contact us
+        </a>
+    @else
     @if($product->qty < 1 || $product->in_stock == 0)
         <p class="prod-i-price">
             <b>{{ __('front.sold-out') }}</b>
@@ -38,6 +43,7 @@
             </p>
         @endif
     @endif
+        @endif
 </div>
 
 @push('scripts')
