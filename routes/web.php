@@ -182,7 +182,6 @@ use Illuminate\Support\Facades\Cookie;
 
             Route::get('buyer', ['as' => 'admin.buyer.index', 'uses' => 'BuyerController@index']);
             Route::resource('newsletter', 'NewsletterController', ['as' => 'admin']);
-
             Route::get('csvview',['as'=>'csvview','uses'=>'NewsletterController@csvView']);
 
             Route::get('page/home', ['as' => 'admin.page.home', 'uses' => 'PageController@home']);
@@ -190,13 +189,13 @@ use Illuminate\Support\Facades\Cookie;
             Route::post('page/home/create', ['as' => 'admin.home.store', 'uses' => 'PageController@homeStore']);
             Route::get('page/home/edit/{id}', ['as' => 'admin.home.edit', 'uses' => 'PageController@homeEdit']);
             Route::post('page/home/edit/{id}', ['as' => 'admin.home.update', 'uses' => 'PageController@homeUpdate']);
-            Route::get('page/home/delete/{id}', ['as' => 'admin.home.destroy', 'uses' => 'PageController@homeDestroy']);
+            Route::post('page/home/destroy/{id}', ['as' => 'admin.home.destroy', 'uses' => 'PageController@homeDestroy']);
 
             Route::get('page/uber-uns', ['as' => 'admin.page.uber-uns', 'uses' => 'PageController@uberUns']);
             Route::get('page/uber-uns/create', ['as' => 'admin.uber-uns.create', 'uses' => 'PageController@bannerUberUnsCreate']);
             Route::post('page/uber-uns/create', ['as' => 'admin.uber-uns.store', 'uses' => 'PageController@bannerUberUnsStore']);
             Route::post('page/uber-uns/update/{id}', ['as' => 'admin.uber-uns.update.text', 'uses' => 'PageController@textUpdateUberUns']);
-            Route::get('page/uber-uns/delete/{id}', ['as' => 'admin.uber-uns.destroy', 'uses' => 'PageController@bannerUberUnsDestroy']);
+            Route::post('page/uber-uns/destroy/{id}', ['as' => 'admin.uber-uns.destroy', 'uses' => 'PageController@bannerUberUnsDestroy']);
 
             Route::get('page/wir-kaufen', ['as' => 'admin.page.wir-kaufen', 'uses' => 'PageController@wirKaufen']);
             Route::post('page/wirkaufen/update/{id}', ['as' => 'admin.wir-kaufen.update', 'uses' => 'PageController@updateWirKaufen']);
