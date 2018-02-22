@@ -81,6 +81,7 @@
                                                 <p class="cart-qnt">
                                                     <input type="text" name="qty" id="qty{{ $cartItem['id'] }}"
                                                            value="{{ $cartItem['qty']}}">
+                                                    <input type="text" name="type" value="{{ $type }}">
                                                     <input type="hidden" data-product-id="{{ $cartItem['id'] }}" data-token="{{ csrf_token() }}">
                                                     <a class="cart-plus prod-plus change-qty"><i class="fa fa-angle-up"></i></a>
                                                     <a class="cart-minus prod-minus change-qty"><i class="fa fa-angle-down"></i></a>
@@ -125,7 +126,8 @@
                                                 <p class="cart-qnt">
                                                     <input type="text" name="qty" id="qty{{ $cartItem['id'] }}"
                                                            value="{{ $cartItem['qty']}}">
-                                                    <input type="hidden" data-product-id="{{ $cartItem['id'] }}" data-token="{{ csrf_token() }}">
+                                                    <input type="hidden" name="type" value="{{ $type }}">
+                                                    <input type="hidden" name="id" data-item-id="{{ $cartItem['id'] }}" data-token="{{ csrf_token() }}">
                                                     <a class="cart-plus prod-plus change-qty"><i class="fa fa-angle-up"></i></a>
                                                     <a class="cart-minus prod-minus change-qty"><i class="fa fa-angle-down"></i></a>
                                                 </p>
@@ -179,7 +181,9 @@
         $(function () {
             $('.change-qty').click(function () {
                 var that = $(this);
-                var qtyField = that.siblings('input[type="text"]');
+                var qtyField = that.siblings('input[name="qty"]');
+                var typeField = that.siblings('input[name="type"]');
+                var type = typeField.val();
                 var qty = parseInt(qtyField.val());
 
                 if (qty <= 0 || isNaN(qty)) {
@@ -210,10 +214,10 @@
                 });
                 totalPrice.text(number_format(sum, 2));
 
-                var hiddenField = that.siblings('input[type="hidden"]')
-                var token = hiddenField.attr('data-token');
-                var productId = hiddenField.attr('data-product-id');
-                var data = { _token: token, productId: productId, qty: qty };
+                var idField = that.siblings('input[name="id"]')
+                var token = idField.attr('data-token');
+                var itemId = idField.attr('data-item-id');
+                var data = { _token: token, id: itemId, qty: qty, type: type };
 
                 $.ajax({
                     url: '{{ url('cart/update') }}',

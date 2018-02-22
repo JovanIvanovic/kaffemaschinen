@@ -20,8 +20,11 @@
             <div class="col-6">
                 @include("admin.forms.text",['value' => $model->name, 'name'=> 'name','label' => __('lang.name')])
             </div>
-            <div class="col-6">
+            <div class="col-3">
                 @include('admin.forms.text',['value' => $model->price, 'name' => 'price','label' => __('front.price')])
+            </div>
+            <div class="col-3">
+                @include('admin.forms.text',['value' => $model->delivery_price, 'name' => 'delivery_price','label' => __('lang.delivery-price')])
             </div>
         </div>
 

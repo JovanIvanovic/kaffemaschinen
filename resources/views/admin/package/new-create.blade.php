@@ -19,8 +19,11 @@
             <div class="col-6">
                 @include("admin.forms.text",['name'=> 'name','label' => __('lang.name')])
             </div>
-            <div class="col-6">
+            <div class="col-3">
                 @include('admin.forms.text',['name' => 'price','label' => __('front.price')])
+            </div>
+            <div class="col-3">
+                @include('admin.forms.text',['name' => 'delivery_price','label' => __('lang.delivery-price')])
             </div>
         </div>
 
@@ -47,7 +50,6 @@
             <button type="submit" class="btn-schoen">{{ __('lang.create') }}</button>
             <button type="button"
                     onclick="location='{{ route('admin.package.index') }}'"
-
                     class="btn">{{ __('lang.cancel') }}
             </button>
         </div>

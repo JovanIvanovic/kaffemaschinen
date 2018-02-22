@@ -113,33 +113,46 @@ class CartController extends Controller
         $cartData = Session::get('cart');
         $qty = $request->get('qty');
 
-
         if ($request->get('type') == 'product') {
             $product = Product::find(request('productId'));
+
+            if ($qty > $product->qty) {
+                return JsonResponse::create([
+                    'status' => false,
+                    'error' => 'Out of Stock',
+                ]);
+            }
+
+            if (!is_numeric($qty)) {
+                $item = $cartData->pull($request->get('productId'));
+                $item['qty'] = 1;
+                $cartData->put($request->get('productId'), $item);
+            } elseif ($qty == 0) {
+                $cartData->pull($request->get('productId'));
+            } else {
+                $item = $cartData->pull($request->get('productId'));
+                $item['qty'] = $qty;
+                $cartData->put($request->get('productId'), $item);
+            }
         } elseif ($request->get('type') == 'package') {
             $package = Package::find(request('productId'));
+
+            if (!is_numeric($qty)) {
+                $item = $cartData->pull($request->get('productId'));
+                $item['qty'] = 1;
+                $cartData->put($request->get('productId'), $item);
+            } elseif ($qty == 0) {
+                $cartData->pull($request->get('productId'));
+            } else {
+                $item = $cartData->pull($request->get('productId'));
+                $item['qty'] = $qty;
+                $cartData->put($request->get('productId'), $item);
+            }
         }
 
         $product = Product::find(request('productId')); // TODO: Remove
 
-        if ($qty > $product->qty) {
-            return JsonResponse::create([
-                'status' => false, 
-                'error' => 'Out of Stock',
-            ]);
-        }
-
-        if (!is_numeric($qty)) {
-            $item = $cartData->pull($request->get('productId'));
-            $item['qty'] = 1;
-            $cartData->put($request->get('productId'), $item);
-        } elseif ($qty == 0) {
-            $cartData->pull($request->get('productId'));
-        } else {
-            $item = $cartData->pull($request->get('productId'));
-            $item['qty'] = $qty;
-            $cartData->put($request->get('productId'), $item);
-        }
+        
 
         Session::put('cart', $cartData);
 

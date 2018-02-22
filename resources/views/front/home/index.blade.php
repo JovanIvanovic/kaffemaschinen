@@ -73,6 +73,68 @@
 </main>
 @endsection
 
+@section('popup')
+    @if ()
+    <div class="modal fade index_popup" id="myModal">
+        <div class="modal-dialog modal-lg index_popup_dialog">
+            <div class="modal-header index_popup_header">
+                <a class="close" data-dismiss="modal">×</a>
+                <h3 class="main-ttl-popup" style="margin-bottom:0;"><span>Special Offer</span></h3>
+
+            </div>
+            <div class="modal-body index_popup_body">
+                <p class="popup_desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus voluptas odio nostrum fuga quod labore itaque ducimus molestiae, a incidunt? Magni repellat rerum ipsam quos quam error sequi excepturi corporis.</p>
+                <div class="popup_cover">
+                    <div class="popup_cover_container">
+                        <div class="owl-carousel owl-theme">
+                            <div class="item plus_item">
+                                <a href=""><span class="carousel_img" style="background-image: url('{{ asset('front/assets/img/products/single/13.jpg') }}')">
+                            <span class="carousel_price">CHF 229</span>
+                        </span></a>
+                            </div>
+                            <div class="item plus_item">
+                                <a href=""><span class="carousel_img" style="background-image: url('{{ asset('front/assets/img/products/1/10.jpg') }}')">
+                            <span class="carousel_price">CHF 229</span>
+                        </span></a>
+                            </div>
+                            <div class="item">
+                                <a href=""><span class="carousel_img" style="background-image: url('{{ asset('front/assets/img/products/1/8.jpg') }}')">
+                            <span class="carousel_price">CHF 229</span>
+                        </span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <div class="modal-footer">
+                <p class="f-left">Angebot gültig bis - 15/09/2018</p>
+                <a href="#" class="popup_cart_add f-right">In den warenkorb</a>
+                <!--                <p class="popup_total f-right">Preis: <b style="color:Red">CHF 2089</b></p>-->
+
+
+
+                <p class="prod-i-price f-right" style="margin-right: 15px; display: inline-block; text-align: center;">
+
+
+                    <del>CHF 110</del>
+
+                    <span style="color: red">-12%</span><br>
+                    <span style="font-size:20px; color: red;">CHF 59</span>
+
+                </p>
+                <div class="total_price f-right" style="display: inline-block; margin-right: 15px; ">
+                    <h1 style="line-height:42px; font-size: 25px; text-transform: uppercase">Total:</h1>
+                </div>
+            </div>
+
+        </div>
+    </div>
+@endsection
+
 @section('scripts')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.0.6/sweetalert2.all.min.js"></script>
 <script>

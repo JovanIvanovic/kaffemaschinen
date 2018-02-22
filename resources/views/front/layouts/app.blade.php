@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="{{ asset('front/assets/css/jquery.fancybox.css') }}">
     <link rel="stylesheet" href="{{ asset('front/assets/css/flexslider.css') }}">
     <link rel="stylesheet" href="{{ asset('front/assets/css/swiper.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/assets/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/assets/css/owl.theme.default.min.css') }}">
     <link rel="stylesheet" href="{{ asset('front/assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('front/assets/css/media.css') }}">
     @yield('styles')
@@ -209,9 +211,13 @@
 @include('front.layouts.footer')
 <!-- Footer - end -->
 
+<!-- Popup - start -->
+@yield('popup')
+<!-- Popup - end -->
 
 <!-- jQuery plugins/scripts - start -->
 <script src="{{ asset('front/assets/js/jquery-1.11.2.min.js') }}"></script>
+<script src="{{ asset('front/assets/js/owl.carousel.min.js') }}"></script>
 <script src="{{ asset('front/assets/js/jquery.bxslider.min.js') }}"></script>
 <script src="{{ asset('front/assets/js/fancybox/fancybox.js') }}"></script>
 <script src="{{ asset('front/assets/js/jquery.flexslider-min.js') }}"></script>
@@ -222,9 +228,8 @@
 <script src="{{ asset('front/assets/js/chosen.jquery.min.js') }}"></script>
 <script src="{{ asset('front/assets/js/jQuery.Brazzers-Carousel.js') }}"></script>
 <script src="{{ asset('front/assets/js/plugins.js') }}"></script>
-<script src="{{ asset('front/assets/js/main.js') }}"></script>
 <script src="{{ asset('front/assets/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('front/assets/js/header_top.js') }}"></script>
+<script src="{{ asset('front/assets/js/main.js') }}"></script>
 <script src="{{ asset('front/assets/js/functions.js?=ver' . str_random(10)) }}"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhAYvx0GmLyN5hlf6Uv_e9pPvUT3YpozE"></script>
 
