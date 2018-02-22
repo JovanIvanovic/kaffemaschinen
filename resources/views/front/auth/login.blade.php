@@ -6,7 +6,7 @@
 @section('content')
     <!-- Main Content - start -->
     <main>
-        <section class="container stylization maincont">
+        <section class="container stylization maincont" style="padding-top: 50px;" id="pozadina">
 
 
             <ul class="b-crumbs">
@@ -22,50 +22,43 @@
                 </li>
             </ul>
             <h1 class="main-ttl"><span>Login</span></h1>
-                <div class="login-form">
-                    <form class="login" role="form" method="POST" action="{{ route('login.post') }}">
+                <div class="auth-wrap">
+                    <div class="auth-col1">
+                        <form class="login" role="form" method="POST" action="{{ route('login.post') }}">
                         {{ csrf_field() }}
                         @if (session('status'))
                             <div class="alert alert-danger">
                                 {{ session('status') }}
                             </div>
                         @endif
-                        
-                            <input placeholder="E-mail*" id="email" type="email" name="email" class="form-control login_input" value="{{ old('email') }}" required autofocus>
+                        <p>
+                            <input placeholder="E-mail*" id="email" type="email" name="email" value="{{ old('email') }}" required autofocus>
+                        </p>
                             @if ($errors->has('email'))
                                 <span class="help-block">
                                             <strong>{{ $errors->first('email') }}</strong>
                                         </span>
                             @endif
-                        
-                            <input placeholder="Passwort*" id="password" class="form-control login_input" type="password" name="password" required>
+                        <p>
+                            <input placeholder="Passwort*" id="password" type="password" name="password" required>
+                        </p>
                             @if ($errors->has('password'))
                                 <span class="help-block">
                                             <strong>{{ $errors->first('password') }}</strong>
                                         </span>
                             @endif
                         
-                       <div class="login_button">
-                          
-                          
-                           <div class="remember_me">
+                       <p class="auth-submit">
+                           <input type="submit" value="Login">
                            <input type="checkbox" name="remember_me" id="rememberme" value="forever" style="display:none;">
-                            <label class="labelcina" for="rememberme">{{ __('front.account-remember-me') }}</label>
-                             
-                            </div>
-                            <input type="submit" value="Login" style="display:unset;">
-                             
-                        </div>
-                            
-
-                        
+                           <label for="rememberme">{{ __('front.account-remember-me') }}</label>
+                        </p>
                         <p class="auth-lost_password">
                             <a href="/forgot-password">{{ __('front.account-lost-your-password') }}</a>
                         </p>
                     </form>
-</div>
-
-
+                    </div>
+                </div>
 
         </section>
     </main>
