@@ -19,6 +19,11 @@
         <div class="prodlist-i-txt">
             {!! substr($product->description, 0, 200) !!}...
         </div>
+        @if ($product->contact_only == 1)
+            <a class="prod-add" href="{{ route('contact') }}">
+                Contact us
+            </a>
+@else
         @if($product->qty < 1 || $product->in_stock == 0)
             <div class="prodlist-i-action">
                 <span class="prodlist-i-price">
@@ -42,18 +47,18 @@
                     <span class="prodlist-i-price">
                         <b>CHF {{ number_format($product->discount_price, 2) }}</b><br>
                         <span style="text-decoration:line-through">CHF {{ number_format($product->price,2) }}</span><span class="price-off">-{{ number_format(100-($product->discount_price/$product->price*100), 0) }}%</span><br>
-                        <span>inkl. MwSt 7,7%</span>
+                        {{--<span>inkl. MwSt 7,7%</span>--}}
                      </span>
                 @else
                     <span class="prodlist-i-price">
                         <b>CHF {{ number_format($product->price,2) }}</b><br>
-                        <span>inkl. MwSt 7,7%</span>
+                        {{--<span>inkl. MwSt 7,7%</span>--}}
                     </span>
                 @endif
             </form>
         </div>
         @endif
-
+@endif
     </div>
 </div>
 

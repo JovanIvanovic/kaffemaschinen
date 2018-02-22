@@ -9,24 +9,30 @@
         </a>
     </li>
     <li>
-        <a href="{{ route('category.view', 'lavazza') }}" class="{{ $menu_about_us or ''  }}">
+        <a href="{{ route('category.view', 'lavazza') }}">
             Lavazza
         </a>
     </li>
     <li>
-        <a href="{{ route('category.view', 'borbone') }}" class="{{ $menu_wir or ''  }}">
+        <a href="{{ route('category.view', 'borbone') }}">
             Borbone
         </a>
     </li>
     <li>
 
-        <a href="{{ route('category.view', 'gastro')  }}" class="{{ $menu_contact or ''  }}">
+        <a href="{{ route('category.view', 'gastro')  }}">
             Gastro
+        </a>
+    </li>
+
+    <li>
+        <a href="{{ route('category.view', 'kaffeebohnen')  }}">
+            Kaffeebohnen
         </a>
     </li>
     <li>
 
-        <a href="{{ route('category.view', 'zubehör') }}" class="{{ $menu_contact or ''  }}">
+        <a href="{{ route('category.view', 'zubehör') }}">
             Zubehör
         </a>
     </li>

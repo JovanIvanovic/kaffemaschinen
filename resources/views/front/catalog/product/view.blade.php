@@ -7,7 +7,7 @@
 @section('content')
 <!-- Main Content - start -->
 <main>
-    <section class="container">
+    <section class="container" style="padding-top: 50px;" id="pozadina">
         <ul class="b-crumbs">
             <li>
                 <a href="{{ route('home') }}">
@@ -69,7 +69,7 @@
                 </div>
             @endif
 
-            @if ($product->contact_only == true)
+            @if ($product->contact_only == 1)
                 <a class="prod-add" href="{{ route('contact') }}">
                     Contact us
                 </a>
@@ -111,14 +111,13 @@
                 @endif
             @endif
 
-                <div class="row">
-                    <div class="col-xs-6" id="prodart"><a class="qview-btn prod-i-qview" data-toggle="modal" data-target="#exampleModal" style="color: dodgerblue; cursor: pointer"><span>Frage Zum Artikel</span></a></div>
-                    <div class="col-xs-6" id="prodart"><a href="mailto:?Subject=Schoengebraucht&amp;Body={{ Request::url() }}" style="color: dodgerblue; cursor: pointer">Artikel weiterempfehlen</a></div>
-                </div>
+                {{--<div class="row">--}}
+                    {{--<div class="col-xs-6" id="prodart"><a class="qview-btn prod-i-qview" data-toggle="modal" data-target="#exampleModal" style="color: dodgerblue; cursor: pointer"><span>Frage Zum Artikel</span></a></div>--}}
+                    {{--<div class="col-xs-6" id="prodart"><a href="mailto:?Subject=Schoengebraucht&amp;Body={{ Request::url() }}" style="color: dodgerblue; cursor: pointer">Artikel weiterempfehlen</a></div>--}}
+                {{--</div>--}}
             <!-- Share Links -->
 
             <div class="post-share-wrap">
-                <h4 id="share">Teilen</h4>
                 <ul class="post-share">
                     <li>
                         <a href="http://www.facebook.com/sharer.php?u={{ Request::url() }}" target="_blank" title="Share on Facebook">
@@ -179,17 +178,17 @@
         </div>
 
         <!-- Quick View Product - start -->
-        <div class="qview-modal">
-            <div class="prod-wrap">
+        {{--<div class="qview-modal">--}}
+            {{--<div class="prod-wrap">--}}
 
-                <!-- Contact Form -->
+                {{--<!-- Contact Form -->--}}
 
-                <div class="auth-wrap">
-                    <h3 class="fat">Frage Zum Artikel</h3>
+                {{--<div class="auth-wrap">--}}
+                    {{--<h3 class="fat">Frage Zum Artikel</h3>--}}
 
-                </div>
-            </div>
-        </div>
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
         <!-- Quick View Product - end -->
 
     </section>

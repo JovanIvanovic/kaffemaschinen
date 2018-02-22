@@ -18,6 +18,7 @@ class CategoryViewController extends Controller
         if ($request->has('slug')) {
             $category = Category::where('slug', '=', $request->slug)->get()->first();
             $collection = $category->products();
+
             $maxPrice = $collection->max('price');
         } else {
             $maxPrice = Product::max('price');
