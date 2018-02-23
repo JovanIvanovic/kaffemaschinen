@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Database\Popup;
 use App\Models\Database\Package;
+use App\DataGrid\Facade as DataGrid;
 
 class PopupController extends Controller
 {

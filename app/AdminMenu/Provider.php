@@ -110,6 +110,14 @@ class Provider extends ServiceProvider
             ->route('admin.change-password.index');
         $systemMenu->subMenu('change-password', $changePasswordMenu);
 
+
+        /**
+         * Add Menu Package
+         */
+        AdminMenuFacade::add('popup')
+            ->label(__('lang.popup'))
+            ->route('admin.popup.index');
+
         /**
          * Add Menu Pages
          */

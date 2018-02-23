@@ -169,6 +169,8 @@ use Illuminate\Support\Facades\Cookie;
             Route::post('package/getSingleProduct', ['as' => 'admin.package.get-single-product',
                 'uses' => 'PackageController@getSingleProduct']);
 
+            Route::resource('popup', 'PopupController', ['as' => 'admin']);
+
             Route::resource('/admin-user', 'AdminUserController', ['as' => 'admin']);
             Route::resource('/change-password', 'ChangePasswordController', ['as' => 'admin']);
 

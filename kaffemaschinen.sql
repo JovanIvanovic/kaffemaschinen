@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 22, 2018 at 10:16 AM
+-- Generation Time: Feb 22, 2018 at 07:06 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -799,6 +799,23 @@ CREATE TABLE `permissions` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `popups`
+--
+
+CREATE TABLE `popups` (
+  `id` int(11) NOT NULL,
+  `package_id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `active` tinyint(1) NOT NULL DEFAULT '1',
+  `end_date` date NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -2318,7 +2335,229 @@ INSERT INTO `visitors` (`id`, `ip_address`, `url`, `agent`, `user_id`, `created_
 (1266, '127.0.0.1', 'cart/view', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:08:28', '2018-02-22 09:08:28'),
 (1267, '127.0.0.1', 'front/assets/js/header_top.js', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:08:30', '2018-02-22 09:08:30'),
 (1268, '127.0.0.1', 'cart/view', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:10:07', '2018-02-22 09:10:07'),
-(1269, '127.0.0.1', 'front/assets/js/header_top.js', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:10:09', '2018-02-22 09:10:09');
+(1269, '127.0.0.1', 'front/assets/js/header_top.js', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:10:09', '2018-02-22 09:10:09'),
+(1270, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:38:13', '2018-02-22 09:38:13'),
+(1271, '127.0.0.1', 'front/assets/js/header_top.js', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:38:14', '2018-02-22 09:38:14'),
+(1272, '127.0.0.1', 'front/assets/img/med-default-product.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:38:15', '2018-02-22 09:38:15'),
+(1273, '127.0.0.1', 'front/assets/js/progressbar.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:38:21', '2018-02-22 09:38:21'),
+(1274, '127.0.0.1', 'front/assets/js/maps/swiper.jquery.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:38:21', '2018-02-22 09:38:21'),
+(1275, '127.0.0.1', 'front/assets/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:38:22', '2018-02-22 09:38:22'),
+(1276, '127.0.0.1', 'category/borbone', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:49:39', '2018-02-22 09:49:39'),
+(1277, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:57:29', '2018-02-22 09:57:29'),
+(1278, '127.0.0.1', 'assets/js/owl.carousel.min.js', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:57:31', '2018-02-22 09:57:31'),
+(1279, '127.0.0.1', 'front/assets/js/header_top.js', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:57:33', '2018-02-22 09:57:33'),
+(1280, '127.0.0.1', 'front/assets/img/med-default-product.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:57:34', '2018-02-22 09:57:34'),
+(1281, '127.0.0.1', 'front/assets/img/med-default-product.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:57:38', '2018-02-22 09:57:38'),
+(1282, '127.0.0.1', 'assets/js/owl.carousel.min.js', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:57:41', '2018-02-22 09:57:41'),
+(1283, '127.0.0.1', 'front/assets/js/header_top.js', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:57:42', '2018-02-22 09:57:42'),
+(1284, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:58:28', '2018-02-22 09:58:28'),
+(1285, '127.0.0.1', 'assets/js/owl.carousel.min.js', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:58:30', '2018-02-22 09:58:30'),
+(1286, '127.0.0.1', 'front/assets/js/header_top.js', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:58:30', '2018-02-22 09:58:30'),
+(1287, '127.0.0.1', 'front/assets/img/med-default-product.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:58:30', '2018-02-22 09:58:30'),
+(1288, '127.0.0.1', 'front/assets/js/maps/swiper.jquery.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:58:35', '2018-02-22 09:58:35'),
+(1289, '127.0.0.1', 'front/assets/js/progressbar.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:58:35', '2018-02-22 09:58:35'),
+(1290, '127.0.0.1', 'front/assets/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:58:35', '2018-02-22 09:58:35'),
+(1291, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:59:05', '2018-02-22 09:59:05'),
+(1292, '127.0.0.1', 'front/assets/js/header_top.js', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:59:07', '2018-02-22 09:59:07'),
+(1293, '127.0.0.1', 'front/assets/img/med-default-product.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:59:07', '2018-02-22 09:59:07'),
+(1294, '127.0.0.1', 'front/assets/js/progressbar.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:59:12', '2018-02-22 09:59:12'),
+(1295, '127.0.0.1', 'front/assets/js/maps/swiper.jquery.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:59:12', '2018-02-22 09:59:12'),
+(1296, '127.0.0.1', 'front/assets/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 09:59:12', '2018-02-22 09:59:12'),
+(1297, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:01:38', '2018-02-22 10:01:38'),
+(1298, '127.0.0.1', 'front/assets/js/header_top.js', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:01:40', '2018-02-22 10:01:40'),
+(1299, '127.0.0.1', 'front/assets/img/med-default-product.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:01:40', '2018-02-22 10:01:40'),
+(1300, '127.0.0.1', 'front/assets/js/progressbar.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:02:12', '2018-02-22 10:02:12'),
+(1301, '127.0.0.1', 'front/assets/js/maps/swiper.jquery.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:02:12', '2018-02-22 10:02:12'),
+(1302, '127.0.0.1', 'front/assets/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:02:13', '2018-02-22 10:02:13'),
+(1303, '127.0.0.1', 'assets/img/products/1/8.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:02:23', '2018-02-22 10:02:23'),
+(1304, '127.0.0.1', 'assets/img/products/1/10.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:02:23', '2018-02-22 10:02:23'),
+(1305, '127.0.0.1', 'assets/img/products/single/13.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:02:23', '2018-02-22 10:02:23'),
+(1306, '127.0.0.1', 'assets/img/popup_test_1.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:02:23', '2018-02-22 10:02:23'),
+(1307, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:04:18', '2018-02-22 10:04:18'),
+(1308, '127.0.0.1', 'front/assets/js/header_top.js', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:04:20', '2018-02-22 10:04:20'),
+(1309, '127.0.0.1', 'front/assets/img/med-default-product.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:04:20', '2018-02-22 10:04:20'),
+(1310, '127.0.0.1', 'front/assets/js/progressbar.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:04:26', '2018-02-22 10:04:26'),
+(1311, '127.0.0.1', 'front/assets/js/maps/swiper.jquery.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:04:26', '2018-02-22 10:04:26'),
+(1312, '127.0.0.1', 'front/assets/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:04:26', '2018-02-22 10:04:26'),
+(1313, '127.0.0.1', 'assets/img/products/1/10.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:04:35', '2018-02-22 10:04:35'),
+(1314, '127.0.0.1', 'assets/img/popup_test_1.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:04:35', '2018-02-22 10:04:35'),
+(1315, '127.0.0.1', 'assets/img/products/single/13.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:04:35', '2018-02-22 10:04:35'),
+(1316, '127.0.0.1', 'assets/img/products/1/8.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:04:35', '2018-02-22 10:04:35'),
+(1317, '127.0.0.1', 'front/assets/js/maps/swiper.jquery.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:05:03', '2018-02-22 10:05:03'),
+(1318, '127.0.0.1', 'front/assets/js/progressbar.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:05:03', '2018-02-22 10:05:03'),
+(1319, '127.0.0.1', 'front/assets/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:05:03', '2018-02-22 10:05:03'),
+(1320, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:05:59', '2018-02-22 10:05:59'),
+(1321, '127.0.0.1', 'front/assets/js/header_top.js', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:06:02', '2018-02-22 10:06:02'),
+(1322, '127.0.0.1', 'front/assets/img/med-default-product.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:06:02', '2018-02-22 10:06:02'),
+(1323, '127.0.0.1', 'front/assets/js/progressbar.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:06:09', '2018-02-22 10:06:09'),
+(1324, '127.0.0.1', 'front/assets/js/maps/swiper.jquery.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:06:09', '2018-02-22 10:06:09'),
+(1325, '127.0.0.1', 'front/assets/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:06:10', '2018-02-22 10:06:10'),
+(1326, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:06:48', '2018-02-22 10:06:48'),
+(1327, '127.0.0.1', 'front/assets/img/med-default-product.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:06:51', '2018-02-22 10:06:51'),
+(1328, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:06:57', '2018-02-22 10:06:57'),
+(1329, '127.0.0.1', 'front/assets/img/med-default-product.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:07:00', '2018-02-22 10:07:00'),
+(1330, '127.0.0.1', 'front/assets/js/progressbar.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:07:11', '2018-02-22 10:07:11'),
+(1331, '127.0.0.1', 'front/assets/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:07:11', '2018-02-22 10:07:11'),
+(1332, '127.0.0.1', 'front/assets/js/maps/swiper.jquery.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:07:11', '2018-02-22 10:07:11'),
+(1333, '127.0.0.1', 'assets/img/products/single/13.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:07:46', '2018-02-22 10:07:46'),
+(1334, '127.0.0.1', 'assets/img/products/1/10.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:07:46', '2018-02-22 10:07:46'),
+(1335, '127.0.0.1', 'assets/img/popup_test_1.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:07:46', '2018-02-22 10:07:46'),
+(1336, '127.0.0.1', 'assets/img/products/1/8.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:07:46', '2018-02-22 10:07:46'),
+(1337, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:09:23', '2018-02-22 10:09:23'),
+(1338, '127.0.0.1', 'front/assets/js/fancybox/helpers/jquery.fancybox-thumbs.js', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:09:26', '2018-02-22 10:09:26'),
+(1339, '127.0.0.1', 'front/assets/img/med-default-product.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:09:27', '2018-02-22 10:09:27'),
+(1340, '127.0.0.1', 'front/assets/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:09:27', '2018-02-22 10:09:27'),
+(1341, '127.0.0.1', 'front/assets/js/progressbar.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:09:29', '2018-02-22 10:09:29'),
+(1342, '127.0.0.1', 'front/assets/js/maps/swiper.jquery.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:09:29', '2018-02-22 10:09:29'),
+(1343, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:10:47', '2018-02-22 10:10:47'),
+(1344, '127.0.0.1', 'front/assets/js/fancybox/helpers/jquery.fancybox-thumbs.js', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:10:50', '2018-02-22 10:10:50'),
+(1345, '127.0.0.1', 'front/assets/img/med-default-product.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:10:51', '2018-02-22 10:10:51'),
+(1346, '127.0.0.1', 'front/assets/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:10:51', '2018-02-22 10:10:51'),
+(1347, '127.0.0.1', 'front/assets/js/progressbar.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:10:53', '2018-02-22 10:10:53'),
+(1348, '127.0.0.1', 'front/assets/js/maps/swiper.jquery.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:10:53', '2018-02-22 10:10:53'),
+(1349, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:12:21', '2018-02-22 10:12:21'),
+(1350, '127.0.0.1', 'front/assets/js/fancybox/helpers/jquery.fancybox-thumbs.js', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:12:23', '2018-02-22 10:12:23'),
+(1351, '127.0.0.1', 'front/assets/img/med-default-product.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:12:23', '2018-02-22 10:12:23'),
+(1352, '127.0.0.1', 'front/assets/js/maps/swiper.jquery.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:12:32', '2018-02-22 10:12:32'),
+(1353, '127.0.0.1', 'front/assets/js/progressbar.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:12:32', '2018-02-22 10:12:32'),
+(1354, '127.0.0.1', 'front/assets/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:12:32', '2018-02-22 10:12:32'),
+(1355, '127.0.0.1', 'assets/img/products/1/8.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:16:26', '2018-02-22 10:16:26'),
+(1356, '127.0.0.1', 'assets/img/products/single/13.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:16:26', '2018-02-22 10:16:26'),
+(1357, '127.0.0.1', 'assets/img/popup_test_1.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:16:26', '2018-02-22 10:16:26'),
+(1358, '127.0.0.1', 'assets/img/products/1/10.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:16:26', '2018-02-22 10:16:26'),
+(1359, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:19:11', '2018-02-22 10:19:11'),
+(1360, '127.0.0.1', 'front/assets/js/fancybox/helpers/jquery.fancybox-thumbs.js', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:19:13', '2018-02-22 10:19:13'),
+(1361, '127.0.0.1', 'front/assets/img/med-default-product.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:19:14', '2018-02-22 10:19:14'),
+(1362, '127.0.0.1', 'front/assets/js/progressbar.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:19:19', '2018-02-22 10:19:19'),
+(1363, '127.0.0.1', 'front/assets/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:19:19', '2018-02-22 10:19:19'),
+(1364, '127.0.0.1', 'front/assets/js/maps/swiper.jquery.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:19:20', '2018-02-22 10:19:20'),
+(1365, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:20:27', '2018-02-22 10:20:27'),
+(1366, '127.0.0.1', 'front/assets/img/med-default-product.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:20:30', '2018-02-22 10:20:30'),
+(1367, '127.0.0.1', 'front/assets/js/progressbar.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:20:35', '2018-02-22 10:20:35'),
+(1368, '127.0.0.1', 'front/assets/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:20:35', '2018-02-22 10:20:35'),
+(1369, '127.0.0.1', 'front/assets/js/maps/swiper.jquery.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:20:35', '2018-02-22 10:20:35');
+INSERT INTO `visitors` (`id`, `ip_address`, `url`, `agent`, `user_id`, `created_at`, `updated_at`) VALUES
+(1370, '127.0.0.1', 'assets/img/popup_test_1.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:20:43', '2018-02-22 10:20:43'),
+(1371, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:21:48', '2018-02-22 10:21:48'),
+(1372, '127.0.0.1', 'front/assets/img/med-default-product.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:21:50', '2018-02-22 10:21:50'),
+(1373, '127.0.0.1', 'front/assets/js/maps/swiper.jquery.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:21:56', '2018-02-22 10:21:56'),
+(1374, '127.0.0.1', 'front/assets/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:21:56', '2018-02-22 10:21:56'),
+(1375, '127.0.0.1', 'front/assets/js/progressbar.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:21:57', '2018-02-22 10:21:57'),
+(1376, '127.0.0.1', 'assets/img/popup_test_1.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:22:02', '2018-02-22 10:22:02'),
+(1377, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:27:37', '2018-02-22 10:27:37'),
+(1378, '127.0.0.1', 'front/assets/js/maps/swiper.jquery.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:27:43', '2018-02-22 10:27:43'),
+(1379, '127.0.0.1', 'front/assets/js/progressbar.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:27:44', '2018-02-22 10:27:44'),
+(1380, '127.0.0.1', 'front/assets/img/med-default-product.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:27:43', '2018-02-22 10:27:43'),
+(1381, '127.0.0.1', 'front/assets/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:27:44', '2018-02-22 10:27:44'),
+(1382, '127.0.0.1', 'front/assets/js/maps/swiper.jquery.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:28:44', '2018-02-22 10:28:44'),
+(1383, '127.0.0.1', 'front/assets/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:28:44', '2018-02-22 10:28:44'),
+(1384, '127.0.0.1', 'front/assets/js/progressbar.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:28:45', '2018-02-22 10:28:45'),
+(1385, '127.0.0.1', 'assets/img/popup_test_1.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:28:51', '2018-02-22 10:28:51'),
+(1386, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:30:41', '2018-02-22 10:30:41'),
+(1387, '127.0.0.1', 'front/assets/img/med-default-product.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:30:44', '2018-02-22 10:30:44'),
+(1388, '127.0.0.1', 'front/assets/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:30:46', '2018-02-22 10:30:46'),
+(1389, '127.0.0.1', 'front/assets/js/progressbar.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:30:46', '2018-02-22 10:30:46'),
+(1390, '127.0.0.1', 'front/assets/js/maps/swiper.jquery.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:30:46', '2018-02-22 10:30:46'),
+(1391, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:34:02', '2018-02-22 10:34:02'),
+(1392, '127.0.0.1', 'front/assets/img/med-default-product.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:34:05', '2018-02-22 10:34:05'),
+(1393, '127.0.0.1', 'assets/img/popup_test_1.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:34:07', '2018-02-22 10:34:07'),
+(1394, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:34:22', '2018-02-22 10:34:22'),
+(1395, '127.0.0.1', 'front/assets/img/med-default-product.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:34:24', '2018-02-22 10:34:24'),
+(1396, '127.0.0.1', 'assets/img/popup_test_1.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:34:26', '2018-02-22 10:34:26'),
+(1397, '127.0.0.1', 'admin', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:36:13', '2018-02-22 10:36:13'),
+(1398, '127.0.0.1', 'admin/login', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:36:14', '2018-02-22 10:36:14'),
+(1399, '127.0.0.1', 'admin/js/jquery-3.2.1.min.js', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:36:16', '2018-02-22 10:36:16'),
+(1400, '127.0.0.1', 'admin/login', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:36:19', '2018-02-22 10:36:19'),
+(1401, '127.0.0.1', 'admin', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:36:21', '2018-02-22 10:36:21'),
+(1402, '127.0.0.1', 'admin/product', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:36:22', '2018-02-22 10:36:22'),
+(1403, '127.0.0.1', 'front/assets/img/small-default-product.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:36:25', '2018-02-22 10:36:25'),
+(1404, '127.0.0.1', 'admin/page/home', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:36:30', '2018-02-22 10:36:30'),
+(1405, '127.0.0.1', 'admin/page/home/create', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:36:45', '2018-02-22 10:36:45'),
+(1406, '127.0.0.1', 'back/js/popper.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:37:08', '2018-02-22 10:37:08'),
+(1407, '127.0.0.1', 'back/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 10:37:09', '2018-02-22 10:37:09'),
+(1408, '127.0.0.1', 'admin/package', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 12:13:01', '2018-02-22 12:13:01'),
+(1409, '127.0.0.1', 'admin/package/7/edit', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 12:13:10', '2018-02-22 12:13:10'),
+(1410, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 15:04:38', '2018-02-22 15:04:38'),
+(1411, '127.0.0.1', 'category', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 15:04:54', '2018-02-22 15:04:54'),
+(1412, '127.0.0.1', 'front/assets/img/med-default-product.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 15:04:58', '2018-02-22 15:04:58'),
+(1413, '127.0.0.1', 'get_price_ranges', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 15:05:34', '2018-02-22 15:05:34'),
+(1414, '127.0.0.1', 'category', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 15:05:35', '2018-02-22 15:05:35'),
+(1415, '127.0.0.1', 'front/assets/img/med-default-product.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 15:05:39', '2018-02-22 15:05:39'),
+(1416, '127.0.0.1', 'category', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 15:06:34', '2018-02-22 15:06:34'),
+(1417, '127.0.0.1', 'front/assets/img/med-default-product.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 15:06:37', '2018-02-22 15:06:37'),
+(1418, '127.0.0.1', 'cart/view', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 15:07:04', '2018-02-22 15:07:04'),
+(1419, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 15:09:45', '2018-02-22 15:09:45'),
+(1420, '127.0.0.1', 'category/borbone', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 15:09:57', '2018-02-22 15:09:57'),
+(1421, '127.0.0.1', 'category/lavazza', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 15:12:06', '2018-02-22 15:12:06'),
+(1422, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 15:16:28', '2018-02-22 15:16:28'),
+(1423, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 15:18:38', '2018-02-22 15:18:38'),
+(1424, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 15:25:59', '2018-02-22 15:25:59'),
+(1425, '127.0.0.1', 'front/assets/img/med-default-product.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 15:26:02', '2018-02-22 15:26:02'),
+(1426, '127.0.0.1', 'front/assets/js/maps/swiper.jquery.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 15:26:09', '2018-02-22 15:26:09'),
+(1427, '127.0.0.1', 'front/assets/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 15:26:09', '2018-02-22 15:26:09'),
+(1428, '127.0.0.1', 'front/assets/js/progressbar.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 15:26:09', '2018-02-22 15:26:09'),
+(1429, '127.0.0.1', 'admin/page/home', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:02:46', '2018-02-22 16:02:46'),
+(1430, '127.0.0.1', 'admin/login', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:02:47', '2018-02-22 16:02:47'),
+(1431, '127.0.0.1', 'admin/js/jquery-3.2.1.min.js', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:02:48', '2018-02-22 16:02:48'),
+(1432, '127.0.0.1', 'admin/login', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:02:50', '2018-02-22 16:02:50'),
+(1433, '127.0.0.1', 'admin', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:02:52', '2018-02-22 16:02:52'),
+(1434, '127.0.0.1', 'admin/product', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:02:53', '2018-02-22 16:02:53'),
+(1435, '127.0.0.1', 'front/assets/img/small-default-product.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:02:55', '2018-02-22 16:02:55'),
+(1436, '127.0.0.1', 'admin/page/home', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:02:57', '2018-02-22 16:02:57'),
+(1437, '127.0.0.1', 'admin/page/home/create', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:03:00', '2018-02-22 16:03:00'),
+(1438, '127.0.0.1', 'back/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:03:29', '2018-02-22 16:03:29'),
+(1439, '127.0.0.1', 'admin/product/26/edit', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:05:02', '2018-02-22 16:05:02'),
+(1440, '127.0.0.1', 'back/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:05:05', '2018-02-22 16:05:05'),
+(1441, '127.0.0.1', 'back/js/popper.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:05:09', '2018-02-22 16:05:09'),
+(1442, '127.0.0.1', 'admin/page/home/create', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:05:09', '2018-02-22 16:05:09'),
+(1443, '127.0.0.1', 'admin/page/home/create', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:16:58', '2018-02-22 16:16:58'),
+(1444, '127.0.0.1', 'admin/popup', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:17:04', '2018-02-22 16:17:04'),
+(1445, '127.0.0.1', 'admin/popup', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:17:43', '2018-02-22 16:17:43'),
+(1446, '127.0.0.1', 'admin/popup/create', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:18:28', '2018-02-22 16:18:28'),
+(1447, '127.0.0.1', 'back/js/popper.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:19:28', '2018-02-22 16:19:28'),
+(1448, '127.0.0.1', 'back/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:19:28', '2018-02-22 16:19:28'),
+(1449, '127.0.0.1', 'admin/popup/create', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:20:19', '2018-02-22 16:20:19'),
+(1450, '127.0.0.1', 'admin/product', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:21:43', '2018-02-22 16:21:43'),
+(1451, '127.0.0.1', 'front/assets/img/small-default-product.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:21:44', '2018-02-22 16:21:44'),
+(1452, '127.0.0.1', 'admin/product/26/edit', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:21:47', '2018-02-22 16:21:47'),
+(1453, '127.0.0.1', 'admin/product/13/edit', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:23:35', '2018-02-22 16:23:35'),
+(1454, '127.0.0.1', 'back/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:23:37', '2018-02-22 16:23:37'),
+(1455, '127.0.0.1', 'back/js/popper.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:23:37', '2018-02-22 16:23:37'),
+(1456, '127.0.0.1', 'admin/popup', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:23:38', '2018-02-22 16:23:38'),
+(1457, '127.0.0.1', 'admin/login', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:23:39', '2018-02-22 16:23:39'),
+(1458, '127.0.0.1', 'admin/product', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:23:40', '2018-02-22 16:23:40'),
+(1459, '127.0.0.1', 'front/assets/img/small-default-product.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:23:42', '2018-02-22 16:23:42'),
+(1460, '127.0.0.1', 'back/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:23:42', '2018-02-22 16:23:42'),
+(1461, '127.0.0.1', 'back/js/popper.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:23:43', '2018-02-22 16:23:43'),
+(1462, '127.0.0.1', 'admin/popup', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:23:54', '2018-02-22 16:23:54'),
+(1463, '127.0.0.1', 'back/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:23:56', '2018-02-22 16:23:56'),
+(1464, '127.0.0.1', 'back/js/popper.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:23:56', '2018-02-22 16:23:56'),
+(1465, '127.0.0.1', 'admin/popup/create', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:23:57', '2018-02-22 16:23:57'),
+(1466, '127.0.0.1', 'back/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:23:59', '2018-02-22 16:23:59'),
+(1467, '127.0.0.1', 'back/js/popper.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:23:59', '2018-02-22 16:23:59'),
+(1468, '127.0.0.1', 'admin/popup/create', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:26:14', '2018-02-22 16:26:14'),
+(1469, '127.0.0.1', 'back/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:26:16', '2018-02-22 16:26:16'),
+(1470, '127.0.0.1', 'back/js/popper.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:26:16', '2018-02-22 16:26:16'),
+(1471, '127.0.0.1', 'admin/popup/create', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:26:36', '2018-02-22 16:26:36'),
+(1472, '127.0.0.1', 'back/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:26:38', '2018-02-22 16:26:38'),
+(1473, '127.0.0.1', 'back/js/popper.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:26:39', '2018-02-22 16:26:39'),
+(1474, '127.0.0.1', 'admin/popup/create', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:26:51', '2018-02-22 16:26:51'),
+(1475, '127.0.0.1', 'back/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:26:53', '2018-02-22 16:26:53'),
+(1476, '127.0.0.1', 'back/js/popper.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:26:53', '2018-02-22 16:26:53'),
+(1477, '127.0.0.1', 'admin/popup/create', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:27:33', '2018-02-22 16:27:33'),
+(1478, '127.0.0.1', 'back/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:27:35', '2018-02-22 16:27:35'),
+(1479, '127.0.0.1', 'back/js/popper.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:27:35', '2018-02-22 16:27:35'),
+(1480, '127.0.0.1', 'admin/popup/create', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:27:50', '2018-02-22 16:27:50'),
+(1481, '127.0.0.1', 'back/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:27:52', '2018-02-22 16:27:52'),
+(1482, '127.0.0.1', 'back/js/popper.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:27:52', '2018-02-22 16:27:52'),
+(1483, '127.0.0.1', 'admin/popup/create', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:28:26', '2018-02-22 16:28:26'),
+(1484, '127.0.0.1', 'back/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:28:28', '2018-02-22 16:28:28'),
+(1485, '127.0.0.1', 'back/js/popper.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:28:28', '2018-02-22 16:28:28'),
+(1486, '127.0.0.1', 'admin/popup/create', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:28:36', '2018-02-22 16:28:36'),
+(1487, '127.0.0.1', 'back/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:28:38', '2018-02-22 16:28:38'),
+(1488, '127.0.0.1', 'back/js/popper.min.js.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 16:28:38', '2018-02-22 16:28:38'),
+(1489, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 18:04:38', '2018-02-22 18:04:38'),
+(1490, '127.0.0.1', 'front/assets/img/med-default-product.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.167 Safari/537.36', NULL, '2018-02-22 18:04:52', '2018-02-22 18:04:52');
 
 --
 -- Indexes for dumped tables
@@ -2482,6 +2721,13 @@ ALTER TABLE `permissions`
   ADD UNIQUE KEY `permissions_name_unique` (`name`);
 
 --
+-- Indexes for table `popups`
+--
+ALTER TABLE `popups`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `package_id` (`package_id`);
+
+--
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
@@ -2642,6 +2888,11 @@ ALTER TABLE `page_wir_kaufen`
 ALTER TABLE `permissions`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `popups`
+--
+ALTER TABLE `popups`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
@@ -2685,7 +2936,7 @@ ALTER TABLE `user_viewed_products`
 -- AUTO_INCREMENT for table `visitors`
 --
 ALTER TABLE `visitors`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1270;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1491;
 --
 -- Constraints for dumped tables
 --
