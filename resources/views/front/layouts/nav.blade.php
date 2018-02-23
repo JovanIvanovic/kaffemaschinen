@@ -9,30 +9,28 @@
         </a>
     </li>
     <li>
-        <a href="{{ route('category.view', 'lavazza') }}">
+        <a href="{{ URL::to('category?slug=lavazza') }}">
             Lavazza
         </a>
     </li>
     <li>
-        <a href="{{ route('category.view', 'borbone') }}">
+        <a href="{{ URL::to('category?slug=borbone') }}">
             Borbone
         </a>
     </li>
     <li>
-
-        <a href="{{ route('category.view', 'gastro')  }}">
+        <a href="{{ URL::to('category?slug=gastro')  }}">
             Gastro
         </a>
     </li>
 
     <li>
-        <a href="{{ route('category.view', 'kaffeebohnen')  }}">
-            Kaffeebohnen
+        <a href="{{ URL::to('category?slug=kaffebohnen')  }}">
+            Kaffebohnen
         </a>
     </li>
     <li>
-
-        <a href="{{ route('category.view', 'zubehör') }}">
+        <a href="{{ URL::to('category?slug=zubehör') }}">
             Zubehör
         </a>
     </li>
