@@ -6,7 +6,8 @@
     <div class="prod-sticker">
         @if($product->new_product == 1)
         <div class="item-new-badge">new</div>
-        @elseif($product->hit_product == 1)
+        @endif
+        @if($product->hit_product == 1)
         <div class="item-hit-badge_catalog-list"><i class="fa fa-star"></i> hit</div>
         @endif
     </div>
