@@ -1,10 +1,4 @@
-@extends('front.layouts.app')
-
-@section('meta_title')
-    {{ $product->name }} - Schoengebraucht
-@endsection
-
-@section('content')
+@extends('front.layouts.app') @section('meta_title') {{ $product->name }} - Schoengebraucht @endsection @section('content')
 <!-- Main Content - start -->
 <main>
     <section class="container" style="padding-top: 50px;" id="pozadina">
@@ -63,75 +57,72 @@
                 </div>
 
 
-            @if ($product->has_packaging == true)
+                @if ($product->has_packaging == true)
                 <div class="prod-info">
                     {{ __('front.packaging') }} : &nbsp;{{ $product->packaging }}
                 </div>
-            @endif
-
-            @if ($product->contact_only == 1)
+                @endif @if ($product->contact_only == 1)
                 <a class="prod-add" href="{{ route('contact') }}">
                     Contact us
                 </a>
-            @else
-                @if($product->qty < 1 || $product->in_stock == 0)
+                @else @if($product->qty
+                < 1 || $product->in_stock == 0)
                     <div class="prod-info text-center" style="font-size: 30px; color: #de5421;">
                         {{ __('front.sold-out') }}
                     </div>
-                @else
+                    @else
 
-                <div class="prod-info">
-                    <p class="prod-price">
-                        @if($product->discount == 1)
-                        <span class="prodlist-i-price">
+                    <div class="prod-info">
+                        <p class="prod-price">
+                            @if($product->discount == 1)
+                            <span class="prodlist-i-price">
                                     <b>CHF {{ number_format($product->discount_price, 2) }}</b><br>
                                     <span style="text-decoration:line-through">CHF {{ number_format($product->price,2) }}</span><span class="price-off">-{{ number_format(100-($product->discount_price/$product->price*100), 0) }}%</span><br>
-                        </span>
-                        @else
-                        <b>CHF {{ number_format($product->price,2) }}</b><br>
-                        <del></del> @endif inkl. MwSt 7,7%
-                    </p>
-
-                    <form method="post" action="{{ route('cart.add-to-cart') }}">
-                        {{ csrf_field() }}
-                        <input type="hidden" name="id" value="{{ $product->id }}" />
-                        <input type="hidden" name="type" value="product" />
-                        <p class="prod-qnt">
-                            <input id="prodQnt" class="prod-qty" name="qty" value="1" type="text" data-max="{{ $product->qty }}">
-                            <a id="prodPlus" class="prod-plus"><i class="fa fa-angle-up"></i></a>
-                            <a id="prodMinus" class="prod-minus"><i class="fa fa-angle-down"></i></a>
+                            </span>
+                            @else
+                            <b>CHF {{ number_format($product->price,2) }}</b><br>
+                            <del></del> @endif inkl. MwSt 7,7%
                         </p>
-                        <p class="prod-addwrap">
-                            <button type="submit" class="prod-add" href="{{ route('cart.add-to-cart', $product->id) }}">
+
+                        <form method="post" action="{{ route('cart.add-to-cart') }}">
+                            {{ csrf_field() }}
+                            <input type="hidden" name="id" value="{{ $product->id }}" />
+                            <input type="hidden" name="type" value="product" />
+                            <p class="prod-qnt">
+                                <input id="prodQnt" class="prod-qty" name="qty" value="1" type="text" data-max="{{ $product->qty }}">
+                                <a id="prodPlus" class="prod-plus"><i class="fa fa-angle-up"></i></a>
+                                <a id="prodMinus" class="prod-minus"><i class="fa fa-angle-down"></i></a>
+                            </p>
+                            <p class="prod-addwrap">
+                                <button type="submit" class="prod-add" href="{{ route('cart.add-to-cart', $product->id) }}">
                                     In den Warenkorb
                                 </button>
-                        </p>
-                    </form>
-                </div>
-                @endif
-            @endif
+                            </p>
+                        </form>
+                    </div>
+                    @endif @endif {{--
 
-                {{--<div class="row">--}}
-                    {{--<div class="col-xs-6" id="prodart"><a class="qview-btn prod-i-qview" data-toggle="modal" data-target="#exampleModal" style="color: dodgerblue; cursor: pointer"><span>Frage Zum Artikel</span></a></div>--}}
-                    {{--<div class="col-xs-6" id="prodart"><a href="mailto:?Subject=Schoengebraucht&amp;Body={{ Request::url() }}" style="color: dodgerblue; cursor: pointer">Artikel weiterempfehlen</a></div>--}}
-                {{--</div>--}}
-            <!-- Share Links -->
+                    <div class="row">--}} {{--
+                        <div class="col-xs-6" id="prodart"><a class="qview-btn prod-i-qview" data-toggle="modal" data-target="#exampleModal" style="color: dodgerblue; cursor: pointer"><span>Frage Zum Artikel</span></a></div>--}} {{--
+                        <div class="col-xs-6" id="prodart"><a href="mailto:?Subject=Schoengebraucht&amp;Body={{ Request::url() }}" style="color: dodgerblue; cursor: pointer">Artikel weiterempfehlen</a></div>--}} {{--
+                    </div>--}}
+                    <!-- Share Links -->
 
-            <div class="post-share-wrap">
-                <ul class="post-share">
-                    <li>
-                        <a href="http://www.facebook.com/sharer.php?u={{ Request::url() }}" target="_blank" title="Share on Facebook">
+                    <div class="post-share-wrap">
+                        <ul class="post-share">
+                            <li>
+                                <a href="http://www.facebook.com/sharer.php?u={{ Request::url() }}" target="_blank" title="Share on Facebook">
                                 <i class="fa fa-facebook"></i>
                             </a>
-                    </li>
-                    <li>
-                        <a href="http://www.instagram.com/shareArticle?mini=true&amp;url={{ Request::url() }}" target="_blank">
+                            </li>
+                            <li>
+                                <a href="http://www.instagram.com/shareArticle?mini=true&amp;url={{ Request::url() }}" target="_blank">
                                 <i class="fa fa-instagram"></i>
                             </a>
-                    </li>
-                </ul>
+                            </li>
+                        </ul>
+                    </div>
             </div>
-        </div>
 
 
 
@@ -178,17 +169,18 @@
         </div>
 
         <!-- Quick View Product - start -->
-        {{--<div class="qview-modal">--}}
-            {{--<div class="prod-wrap">--}}
+        {{--
+        <div class="qview-modal">--}} {{--
+            <div class="prod-wrap">--}} {{--
 
-                {{--<!-- Contact Form -->--}}
+                <!-- Contact Form -->--}} {{--
 
-                {{--<div class="auth-wrap">--}}
-                    {{--<h3 class="fat">Frage Zum Artikel</h3>--}}
+                <div class="auth-wrap">--}} {{--
+                    <h3 class="fat">Frage Zum Artikel</h3>--}} {{--
 
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
+                </div>--}} {{--
+            </div>--}} {{--
+        </div>--}}
         <!-- Quick View Product - end -->
 
     </section>
