@@ -54,8 +54,19 @@
 </div>
 
 <div class="row">
-    <div class="col-6">
-        @include('admin.forms.select',['name' => 'delivery','label' => __('lang.delivery'), 'options' => ['1' => "Ja",'0' => "Nein"]])
+    <div class="col-2">
+        <div class="form-group">
+            <label for="has_packaging">{{ __('lang.has-packaging') }}</label>
+            <div class="checkbox">
+                <label style="margin-left: 20px;">
+                    <input id="has_packaging_toggle" name="has_packaging_toggle" type="checkbox" data-toggle="toggle" data-on="{{ __('front.yes') }}" data-off="{{ __('front.no') }}" @if ($model['new_product'] === 1) checked @endif>
+                    <input hidden id="has_packaging" type="number" name="has_packaging" value="{{ $model['has_packaging'] }}" />
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        @include('admin.forms.text',['name' => 'packaging','label' => __('lang.packaging')])
     </div>
     <div class="col-6">
         @include('admin.forms.text',['name' => 'delivery_price','label' => __('lang.delivery-price')])
@@ -72,7 +83,18 @@
 </div>
 
 <div class="row">
-    <div class="col-6">
+    <div class="col-4">
+        <div class="form-group">
+            <label for="contact_only">{{ __('lang.contact-only') }}</label>
+            <div class="checkbox">
+                <label style="margin-left: 20px;">
+                    <input id="contact_only_toggle" name="contact_only_toggle" type="checkbox" data-toggle="toggle" data-on="{{ __('front.yes') }}" data-off="{{ __('front.no') }}" @if ($model['new_product'] === 1) checked @endif>
+                    <input hidden id="contact_only" type="number" name="contact_only" value="{{ $model['contact_only'] }}" />
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
         <div class="form-group">
             <label for="new_product">{{ __('lang.new-product') }}</label>
             <div class="checkbox">
@@ -83,7 +105,7 @@
             </div>
         </div>
     </div>
-    <div class="col-6">
+    <div class="col-4">
         <div class="form-group">
             <label for="hit_product">{{ __('lang.hit-product') }}</label>
             <div class="checkbox">
