@@ -27,9 +27,9 @@ class CartController extends Controller
 
         if ($request->get('type') == 'product') {
             if ($cart->has('product:'.$product->id)) {
-                $item = $cart->pull($product->id);
+                $item = $cart->pull('product:'.$product->id);
                 $item['qty'] = $qty;
-                $cart->put($product->id, $item);
+                $cart->put('product:'.$product->id, $item);
             } else {
                 if ($product->discount == 1)
                     $price = $product->discount_price;
@@ -49,9 +49,9 @@ class CartController extends Controller
             }
         } elseif ($request->get('type') == 'package') {
             if ($cart->has('package:'.$package->id)) {
-                $item = $cart->pull($package->id);
+                $item = $cart->pull('package:'.$package->id);
                 $item['qty'] = $qty;
-                $cart->put($package->id, $item);
+                $cart->put('package:'.$package->id, $item);
             } else {
                 $price = $package->price;
 
@@ -114,7 +114,7 @@ class CartController extends Controller
         $qty = $request->get('qty');
 
         if ($request->get('type') == 'product') {
-            $product = Product::find(request('productId'));
+            $product = Product::find(request('id'));
 
             if ($qty > $product->qty) {
                 return JsonResponse::create([
@@ -124,39 +124,34 @@ class CartController extends Controller
             }
 
             if (!is_numeric($qty)) {
-                $item = $cartData->pull($request->get('productId'));
+                $item = $cartData->pull('product:'.$request->get('id'));
                 $item['qty'] = 1;
-                $cartData->put($request->get('productId'), $item);
+                $cartData->put('product:'.$request->get('id'), $item);
             } elseif ($qty == 0) {
-                $cartData->pull($request->get('productId'));
+                $cartData->pull('product:'.$request->get('id'));
             } else {
-                $item = $cartData->pull($request->get('productId'));
+                $item = $cartData->pull('product:'.$request->get('id'));
                 $item['qty'] = $qty;
-                $cartData->put($request->get('productId'), $item);
+                $cartData->put('product:'.$request->get('id'), $item);
             }
         } elseif ($request->get('type') == 'package') {
-            $package = Package::find(request('productId'));
+            $package = Package::find(request('id'));
 
             if (!is_numeric($qty)) {
-                $item = $cartData->pull($request->get('productId'));
+                $item = $cartData->pull('package:'.$request->get('id'));
                 $item['qty'] = 1;
-                $cartData->put($request->get('productId'), $item);
+                $cartData->put('package:'.$request->get('id'), $item);
             } elseif ($qty == 0) {
-                $cartData->pull($request->get('productId'));
+                $cartData->pull('package:'.$request->get('id'));
             } else {
-                $item = $cartData->pull($request->get('productId'));
+                $item = $cartData->pull('package:'.$request->get('id'));
                 $item['qty'] = $qty;
-                $cartData->put($request->get('productId'), $item);
+                $cartData->put('package:'.$request->get('id'), $item);
             }
         }
 
-        $product = Product::find(request('productId')); // TODO: Remove
-
-        
-
         Session::put('cart', $cartData);
 
-        //return redirect()->back();
         return JsonResponse::create(['status' => true, 'cart' => Session::get('cart')]);
     }
 
@@ -170,29 +165,17 @@ class CartController extends Controller
         $hasDelivery = false;
         $hasPickup = false;
 
-        foreach ($cartData as $item) {
-            if (in_array($item['id'], $aDelivery)) {
-                $pom = $cartData->pull($item['id']);
-                $pom['for_delivery'] = true;
-                $cartData->put($pom['id'], $pom);
-                $hasDelivery = true;
-            }
-            else {
-                $pom = $cartData->pull($item['id']);
-                $pom['for_delivery'] = false;
-                $cartData->put($pom['id'], $pom);
-                $hasPickup = true;
-            }
-            // $item = $cartData->pull($request->get('productId'));
-            // $item['qty'] = request('qty');
-            // $cartData->put($request->get('productId'), $item);
+        foreach ($cartData as $key => $item) {
+            $type = explode(':', $key)[0];
+            $pom = $cartData->pull($type.':'.$item['id']);
+            $pom['for_delivery'] = true;
+            $cartData->put($type.':'.$pom['id'], $pom);
+            $hasDelivery = true;
         }
 
-        // dd($cartData);
 
         Session::put('cart', $cartData);
         Session::put('hasDelivery', $hasDelivery);
-        Session::put('hasPickup', $hasPickup);
 
         //return redirect()->back();
         return redirect('/checkout');

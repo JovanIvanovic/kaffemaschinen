@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Database\Popup;
 use App\Models\Database\Package;
 use App\DataGrid\Facade as DataGrid;
+use Illuminate\Support\Facades\File;
+use Intervention\Image\Facades\Image;
 
 class PopupController extends Controller
 {
@@ -15,10 +17,10 @@ class PopupController extends Controller
         $dataGrid = DataGrid::model(Popup::query())
             ->column('title', ['sortable' => true, 'label' => __('lang.title')])
             ->linkColumn(__('lang.edit'), [], function ($model) {
-                return "<a href='" . route('admin.home.edit', $model->id) . "' >".__('lang.edit')."</a>";
+                return "<a href='" . route('admin.popup.edit', $model->id) . "' >".__('lang.edit')."</a>";
             })
             ->linkColumn('destroy', ['label' => __('lang.destroy')], function ($model) {
-                return  "<a href=' " . route('admin.home.destroy', $model->id) . " ' >".__('lang.destroy')."</a>";
+                return  "<a href=' " . route('admin.popup.destroy', $model->id) . " ' >".__('lang.destroy')."</a>";
             })
             ->setPagination(100);
 
@@ -40,19 +42,24 @@ class PopupController extends Controller
         $this->validate($request, [
             'package_id' => 'required',
             'title' => 'required',
-            'image' => 'required|url',
+            'image' => 'required|mimes:jpeg,jpg,png|max:2048',
             'active' => 'required',
             'end_date' => 'required'
         ]);
 
         $image = $request->image;
         $name = time() . $image->getClientOriginalName();
-        $folder = '\front\assets\img\popup\\';
+        $folder = '/uploads/popup/';
         $savePath = public_path($folder);
         Image::make($image->getRealPath())->resize(1140, 480)->save($savePath . $name);
         $dbPath = $folder . $name;
 
-        PageHome::create([
+        if ($request->active == true) {
+            $allPopups = Popup::where('active', 1);
+            $allPopups->update(['active' => 0]);
+        }
+
+        Popup::create([
             'package_id' => $request->package_id,
             'title' => $request->title,
             'image' => $dbPath,
@@ -80,11 +87,16 @@ class PopupController extends Controller
         $this->validate($request, [
             'package_id' => 'required',
             'title' => 'required',
-            'image' => 'required|url',
             'end_date' => 'required'
         ]);
 
         $popup = Popup::findorfail($id);
+
+        if ($request->active == true) {
+            $allPopups = Popup::where('active', 1);
+            $allPopups->update(['active' => 0]);
+        }
+
         $popup->update($request->all());
 
         return redirect()->route('admin.popup.index');

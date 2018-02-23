@@ -57,13 +57,7 @@
                         <?php
                         $user = auth()->user();
                         $name = $user->first_name;
-                        $image = (!is_null($user->image_path)) ? $user->image_path->smallUrl : '/front/assets/img/default_avatar.png';
                         ?>
-                        <li id="scroller_thumbnail_photo">
-                        <a href="{{ route('my-account.home') }}">
-                            <img src="{{ $image }}" style="border-radius: 50%; width: 40px; height: 40px">
-                        </a>
-                        </li>
                         <li class="topauth">
                             <a href="{{ route('my-account.home') }}">
                                 <span class="shop-menu-ttl">{{ $name }}</span>

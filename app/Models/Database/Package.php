@@ -21,7 +21,7 @@ class Package extends Model
 
     public function popups()
     {
-        return $this->belongsToMany(Popup::class);
+        return $this->hasMany(Popup::class);
     }
 
     public function getTotalPriceAttribute()
@@ -31,6 +31,14 @@ class Package extends Model
 
     public function getPercentageAttribute()
     {
-        return round(($this->total_price / $this->price) * 100);
+        if ($this->price < $this->total_price)
+            return 100 - round(($this->price / $this->total_price) * 100);
+        else
+            return 100 - round(($this->total_price / $this->price) * 100);
+    }
+
+    public function getPercentageSignAttribute()
+    {
+        return ($this->price < $this->total_price) ? '-' : '+';
     }
 }

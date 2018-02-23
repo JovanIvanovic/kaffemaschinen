@@ -170,6 +170,7 @@ use Illuminate\Support\Facades\Cookie;
                 'uses' => 'PackageController@getSingleProduct']);
 
             Route::resource('popup', 'PopupController', ['as' => 'admin']);
+            Route::get('popup/destroy/{id}', ['as' => 'admin.popup.destroy', 'uses' => 'PopupController@destroy']);
 
             Route::resource('/admin-user', 'AdminUserController', ['as' => 'admin']);
             Route::resource('/change-password', 'ChangePasswordController', ['as' => 'admin']);

@@ -94,27 +94,46 @@ class OrderController extends Controller
 				$user->addresses()->save($shippingAddress);
 			}
 
-			$pickupSyncedData = [];
-			$deliverySyncedData = [];
+			//$pickupSyncedData = [];
+
+			$deliverySyncedDataProducts = [];
+			$deliverySyncedDataPackages = [];
+
 			foreach ($cartItems as $id => $item) {
-				if (array_key_exists('for_delivery', $item)) {
-					if ($item['for_delivery'] === true) {
-						$cartItemsForDelivery[] = $item;
-						$deliverySyncedData[$id] = [
-							'qty' => $item['qty'], 
-							'price' => $item['price'], 
-							'tax_amount' => $item['delivery_price']
-						];
-					} else if ($item['for_delivery'] === false) {
-						$cartItemsForPickup[] = $item;
-						$pickupSyncedData[$id] = [
-							'qty' => $item['qty'], 
-							'price' => $item['price'], 
-							'tax_amount' => $item['delivery_price']
-						];
+				$type = explode(':', $id)[0];
+				$itemId = explode(':', $id)[1];
+				if ($type == 'product') {
+					if (array_key_exists('for_delivery', $item)) {
+						if ($item['for_delivery'] === true) {
+							$cartItemsForDelivery[] = $item;
+							$deliverySyncedDataProducts[$itemId] = [
+								'qty' => $item['qty'],
+								'price' => $item['price'],
+								'tax_amount' => $item['delivery_price']
+							];
+						}
+					} elseif ($type == 'package') {
+						if (array_key_exists('for_delivery', $item)) {
+							if ($item['for_delivery'] === true) {
+								$cartItemsForDelivery[] = $item;
+								$deliverySyncedDataPackages[$itemId] = [
+									'qty' => $item['qty'],
+									'price' => $item['price'],
+									'tax_amount' => $item['delivery_price']
+								];
+							}
+						}
 					}
 				}
 			}
+//					else if ($item['for_delivery'] === false) {
+//						$cartItemsForPickup[] = $item;
+//						$pickupSyncedData[$id] = [
+//							'qty' => $item['qty'],
+//							'price' => $item['price'],
+//							'tax_amount' => $item['delivery_price']
+//						];
+//					}
 
 			$orders = [];
 
@@ -128,25 +147,26 @@ class OrderController extends Controller
 				$orderForDelivery->total_amount = Session::get('deliveryTotal');
 				$orderForDelivery->save();
 
-				$orderForDelivery->products()->sync($deliverySyncedData, false);
+				$orderForDelivery->products()->sync($deliverySyncedDataProducts, false);
+				$orderForDelivery->packages()->sync($deliverySyncedDataPackages, false);
 
 				$orders['deliveryOrder'] = $orderForDelivery;
 			}
 
-			if (!empty($cartItemsForPickup)) {
-				$orderForPickup = new Order;
-				$orderForPickup->user_id = $user->id;
-				$orderForPickup->billing_address_id = $address->id;
-				$orderForPickup->shipping_address_id = isset($shippingAddress) ? $shippingAddress->id : null;
-				$orderForPickup->payment_option = 'Abholung';
-				$orderForPickup->order_status_id = 1;
-				$orderForPickup->total_amount = Session::get('pickupTotal');
-				$orderForPickup->save();
-
-				$orderForPickup->products()->sync($pickupSyncedData, false);
-
-                $orders['pickupOrder'] = $orderForPickup;
-			}
+//			if (!empty($cartItemsForPickup)) {
+//				$orderForPickup = new Order;
+//				$orderForPickup->user_id = $user->id;
+//				$orderForPickup->billing_address_id = $address->id;
+//				$orderForPickup->shipping_address_id = isset($shippingAddress) ? $shippingAddress->id : null;
+//				$orderForPickup->payment_option = 'Abholung';
+//				$orderForPickup->order_status_id = 1;
+//				$orderForPickup->total_amount = Session::get('pickupTotal');
+//				$orderForPickup->save();
+//
+//				$orderForPickup->products()->sync($pickupSyncedData, false);
+//
+//                $orders['pickupOrder'] = $orderForPickup;
+//			}
 
 			Stripe::setApiKey(config('stripe.secret_key'));
 
@@ -164,13 +184,13 @@ class OrderController extends Controller
 					'currency' => 'chf',
 				]);
 
-				foreach ($cartItems as $key => $data){
-				    $product = Product::findorfail($data['id']);
-                    $product->qty -= $data['qty'];
-                    $product->update();
-                }
+//				foreach ($cartItems as $key => $data){
+//				    $product = Product::findorfail($data['id']);
+//                    $product->qty -= $data['qty'];
+//                    $product->update();
+//                }
 
-                dispatch(new SendOrderMail($orders));
+                //dispatch(new SendOrderMail($orders));
 
 				Session::forget('cart');
 				Session::flash('order_made', __('front.order_successfully_made'));
