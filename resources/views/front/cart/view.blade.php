@@ -31,7 +31,7 @@
                 <span>Warenkorb</span>
             </h1>
             @if(count($cartItems) <= 0)
-                <p>{{ __('front.product-no-found') }}</p>
+                <p style="color:#fff;">{{ __('front.product-no-found') }}</p>
             @else
                 <form method="post" action="{{ route('cart.update.delivery') }}" id="cart-form" style="border-radius: 4px; background-color: white; padding: 15px;">
                     {{ csrf_field() }}
