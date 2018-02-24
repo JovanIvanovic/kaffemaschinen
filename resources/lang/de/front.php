@@ -58,6 +58,7 @@ return [
 
     'packaging' => 'Stück pro Verpackung',
     'product' => 'Produkt',
+    'package' => 'Angebot',
     'delivery' => 'Lieferung',
     'delivery_cost' => 'Versandgebühr',
     'delivery_option' => 'Versandart',

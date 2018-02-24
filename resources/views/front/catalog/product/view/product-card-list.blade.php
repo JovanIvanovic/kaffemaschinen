@@ -35,7 +35,8 @@
         <div class="prodlist-i-action">
             <form method="post" action="{{ route('cart.add-to-cart') }}">
                 {{ csrf_field() }}
-                <input type="hidden" name="slug" value="{{ $product->slug }}"/>
+                <input type="hidden" name="id" value="{{ $product->id }}"/>
+                <input type="hidden" name="type" value="product"/>
                 <p class="prodlist-i-qnt">
                     <input id="prodQnt" class="prod-qty" name="qty" value="1" type="text" data-max="{{ $product->qty }}">
                     <a id="prodPlus" class="prod-plus prodlist-i-plus"><i class="fa fa-angle-up"></i></a>

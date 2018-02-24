@@ -120,6 +120,10 @@ return [
     'package.create.text' => 'Angebot erstellen',
     'package-edit.package' => 'Erstellen',
 
+    'popup' => 'Popup',
+    'popup-active' => 'Aktiviert',
+    'popup-edit' => 'Erstellen',
+
     'address.configuration.title' => "Adresse Konfigurationsliste",
 
 
