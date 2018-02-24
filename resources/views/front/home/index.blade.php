@@ -100,7 +100,7 @@
                 <div class="modal fade index_popup" id="myModal">
                     <div class="modal-dialog modal-lg index_popup_dialog">
                         <div class="modal-header index_popup_header">
-                            <a class="close" data-dismiss="modal">×</a>
+                            <a class="close modal_close" data-dismiss="modal">×</a>
                             <h3 class="main-ttl-popup" style="margin-bottom:0;">
                                 <span>{{ $popup->title }}</span>
                             </h3>
