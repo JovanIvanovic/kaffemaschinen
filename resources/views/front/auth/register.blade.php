@@ -29,10 +29,10 @@
                         <p>
                             <label for="title">{{ __('front.account-title') }}<span class="required">*</span></label>
                             <label class="radio-inline">
-                                <input type="radio" name="title" value="Herr" required>Herr
+                                <input class="herr_frau" type="radio" name="title" value="Herr" required>Herr
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="title" value="Frau">Frau
+                                <input class="herr_frau" type="radio" name="title" value="Frau">Frau
                             </label>                        </p>
                         <p>
                             <input id="firstname" placeholder="{{ __('front.account-first-name') }}" type="text" class="form-control" name="first_name" value="{{ old('first_name') }}" required autofocus>
@@ -62,8 +62,9 @@
                             <input id="password" placeholder="{{ __('front.account-confirm-password') }}" type="password" class="form-control" name="password_confirmation" required>
                         </p>
                         <p>
+                           <input id="subscribe" type="checkbox" name="subscribe">
                             <label for="subscribe">{{ __('front.i-want-to-subscribe') }}<span class="required">*</span></label>
-                            <input id="subscribe" type="checkbox" name="subscribe">
+                            
                         </p>
                         <p class="auth-submit">
                             <input type="submit" value="{{ __('front.account-register') }}">
