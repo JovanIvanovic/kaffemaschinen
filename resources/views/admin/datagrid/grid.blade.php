@@ -30,6 +30,8 @@
                 <td>
                     @if($column->type() == "link")
                         {!! $column->executeCallback($row) !!}
+                    @elseif($column->type() == "online")
+                        <div class="status {{ $row->$identifier ? 'online' : 'offline' }}"></div>
                     @elseif($column->type() == "image")
                         <?php $identifier = $column->identifier() ?>
                         <img height="30px" width="30px" src="{{ $row->$identifier->smallUrl }}" />

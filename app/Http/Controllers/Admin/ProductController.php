@@ -27,6 +27,7 @@ class ProductController extends Controller
     {
         $dataGrid = DataGrid::model(Product::query())
             ->setDefaultOrder(['field' => 'created_at', 'keyword' => 'desc'])
+            ->onlineColumn('status', ['sortable' => true, 'label' => ''])
             ->imageColumn('image', ['sortable' => false, 'label' => __('lang.images')])
             ->column('name', ['sortable' => true, 'label' => __('lang.name')])
             ->column('product_no', ['sortable' => true, 'label' => __('lang.product-number')])

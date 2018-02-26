@@ -4,6 +4,7 @@ namespace App\DataGrid;
 
 use App\DataGrid\Columns\ImageColumn;
 use App\DataGrid\Columns\LinkColumn;
+use App\DataGrid\Columns\OnlineColumn;
 use App\DataGrid\Columns\TextColumn;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -86,6 +87,13 @@ class Manager
     public function linkColumn($identifier, $options , $callback) {
 
         $column = new LinkColumn($identifier, $options ,$callback);
+        $this->columns->put($identifier, $column);
+
+        return $this;
+    }
+
+    public function onlineColumn($identifier, $options) {
+        $column = new OnlineColumn($identifier, $options);
         $this->columns->put($identifier, $column);
 
         return $this;
