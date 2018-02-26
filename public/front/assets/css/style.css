@@ -9067,3 +9067,19 @@ a:hover {
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
     /* STYLES GO HERE */
 }
+
+/***********************/
+
+.status {
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%
+}
+
+.status.online {
+    background-color: green;
+}
+.status.offline {
+    background-color: red;
+}
