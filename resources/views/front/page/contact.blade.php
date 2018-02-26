@@ -42,11 +42,11 @@
                     </p>
                     <p class="contactform-field contactform-tel">
                         {{--<label class="contactform-label">Telefon</label>--}}
-                        <span class="contactform-input"><input placeholder="Ihre Telefon" id="tel" type="text" name="tel" value="{{ old('tel') }}" data-required="text" required></span>
+                        <span class="contactform-input"><input placeholder="Ihre Telefonnummer" id="tel" type="text" name="tel" value="{{ old('tel') }}" data-required="text" required></span>
                     </p>
                     <p class="contactform-field contactform-email">
                         {{--<label class="contactform-label">Email</label>--}}
-                        <span class="contactform-input"><input placeholder="Ihre Email" id="email" type="text" name="email" value="{{ old('email') }}" data-required="text" data-required-email="email" required></span>
+                        <span class="contactform-input"><input placeholder="Ihre Emailadresse" id="email" type="text" name="email" value="{{ old('email') }}" data-required="text" data-required-email="email" required></span>
                     </p>
                     <p class="contactform-field contactform-textarea">
                         {{--<label class="contactform-label">Nachricht</label>--}}
@@ -60,67 +60,7 @@
             </div>
             <!-- Contacts - end -->
 
-            <!-- Kontakt - start -->
-            <div class="iconbox-wrap">
-                <div class="row iconbox-list">
-                    <div class="cf-xs-6 cf-sm-4 cf-lg-4 col-xs-6 col-sm-4 iconbox-i">
-                        <p class="iconbox-i-img"><i class="fa fa-phone" aria-hidden="true" style="font-size:60px;"></i></p>
-                        <h3 class="iconbox-i-ttl">+41 44 450 21 02</h3>
-                        <span class="contact-text">
-                            Rufen Sie uns an
-                        </span>
-                        <span class="iconbox-i-margin"></span>
-                    </div>
-                    <div class="cf-xs-6 cf-sm-4 cf-lg-4 col-xs-6 col-sm-4 iconbox-i">
-                        <p class="iconbox-i-img"><i class="fa fa-map-marker" aria-hidden="true" style="font-size:60px;"></i></p>
-                        <h3 class="iconbox-i-ttl">Adresse</h3>
-                        <span class="contact-text">
-                            Brock GmbH<br>
-                            Birmensdorferstr. 430<br>
-                            8055 Zurich
-                        </span>
-                        <span class="iconbox-i-margin"></span>
-                    </div>
-                    <div class="cf-xs-6 cf-sm-4 cf-lg-4 col-xs-6 col-sm-4 iconbox-i">
-                        <p class="iconbox-i-img"><i class="fa fa-clock-o" aria-hidden="true" style="font-size:60px;"></i></p>
-                        <h3 class="iconbox-i-ttl">Öffnungszeiten</h3>
-                        <span class="contact-text">
-                            Montag - Freitag 13:00 - 18:00
-                        </span>
-                        <span class="iconbox-i-margin"></span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Contacts Info - end -->
-            <div class="social-wrap">
-                <div class="social-list">
-                    <div class="social-i">
-                        <a rel="nofollow" target="_blank" href="https://de-de.facebook.com/schoengebraucht.ch/">
-                            <p class="social-i-img">
-                                <i class="fa fa-facebook"></i>
-                            </p>
-                            <p class="social-i-ttl">Facebook</p>
-                        </a>
-                    </div>
-
-                    <div class="social-i">
-                        <a rel="nofollow" target="_blank" href="https://www.instagram.com/schoengebraucht.ch/">
-                            <p class="social-i-img">
-                                <i class="fa fa-instagram"></i>
-                            </p>
-                            <p class="social-i-ttl">Instagram</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <br><br>
-            <!-- Google Maps -->
-            <div class="contacts-map allstore-gmap">
-                <div class="marker" data-zoom="15" data-lat="47.3691831" data-lng="8.49889" data-marker="assets/img/marker.png">534-540 Little Bourke St, Basel, Svizeria</div>
-            </div>
-
+            
         </section>
     </main>
 @endsection
