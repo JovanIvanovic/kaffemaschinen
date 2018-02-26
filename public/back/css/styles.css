@@ -69,3 +69,19 @@ a:hover {
 .cover-text > form > a {
     width: 100px;
 }
+
+/***********************/
+
+.status {
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%
+}
+
+.status.online {
+    background-color: green;
+}
+.status.offline {
+    background-color: red;
+}
