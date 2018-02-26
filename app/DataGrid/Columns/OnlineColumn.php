@@ -2,6 +2,8 @@
 
 namespace App\DataGrid\Columns;
 
+use Illuminate\Support\Facades\Route;
+
 class OnlineColumn extends AbstractColumn
 {
     protected $type = 'online';
