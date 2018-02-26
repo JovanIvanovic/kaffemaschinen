@@ -14,7 +14,7 @@
                     @include('front.user.my-account.sidebar')
 
                     <div class="col-sm-9 profile-info">
-                        <h3 class="fat">
+                        <h3 class="main-ttl">
                             <span>{{ __('front.address') }}</span>
                         </h3>
                         @if(count($addresses) <= 0)
@@ -24,9 +24,9 @@
                             <div class="row space">
                                 <div class="auth-wrap">
                                     @foreach($addresses as $address)
-                                        <div class="auth-col">
+                                        <div class="auth-col" style="margin: 0;">
                                             <div class="table-responsive">
-                                                <table class="table">
+                                                <table class="table myacc_table">
                                                     <thead>
                                                     <tr>
                                                         @if($address->type == "SHIPPING")
@@ -75,7 +75,7 @@
                             </div>
                         @endif
                         <div class="row space">
-                            <a class="button-c" href="{{ route('my-account.address.new') }}">Adresse hinzufügen</a>
+                            <a class="button-c" href="{{ route('my-account.address.new') }}" style="color: #fff;">Adresse hinzufügen</a>
                         </div>
                     </div>
                 </div>

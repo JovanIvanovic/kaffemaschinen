@@ -46,7 +46,7 @@
             <!-- Search - start -->
             <div class="topsearch">
                 <form class="topsearch-form" action="{{ route('all.category.view') }}" method="get" role="search">
-                    <input name="q" type="text" placeholder="Search products">
+                    <input name="q" type="text" placeholder="Suche...">
                     <button type="submit"><i class="fa fa-search"></i></button>
                 </form>
             </div>
@@ -62,6 +62,7 @@
                             <a href="{{ route('my-account.home') }}">
                                 <span class="shop-menu-ttl">{{ $name }}</span>
                             </a>
+                            <span style="color: #fff;"> / </span>
                             <a href="{{ route('logout') }}">
                                 <span class="shop-menu-ttl">Logout</span>
                             </a>
@@ -86,6 +87,9 @@
                                 ({{$cart}})
                             </a>
                         </div>
+                    </li>
+                    <li class="header_media">
+                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i>Facebook</a>
                     </li>
                 </ul>
         </div>

@@ -468,7 +468,7 @@ Header
 ----------------------------------*/
 
 .topmenu {
-    height: 70px;
+    height: 60px;
 }
 
 .topmenu:after {}
@@ -704,8 +704,8 @@ Header
     color: #fff;
     display: block;
     transition: all 0.2s;
-    padding: 27px 19px;
-    height: 70px;
+    padding: 23px 19px;
+    height: 60px;
 }
 
 .topmenu .mainmenu > li.menu-item-has-children > a {
@@ -5044,6 +5044,7 @@ Catalog | Gallery View
 .prod-cont .prod-info {
     margin: 0 0 14px;
     position: relative;
+    color: #fff;
 }
 
 .prod-cont .prod-info:after {
@@ -5143,6 +5144,7 @@ Catalog | Gallery View
     color: #fff;
     background: #583520;
     position: relative;
+    border: none;
 }
 
 .prod-cont .prod-add:hover {
@@ -8025,9 +8027,8 @@ Login
 }
 
 .auth-wrap .auth-col {
-    width: 63%;
-    margin: 0 8% 0 0;
-    float: left;
+    width: 46%;
+    margin: 0 auto;
 }
 
 .auth-wrap .auth-col:nth-child(2n) {
@@ -8095,8 +8096,7 @@ Login
 
 .auth-wrap .auth-col1 {
     width: 46%;
-    margin: 0 8% 0 0;
-    float: left;
+    margin: 0 auto;
 }
 
 .auth-wrap .auth-col1:nth-child(2n) {
@@ -8250,7 +8250,6 @@ Login
 
 .vertical-menu {
     border-right: 2px solid;
-    padding-bottom: 20px;
 }
 
 #slika {
@@ -8351,7 +8350,7 @@ thead {
 }
 
 .padd {
-    padding-bottom: 30px;
+    padding: 100px 0;
 }
 
 #slika {
@@ -8674,6 +8673,69 @@ a:hover {
     bottom: 5px;
 }
 
+.header_media {
+    padding-left: 15px;
+    color: #fff;
+}
+
+.header_media > a > i {
+    margin-right: 6px;
+}
+
+.myacc_table > tbody > tr {
+    background-color: #fff;
+}
+
+#input-billing-firstname,
+#input-billing-lastname,
+#input-shipping-address-1,
+#input-shipping-address-2,
+#input-shipping-postcode,
+#input-shipping-city,
+#input-shipping-phone,
+#delivery {
+    padding: 0 15px;
+    color: #373d54;
+    background: #f8fafc;
+    font-size: 14px;
+    height: 40px;
+    border: 1px solid #e0e4f6;
+    border-radius: 0;
+    transition: all 0.2s;
+    display: inline-block;
+    margin: 0;
+    vertical-align: middle;
+}
+
+#input-billing-firstname::placeholder,
+#input-billing-lastname::placeholder,
+#input-shipping-address-1::placeholder,
+#input-shipping-address-2::placeholder,
+#input-shipping-postcode::placeholder,
+#input-shipping-city::placeholder,
+#input-shipping-phone::placeholder,
+#delivery::placeholder {
+    text-transform: uppercase;
+}
+
+.new_address_button {
+    display: block;
+    border: none;
+    transition: all 0.2s;
+    font-weight: 500;
+    background: #583520!important;
+    padding: 10px 35px;
+    color: #ffffff;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+.new_address_button:hover {
+    background-color: #734826!important;
+}
 
 /************************
     MEIDA

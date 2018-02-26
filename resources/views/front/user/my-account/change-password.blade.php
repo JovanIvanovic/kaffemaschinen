@@ -14,11 +14,11 @@
                     @include('front.user.my-account.sidebar')
 
                     <div class="col-sm-9 profile-info">
-                        <h3 class="fat"><span>{{ __('front.account-change-password') }}</span></h3>
+                        <h3 class="main-ttl"><span>{{ __('front.account-change-password') }}</span></h3>
                         <div class="row space">
                             <div class="auth-wrap">
 
-                                <div class="auth-col" style="width: 63%;">
+                                <div class="auth-col" style="width: 63%; margin:0;">
                                     <form method="post" action="{{ route('my-account.change-password.post') }}" >
                                         {{ csrf_field() }}
 

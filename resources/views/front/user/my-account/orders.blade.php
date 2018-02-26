@@ -14,7 +14,7 @@
                     @include('front.user.my-account.sidebar')
 
                     <div class="col-sm-9 profile-info">
-                        <h3 class="fat">
+                        <h3 class="main-ttl">
                             <span>Meine Bestellungen</span>
 
                         </h3>
@@ -24,7 +24,7 @@
                                     <p>Keine Bestellungen vorhanden</p>
                                 @else
                                     <div class="table-responsive">
-                                        <table class="table">
+                                        <table class="table myacc_table">
                                             <thead>
                                             <tr>
                                                 <th>ID</th>
