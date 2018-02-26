@@ -35,31 +35,31 @@
                                 <input class="herr_frau" type="radio" name="title" value="Frau">Frau
                             </label>                        </p>
                         <p>
-                            <input id="firstname" placeholder="{{ __('front.account-first-name') }}" type="text" class="form-control" name="first_name" value="{{ old('first_name') }}" required autofocus>
+                            <input id="firstname" placeholder="{{ __('front.account-first-name') }}" type="text" name="first_name" value="{{ old('first_name') }}" required autofocus>
                         </p>
                         <p>
-                            <input id="lastname" placeholder="{{ __('front.account-last-name') }}" type="text" class="form-control" name="last_name" value="{{ old('last_name') }}" required autofocus>
+                            <input id="lastname" placeholder="{{ __('front.account-last-name') }}" type="text" name="last_name" value="{{ old('last_name') }}" required autofocus>
                         </p>
                         <p>
-                            <input id="reg_email" placeholder="Adresse" type="text" class="form-control" name="address" value="{{ old('address') }}" required>
+                            <input id="reg_email" placeholder="Adresse" type="text" name="address" value="{{ old('address') }}" required>
                         </p>
                         <p>
-                            <input id="password" placeholder="{{ __('front.account-city') }}" type="text" class="form-control" name="city" value="{{ old('city') }}" required>
+                            <input id="password" placeholder="{{ __('front.account-city') }}" type="text" name="city" value="{{ old('city') }}" required>
                         </p>
                         <p>
-                            <input id="password" placeholder="{{ __('front.account-zip') }}" type="text" class="form-control" name="zip" value="{{ old('zip') }}" required>
+                            <input id="password" placeholder="{{ __('front.account-zip') }}" type="text" name="zip" value="{{ old('zip') }}" required>
                         </p>
                         <p>
-                            <input id="password" placeholder="{{ __('front.phone') }} P" type="text" class="form-control" name="phone" value="{{ old('phone') }}" required>
+                            <input id="password" placeholder="{{ __('front.phone') }} P" type="text" name="phone" value="{{ old('phone') }}" required>
                         </p>
                         <p>
-                            <input id="password" placeholder="E-mail" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+                            <input id="password" placeholder="E-mail" type="email" name="email" value="{{ old('email') }}" required>
                         </p>
                         <p>
-                            <input id="reg_password" placeholder="{{ __('front.account-password') }}" type="password" class="form-control" name="password" required>
+                            <input id="reg_password" placeholder="{{ __('front.account-password') }}" type="password"  name="password" required>
                         </p>
                         <p>
-                            <input id="password" placeholder="{{ __('front.account-confirm-password') }}" type="password" class="form-control" name="password_confirmation" required>
+                            <input id="password" placeholder="{{ __('front.account-confirm-password') }}" type="password" name="password_confirmation" required>
                         </p>
                         <p>
                            <input id="subscribe" type="checkbox" name="subscribe">

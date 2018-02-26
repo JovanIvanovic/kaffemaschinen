@@ -14,22 +14,22 @@
                     @include('front.user.my-account.sidebar')
 
                     <div class="col-sm-9 profile-info">
-                        <h3 class="fat">
+                        <h3 class="main-ttl">
                             <span>{{ __('front.account-profile-edit') }}</span>
                         </h3>
                         <div class="row space">
                             <div class="auth-wrap">
 
-                                <div class="auth-col" style="width: 63%;">
+                                <div class="auth-col" style="width: 63%; margin: 0;">
                                     <form method="post" action="{{ route('my-account.store') }}">
                                         {{ csrf_field() }}
                                         <p>
                                             <label for="title">{{ __('front.account-title') }}<span class="required">*</span></label>
                                             <label class="radio-inline">
-                                                <input type="radio" name="title" value="Herr" @if ($user->title == 'Herr') checked @endif>Herr
+                                                <input class="herr_frau" type="radio" name="title" value="Herr" @if ($user->title == 'Herr') checked @endif>Herr
                                             </label>
                                             <label class="radio-inline">
-                                                <input type="radio" name="title" value="Frau" @if ($user->title == 'Frau') checked @endif>Frau
+                                                <input class="herr_frau" type="radio" name="title" value="Frau" @if ($user->title == 'Frau') checked @endif>Frau
                                             </label>
                                             @if ($errors->has('title'))
                                                 <span class="help-block">

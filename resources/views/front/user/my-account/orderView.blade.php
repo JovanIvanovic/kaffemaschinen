@@ -14,7 +14,7 @@
                     @include('front.user.my-account.sidebar')
 
                     <div class="col-sm-9 profile-info">
-                        <h3 class="fat">Bestellansicht</h3>
+                        <h3 class="main-ttl">Bestellansicht</h3>
                         <div class="row space">
                             <div class="auth-wrap">
                                 <h3 class="fet">Grundinformationen bestellen</h3>

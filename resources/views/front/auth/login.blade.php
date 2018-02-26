@@ -21,9 +21,10 @@
                     </a>
                 </li>
             </ul>
-            <h1 class="main-ttl"><span>Login</span></h1>
+            
                 <div class="auth-wrap">
                     <div class="auth-col1">
+                       <h1 class="main-ttl"><span>Login</span></h1>
                         <form class="login" role="form" method="POST" action="{{ route('login.post') }}">
                         {{ csrf_field() }}
                         @if (session('status'))
