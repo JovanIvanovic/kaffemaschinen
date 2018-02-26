@@ -31,6 +31,7 @@
                     @if($column->type() == "link")
                         {!! $column->executeCallback($row) !!}
                     @elseif($column->type() == "online")
+                        <?php $identifier = $column->identifier() ?>
                         <div class="status {{ $row->$identifier ? 'online' : 'offline' }}"></div>
                     @elseif($column->type() == "image")
                         <?php $identifier = $column->identifier() ?>
