@@ -8,7 +8,7 @@
                 <ul class="nav nav-pills nav-stacked">
                     <li><a href="#">AGB's</a></li>
                     <li><a href="#">Impressum</a></li>
-                    <li><a href="contacts.html"><i class="fa fa-envelope-open-o" aria-hidden="true"></i>Kontaktformular</a></li>
+                    <li><a href="{{ route('contact') }}"><i class="fa fa-envelope-open-o" aria-hidden="true"></i>Kontaktformular</a></li>
                 </ul>
             </div>
             <div class="f-menu">

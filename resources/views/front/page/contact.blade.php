@@ -34,7 +34,7 @@
             <div class="contactform-wrap">
                 <form method="post" action="{{ route('contact.email') }}">
                     {{ csrf_field() }}
-                    <h3 class="component-ttl component-ttl-ct component-ttl-hasdesc"><span>Kontakt formular</span></h3>
+                    <h3 class="component-ttl component-ttl-ct component-ttl-hasdesc"><span>Kontaktformular</span></h3>
                     <p class="component-desc component-desc-ct">Unvollstandige Anfragen werden nicht beantwortet.</p>
                     <p class="contactform-field contactform-text">
                         {{--<label class="contactform-label">Name</label>--}}
