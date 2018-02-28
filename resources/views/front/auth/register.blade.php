@@ -61,11 +61,11 @@
                         <p>
                             <input id="password" placeholder="{{ __('front.account-confirm-password') }}" type="password" name="password_confirmation" required>
                         </p>
-                        <p>
-                           <input id="subscribe" type="checkbox" name="subscribe">
-                            <label for="subscribe">{{ __('front.i-want-to-subscribe') }}<span class="required">*</span></label>
+                        <div class="remember_me_register">
+                           <input id="subscribe" type="checkbox" name="subscribe" style="display:none">
+                            <label class="labelcina" for="subscribe">{{ __('front.i-want-to-subscribe') }}<span class="required">*</span></label>
                             
-                        </p>
+                        </div>
                         <p class="auth-submit">
                             <input type="submit" value="{{ __('front.account-register') }}">
                         </p>

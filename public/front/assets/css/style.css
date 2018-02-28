@@ -1048,7 +1048,7 @@ Header
 
 .topsearch {
     display: inline-block;
-    width: 450px;
+    width: 100%;
 }
 
 
@@ -1132,17 +1132,21 @@ Header
 }
 
 .topsearch_auth {
+/*
     display: inline-block;
     float: right;
+*/
     line-height: 43px;
+    text-align: center;
 }
 
 .topsearch_auth > li {
     display: inline-block;
+    margin-right: 10px;
 }
 
 .h-cart {
-    padding-left: 30px;
+    padding-left: 0;
 }
 
 .fa-shopping-cart,
@@ -1453,8 +1457,6 @@ Topmenu
     height: 40px;
     border: 1px solid #e0e4f6;
     transition: all 0.2s;
-    width: 70%;
-    margin: 0 auto;
 }
 
 .stylization input[type=email]:focus,
@@ -1502,9 +1504,8 @@ Topmenu
     height: 150px;
     border: 1px solid #e0e4f6;
     transition: all 0.2s;
-    width: 70%;
-    max-width: 70%;
-    min-width: 70%;
+    max-width: 100%;
+    min-width: 100%;
     min-height: 150px;
     margin: 0 auto;
 }
@@ -1629,7 +1630,7 @@ ul.b-crumbs {
     content: "\f105";
     font-size: 12px;
     font-family: FontAwesome;
-    color: #583520;
+    color: #fff;
     display: block;
     left: auto;
     top: 0;
@@ -1650,7 +1651,7 @@ ul.b-crumbs {
     text-decoration: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0);
     transition: all 0.2s;
-    color: #583520;
+    color: #fff;
     line-height: 100%;
 }
 
@@ -1667,6 +1668,72 @@ ul.b-crumbs {
 /*----------------------------------
  Breadcrumbs
 ----------------------------------*/
+
+.labelcina {
+    width: 100%!important;
+    padding-left: 25px;
+    padding-bottom: 5px;
+    color: #fff;
+}
+
+.remember_me {
+        display: block;
+    /* float: left; */
+    line-height: 39px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.remember_me_register {
+    display: block;
+    line-height: 39px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.button_login {
+    margin: 10px 0;
+}
+
+.remember_me input[type=checkbox] + label:after {
+    content: "\f00c";
+    width: 14px;
+    height: 14px;
+    display: block;
+    position: absolute;
+    top: 39%;
+    margin: -7px 0 0;
+    /* right: 0; */
+    border: 2px solid #8890af;
+    background-color: #fff;
+    color: #fff;
+    font-size: 8px;
+    padding: 0 0 0 1px;
+    text-align: center;
+    font-family: FontAwesome;
+    line-height: 10px;
+    left: 0;
+}
+
+.remember_me_register input[type=checkbox] + label:after {
+    content: "\f00c";
+    width: 14px;
+    height: 14px;
+    display: block;
+    position: absolute;
+    top: 40%;
+    margin: -7px 0 0;
+    /* right: 0; */
+    border: 2px solid #8890af;
+    background-color: #fff;
+    color: #fff;
+    font-size: 8px;
+    padding: 0 0 0 1px;
+    text-align: center;
+    font-family: FontAwesome;
+    line-height: 10px;
+    left: 0;
+}
 
 /*----------------------------------
  Pagination
@@ -2311,7 +2378,7 @@ Catalog | Gallery View
 
 .prod-items .prod-i h3 {
     font-size: 15px;
-    margin: 0 0 15px;
+    margin: 0 0 10px;
     text-align: center;
     font-weight: bold;
 }
@@ -4673,7 +4740,7 @@ Catalog | Gallery View
     width: 32%;
     margin: 0 2% 36px 0;
     background: #fff;
-    height: 400px;
+    height: 385px;
 }
 
 .section-cont .section-items .prod-i:nth-child(3n) {
@@ -5007,6 +5074,10 @@ Catalog | Gallery View
     left: 4px;
 }
 
+.single_product_form {
+    text-align: right;
+}
+
 .prod-cont {
     width: 56%;
     margin: 0 0 50px 0;
@@ -5066,13 +5137,10 @@ Catalog | Gallery View
 }
 
 .prod-cont .prod-price {
-    position: absolute;
-    top: 5px;
-    right: 0;
     font-size: 14px;
     color: #373d54;
     display: block;
-    margin: 0;
+    margin: 15px auto;
     text-align: right;
 }
 
@@ -7631,6 +7699,7 @@ body .component-desc.component-desc-ct {
     padding-bottom: 30px;
     flex: 0 0 50px;
     margin-top: auto;
+    text-align: center;
 }
 
 .companyinfo {
@@ -8028,7 +8097,6 @@ Login
 
 .auth-wrap .auth-col {
     width: 46%;
-    margin: 0 auto;
 }
 
 .auth-wrap .auth-col:nth-child(2n) {
@@ -8095,8 +8163,7 @@ Login
 
 
 .auth-wrap .auth-col1 {
-    width: 46%;
-    margin: 0 auto;
+    width: 100%;
 }
 
 .auth-wrap .auth-col1:nth-child(2n) {
@@ -8156,7 +8223,7 @@ Login
     display: inline-block;
     margin: 0;
     vertical-align: middle;
-    width: 80%;
+    width: 100%;
 }
 
 .auth-wrap .auth-col1 input[type=submit] {
@@ -8740,392 +8807,102 @@ a:hover {
 /************************
     MEIDA
 ************************/
-
-/* iPhone 5 & 5S in portrait */
-
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-    .topsearch {
-        width: 100%;
-    }
-
-    .topsearch_auth {
-        text-align: center;
-    }
-
-    .h-cart {
-        padding-left: 0;
-    }
-
-    h1.main-ttl {
-        text-align: right;
-    }
-
-    .footer-wrap {
-        text-align: center;
-    }
-
-    .item-hit-badge {
-        bottom: -262px;
-        left: 176px;
-    }
-
-    .prod-cont .prod-info {
-        text-align: right;
-    }
-
-    .main-ttl span:after {
-        right: 0;
-        left: unset;
-    }
-
-    .stylization input[type=email],
-    .stylization input[type=tel],
-    .stylization input[type=search],
-    .stylization input[type=password],
-    .stylization input[type=text] {
-        width: 100%;
-    }
-
-    .stylization textarea {
-        width: 100%;
-        min-width: 100%;
-        max-width: 100%;
-    }
-
-    .auth-wrap .auth-col1 {
-        width: 100%;
-        margin: 0;
-        float: none;
-    }
-
-    #username,
-    #password,
-    #firstname,
-    #lastname,
-    #reg_email,
-    #reg_password,
-    #email,
-    #tel,
-    #company {
-        margin: 0;
-        width: 100%;
-    }
-
-    .auth-wrap .auth-col1 input[type=submit] {
-        margin: 0;
-    }
-
-    .auth-wrap .auth-submit input[type=checkbox] + label {
-        right: 0;
-    }
-
-    .auth-wrap .auth-col1 .auth-lost_password {
-        padding: 0;
-    }
-
-    .auth-wrap .auth-col1 p a {
-        color: #fff;
-    }
-
-}
-
-
-/* iPhone 5 & 5S in landscape */
-
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
-    .topsearch {
-        width: 100%;
-    }
-
-    .topsearch_auth {
-        width: 100%;
-        text-align: center;
-    }
-
-    h1.main-ttl {
-        text-align: right;
-    }
-
-    .main-ttl span:after {
-        right: 0;
-        left: unset;
-    }
-
-    .footer-wrap {
-        text-align: center;
-    }
-
-    .item-hit-badge {
-        bottom: -218px;
-        left: 174px;
-    }
-
-    .auth-wrap .auth-col1 {
-        width: 100%;
-        margin: 0;
-        float: none;
-    }
-
-    #username,
-    #password,
-    #firstname,
-    #lastname,
-    #reg_email,
-    #reg_password,
-    #email,
-    #tel,
-    #company {
-        margin: 0;
-        width: 100%;
-    }
-
-    .auth-wrap .auth-col1 input[type=submit] {
-        margin: 0;
-    }
-
-    .auth-wrap .auth-submit input[type=checkbox] + label {
-        right: 0;
-    }
-
-    .auth-wrap .auth-col1 .auth-lost_password {
-        padding: 0;
-    }
-
-    .auth-wrap .auth-col1 p a {
-        color: #fff;
-    }
-}
-
-
-/* iPhone 6 in portrait */
-
-@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
-    .topsearch_auth {
-        width: 100%;
-        text-align: center;
-    }
-}
-
-
-/* iPhone 6 in landscape */
-
-@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: landscape) {
-    .topsearch {
-        width: 100%;
-    }
-    .topsearch_auth {
-        width: 100%;
-        text-align: center;
-    }
-
-    .footer-wrap {
-        text-align: center;
-    }
-
-    h1.main-ttl {
-        text-align: right;
-    }
-
-    .main-ttl span:after {
-        right: 0;
-        left: unset;
-    }
-
-    .item-hit-badge {
-        bottom: -216px;
-        left: 223px;
-    }
-
-    .auth-wrap .auth-col1 {
-        width: 100%;
-        margin: 0;
-        float: none;
-    }
-
-    #username,
-    #password,
-    #firstname,
-    #lastname,
-    #reg_email,
-    #reg_password,
-    #email,
-    #tel,
-    #company {
-        margin: 0;
-        width: 100%;
-    }
-
-    .auth-wrap .auth-col1 input[type=submit] {
-        margin: 0;
-    }
-
-    .auth-wrap .auth-submit input[type=checkbox] + label {
-        right: 0;
-    }
-
-    .auth-wrap .auth-col1 .auth-lost_password {
-        padding: 0;
-    }
-
-    .auth-wrap .auth-col1 p a {
-        color: #fff;
-    }
-
-}
-
-/* iPhone 6 Plus in portrait */
-
-@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
-    .prod-cont .prod-price {
-        position: relative;
-        right: auto;
-        top: auto;
-        margin: 0 0 13px;
-    }
-
-    .package_amount {
-        display: block!important;
-        text-align: right;
-    }
-
-    .product_post_share {
-        width: 100%;
-        text-align: right;
-    }
-
-}
-
-
-
-/* iPhone 6 Plus in landscape */
-
-@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: landscape) {
-
-    .footer-wrap {
-        text-align: center;
-    }
-
-    h1.main-ttl {
-        text-align: right;
-    }
-
-    .main-ttl span:after {
-        right: 0;
-        left: unset;
-    }
-
-    .topsearch {
-        width: 100%;
-    }
-    .topsearch_auth {
-        width: 100%;
-        text-align: center;
-    }
-
-
-    .auth-wrap .auth-col1 {
-        width: 100%;
-        margin: 0;
-        float: none;
-    }
-
-    #username,
-    #password,
-    #firstname,
-    #lastname,
-    #reg_email,
-    #reg_password,
-    #email,
-    #tel,
-    #company {
-        margin: 0;
-        width: 100%;
-    }
-
-    .auth-wrap .auth-col1 input[type=submit] {
-        margin: 0;
-    }
-
-    .auth-wrap .auth-submit input[type=checkbox] + label {
-        right: 0;
-    }
-
-    .auth-wrap .auth-col1 .auth-lost_password {
-        padding: 0;
-    }
-
-    .auth-wrap .auth-col1 p a {
-        color: #fff;
-    }
-
-    .item-hit-badge {
-        bottom: -219px;
-        left: 257px;
-    }
-}
-
-
 /* iPad in portrait */
-
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-    .footer-wrap {
-        text-align: center;
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) { 
+    .auth-wrap .auth-col1 input[type=email], .auth-wrap .auth-col1 input[type=password], .auth-wrap .auth-col1 input[type=text] {
+        width: 40%;
     }
+    
 
-
-
-    .topsearch {
-        width: 100%;
-    }
-    .topsearch_auth {
-        width: 100%;
-        text-align: center;
-    }
-
-    h1.main-ttl {
-        text-align: right;
-    }
-
-
-    .auth-wrap .auth-col1 {
-        width: 100%;
-        margin: 0;
-        float: none;
-    }
-
-    #username,
-    #password,
-    #firstname,
-    #lastname,
-    #reg_email,
-    #reg_password,
-    #email,
-    #tel,
-    #company {
-        margin: 0;
-        width: 100%;
-    }
-
-    .auth-wrap .auth-col1 input[type=submit] {
-        margin: 0;
-    }
-
-    .auth-wrap .auth-submit input[type=checkbox] + label {
-        right: 0;
-    }
-
-    .auth-wrap .auth-col1 .auth-lost_password {
-        padding: 0;
-    }
-
-    .auth-wrap .auth-col1 p a {
-        color: #fff;
-    }
 }
 
 
 /* iPad in landscape */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) { 
+    .auth-wrap .auth-col1 input[type=email], .auth-wrap .auth-col1 input[type=password], .auth-wrap .auth-col1 input[type=text] {
+        width: 40%;
+    }
+    
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-    /* STYLES GO HERE */
 }
+
+/* iPad Pro Landscape */
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1366px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+        .auth-wrap .auth-col1 input[type=email], .auth-wrap .auth-col1 input[type=password], .auth-wrap .auth-col1 input[type=text] {
+        width: 40%;
+    }
+    
+      
+}
+
+/*----------------------------------
+Media
+----------------------------------*/
+
+
+@media (min-width: 768px) {
+
+    
+}
+
+
+
+@media (min-width: 992px) {
+    
+    .topsearch_auth {
+        display: inline-block;
+        float: right;
+    }
+    
+    .topsearch {
+        width: 460px;
+    }
+    
+    .auth-wrap .auth-col1 {
+    width: 40%;
+    margin: 0 auto;
+}
+    
+    .auth-wrap .auth-col {
+    width: 40%;
+    margin: 0 auto;
+}
+    
+.single_product_form {
+    text-align: left;
+}
+    
+    .prod-cont .prod-price {
+        position: absolute;
+        right: 0;
+        top: -2px;
+        margin: 0;
+    }
+    
+    
+    
+    
+}
+
+
+
+
+
+@media (min-width: 1200px) {
+
+}
+
+
+/*----------------------------------
+Media
+----------------------------------*/
