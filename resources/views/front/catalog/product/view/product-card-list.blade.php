@@ -22,9 +22,9 @@
         </div>
         @if ($product->contact_only == 1)
             <a class="prod-add" href="{{ route('contact') }}">
-				{{ __('front.contact-us-button) }}
+                {{ __('front.contact-us-button') }}
             </a>
-@else
+        @else
         @if($product->qty < 1)
             <div class="prodlist-i-action">
                 <span class="prodlist-i-price">

@@ -61,11 +61,13 @@
                 <div class="prod-info">
                     {{ __('front.packaging') }} : &nbsp;{{ $product->packaging }}
                 </div>
-                @endif @if ($product->contact_only == 1)
+                @endif
+                @if ($product->contact_only == 1)
                 <a class="prod-add" href="{{ route('contact') }}">
-                    {{ __('front.contact-us-button) }}
+                    {{ __('front.contact-us-button') }}
                 </a>
-                @else @if($product->qty < 1)
+                @else
+                    @if($product->qty < 1)
                     <div class="prod-info text-center" style="font-size: 30px; color: #de5421;">
                         {{ __('front.sold-out') }}
                     </div>
