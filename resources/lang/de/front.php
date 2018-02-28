@@ -103,7 +103,8 @@ return [
     'image1-5' => 'Sie können 1 bis 5 Bilder eingeben',
 
     'order_successfully_made' => 'Bestellung erfolgreich abgeschlossen!',
-    'all_done' => 'Erledigt!'
+    'all_done' => 'Erledigt!',
+	'contact-us-button' => 'Kontaktieren Sie uns',
 //
 //Save changes = Änderungen speichern (ilisamo „speichern“)     '' => '',  {{ __('front.') }}
 

@@ -63,7 +63,7 @@
                 </div>
                 @endif @if ($product->contact_only == 1)
                 <a class="prod-add" href="{{ route('contact') }}">
-                    Contact us
+                    {{ __('front.contact-us-button) }}
                 </a>
                 @else @if($product->qty < 1)
                     <div class="prod-info text-center" style="font-size: 30px; color: #de5421;">

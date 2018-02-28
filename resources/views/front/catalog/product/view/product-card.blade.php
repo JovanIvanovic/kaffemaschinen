@@ -18,7 +18,7 @@
     </h3>
     @if ($product->contact_only == 1)
         <a class="prod-add add_to_cart_gastro" href="{{ route('contact') }}">
-            Contact us
+            {{ __('front.contact-us-button) }}
         </a>
         
 <!--
