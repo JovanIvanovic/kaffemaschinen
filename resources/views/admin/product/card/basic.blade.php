@@ -77,9 +77,6 @@
     <div class="col-6">
         @include('admin.forms.text',['name' => 'qty','label' => __('lang.quantity')])
     </div>
-    <div class="col-6">
-        @include('admin.forms.select',['name' => 'in_stock','label' => __('lang.in-stock'), 'options' => ['1' => "Ja",'0' => "Nein"]])
-    </div>
 </div>
 
 <div class="row">

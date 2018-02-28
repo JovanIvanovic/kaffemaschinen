@@ -25,7 +25,7 @@
                 Contact us
             </a>
 @else
-        @if($product->qty < 1 || $product->in_stock == 0)
+        @if($product->qty < 1)
             <div class="prodlist-i-action">
                 <span class="prodlist-i-price">
                     <b>{{ __('front.sold-out') }}</b>

@@ -28,7 +28,7 @@
                 </div>
 -->
     @else
-    @if($product->qty < 1 || $product->in_stock == 0)
+    @if($product->qty < 1)
         <p class="prod-i-price">
             <b>{{ __('front.sold-out') }}</b>
         </p>

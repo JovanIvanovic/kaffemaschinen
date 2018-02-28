@@ -30,15 +30,15 @@ class CategoryViewController extends Controller
         $orderBy = $request->order_by ? $request->order_by : null;
 
         if ($request->has('q')) {
-            
+
             $products = Product::where('name', 'LIKE', '%' . $request->q . '%')->paginate($view);
             $request->flash();
 
             return view('front.catalog.view')
-            ->with('params', $request->all())
-            ->with('products', $products)
-            ->with('mode', $mode)
-            ->with('maxPrice', $maxPrice);
+                ->with('params', $request->all())
+                ->with('products', $products)
+                ->with('mode', $mode)
+                ->with('maxPrice', $maxPrice);
         }
 
         if ($request->has('price_from') && $request->has('price_to')) {
@@ -57,10 +57,11 @@ class CategoryViewController extends Controller
         $request->flash();
 
         return view('front.catalog.view')
-        ->with('params', $request->all())
-        ->with('products', $products)
-        ->with('mode', $mode)
-        ->with('maxPrice', $maxPrice);
+            ->with('params', $request->all())
+            ->with('products', $products)
+            ->with('mode', $mode)
+            ->with('maxPrice', $maxPrice)
+            ->with('category', isset($category) ? $category : null);
     }
 
     public function getPriceRanges(Request $request)

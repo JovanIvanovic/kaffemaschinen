@@ -1,5 +1,6 @@
 @extends('front.layouts.app')
 
+@section('nav_active_category', $category->slug)
 @section('meta_title')
 {{ $category->name }}
 @endsection
@@ -20,7 +21,7 @@
                 </a>
             </li>
             <li>
-                <span>Kategorie</span>
+                <span>{{ $category->name }}</span>
             </li>
         </ul>
         <h1 class="main-ttl"><span>Kategorie</span></h1>

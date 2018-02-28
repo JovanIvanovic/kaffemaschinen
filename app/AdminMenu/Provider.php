@@ -61,6 +61,13 @@ class Provider extends ServiceProvider
             ->route('admin.package.index');
 
         /**
+         * Add Menu Popup
+         */
+        AdminMenuFacade::add('popup')
+            ->label(__('lang.popup'))
+            ->route('admin.popup.index');
+
+        /**
          * Add Menu Sales
          */
         AdminMenuFacade::add('sale')
@@ -110,14 +117,6 @@ class Provider extends ServiceProvider
             ->route('admin.change-password.index');
         $systemMenu->subMenu('change-password', $changePasswordMenu);
 
-
-        /**
-         * Add Menu Package
-         */
-        AdminMenuFacade::add('popup')
-            ->label(__('lang.popup'))
-            ->route('admin.popup.index');
-
         /**
          * Add Menu Pages
          */
@@ -135,18 +134,6 @@ class Provider extends ServiceProvider
             ->label('Home')
             ->route('admin.page.home');
         $homeMenu->subMenu('home', $homeSubMenu);
-
-        $uberUnsMenu = new AdminMenu();
-        $uberUnsMenu->key('uber-uns')
-            ->label('Uber Uns')
-            ->route('admin.page.uber-uns');
-        $homeMenu->subMenu('uber-uns',  $uberUnsMenu);
-
-        $wirKaufenMenu = new AdminMenu();
-        $wirKaufenMenu->key('wir-kaufen')
-            ->label('Wir Kaufen')
-            ->route('admin.page.wir-kaufen');
-        $homeMenu->subMenu('wir-kaufen',  $wirKaufenMenu);
 
         /**
 

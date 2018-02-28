@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light" style="border-bottom: 1px solid #1a1a1a;">
 
     <a class="navbar-brand text-white" href="{{ route('admin.product.index') }}">
-        <p style="color: black; font-size: 24px; margin: 0;">Kaffemaschinen | Admin</p>
+        <p style="color: black; font-size: 24px; margin: 0;">Admin Panel</p>
     </a>
 
     <button class="navbar-toggler" type="button"

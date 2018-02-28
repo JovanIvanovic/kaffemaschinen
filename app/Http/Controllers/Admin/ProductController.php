@@ -121,11 +121,22 @@ class ProductController extends Controller
 
         try {
             Event::fire(new ProductBeforeSave($request));
+
             $product = Product::findorfail($id);
 
-            $product->saveProduct($request);
-            
-            Event::fire(new ProductAfterSave($product, $request));
+            if ($request->slug == $product->slug){
+                $product->saveProduct($request);
+                Event::fire(new ProductAfterSave($product, $request));
+            }
+            if ($request->slug != $product->slug){
+                $slugs = Product::all()->pluck('slug')->toArray();
+                if (!in_array($request->slug, $slugs)){
+                    $product->saveProduct($request);
+                    Event::fire(new ProductAfterSave($product, $request));
+                } else {
+                    return redirect()->back()->with('slug', __('lang.slug-unique-fail'));
+                }
+            }
 
         } catch (\Exception $e) {
             throw new \Exception('Error in Saving Product: ' . $e->getMessage());

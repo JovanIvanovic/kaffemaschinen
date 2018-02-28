@@ -9,28 +9,28 @@
         </a>
     </li>
     <li>
-        <a href="{{ URL::to('category?slug=lavazza') }}">
+        <a href="{{ URL::to('category?slug=lavazza') }}" class="{{ $__env->yieldContent('nav_active_category') == 'lavazza' ? 'active' : '' }}">
             Lavazza
         </a>
     </li>
     <li>
-        <a href="{{ URL::to('category?slug=borbone') }}">
+        <a href="{{ URL::to('category?slug=borbone') }}" class="{{ $__env->yieldContent('nav_active_category') == 'borbone' ? 'active' : '' }}">
             Borbone
         </a>
     </li>
     <li>
-        <a href="{{ URL::to('category?slug=gastro')  }}">
+        <a href="{{ URL::to('category?slug=gastro')  }}" class="{{ $__env->yieldContent('nav_active_category') == 'gastro' ? 'active' : '' }}">
             Gastro
         </a>
     </li>
 
     <li>
-        <a href="{{ URL::to('category?slug=kaffebohnen')  }}">
+        <a href="{{ URL::to('category?slug=kaffebohnen')  }}" class="{{ $__env->yieldContent('nav_active_category') == 'kaffebohnen' ? 'active' : '' }}">
             Kaffebohnen
         </a>
     </li>
     <li>
-        <a href="{{ URL::to('category?slug=zubehör') }}">
+        <a href="{{ URL::to('category?slug=zubehor') }}" class="{{ $__env->yieldContent('nav_active_category') == 'zubehor' ? 'active' : '' }}">
             Zubehör
         </a>
     </li>

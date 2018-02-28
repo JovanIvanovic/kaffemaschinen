@@ -65,8 +65,7 @@
                 <a class="prod-add" href="{{ route('contact') }}">
                     Contact us
                 </a>
-                @else @if($product->qty
-                < 1 || $product->in_stock == 0)
+                @else @if($product->qty < 1)
                     <div class="prod-info text-center" style="font-size: 30px; color: #de5421;">
                         {{ __('front.sold-out') }}
                     </div>
