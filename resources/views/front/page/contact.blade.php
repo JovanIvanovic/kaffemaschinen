@@ -42,15 +42,15 @@
                     </p>
                     <p class="contactform-field contactform-tel">
                         {{--<label class="contactform-label">Telefon</label>--}}
-                        <span class="contactform-input"><input placeholder="Ihre Telefonnummer" id="tel" type="text" name="tel" value="{{ old('tel') }}" data-required="text" required></span>
+                        <span class="contactform-input"><input placeholder="Telefonnummer" id="tel" type="text" name="tel" value="{{ old('tel') }}" data-required="text" required></span>
                     </p>
                     <p class="contactform-field contactform-email">
                         {{--<label class="contactform-label">Email</label>--}}
-                        <span class="contactform-input"><input placeholder="Ihre Emailadresse" id="email" type="text" name="email" value="{{ old('email') }}" data-required="text" data-required-email="email" required></span>
+                        <span class="contactform-input"><input placeholder="Emailadresse" id="email" type="text" name="email" value="{{ old('email') }}" data-required="text" data-required-email="email" required></span>
                     </p>
                     <p class="contactform-field contactform-textarea">
                         {{--<label class="contactform-label">Nachricht</label>--}}
-                        <span class="contactform-input"><textarea placeholder="Ihre Nachricht" id="mess" name="mess" data-required="text" required>{{ old('mess') }}</textarea></span>
+                        <span class="contactform-input"><textarea placeholder="Nachricht" id="mess" name="mess" data-required="text" required>{{ old('mess') }}</textarea></span>
                     </p>
 
                     <p class="contactform-submit">
