@@ -164,7 +164,7 @@
     </div>
 </header>
     <!-- Topmenu - end -->
-
+<div class="dim_background">
 <!-- Notification text - start -->
 @if(session()->has('notificationText') || session()->has('notificationError') || $errors->any())
 <?php $id = (isset($header)) ? "id = container-home" : ""  ?>
@@ -172,11 +172,13 @@
     <div class="row">
         <div class="col-lg-12 col-lg-offset-0 text-center">
             @if(session()->has('notificationText'))
+               <br>
                 <div class="alert alert-success alert-dismissible" role="alert">
                     {{ session()->get('notificationText') }}
                 </div>
             @endif
             @if(session()->has('notificationError'))
+               <br>
                 <div class="alert alert-warning alert-dismissible" role="alert">
                     <strong>Warrning!</strong> {{ session()->get('notificationError') }}
                 </div>
@@ -198,7 +200,7 @@
 <!-- Notification text - end -->
 
 <!-- Main Content - start -->
-<div class="dim_background">
+
     @yield('content')
 </div>
 <!-- Main Content - end -->
