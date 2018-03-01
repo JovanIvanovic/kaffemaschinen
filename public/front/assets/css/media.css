@@ -209,10 +209,10 @@
     .auth-wrap .auth-col input[type=email],
     .auth-wrap .auth-col input[type=password],
     .auth-wrap .auth-col input[type=text] {
-        width: 76%;
+        width: 100%;
     }
     .auth-wrap .auth-col input[type=submit] {
-        margin: 0 0 0 24%;
+        
     }
     .auth-wrap .auth-col .auth-lost_password {
         padding: 0 0 0 24%;
@@ -883,7 +883,6 @@
         background: #f8fafc;
     }
     .section-sb .section-sb-list {
-        display: none;
         border-top: 1px solid #e0e4f6;
     }
     .section-sb .section-sb-img {
@@ -1491,9 +1490,7 @@
     }
     .auth-wrap .auth-col label {
         width: auto;
-        display: block;
         text-align: left;
-        padding: 0 0 3px;
     }
     .auth-wrap .auth-col input[type=email],
     .auth-wrap .auth-col input[type=password],

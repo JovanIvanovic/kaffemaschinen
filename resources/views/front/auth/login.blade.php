@@ -49,11 +49,14 @@
                                         </span>
                             @endif
                         
-                       <p class="auth-submit">
-                           <input type="submit" value="Login">
-                           <input type="checkbox" name="remember_me" id="rememberme" value="forever" style="display:none;">
-                           <label for="rememberme">{{ __('front.account-remember-me') }}</label>
-                        </p>
+                       <div class="login_button">
+                          <input class="button_login" type="submit" value="Login">
+                           <div class="remember_me">
+                               <input type="checkbox" name="remember_me" id="rememberme" value="forever" style="display:none;">
+                               <label class="labelcina" for="rememberme">{{ __('front.account-remember-me') }}</label>
+                           </div>
+                           
+                        </div>
                         <p class="auth-lost_password">
                             <a href="/forgot-password">{{ __('front.account-lost-your-password') }}</a>
                         </p>

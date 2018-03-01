@@ -85,7 +85,7 @@
                             <del></del> @endif inkl. MwSt 7,7%
                         </p>
 
-                        <form method="post" action="{{ route('cart.add-to-cart') }}">
+                        <form method="post" class="single_product_form" action="{{ route('cart.add-to-cart') }}">
                             {{ csrf_field() }}
                             <input type="hidden" name="id" value="{{ $product->id }}" />
                             <input type="hidden" name="type" value="product" />

@@ -12,7 +12,7 @@
                 <div class="row">
 
                     @include('front.user.my-account.sidebar')
-                    <div class="col-sm-9 profile-info">
+                    <div class="col-sm-8 profile-info">
                         <form method="POST" action="{{ route('my-account.address.new') }}">
                             {{ csrf_field() }}
                             <div class="row space">
