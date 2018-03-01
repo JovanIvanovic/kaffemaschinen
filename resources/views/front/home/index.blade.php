@@ -7,7 +7,7 @@
 
 @section('content')
 <!-- Main Content - start -->
-<main class="dim_background">
+<main>
     <section class="container" id="pozadina" style="margin-top: 50px;">
         <!-- Slider -->
         <div class="fr-slider-wrap">

@@ -9,7 +9,7 @@
         <section class="container stylization maincont" style="padding-top: 50px;" id="pozadina">
 
 
-            <ul class="b-crumbs">
+            <ul class="b-crumbs login_crumbs">
                 <li>
                     <a href="{{ route('home') }}">
                         Home

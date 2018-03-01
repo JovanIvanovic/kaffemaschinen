@@ -13,7 +13,7 @@
             </div>
             <div class="f-menu">
                 <ul class="nav nav-pills nav-stacked">
-                    <li><a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i>Facebook</a></li>
+                    <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i>Facebook</a></li>
 
                 </ul>
             </div>
