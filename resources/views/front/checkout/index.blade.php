@@ -109,7 +109,7 @@
                                     <div class="card-header">{{ __('front.account-billing-address') }}</div>
                                     <div class="card-body">
 
-                                        <p>
+                                        <p style="color: #fff;">
                                             {{ $address->first_name }} {{ $address->last_name }}
                                             <br/>
                                             {{ $address->address1 }}<br/>
@@ -128,7 +128,7 @@
 
 
                             <div class="form-group col-sm-12" style="padding-left: 0px">
-                                <label>
+                                <label style="color: #fff;">
                                     <input type="checkbox" id="use_different_shipping_address" name="use_different_shipping_address">&nbsp;{{ __('front.different-shipping-address') }}
                                 </label>
                                 </div>
@@ -206,12 +206,13 @@
                 </div>
                 <div class="card mb-3">
                     <div class="card-body">
+                       <div style="overflow-x: auto;">
                         <table id="cart_table" class="table table-bordered table-hover table-responsive" style="margin-top: 10px">
                             <thead>
                                 <tr>
                                     <th class="text-left">{{ __('front.product-name') }}</th>
-                                    <th class="text-right hidden-xs">{{ __('front.quantity') }}</th>
-                                    <th class="text-right hidden-xs">{{ __('front.unit-price') }}</th>
+                                    <th class="text-right">{{ __('front.quantity') }}</th>
+                                    <th class="text-right">{{ __('front.unit-price') }}</th>
                                     <th class="text-right">{{ __('front.delivery_option') }}</th>
                                     <th class="text-right">{{ __('front.total') }}</th>
                                 </tr>
@@ -223,10 +224,10 @@
                                     <td class="text-left">
                                         {{ $cartItem['name'] }}
                                     </td>
-                                    <td class="text-right hidden-xs">{{ $cartItem['qty'] }}</td>
-                                    <td class="text-right hidden-xs">
+                                    <td class="text-right">{{ $cartItem['qty'] }}</td>
+                                    <td class="text-right">
                                     CHF {{ number_format($cartItem['price'],2) }}</td>
-                                    <td class="text-center hidden-xs">
+                                    <td class="text-center">
                                         {{ $cartItem['for_delivery'] ? __('front.delivery') : __('front.pick_up') }}
                                     </td>
                                     <td class="text-right">
@@ -253,7 +254,8 @@
                                 <?php $totalTax = $subTotal * 0.077; ?>
                             </tbody>
                         </table>
-                        <table class="table table-bordered table-hover table-responsive">
+                        </div>
+                        <table class="table table-bordered table-hover table-responsive" style="background: #fff;">
                             @php 
                             $total = $subTotal + $shipping;
                             $deliveryTotal = $subTotalDelivery + $shipping;
@@ -296,7 +298,7 @@
                             <textarea name="comment" rows="3" class="form-control checkout-textarea"></textarea>
 
                             <div class="buttons clearfix">
-                                <div class="float-right" style="margin:15px 0;">
+                                <div class="float-right" style="margin:15px 0; color: #fff; font-size: 13px;">
                                     <input type="checkbox" name="billing_terms_and_conditions" id="agree" />
                                     {{ __('front.i-have-read-and-agree-to-the') }}
                                     <a href="{{ $termConditionPageUrl }}" target="_blank" class="agree"><b>{{ __('front.terms-conditions') }}</b></a>
