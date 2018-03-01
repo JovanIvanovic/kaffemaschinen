@@ -21,7 +21,7 @@
             {!! substr($product->description, 0, 200) !!}...
         </div>
         @if ($product->contact_only == 1)
-            <a class="prod-add" href="{{ route('contact') }}">
+            <a class="prod-add gastro_contact_us" href="{{ route('contact') }}">
                 {{ __('front.contact-us-button') }}
             </a>
         @else
