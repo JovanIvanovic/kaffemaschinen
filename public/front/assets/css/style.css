@@ -9034,6 +9034,10 @@ Media
         width: 40%;
         margin: 20px auto!important;
     }
+    
+    .footer-wrap {
+        text-align: unset;
+    }
 
 }
 
