@@ -8847,6 +8847,68 @@ a:hover {
     height: 100%;
 }
 
+#cart_table {
+    background: #fff;
+}
+
+.card-header {
+    color: #fff;
+}
+
+.checkout-textarea {
+        display: block;
+    padding: 12px 15px;
+    background: #f8fafc;
+    color: #373d54;
+    width: 100%;
+    font-size: 14px;
+    height: 150px;
+    border: 1px solid #e0e4f6;
+    border-radius: 0;
+    transition: all 0.2s;
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 150px;
+    margin: 0 auto;
+}
+
+.checkout-submit {
+    display: block;
+    border: none;
+    transition: all 0.2s;
+    font-weight: 500;
+    background: #583520!important;
+    padding: 10px 35px;
+    color: #ffffff;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+.checkout-submit:hover {
+    background-color: #734826!important;
+}
+
+.checkout-input {
+        display: block;
+    padding: 0 15px;
+    color: #373d54!important;
+    width: 100%;
+    background: #f8fafc;
+    font-size: 14px;
+    height: 40px;
+    border: 1px solid #e0e4f6;
+    transition: all 0.2s;
+    border-radius: 0;
+}
+
+.checkout-input::placeholder {
+    text-transform: uppercase;
+    color: ;
+}
+
 /************************
     MEIDA
 ************************/
