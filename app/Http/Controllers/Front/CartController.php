@@ -119,7 +119,7 @@ class CartController extends Controller
             if ($qty > $product->qty) {
                 return JsonResponse::create([
                     'status' => false,
-                    'error' => 'Out of Stock',
+                    'error' => __('front.out-of-stock'),
                 ]);
             }
 
