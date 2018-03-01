@@ -54,7 +54,7 @@ Wir bieten eine grosse Auswahl an Kaffeeprodukten und Kaffeegeräten.">
     <!-- Logo, Shop-menu - start -->
     <div class="header_top">
         <div class="container">
-            <button type="button" class="open_special_offer" data-toggle="modal" data-target="#myModal">Top-Angebot</button>
+            <button type="button" class="open_special_offer" data-toggle="modal" data-target="#modal_button">Top-Angebot</button>
             <!-- Search - start -->
             <div class="topsearch">
                 <form class="topsearch-form" action="{{ route('all.category.view') }}" method="get" role="search">
