@@ -16,18 +16,21 @@ class MyAccountController extends Controller
 {
     public function home()
     {
+
+        $popup = Popup::where('active', 1)->first();
         $user = Auth::user();
 
         return view('front.user.my-account.home')
-            ->with('user', $user);
+            ->with('user', $user)
+            ->with('popup', $popup);
     }
 
     public function edit()
     {
         $user = Auth::user();
-
+        $popup = Popup::where('active', 1)->first();
         return view('front.user.my-account.edit')
-            ->with('user', $user);
+            ->with('user', $user)->with('popup', $popup);
     }
 
     /**
@@ -86,10 +89,10 @@ class MyAccountController extends Controller
     {
         $user = Auth::user();
         $orders = Order::where('user_id', '=', $user->id)->get();
-
+        $popup = Popup::where('active', 1)->first();
         return view('front.user.my-account.orders')
             ->with('orders', $orders)
-            ->with('user', $user);
+            ->with('user', $user)->with('popup', $popup);
     }
 
     /**
@@ -99,10 +102,10 @@ class MyAccountController extends Controller
     {
         $user = Auth::user();
         $order = Order::where('id', '=', $id)->first();
-
+        $popup = Popup::where('active', 1)->first();
         return view('front.user.my-account.orderView')
             ->with('order', $order)
-            ->with('user', $user);
+            ->with('user', $user)->with('popup', $popup);
     }
 
     /**
@@ -111,9 +114,9 @@ class MyAccountController extends Controller
     public function changePassword()
     {
         $user = Auth::user();
-
+        $popup = Popup::where('active', 1)->first();
         return view('front.user.my-account.change-password')
-            ->with('user', $user);
+            ->with('user', $user)->with('popup', $popup);
     }
 
     public function changePasswordPost(ChangePasswordRequest $request)
