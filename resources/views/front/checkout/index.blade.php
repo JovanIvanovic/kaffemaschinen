@@ -5,6 +5,21 @@
 
 @section('content')
 <div class="container">
+               <ul class="b-crumbs">
+                <li>
+                    <a href="{{ route('home') }}">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('cart.view') }}">
+                        Warenkorb
+                    </a>
+                </li>
+                <li>
+                        Zur Kasse
+                </li>
+            </ul>
     <div class="main-ttl"><span>{{ __('front.checkout') }}</span></div>
 
     @if(count($cartItems) <=  0)
