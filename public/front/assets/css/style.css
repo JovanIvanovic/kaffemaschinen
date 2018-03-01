@@ -109,9 +109,7 @@ body {
     line-height: 1;
 }
 
-body.modal-open {
-    overflow: hidden;
-}
+
 
 ol,
 ul {
@@ -138,6 +136,8 @@ table {
 
 html,
 body {
+    height: 100%;
+    min-height: 100%;
     min-width: 100%;
 }
 
