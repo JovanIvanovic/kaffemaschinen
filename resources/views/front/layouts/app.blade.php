@@ -38,11 +38,7 @@
     <!-- Logo, Shop-menu - start -->
     <div class="header_top">
         <div class="container">
-            {{--<div class="toplogo topLogo_scroller">--}}
-                {{--<a href="{{ route('home') }}">--}}
-                    {{--<img src="\front/assets/img/logo.png"/>--}}
-                {{--</a>--}}
-            {{--</div>--}}
+            <button type="button" class="open_special_offer" data-toggle="modal" data-target="#myModal">Top-Angebot</button>
             <!-- Search - start -->
             <div class="topsearch">
                 <form class="topsearch-form" action="{{ route('all.category.view') }}" method="get" role="search">

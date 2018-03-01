@@ -6,6 +6,7 @@
 		@include('front.layouts.category-tree-categories', ['categories', $categories])
 	</ul>
 </div>
+<!--
 <div class="section-filter-price">
 	<div class="price-inputs">
 		<input type="hidden" name="price_from" value="{{ old('price_from') }}">
@@ -13,4 +14,5 @@
 	</div>
 	<div class="section-filter-price" id="range-slider" data-prefix="CHF " data-grid="false"></div>
 </div>
+-->
 

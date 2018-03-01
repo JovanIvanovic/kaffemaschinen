@@ -8804,6 +8804,31 @@ a:hover {
     background-color: #734826!important;
 }
 
+.open_special_offer {
+    padding: 13px 18px 12px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    transition: all 0.2s;
+    text-transform: uppercase;
+    color: #fff;
+    background: #734826;
+    position: relative;
+    border: none;
+}
+
+.open_special_offer:hover {
+    background: rgba(115, 72, 38, 0.9);
+    color: #fff;
+}
+
+.dim_background {
+    background-color: rgba(0,0,0,0.4);
+}
+
 /************************
     MEIDA
 ************************/
@@ -8865,17 +8890,18 @@ Media
     }
     
     .topsearch {
-        width: 460px;
+        width: 400px;
+        text-align: center;
     }
     
     .auth-wrap .auth-col1 {
-    width: 40%;
-    margin: 0 auto;
+        width: 40%;
+        margin: 0 auto;
 }
     
     .auth-wrap .auth-col {
-    width: 40%;
-    margin: 0 auto;
+        width: 40%;
+        margin: 0 auto;
 }
     
 .single_product_form {
@@ -8889,6 +8915,10 @@ Media
         margin: 0;
     }
     
+    .open_special_offer {
+        display: inline-block;
+        margin: 0;
+    }
     
     
     
