@@ -27,7 +27,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light" style="border-bottom: 1px solid #1a1a1a;">
 
     <a class="navbar-brand text-white" href="{{ route('admin.product.index') }}">
-        <img src="{{ asset('back/img/admin2.png') }}" height="30" />
+<!--        <img src="{{ asset('back/img/admin2.png') }}" height="30" />-->
+       <p style="margin: 0; font-size:40px; color:#000;">Admin Panel</p>
     </a>
 
 </nav>
@@ -37,7 +38,8 @@
             <div class="card card-default">
                 <div class="card-header">
 
-                    {{ __('lang.admin-login-card-title') }}
+<!--                    {{ __('lang.admin-login-card-title') }}-->
+               <p style="margin: 0;">Administrator Anmeldung</p>
                 </div>
                 <div class="card-body" >
                     <form method="post" action="{{ route('admin.login.post') }}" >
