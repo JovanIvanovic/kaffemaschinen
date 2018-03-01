@@ -85,7 +85,7 @@
                         </div>
                     </li>
                     <li class="header_media">
-                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i>Facebook</a>
+                        <a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i>Facebook</a>
                     </li>
                 </ul>
         </div>
