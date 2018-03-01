@@ -7,6 +7,7 @@ use App\Http\Requests\ChangePasswordRequest;
 use App\Http\Requests\UploadUserImageRequest;
 use App\Http\Requests\UserProfileRequest;
 use App\Models\Database\Order;
+use App\Models\Database\Popup;
 use Illuminate\Support\Facades\Auth;
 use App\Image\Facade as Image;
 use Illuminate\Support\Facades\File;
@@ -17,7 +18,7 @@ class MyAccountController extends Controller
     public function home()
     {
 
-        $popup = Popup::where('active', 1)->first();
+        $popup = Popupp::where('active', 1)->first();
         $user = Auth::user();
 
         return view('front.user.my-account.home')
