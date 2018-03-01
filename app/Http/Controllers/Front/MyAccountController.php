@@ -18,7 +18,7 @@ class MyAccountController extends Controller
     public function home()
     {
 
-        $popup = Popupp::where('active', 1)->first();
+        $popup = Popup::where('active', 1)->first();
         $user = Auth::user();
 
         return view('front.user.my-account.home')
