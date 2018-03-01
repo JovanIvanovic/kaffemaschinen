@@ -109,6 +109,10 @@ body {
     line-height: 1;
 }
 
+body.modal-open {
+    overflow: hidden;
+}
+
 ol,
 ul {
     list-style: none;
@@ -8205,7 +8209,7 @@ Login
     color: #fff;
 }
 
-..auth-wrap .auth-col1 p a:hover {
+.auth-wrap .auth-col1 p a:hover {
     color: #fff;
 }
 

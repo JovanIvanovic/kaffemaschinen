@@ -6,6 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
 
+    <!--SEO-->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{{asset('favicon.ico')}}">
+    <meta name="theme-color" content="#583520">
+    <meta name="description" content="Kaffeemaschine ist ein Online Shop rundum für Ihren Kaffeegenuss.
+Wir bieten eine grosse Auswahl an Kaffeeprodukten und Kaffeegeräten.">
+    <meta name="keywords" content="lavazza,gastro,borbone,kaffebohnen,kaffemaschines,diverse,donna regina,">
+    <meta name="author" content="Kaffemaschines">
+    <meta name="language" content="de">
+    <meta property="og:title" content="Kaffemaschines">
+    <meta property="og:site_name" content="Kaffemaschines">
+    <meta property="og:image" content="{{asset('front/assets/img/slider/1.jpg')}}"><!-- Google kartica slika-->
+    <meta property="og:url" content="https://www.kaffemaschines.ch/">
+    <meta property="og:description" content="Kaffeemaschine ist ein Online Shop rundum für Ihren Kaffeegenuss.
+Wir bieten eine grosse Auswahl an Kaffeeprodukten und Kaffeegeräten.">
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -91,65 +107,6 @@
         </div>
     </div>
 
-
-    {{--<div class="header-middle">--}}
-        {{--<div class="container header-middle-cont">--}}
-            {{--<div class="toplogo">--}}
-                {{--<a href="{{ route('home') }}">--}}
-                    {{--<img src="/front/assets/img/logo.png">--}}
-                {{--</a>--}}
-            {{--</div>--}}
-
-            {{--<div class="shop-menu-search">--}}
-                {{--<form action="{{ route('all.category.view') }}" method="get" role="search">--}}
-                    {{--<input class="menu-search-input" name="q" type="text" placeholder="Search products">--}}
-                    {{--<button class="menu-search-button" type="submit"><i class="fa fa-search"></i></button>--}}
-                {{--</form>--}}
-            {{--</div>--}}
-
-            {{--<div class="shop-menu">--}}
-                {{--<ul>--}}
-                    {{--@if(Auth::check())--}}
-                        {{--<li id="thumbnail_photo">--}}
-                            {{--<a href="{{ route('my-account.home') }}">--}}
-                                {{--<img src="{{ $image }}" style="border-radius: 50%; width: 40px; height: 40px">--}}
-                            {{--</a>--}}
-                        {{--</li>--}}
-                        {{--<li class="topauth">--}}
-                            {{--<a href="{{ route('my-account.home') }}">--}}
-                               {{--<span class="shop-menu-ttl">{{ $name }}</span>--}}
-                            {{--</a>--}}
-                            {{--<a href="{{ route('logout') }}">--}}
-                                {{--<span class="shop-menu-ttl">Logout</span>--}}
-                            {{--</a>--}}
-                        {{--</li>--}}
-                    {{--@else--}}
-                        {{--<li class="topauth">--}}
-                            {{--<a href="{{ route('register') }}">--}}
-                                {{--<i class="fa fa-lock"></i>--}}
-                                {{--<span class="shop-menu-ttl">Registrierung</span>--}}
-                            {{--</a>--}}
-                            {{--<a href="{{ route('login') }}">--}}
-                                {{--<span class="shop-menu-ttl">Login</span>--}}
-                            {{--</a>--}}
-                        {{--</li>--}}
-                    {{--@endif--}}
-                    {{--<li>--}}
-                        {{--<div class="h-cart">--}}
-                            {{--<a href="{{ route('cart.view') }}">--}}
-                                {{--<i class="fa fa-shopping-cart"></i>--}}
-                                {{--<span class="shop-menu-ttl">Warenkorb</span>--}}
-                                {{--({{$cart}})--}}
-                            {{--</a>--}}
-                        {{--</div>--}}
-                    {{--</li>--}}
-
-                {{--</ul>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
-    <!-- Logo, Shop-menu - end -->
-
     <!-- Topmenu - start -->
     <div class="header-bottom">
         <div class="container">
@@ -163,6 +120,7 @@
         </div>
     </div>
 </header>
+
     <!-- Topmenu - end -->
 <div class="dim_background">
 <!-- Notification text - start -->
