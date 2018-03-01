@@ -256,7 +256,7 @@ Header
 
 .header_top {
     background: #583520;
-    padding: .5rem;
+    padding: 3px;
     border-bottom: 1px solid #e0e4f6;
 }
 
@@ -472,7 +472,7 @@ Header
 ----------------------------------*/
 
 .topmenu {
-    height: 60px;
+    height: 50px;
 }
 
 .topmenu:after {}
@@ -708,8 +708,8 @@ Header
     color: #fff;
     display: block;
     transition: all 0.2s;
-    padding: 23px 19px;
-    height: 60px;
+    padding: 17px 19px;
+    height: 50px;
 }
 
 .topmenu .mainmenu > li.menu-item-has-children > a {
@@ -1053,6 +1053,7 @@ Header
 .topsearch {
     display: inline-block;
     width: 100%;
+    position: relative;
 }
 
 
@@ -1098,7 +1099,7 @@ Header
     width: calc(100% - 43px);
     border: 1px solid #e0e4f6;
     background: #f8fafc;
-    height: 43px;
+    height: 37px;
     color: #373d54;
     font-size: 14px;
     padding: 0 15px;
@@ -1119,12 +1120,12 @@ Header
 }
 
 .topsearch .topsearch-form button[type=submit] {
-    height: 42.5px;
+    height: 37px;
     width: 43px;
     position: absolute;
     border: 1px solid #e0e4f6;
     border-left: none;
-    line-height: 42.5px;
+    line-height: 37px;
     background: #583520;
     color: #fff;
     transition: all .2s;
@@ -1681,9 +1682,9 @@ ul.b-crumbs {
 }
 
 .remember_me {
-    display: block;
-    /* float: left; */
-    line-height: 39px;
+    display: inline-block;
+    float: right;
+    line-height: 66px;
     text-transform: uppercase;
     position: relative;
 }
@@ -1697,6 +1698,7 @@ ul.b-crumbs {
 
 .button_login {
     margin: 10px 0;
+    display: inline-block!important;
 }
 
 .remember_me input[type=checkbox] + label:after {
@@ -1705,7 +1707,7 @@ ul.b-crumbs {
     height: 14px;
     display: block;
     position: absolute;
-    top: 39%;
+    top: 43.5%;
     margin: -7px 0 0;
     /* right: 0; */
     border: 2px solid #8890af;
@@ -1725,7 +1727,7 @@ ul.b-crumbs {
     height: 14px;
     display: block;
     position: absolute;
-    top: 40%;
+    top: 39%;
     margin: -7px 0 0;
     /* right: 0; */
     border: 2px solid #8890af;

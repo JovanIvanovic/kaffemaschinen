@@ -43,10 +43,10 @@
                 <!-- View Mode -->
                 <ul class="section-mode">
                     <li class="section-mode-gallery {{ $mode == 'grid' ? 'active' : '' }}">
-                        <a title="View mode: Gallery" href="{{ urldecode(route('all.category.view', array_merge(request()->query(), ['mode' => 'grid']), false)) }}"></a>
+                        <a title="Gallery" href="{{ urldecode(route('all.category.view', array_merge(request()->query(), ['mode' => 'grid']), false)) }}"></a>
                     </li>
                     <li class="section-mode-list {{ $mode == 'list' ? 'active' : '' }}">
-                        <a title="View mode: List" href="{{ urldecode(route('all.category.view', array_merge(request()->query(), ['mode' => 'list']), false)) }}"></a>
+                        <a title="List" href="{{ urldecode(route('all.category.view', array_merge(request()->query(), ['mode' => 'list']), false)) }}"></a>
                     </li>
                 </ul>
                 <!-- Sorting -->
