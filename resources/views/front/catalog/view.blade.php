@@ -1,10 +1,14 @@
+
 @extends('front.layouts.app')
 
-@section('nav_active_category', $category->slug)
-@section('meta_title')
-    {{ $category->name }} - Kaffemaschinen E-commerce
-@endsection
-
+@if(!isset($search))
+    @if($category)
+    @section('nav_active_category', $category->slug)
+    @section('meta_title')
+        {{ $category->name }} - Kaffemaschinen E-commerce
+    @endsection
+    @endif
+@endif
 @section('content')
 <main>
     <section class="container">
@@ -20,9 +24,13 @@
                     Shop
                 </a>
             </li>
+            @if(!isset($search))
+                @if($category)
             <li>
                 <span>{{ $category->name }}</span>
             </li>
+            @endif
+            @endif
         </ul>
         <h1 class="main-ttl"><span>Kategorie</span></h1>
         <!-- Catalog Sidebar - start -->

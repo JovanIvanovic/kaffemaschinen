@@ -168,21 +168,79 @@
                 </div>
             </div>
         </div>
+<!-- top angebote-->
+        @if ($popup != null)
+            <?php
+            if (strtotime($popup->end_date) < strtotime('now')):
 
-        <!-- Quick View Product - start -->
-        {{--
-        <div class="qview-modal">--}} {{--
-            <div class="prod-wrap">--}} {{--
+                $popup->active = 0;
+                $popup->update();
+            //shutdowns pop-up
 
-                <!-- Contact Form -->--}} {{--
+            //                unset($_COOKIE['popup_'.$popup->id]);
+            //                setcookie('popup_'.$popup->id, null, -1, '/');
+            elseif($popup->active == 1):
+            ?>
+            <div class="modal fade index_popup" id="modal_button">
+                <div class="modal-dialog modal-lg index_popup_dialog">
+                    <div class="modal-header index_popup_header">
+                        <a class="close modal_close" data-dismiss="modal">×</a>
+                        <h3 class="main-ttl-popup" style="margin-bottom:0;">
+                            <span>{{ $popup->title }}</span>
+                        </h3>
+                    </div>
+                    <div class="modal-body index_popup_body">
+                        <div class="popup_desc">{!! $popup->package->description !!}</div>
+                        <div class="popup_cover" style="background-image: url('{{ asset($popup->image) }}');">
+                            <div class="popup_cover_container">
+                                <div class="owl-carousel owl-theme">
+                                    <?php
+                                    $count = count($popup->package->products);
+                                    $i = 0;
+                                    ?>
+                                    @foreach ($popup->package->products as $product)
+                                        <?php $i++; ?>
+                                        <div class="item {{ $i == $count ? '' : 'plus_item' }}">
+                                            <a href="{{ route('product.view', $product->slug) }}">
+                                                    <span class="carousel_img" style="background-image: url('{{ asset($product->image->medUrl) }}')">
+                                                        <span class="carousel_price">CHF {{ number_format($product->price, 2) }}</span>
+                                                    </span>
+                                            </a>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <p class="f-left">Angebot gültig bis - {{ $popup->end_date->format('d/m/Y') }}</p>
+                        <form class="f-right" action="{{ route('cart.add-to-cart') }}" method="POST">
+                            {{ csrf_field() }}
 
-                <div class="auth-wrap">--}} {{--
-                    <h3 class="fat">Frage Zum Artikel</h3>--}} {{--
+                            <input type="hidden" name="id" value="{{ $popup->package->id }}"/>
+                            <input type="hidden" name="type" value="package"/>
 
-                </div>--}} {{--
-            </div>--}} {{--
-        </div>--}}
-        <!-- Quick View Product - end -->
+                            <button type="submit" class="popup_cart_add">In den warenkorb</button>
+                        </form>
+
+                        <p class="prod-i-price f-right" style="margin-right: 15px; display: inline-block; text-align: center;">
+                            <del>CHF {{ number_format($popup->package->total_price, 2) }}</del>
+
+                            <span style="color: red">{{ $popup->package->percentage_sign }}{{ $popup->package->percentage }}%</span><br>
+                            <span style="font-size:20px; color: red;">CHF {{ number_format($popup->package->price, 2) }}</span>
+                        </p>
+                        <div class="total_price f-right" style="display: inline-block; margin-right: 15px; ">
+                            <h1 style="line-height:42px; font-size: 25px; text-transform: uppercase">Total:</h1>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <?php
+            endif;
+            ?>
+
+        @endif
 
     </section>
 </main>

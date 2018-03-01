@@ -75,7 +75,7 @@
 
 @section('popup')
     <?php
-    
+
     if(session()->has('check')){
 
     }else {
@@ -162,6 +162,7 @@
     <?php
     }
     ?>
+    <!--TOP ANGEBOTE-->
     @if ($popup != null)
         <?php
         if (strtotime($popup->end_date) < strtotime('now')):
