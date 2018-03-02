@@ -4,6 +4,7 @@
 @section('meta_description','Checkout Page')
 
 @section('content')
+<main>
 <div class="container">
                <ul class="b-crumbs">
                 <li>
@@ -337,6 +338,7 @@
     </form>
     @endif
 </div>
+</main>
 @endsection
 @push('scripts')
 <script>

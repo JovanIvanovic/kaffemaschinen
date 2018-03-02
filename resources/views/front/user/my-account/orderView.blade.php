@@ -14,7 +14,7 @@
                     @include('front.user.my-account.sidebar')
 
                     <div class="col-sm-8 profile-info">
-                        <h3 class="main-ttl">Bestellansicht</h3>
+                        <h3 class="main-ttl"><span>Bestellansicht</span></h3>
                         <div class="row space">
                             <div class="auth-wrap">
                                 <h3 class="fet">Grundinformationen bestellen</h3>
@@ -23,7 +23,7 @@
                                 <label class="h5">Bestellnummer: {{ $order->orderStatusTitle  }}</label><br>
                                 <h3 class="fet" style="padding-top: 20px">Bestellinformationen</h3>
                                 <div class="table-responsive">
-                                    <table class="table">
+                                    <table class="table order_view_table">
 
                                         <thead>
                                         <tr>
@@ -53,7 +53,7 @@
                                 <div class="table-responsive row">
                                     @if (!is_null($order->shipping_address_id))
                                         <div class="col-sm-6">
-                                            <table class="table">
+                                            <table class="table order_view_table">
                                                 <thead>
                                                 <tr>
                                                     <th>{{ __('lang.order-shipping-info') }}</th>
@@ -83,7 +83,7 @@
                                         </div>
                                     @else
                                         <div class="col-sm-6">
-                                            <table class="table">
+                                            <table class="table order_view_table">
                                                 <thead>
                                                 <tr>
                                                     <th>{{ __('lang.order-shipping-info') }}</th>

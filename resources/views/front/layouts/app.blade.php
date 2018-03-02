@@ -122,8 +122,9 @@ Wir bieten eine grosse Auswahl an Kaffeeprodukten und Kaffeegeräten.">
 </header>
 
     <!-- Topmenu - end -->
-<div class="dim_background">
+
 <!-- Notification text - start -->
+<div class="alert_container">
 @if(session()->has('notificationText') || session()->has('notificationError') || $errors->any())
 <?php $id = (isset($header)) ? "id = container-home" : ""  ?>
 <div {{ $id }} class="container">
@@ -160,9 +161,9 @@ Wir bieten eine grosse Auswahl an Kaffeeprodukten und Kaffeegeräten.">
 <!-- Notification text - end -->
 
 <!-- Main Content - start -->
-<div class="dim_background">
+
     @yield('content')
-</div>
+
 @if ($popup != null)
     <?php
     if (strtotime($popup->end_date) < strtotime('now')):

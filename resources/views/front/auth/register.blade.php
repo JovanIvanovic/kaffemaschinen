@@ -27,7 +27,7 @@
                     <form class="register" role="form" method="POST" action="{{ url('/register') }}">
                         {{ csrf_field() }}
                         <p>
-                            <label for="title">{{ __('front.account-title') }}<span class="required">*</span></label>
+                            <label for="title">{{ __('front.account-title') }}<span class="required"></span></label>
                             <label class="radio-inline">
                                 <input class="herr_frau" type="radio" name="title" value="Herr" required>Herr
                             </label>

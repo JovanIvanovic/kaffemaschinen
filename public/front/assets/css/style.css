@@ -143,12 +143,16 @@ body {
 
 body {
     display: flex;
+    display: -ms-flex;
     flex-direction: column;
+    -ms-flex-direction: column;
     min-height: 100vh;
     background: url('../img/bg-coffee-beans-right-rotated.jpg') no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }
+
+
 
 
 body {
@@ -158,6 +162,20 @@ body {
 body * {
     line-height: 140%;
     box-sizing: border-box;
+}
+
+main {
+    display: block;
+    flex-grow: 1;
+    flex-shrink: 1;
+    background: rgba(0,0,0,0.3);
+}
+
+.alert_container {
+    display: block;
+    flex-grow: 1;
+    flex-shrink: 1;
+    background: rgba(0,0,0,0.3);
 }
 
 h1,
@@ -7754,6 +7772,7 @@ body .component-desc.component-desc-ct {
     background: #583520;
     border-top: 1px solid #e0e4f6;
     flex: 0 0 50px;
+    -ms-flex: 0 0 150px;
     margin-top: auto;
     text-align: center;
 }
@@ -8371,7 +8390,7 @@ Login
 ----------------------------------*/
 
 .vertical-menu {
-    border-right: 2px solid;
+    
 }
 
 #slika {
@@ -8872,7 +8891,7 @@ a:hover {
     color: #fff;
     background: #734826;
     position: relative;
-    border: none;
+    border: 1px solid #e0e4f6;
 }
 
 .open_special_offer:hover {
@@ -8946,6 +8965,21 @@ a:hover {
     color: ;
 }
 
+.single_prduct_price {
+    color: #fff!important;
+    font-family: 'Nexa Bold', sans-serif;
+    letter-spacing: .5px;
+}
+
+.fet,
+.h5 {
+    color: #fff;
+}
+
+.order_view_table {
+    background-color: #fff;
+}
+
 /************************
     MEIDA
 ************************/
@@ -8991,7 +9025,9 @@ a:hover {
 Media
 ----------------------------------*/
 
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+
+}
 
 
 
@@ -9003,7 +9039,7 @@ Media
     }
 
     .topsearch {
-        width: 400px;
+        width: 350px;
         text-align: center;
         position: relative;
     }
@@ -9053,6 +9089,7 @@ Media
     
     .footer-wrap {
         text-align: unset;
+        
     }
     
     .price_popup {

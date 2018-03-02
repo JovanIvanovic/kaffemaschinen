@@ -23,13 +23,13 @@
                                         {{ csrf_field() }}
 
                                         <p>
-                                            <input placeholder="{{ __('front.account-current-password') }}*" type="password" name="current_password" id="reg_password">
+                                            <input placeholder="{{ __('front.account-current-password') }}" type="password" name="current_password" id="reg_password">
                                         </p>
                                         <p>
-                                            <input placeholder="{{ __('front.account-new-password') }}*" type="password" name="password" id="reg_password">
+                                            <input placeholder="{{ __('front.account-new-password') }}" type="password" name="password" id="reg_password">
                                         </p>
                                         <p>
-                                            <input placeholder="{{ __('front.account-confirm-password') }}*" type="password" name="password_confirmation" id="reg_password">
+                                            <input placeholder="{{ __('front.account-confirm-password') }}" type="password" name="password_confirmation" id="reg_password">
                                         </p>
 
                                         <p class="auth-submit">

@@ -33,7 +33,7 @@
                             </div>
                         @endif
                         <p>
-                            <input placeholder="E-mail*" id="email" type="email" name="email" value="{{ old('email') }}" required autofocus>
+                            <input placeholder="E-mail" id="email" type="email" name="email" value="{{ old('email') }}" required autofocus>
                         </p>
                             @if ($errors->has('email'))
                                 <span class="help-block">
@@ -41,7 +41,7 @@
                                         </span>
                             @endif
                         <p>
-                            <input placeholder="Passwort*" id="password" type="password" name="password" required>
+                            <input placeholder="Passwort" id="password" type="password" name="password" required>
                         </p>
                             @if ($errors->has('password'))
                                 <span class="help-block">

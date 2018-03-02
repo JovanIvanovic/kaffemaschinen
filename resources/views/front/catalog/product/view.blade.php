@@ -46,10 +46,10 @@
 
             <!-- Product Description/Info -->
 
-            <h1 class="main-ttl"><span>{{ $product->name }}</span></h1>
+            
             <div class="prod-cont">
-
-                <h4 style="color: #de5421;">Artikel Nr. {{ $product->product_no }}</h4>
+                <h1 class="main-ttl"><span>{{ $product->name }}</span></h1>
+                <h4 style="color: #fff;">Artikel Nr. {{ $product->product_no }}</h4>
 
                 <br>
                 <div class="prod-cont-txt">
@@ -74,14 +74,14 @@
                     @else
 
                     <div class="prod-info">
-                        <p class="prod-price">
+                        <p class="prod-price" style="color:#fff;">
                             @if($product->discount == 1)
                             <span class="prodlist-i-price">
-                                    <b>CHF {{ number_format($product->discount_price, 2) }}</b><br>
+                                    <b class="single_prduct_price">CHF {{ number_format($product->discount_price, 2) }}</b><br>
                                     <span style="text-decoration:line-through">CHF {{ number_format($product->price,2) }}</span><span class="price-off">-{{ number_format(100-($product->discount_price/$product->price*100), 0) }}%</span><br>
                             </span>
                             @else
-                            <b>CHF {{ number_format($product->price,2) }}</b><br>
+                            <b class="single_prduct_price">CHF {{ number_format($product->price,2) }}</b><br>
                             <del></del> @endif inkl. MwSt 7,7%
                         </p>
 

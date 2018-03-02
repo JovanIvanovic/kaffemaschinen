@@ -24,7 +24,7 @@
                                     <form method="post" action="{{ route('my-account.store') }}">
                                         {{ csrf_field() }}
                                         <p>
-                                            <label for="title">{{ __('front.account-title') }}<span class="required">*</span></label>
+                                            <label for="title">{{ __('front.account-title') }}<span class="required"></span></label>
                                             <label class="radio-inline">
                                                 <input class="herr_frau" type="radio" name="title" value="Herr" @if ($user->title == 'Herr') checked @endif>Herr
                                             </label>
@@ -38,7 +38,7 @@
                                             @endif
                                         </p>
                                         <p>
-                                            <input placeholder="{{ __('front.account-first-name') }}*" id="firstname" type="text" value="{{ $user->first_name }}"
+                                            <input placeholder="{{ __('front.account-first-name') }}" id="firstname" type="text" value="{{ $user->first_name }}"
                                                    name="first_name">
                                             @if ($errors->has('first_name'))
                                                 <span class="help-block">
@@ -47,7 +47,7 @@
                                             @endif
                                         </p>
                                         <p>
-                                            <input placeholder="{{ __('front.account-last-name') }}*" id="lastname" type="text" value="{{ $user->last_name}}"
+                                            <input placeholder="{{ __('front.account-last-name') }}" id="lastname" type="text" value="{{ $user->last_name}}"
                                                    name="last_name">
                                             @if ($errors->has('last_name'))
                                                 <span class="help-block">
@@ -56,7 +56,7 @@
                                             @endif
                                         </p>
                                         <p>
-                                            <input placeholder="{{ __('front.email') }}*" id="email" type="text" disabled="true"
+                                            <input placeholder="{{ __('front.email') }}" id="email" type="text" disabled="true"
                                                    value="{{ $user->email }}"
                                                    name="email">
                                             @if ($errors->has('email'))
@@ -66,7 +66,7 @@
                                             @endif
                                         </p>
                                         <p>
-                                            <input placeholder="{{ __('front.phone') }}*" id="tel" type="text"
+                                            <input placeholder="{{ __('front.phone') }}" id="tel" type="text"
                                                    value="{{ $user->phone }}"
                                                    name="phone">
                                             @if ($errors->has('phone'))
