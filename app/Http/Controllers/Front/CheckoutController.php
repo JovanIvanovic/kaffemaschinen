@@ -26,7 +26,7 @@ class CheckoutController extends Controller
             ->with('shippingOptions', $shippingOptions)
             ->with('paymentOptions', $paymentOptions)
             ->with('hasDelivery', $hasDelivery)
-            ->with('hasPickup', $hasPickup)->with('popup', $popup)
+            ->with('hasPickup', $hasPickup)
             ->with('popup', $popup);
     }
 }
