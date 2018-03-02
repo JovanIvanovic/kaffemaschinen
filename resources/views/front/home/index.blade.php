@@ -92,7 +92,7 @@
             } elseif($popup->active == 1) {
                 ?>
             <div class="modal fade index_popup" id="myModal">
-            <div class="modal-dialog modal-lg index_popup_dialog">
+            <div class="modal-dialog modal-md index_popup_dialog">
                 <div class="modal-header index_popup_header">
                     <a class="close modal_close" data-dismiss="modal">×</a>
                     <h3 class="main-ttl-popup" style="margin-bottom:0;">
@@ -123,27 +123,42 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <p class="f-left">Angebot gültig bis - {{ $popup->end_date->format('d/m/Y') }}</p>
-                    <form class="f-right" action="{{ route('cart.add-to-cart') }}" method="POST">
-                        {{ csrf_field() }}
+                      <p class="popup_date">Angebot gültig bis - {{ $popup->end_date->format('d/m/Y') }}</p>
+                   <div class="container-fluid">
+                       <div class="row">
 
-                        <input type="hidden" name="id" value="{{ $popup->package->id }}"/>
-                        <input type="hidden" name="type" value="package"/>
+                            
+                            
+                    <div class="col-md-6 col-sm-6 price_popup">
+                        <div class="total_price" style="display: inline-block; margin-right: 15px; ">
+                            <h1 style="line-height:42px; font-size: 25px; text-transform: uppercase">Total:</h1>
+                        </div>
+                   
+                        <p class="prod-i-price" style="margin-right: 15px; display: inline-block; text-align: center; font-size:12px">
+                            <del>CHF {{ number_format($popup->package->total_price, 2) }}</del>
 
-                        <button type="submit" class="popup_cart_add">In den warenkorb</button>
-                    </form>
+                            <span style="color: red">{{ $popup->package->percentage_sign }}{{ $popup->package->percentage }}%</span><br>
+                            <span style="font-size:20px; color: red;">CHF {{ number_format($popup->package->price, 2) }}</span>
+                        </p>
+                           
+                           
+                           
+                    </div>
+                            
+                    <div class="col-md-6 col-sm-6 button_war_popup">
+                                <form class="" action="{{ route('cart.add-to-cart') }}" method="POST">
+                                    {{ csrf_field() }}
 
-                    <p class="prod-i-price f-right" style="margin-right: 15px; display: inline-block; text-align: center;">
-                        <del>CHF {{ number_format($popup->package->total_price, 2) }}</del>
+                                    <input type="hidden" name="id" value="{{ $popup->package->id }}"/>
+                                    <input type="hidden" name="type" value="package"/>
 
-                        <span style="color: red">{{ $popup->package->percentage_sign }}{{ $popup->package->percentage }}%</span><br>
-                        <span style="font-size:20px; color: red;">CHF {{ number_format($popup->package->price, 2) }}</span>
-                    </p>
-                    <div class="total_price f-right" style="display: inline-block; margin-right: 15px; ">
-                        <h1 style="line-height:42px; font-size: 25px; text-transform: uppercase">Total:</h1>
+                                    <button type="submit" class="popup_cart_add">In den warenkorb</button>
+                                </form>
+                    </div>
+
+                        </div>
                     </div>
                 </div>
-
             </div>
         </div>
             <?php
@@ -176,7 +191,7 @@
         elseif($popup->active == 1):
         ?>
             <div class="modal fade index_popup" id="modal_button">
-        <div class="modal-dialog modal-lg index_popup_dialog">
+        <div class="modal-dialog modal-md index_popup_dialog">
             <div class="modal-header index_popup_header">
                 <a class="close modal_close" data-dismiss="modal">×</a>
                 <h3 class="main-ttl-popup" style="margin-bottom:0;">
@@ -206,27 +221,44 @@
                     </div>
                 </div>
             </div>
-            <div class="modal-footer">
-                <p class="f-left">Angebot gültig bis - {{ $popup->end_date->format('d/m/Y') }}</p>
-                <form class="f-right" action="{{ route('cart.add-to-cart') }}" method="POST">
-                    {{ csrf_field() }}
+                <div class="modal-footer">
+                  
+                  <p class="popup_date">Angebot gültig bis - {{ $popup->end_date->format('d/m/Y') }}</p>
+                   <div class="container-fluid">
+                       <div class="row">
 
-                    <input type="hidden" name="id" value="{{ $popup->package->id }}"/>
-                    <input type="hidden" name="type" value="package"/>
+                            
+                            
+                    <div class="col-md-6 col-sm-6 price_popup">
+                        <div class="total_price" style="display: inline-block; margin-right: 15px; ">
+                            <h1 style="line-height:42px; font-size: 25px; text-transform: uppercase">Total:</h1>
+                        </div>
+                   
+                        <p class="prod-i-price" style="margin-right: 15px; display: inline-block; text-align: center; font-size:12px">
+                            <del>CHF {{ number_format($popup->package->total_price, 2) }}</del>
 
-                    <button type="submit" class="popup_cart_add">In den warenkorb</button>
-                </form>
+                            <span style="color: red">{{ $popup->package->percentage_sign }}{{ $popup->package->percentage }}%</span><br>
+                            <span style="font-size:20px; color: red;">CHF {{ number_format($popup->package->price, 2) }}</span>
+                        </p>
+                           
+                           
+                           
+                    </div>
+                            
+                    <div class="col-md-6 col-sm-6 button_war_popup">
+                                <form class="" action="{{ route('cart.add-to-cart') }}" method="POST">
+                                    {{ csrf_field() }}
 
-                <p class="prod-i-price f-right" style="margin-right: 15px; display: inline-block; text-align: center;">
-                    <del>CHF {{ number_format($popup->package->total_price, 2) }}</del>
+                                    <input type="hidden" name="id" value="{{ $popup->package->id }}"/>
+                                    <input type="hidden" name="type" value="package"/>
 
-                    <span style="color: red">{{ $popup->package->percentage_sign }}{{ $popup->package->percentage }}%</span><br>
-                    <span style="font-size:20px; color: red;">CHF {{ number_format($popup->package->price, 2) }}</span>
-                </p>
-                <div class="total_price f-right" style="display: inline-block; margin-right: 15px; ">
-                    <h1 style="line-height:42px; font-size: 25px; text-transform: uppercase">Total:</h1>
+                                    <button type="submit" class="popup_cart_add">In den warenkorb</button>
+                                </form>
+                    </div>
+
+                        </div>
+                    </div>
                 </div>
-            </div>
 
         </div>
     </div>

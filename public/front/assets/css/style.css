@@ -1099,7 +1099,7 @@ Header
     width: calc(100% - 43px);
     border: 1px solid #e0e4f6;
     background: #f8fafc;
-    height: 37px;
+    height: 30px;
     color: #373d54;
     font-size: 14px;
     padding: 0 15px;
@@ -1120,12 +1120,12 @@ Header
 }
 
 .topsearch .topsearch-form button[type=submit] {
-    height: 37px;
+    height: 30px;
     width: 43px;
     position: absolute;
     border: 1px solid #e0e4f6;
     border-left: none;
-    line-height: 37px;
+    line-height: 30px;
     background: #583520;
     color: #fff;
     transition: all .2s;
@@ -6154,7 +6154,7 @@ body .cart-total .cart-summ b {
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
-    height: 400px;
+    height: 300px;
     display: block;
     position: relative;
 }
@@ -6177,6 +6177,24 @@ body .cart-total .cart-summ b {
     margin: 0 15px;
 }
 
+.popup_date {
+    text-align: left;
+}
+
+.price_popup {
+    float: left;
+    display: inline-block;
+    padding-left: 0;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.button_war_popup {
+    display: inline-block;
+    padding-right: 0;
+    margin-top: 20px;
+}
+
 .owl-carousel .owl-item img {
     width: 50%;
     margin: 0 auto;
@@ -6186,7 +6204,7 @@ body .cart-total .cart-summ b {
 .owl-carousel.owl-loaded {
     position: absolute;
     width: 100%;
-    bottom: 105px;
+    bottom: 70px;
 }
 
 .carousel_img {
@@ -6194,8 +6212,8 @@ body .cart-total .cart-summ b {
     background-repeat: no-repeat;
     background-size: cover;
     display: block;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     margin: 0 auto;
     box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.3);
 }
@@ -6272,12 +6290,11 @@ body .cart-total .cart-summ b {
     display: block;
     content: '+';
     position: absolute;
-    right: -30px;
+    right: -20px;
     color: #fff;
-    font-size: 90px;
+    font-size: 60px;
     height: 100%;
-    top: 50%;
-    text-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.4);
+    top: 47%;
 }
 
 
@@ -7736,7 +7753,6 @@ body .component-desc.component-desc-ct {
 .footer-wrap {
     background: #583520;
     border-top: 1px solid #e0e4f6;
-    padding-bottom: 30px;
     flex: 0 0 50px;
     margin-top: auto;
     text-align: center;
@@ -7907,7 +7923,7 @@ body .component-desc.component-desc-ct {
 
 .f-menu-list {
     /*margin-bottom: 20px;*/
-    padding-top: 30px;
+    padding-top: 15px;
 }
 
 .f-menu-list .f-menu {
@@ -9037,6 +9053,15 @@ Media
     
     .footer-wrap {
         text-align: unset;
+    }
+    
+    .price_popup {
+        margin-top: 20px;
+    }
+    
+    .button_war_popup {
+        padding-right: 15px;
+        margin-top: 20px;
     }
 
 }
