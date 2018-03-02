@@ -2,6 +2,7 @@
         <a href="{{ route('product.view', $product->slug)}}" title="{{ $product->name }}" class="prodlist-i-img">
             @include('front.catalog.product.view.product-image',['product' => $product])
         </a>
+        
     @if($product->new_product == 1 || $product->hit_product == 1)
     <div class="prod-sticker">
         @if($product->new_product == 1)
@@ -17,6 +18,7 @@
         <h3>
             <a href="{{ route('product.view', $product->slug)}}">{{ $product->name }}</a>
         </h3>
+        <h3 class="available">Available</h3>
         <div class="prodlist-i-txt">
             {!! substr($product->description, 0, 200) !!}...
         </div>
@@ -44,6 +46,7 @@
                 </p>
                 <p class="prodlist-i-addwrap">
                     <button type="submit" class="prodlist-i-add">In den Warenkorb</button>
+                    
                 </p>
                 @if($product->discount == 1)
                     <span class="prodlist-i-price">

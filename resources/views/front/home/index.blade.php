@@ -53,6 +53,7 @@
                         <h3>
                             <a href="{{ route('product.view', $product->slug)}}" title="{{ $product->name }}">{{ $product->name }}</a>
                         </h3>
+                        <h3>Available</h3>
                         <p class="prod-i-price">
                             @if($product->discount == 1)
                                 <b>CHF {{ number_format($product->discount_price, 2) }}</b><br>
@@ -64,7 +65,7 @@
                                 <del></del>
                                 <span></span>
                             @endif
-                                <form method="post" action="{{ route('cart.add-to-cart') }}">
+                                <form method="post" action="{{ route('cart.add-to-cart') }}" style="text-align:center;">
                                     {{ csrf_field() }}
                                     <input type="hidden" name="id" value="{{ $product->id }}"/>
                                     <input type="hidden" name="type" value="product"/>

@@ -16,7 +16,9 @@
     <h3>
         <a href="{{ route('product.view', $product->slug)}}" title="{{ $product->name }}">{{ $product->name }}</a>
     </h3>
+    
     @if ($product->contact_only == 1)
+       <h3 class="available_grid">Available</h3>
         <a class="prod-add add_to_cart_gastro" href="{{ route('contact') }}">
             {{ __('front.contact-us-button') }}
         </a>
@@ -33,6 +35,7 @@
             <b>{{ __('front.sold-out') }}</b>
         </p>
     @else
+       <h3 class="available_grid">Available</h3>
         @if($product->discount == 1)
             <p class="prod-i-price">
                 <b>CHF {{ number_format($product->discount_price, 2) }}</b><br>
@@ -40,7 +43,7 @@
                 @if($product->discount == 1)
                     <span class="price-off">-{{ number_format(100-($product->discount_price/$product->price*100), 0) }}%</span>
                 @endif
-                <form method="post" action="{{ route('cart.add-to-cart') }}">
+                <form method="post" action="{{ route('cart.add-to-cart') }}" style="text-align:center;">
                     {{ csrf_field() }}
                     <input type="hidden" name="id" value="{{ $product->id }}"/>
                     <input type="hidden" name="type" value="product"/>
@@ -55,7 +58,7 @@
                 @if($product->discount == 1)
                     <span class="price-off">-{{ number_format(100-($product->discount_price/$product->price*100), 0) }}%</span>
                 @endif
-            <form method="post" action="{{ route('cart.add-to-cart') }}">
+            <form method="post" action="{{ route('cart.add-to-cart') }}" style="text-align:center;">
                 {{ csrf_field() }}
                 <input type="hidden" name="id" value="{{ $product->id }}"/>
                 <input type="hidden" name="type" value="product"/>

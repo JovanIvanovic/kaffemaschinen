@@ -2321,7 +2321,7 @@ Catalog | Gallery View
     background: #583520;
     left: -1px;
     right: -1px;
-    opacity: 0;
+    opacity: 1;
     transition: all 0.3s;
     z-index: 5000;
 }
@@ -2420,6 +2420,10 @@ Catalog | Gallery View
     margin: 0 0 10px;
     text-align: center;
     font-weight: bold;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 0 10px;
 }
 
 .prod-items .prod-i h3 a {
@@ -4779,7 +4783,7 @@ Catalog | Gallery View
     width: 32%;
     margin: 0 2% 36px 0;
     background: #fff;
-    height: 385px;
+    height: 447px;
 }
 
 .section-cont .section-items .prod-i:nth-child(3n) {
@@ -8978,6 +8982,23 @@ a:hover {
 
 .order_view_table {
     background-color: #fff;
+}
+
+.available{
+    font-size: 15px!important;
+    color: #373d54!important;
+    text-transform: uppercase!important;
+    font-weight: 500!important;
+    margin: 0!important;
+    display: inline-block;
+    line-height: 41px;
+}
+
+.available_grid{
+    font-size: 15px!important;
+    color: #373d54!important;
+    text-transform: uppercase!important;
+    font-weight: 500!important;
 }
 
 /************************
