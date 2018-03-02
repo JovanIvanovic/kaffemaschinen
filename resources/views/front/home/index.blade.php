@@ -64,15 +64,16 @@
                                 <del></del>
                                 <span></span>
                             @endif
+                                <form method="post" action="{{ route('cart.add-to-cart') }}">
+                                    {{ csrf_field() }}
+                                    <input type="hidden" name="id" value="{{ $product->id }}"/>
+                                    <input type="hidden" name="type" value="product"/>
+                        <p class="prodlist-i-addwrap">
+                            <button type="submit" class="prodlist-i-add">In den Warenkorb</button>
                         </p>
-                        <form method="post" action="{{ route('cart.add-to-cart') }}">
-                            {{ csrf_field() }}
-                            <input type="hidden" name="id" value="{{ $product->id }}"/>
-                            <input type="hidden" name="type" value="product"/>
-                            <p class="prodlist-i-addwrap">
-                                <button type="submit" class="prodlist-i-add">In den Warenkorb</button>
-                            </p>
                         </form>
+                        </p>
+
                     </div>
                 @endforeach
             </div>
