@@ -31,11 +31,15 @@
 -->
     @else
     @if($product->qty < 1)
-        <p class="prod-i-price">
+
+            <h3 class="available_grid"><span style="color:red;" >{{ __('front.unavailable') }}</span></h3>
+
+            <p class="prod-i-price">
             <b>{{ __('front.sold-out') }}</b>
         </p>
     @else
-       <h3 class="available_grid">Available</h3>
+
+       <h3 class="available_grid"><span style="color:green;" >{{ __('front.available') }}</span></h3>
         @if($product->discount == 1)
             <p class="prod-i-price">
                 <b>CHF {{ number_format($product->discount_price, 2) }}</b><br>

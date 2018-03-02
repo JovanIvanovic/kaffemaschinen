@@ -106,6 +106,8 @@ return [
     'all_done' => 'Erledigt!',
 	'contact-us-button' => 'Kontaktieren Sie uns',
     'out-of-stock' => 'nicht genug auf Lager',
+    'unavailable' => 'Nicht verfügbar',
+    'available' => 'Verfügbar',
 //
 //Save changes = Änderungen speichern (ilisamo „speichern“)     '' => '',  {{ __('front.') }}
 

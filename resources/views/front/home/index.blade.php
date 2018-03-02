@@ -53,7 +53,11 @@
                         <h3>
                             <a href="{{ route('product.view', $product->slug)}}" title="{{ $product->name }}">{{ $product->name }}</a>
                         </h3>
-                        <h3>Available</h3>
+                        @if($product->qty < 1)
+                            <h3 class="available_grid"><span style="color:red;" >{{ __('front.unavailable') }}</span></h3>
+                        @else
+                            <h3 class="available_grid"><span style="color:green;" >{{ __('front.available') }}</span></h3>
+                        @endif
                         <p class="prod-i-price">
                             @if($product->discount == 1)
                                 <b>CHF {{ number_format($product->discount_price, 2) }}</b><br>
