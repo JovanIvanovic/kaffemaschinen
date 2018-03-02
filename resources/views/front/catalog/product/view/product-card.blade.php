@@ -40,6 +40,14 @@
                 @if($product->discount == 1)
                     <span class="price-off">-{{ number_format(100-($product->discount_price/$product->price*100), 0) }}%</span>
                 @endif
+                <form method="post" action="{{ route('cart.add-to-cart') }}">
+                    {{ csrf_field() }}
+                    <input type="hidden" name="id" value="{{ $product->id }}"/>
+                    <input type="hidden" name="type" value="product"/>
+                <p class="prodlist-i-addwrap">
+                    <button type="submit" class="prodlist-i-add">In den Warenkorb</button>
+                </p>
+                </form>
             </p>
         @else
             <p class="prod-i-price">
@@ -47,6 +55,14 @@
                 @if($product->discount == 1)
                     <span class="price-off">-{{ number_format(100-($product->discount_price/$product->price*100), 0) }}%</span>
                 @endif
+            <form method="post" action="{{ route('cart.add-to-cart') }}">
+                {{ csrf_field() }}
+                <input type="hidden" name="id" value="{{ $product->id }}"/>
+                <input type="hidden" name="type" value="product"/>
+                <p class="prodlist-i-addwrap">
+                    <button type="submit" class="prodlist-i-add">In den Warenkorb</button>
+                </p>
+            </form>
             </p>
         @endif
     @endif

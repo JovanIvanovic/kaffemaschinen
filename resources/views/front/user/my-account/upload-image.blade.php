@@ -2,8 +2,8 @@
 
 @extends('front.layouts.app')
 
-@section('meta_title','Upload My Account E commerce')
-@section('meta_description','Upload My Account E commerce')
+@section('meta_title','Kundenbereich')
+@section('meta_description','Kundenbereich')
 
 @section('content')
     <main class="padd">
