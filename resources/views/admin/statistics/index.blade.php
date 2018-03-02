@@ -179,7 +179,7 @@
             firstDay: 1
         }
     }, function(start, end, label) {
-        window.location.href = "/admin?start=" + start.format("MM/DD/YYYY") + "&end=" + end.format("MM/DD/YYYY");
+        window.location.href = "/admin/statistics?start=" + start.format("MM/DD/YYYY") + "&end=" + end.format("MM/DD/YYYY");
     });
 
 
