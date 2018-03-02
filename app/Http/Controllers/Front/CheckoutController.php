@@ -20,7 +20,6 @@ class CheckoutController extends Controller
         $hasPickup = Session::get('hasPickup');
         $popup = Popup::where('active', 1)->first();
 
-        $popup = Popup::where('active', 1)->first();
         return view('front.checkout.index')
             ->with('cartItems', $cartItems)
             ->with('shippingOptions', $shippingOptions)
