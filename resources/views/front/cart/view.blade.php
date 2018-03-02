@@ -1,7 +1,7 @@
 @extends('front.layouts.app')
 
-@section('meta_title','Cart Page')
-@section('meta_description','Cart Page')
+@section('meta_title','Warenkorb')
+@section('meta_description','Warenkorb')
 
 @section('styles')
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet"/>
