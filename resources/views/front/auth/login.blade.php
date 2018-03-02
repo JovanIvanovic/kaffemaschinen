@@ -1,7 +1,7 @@
 @extends('front.layouts.app')
 
-@section('meta_title', 'Login: Schoengebraucht')
-@section('meta_description', 'My Account Management System for Schoengebraucht E Commerce')
+@section('meta_title', 'Login: Kaffemaschinen')
+@section('meta_description', 'My Account Management System for Kaffemaschinen E Commerce')
 
 @section('content')
     <!-- Main Content - start -->

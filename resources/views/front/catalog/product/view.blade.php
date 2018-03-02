@@ -1,4 +1,4 @@
-@extends('front.layouts.app') @section('meta_title') {{ $product->name }} - Schoengebraucht @endsection @section('content')
+@extends('front.layouts.app') @section('meta_title') {{ $product->name }} @endsection @section('content')
 <!-- Main Content - start -->
 <main>
     <section class="container" style="padding-top: 50px;" id="pozadina">

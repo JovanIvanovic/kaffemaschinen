@@ -5,7 +5,7 @@
     @if($category)
     @section('nav_active_category', $category->slug)
     @section('meta_title')
-        {{ $category->name }} - Kaffemaschinen E-commerce
+        {{ $category->name }}
     @endsection
     @endif
 @endif

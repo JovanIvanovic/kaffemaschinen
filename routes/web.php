@@ -14,6 +14,8 @@
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Cookie;
 
+Route::get('/phpinfo', function() { phpinfo(); });
+
 // Route::get('/luisb', function() {
 //     return view('testprotection');
 // })->name('luisb');

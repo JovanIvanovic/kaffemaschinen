@@ -105,7 +105,6 @@ return [
     'order_successfully_made' => 'Bestellung erfolgreich abgeschlossen!',
     'all_done' => 'Erledigt!',
 	'contact-us-button' => 'Kontaktieren Sie uns',
-    'out-of-stock' => 'nicht genug auf Lager',
 //
 //Save changes = Änderungen speichern (ilisamo „speichern“)     '' => '',  {{ __('front.') }}
 

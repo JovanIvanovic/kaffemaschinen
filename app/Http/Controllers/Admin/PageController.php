@@ -48,7 +48,7 @@ class PageController extends Base
 
         $image = $request->image;
         $name = time() . $image->getClientOriginalName();
-        $folder = '\front\assets\img\slider\\';
+        $folder = '/front/assets/img/slider/';
         $savePath = public_path($folder);
         Image::make($image->getRealPath())->resize(1140, 480)->save($savePath . $name);
         $dbPath = $folder . $name;
@@ -153,7 +153,7 @@ class PageController extends Base
 
         $image = $request->image;
         $name = time() . $image->getClientOriginalName();
-        $folder = '\front\assets\img\about\\';
+        $folder = '/front/assets/img/about/';
         $savePath = public_path($folder);
         Image::make($image->getRealPath())->resize(1140, 480)->save($savePath . $name);
         $dbPath = $folder . $name;

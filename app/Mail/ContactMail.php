@@ -29,7 +29,7 @@ class ContactMail extends Mailable
 
         if (isset($this->contactForm['image'])){
             foreach ($this->contactForm['image'] as $name){
-                $email->attach(storage_path().'\app\email\\'. $name);
+                $email->attach(storage_path().'/app/email/'. $name);
             }
             $email->subject('Wir Kaufen');
         }

@@ -1,7 +1,7 @@
 @extends('front.layouts.app')
 
-@section('meta_title','Checkout Page Schoengebraucht E-commerce')
-@section('meta_description','Checkout Page Schoengebraucht E-commerce')
+@section('meta_title','Checkout Page')
+@section('meta_description','Checkout Page')
 
 @section('content')
 <div class="container">

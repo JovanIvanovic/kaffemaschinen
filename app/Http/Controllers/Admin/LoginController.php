@@ -48,6 +48,6 @@ class LoginController extends AdminController
 
         $request->session()->regenerate();
 
-        return redirect('/admin');
+        return redirect('/');
     }
 }

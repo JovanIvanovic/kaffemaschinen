@@ -31,9 +31,9 @@ class OrderMail extends Mailable
 
         $pdf = PDF::loadView('front.emails.order', ['orders' => $this->orders]);
         $name = time() . '.pdf';
-        $pdf->save(storage_path().'\app\email\\'. $name);
+        $pdf->save(storage_path().'/app/email/'. $name);
 
-        $email->attach(storage_path().'\app\email\\'. $name);
+        $email->attach(storage_path().'/app/email/'. $name);
 
         $email->with([
             'orders' => $this->orders,

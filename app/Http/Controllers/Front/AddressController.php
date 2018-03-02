@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Database\Address;
 use Illuminate\Support\Facades\Auth;
-
+use App\Models\Database\Popup;
 class AddressController extends Controller
 {
     /**
@@ -15,11 +15,12 @@ class AddressController extends Controller
     public function index()
     {
         $user = Auth::user(); // LOGED IN USER
-
+        $popup = Popup::where('active', 1)->first();
         $addresses = Address::where('user_id', '=', $user->id)->get(); // VRACA ADRESE TRENUTNOG USERA IZ BAZE
 
         return view('front.address.my-account.address')
             ->with('user', $user)
+            ->with('popup', $popup)
             ->with('addresses', $addresses);
     }
 

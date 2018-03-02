@@ -5,7 +5,8 @@ function pad(n) {
 }
 
 $(document).ready(function () {
-    
+
+
     $(window).on('load', function () {
         $('#myModal').modal('show');
         $('.owl-carousel').owlCarousel({

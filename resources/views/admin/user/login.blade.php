@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Schoengebraucht Admin Login</title>
+    <title>Kaffemaschinen Admin Login</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('back/css/bootstrap.min.css') }}" rel="stylesheet">
