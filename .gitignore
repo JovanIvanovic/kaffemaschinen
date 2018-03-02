@@ -26,3 +26,4 @@ Kaffemaschinen.phpproj
 composer.lock
 composer.lock
 *.DS_Store
+*.zip
