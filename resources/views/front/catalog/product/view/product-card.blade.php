@@ -18,9 +18,11 @@
     </h3>
     
     @if ($product->contact_only == 1)
-        <a class="prod-add add_to_cart_gastro" href="{{ route('contact') }}">
+       <p class="prodlist-i-addwrap prodlist-i-addwrap_gastro">
+            <a class="prod-add add_to_cart_gastro" href="{{ route('contact') }}">
             {{ __('front.contact-us-button') }}
-        </a>
+            </a>
+        </p>
     @else
     @if($product->qty < 1)
 

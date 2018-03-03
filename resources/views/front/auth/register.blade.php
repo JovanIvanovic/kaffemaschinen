@@ -63,7 +63,7 @@
                         </p>
                         <div class="remember_me_register">
                            <input id="subscribe" type="checkbox" name="subscribe" style="display:none">
-                            <label class="labelcina" for="subscribe">{{ __('front.i-want-to-subscribe') }}<span class="required">*</span></label>
+                            <label class="labelcina" for="subscribe">{{ __('front.i-want-to-subscribe') }}<span class="required"></span></label>
                             
                         </div>
                         <p class="auth-submit">

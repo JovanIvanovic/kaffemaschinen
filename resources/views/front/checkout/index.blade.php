@@ -48,18 +48,18 @@
                         <div class="row">
                             <div class="form-group col-sm-6">
                                 {{--<label class="control-label" for="input-user-first-name">{{ __('front.account-first-name') }}*</label>--}}
-                                <input type="text" name="billing_first_name" placeholder="{{ __('front.account-first-name') }}*"
+                                <input type="text" name="billing_first_name" placeholder="{{ __('front.account-first-name') }}"
                                 id="name" class="form-control checkout-input">
                             </div>
                             <div class="form-group  col-sm-6">
                                 {{--<label class="control-label" for="input-user-last-name">{{ __('front.account-last-name') }}*</label>--}}
-                                <input type="text" name="billing_last_name" placeholder="{{ __('front.account-last-name') }}*"
+                                <input type="text" name="billing_last_name" placeholder="{{ __('front.account-last-name') }}"
                                 id="name" class="form-control checkout-input">
                             </div>
                         </div>
                         <div class="form-group">
                             {{--<label class="control-label" for="input-user-email">E-Mail*</label>--}}
-                            <input type="text" name="email" placeholder="E-Mail*"
+                            <input type="text" name="email" placeholder="E-Mail"
                             id="name" class="form-control checkout-input">
                         </div>
 
@@ -67,13 +67,13 @@
                             <div class="row">
                                 <div class="form-group  col-sm-6">
                                     {{--<label class="control-label" for="input-billing-password">{{ __('front.account-password') }}*</label>--}}
-                                    <input type="password" name="password" placeholder="{{ __('front.account-password') }}*"
+                                    <input type="password" name="password" placeholder="{{ __('front.account-password') }}"
                                     id="name" class="form-control checkout-input">
                                 </div>
                                 <div class="form-group  col-sm-6">
                                     {{--<label class="control-label" for="input-billing-confirm">{{ __('front.account-confirm-password') }}*</label>--}}
                                     <input type="password" name="password_confirmation"
-                                    placeholder="{{ __('front.account-confirm-password') }}*"
+                                    placeholder="{{ __('front.account-confirm-password') }}"
                                     id="name" class="form-control checkout-input">
                                 </div>
                             </div>
@@ -94,7 +94,7 @@
                             @if(NULL === $address)
                             <div class="form-group">
                                 {{--<label class="control-label" for="input-billing-address-1">{{ __('front.address') }}*</label>--}}
-                                <input type="text" name="billing_address" value="" placeholder="{{ __('front.address') }}*"
+                                <input type="text" name="billing_address" value="" placeholder="{{ __('front.address') }}"
                                 id="name" class="form-control checkout-input">
                             </div>
 
@@ -108,13 +108,13 @@
                                 <div class="form-group col-sm-6">
                                     {{--<label class="control-label" for="input-billing-postcode">{{ __('front.account-zip') }}*</label>--}}
                                     <input type="text" data-name="postcode" name="billing_postcode" value=""
-                                    placeholder="{{ __('front.account-zip') }}*"
+                                    placeholder="{{ __('front.account-zip') }}"
                                     id="name" class="form-control checkout-input">
                                 </div>
                                 <div class="form-group  col-sm-6">
                                     {{--<label class="control-label" for="input-billing-city">{{ __('front.account-city') }}*</label>--}}
                                     <input type="text" data-name="city" name="billing_city"
-                                    placeholder="{{ __('front.account-city') }}*"
+                                    placeholder="{{ __('front.account-city') }}"
                                     id="name" class="form-control checkout-input">
                                 </div>
                             </div>
@@ -163,13 +163,13 @@
                                         <div class="form-group  col-sm-6">
                                             {{--<label class="control-label" for="input-billing-firstname">{{ __('front.account-first-name') }}*</label>--}}
                                             <input type="text" name="shipping_first_name"
-                                            value="" placeholder="{{ __('front.account-first-name') }}*"
+                                            value="" placeholder="{{ __('front.account-first-name') }}"
                                             id="name" class="form-control checkout-input">
                                         </div>
                                         <div class="form-group  col-sm-6">
                                             {{--<label class="control-label" for="input-billing-lastname">{{ __('front.account-last-name') }}*</label>--}}
                                             <input type="text" name="shipping_last_name"
-                                            value="" placeholder="{{ __('front.account-last-name') }}*"
+                                            value="" placeholder="{{ __('front.account-last-name') }}"
                                             id="name" class="form-control checkout-input">
                                         </div>
                                     </div>
@@ -177,7 +177,7 @@
 
                                     <div class="form-group">
                                         {{--<label class="control-label" for="input-shipping-address-1">{{ __('front.account-address-1') }}*</label>--}}
-                                        <input type="text" name="shipping_address" value="" placeholder="{{ __('front.account-address-1') }}*"
+                                        <input type="text" name="shipping_address" value="" placeholder="{{ __('front.account-address-1') }}"
                                         id="name" class="form-control checkout-input">
                                     </div>
 
@@ -191,14 +191,14 @@
                                         <div class="form-group col-sm-6">
                                             {{--<label class="control-label" for="input-shipping-postcode">{{ __('front.account-zip') }}*</label>--}}
                                             <input type="text" data-name="postcode" name="shipping_postcode" value=""
-                                            placeholder="{{ __('front.account-zip') }}*"
+                                            placeholder="{{ __('front.account-zip') }}"
                                             id="name" class="form-control checkout-input">
                                         </div>
 
 
                                         <div class="form-group  col-sm-6">
                                             {{--<label class="control-label" for="input-shipping-city">{{ __('front.account-city') }}*</label>--}}
-                                            <input type="text" data-name="city" name="shipping_city" placeholder="{{ __('front.account-city') }}*"
+                                            <input type="text" data-name="city" name="shipping_city" placeholder="{{ __('front.account-city') }}"
                                             id="name" class="form-control checkout-input">
                                         </div>
                                     </div>

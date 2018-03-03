@@ -144,7 +144,7 @@
                     <ul class="cart-total">
                         <li class="cart-summ">
                             {{ __('front.total') }}: <b>CHF <span style="color: #ff0000;" class="total-sum-price">{{ number_format(($total),2) }}</span></b>
-                            <p class="cart_pdv">MwSt: 7.7%</p>
+                            <p class="cart_pdv">inkl. MwSt: 7.7%</p>
                         </li>
                     </ul>
                     <div class="cart-submit">
