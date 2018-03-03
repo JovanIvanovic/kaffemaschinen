@@ -113,6 +113,8 @@ return [
     'category-parent-category' => 'Hauptkategorie',
 
     "product.index.title" => "Artikelliste",
+    "kunden.index.title" => "Kunden",
+    "newsletter.index.title" => "Newsletter",
     "product.create.text" => "Artikel erstellen",
     'product-edit-product' => 'Erstellen',
 

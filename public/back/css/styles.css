@@ -16,7 +16,7 @@ body * {
     border: none;
     transition: all 0.2s;
     font-weight: 500;
-    background: #252525;
+    background: #583520;
     padding: 10px 35px;
     color: #ffffff;
     letter-spacing: 0.01em;
@@ -26,7 +26,7 @@ body * {
     font-size: 14px;
 }
 .btn-schoen:hover {
-    background: #656d73;
+    background: #734826;
     cursor: pointer;
     color: #ffffff;
 }
@@ -85,4 +85,20 @@ a:hover {
 }
 .status.offline {
     background-color: red;
+}
+
+.list-group-item-action:focus, .list-group-item-action:hover {
+    background: none;
+}
+
+.admin_active {
+    background: #583520;
+    color: #fff;
+    transition: all .2s;
+}
+
+.admin_active:hover {
+    background: #734826;
+    color: #fff;
+    transition: all .2s;
 }

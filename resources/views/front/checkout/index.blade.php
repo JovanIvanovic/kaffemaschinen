@@ -229,7 +229,7 @@
                                     <th class="text-left">{{ __('front.product-name') }}</th>
                                     <th class="text-right">{{ __('front.quantity') }}</th>
                                     <th class="text-right">{{ __('front.unit-price') }}</th>
-                                    <th class="text-right">{{ __('front.delivery_option') }}</th>
+<!--                                    <th class="text-right">{{ __('front.delivery_option') }}</th>-->
                                     <th class="text-right">{{ __('front.total') }}</th>
                                 </tr>
                             </thead>
@@ -243,16 +243,18 @@
                                     <td class="text-right">{{ $cartItem['qty'] }}</td>
                                     <td class="text-right">
                                     CHF {{ number_format($cartItem['price'],2) }}</td>
+<!--
                                     <td class="text-center">
                                         {{ $cartItem['for_delivery'] ? __('front.delivery') : __('front.pick_up') }}
                                     </td>
+-->
                                     <td class="text-right">
                                     CHF {{ number_format($cartItem['qty'] * $cartItem['price'], 2) }}</td>
                                 </tr>
 
                                 @if($cartItem['for_delivery'])
                                 <tr>
-                                    <td colspan="4" class="text-right">{{ __('front.delivery_cost') }}</td>
+                                    <td colspan="3" class="text-right">{{ __('front.delivery_cost') }}</td>
                                     <td class="text-right">{{ 'CHF ' . number_format($cartItem['delivery_price'], 2) }}</td>
                                 </tr>
                                 @endif

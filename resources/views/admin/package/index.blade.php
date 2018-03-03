@@ -1,3 +1,4 @@
+@php($page_name = 'Angebot')
 @extends('admin.layouts.app')
 
 @section('content')

@@ -15,13 +15,13 @@
                     <div class="list-group-sub-items-list {{ $menu->menuClass() }} ">
 
                         @foreach($subMenu as $subKey => $subMenuObj)
-                            <a class="list-group-item pl-5 list-group-item-action"
+                            <a class="list-group-item pl-5 list-group-item-action {{ $subMenuObj->label() == $page_name ? 'admin_active' : ''}}"
                                href="{{ route($subMenuObj->route()) }}">{{ $subMenuObj->label() }}</a>
                         @endforeach
                     </div>
                 </div>
             @else
-                <a class="list-group-item list-group-item-action " href="
+                <a class="list-group-item list-group-item-action {{ $menu->label() == $page_name ? 'admin_active' : ''}} " href="
                 @if("#" == $menu->route())
                         #
     @else
