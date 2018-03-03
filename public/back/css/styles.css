@@ -102,3 +102,15 @@ a:hover {
     color: #fff;
     transition: all .2s;
 }
+
+.toggle-off.btn {
+    padding-left: 24px;
+    background: #252525;
+    color: #fff;
+    cursor: pointer;
+}
+
+.toggle-on.btn {
+    padding-right: 24px;
+    cursor: pointer;
+}
