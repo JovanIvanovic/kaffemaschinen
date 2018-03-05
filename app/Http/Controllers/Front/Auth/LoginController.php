@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Front\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Mail\UserConfirmation;
-use App\Models\Database\Popup;
 use App\Models\Database\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
@@ -105,9 +104,6 @@ class LoginController extends Controller
 
     public function showLoginForm()
     {
-
-        $popup = Popup::where('active', 1)->first();
-        return view('front.auth.login')
-            ->with('popup',$popup);
+        return view('front.auth.login');
     }
 }

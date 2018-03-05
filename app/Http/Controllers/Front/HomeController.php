@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Http\Controllers\Controller;
 use App\Models\Database\Configuration;
 use App\Models\Database\Page;
 use App\Models\Database\PageHome;
 use App\Models\Database\Product;
-use App\Models\Database\Popup;
 
-class HomeController extends Base
+class HomeController extends Controller
 {
     public function index()
     {
@@ -17,7 +17,6 @@ class HomeController extends Base
         $hitAndNewProducts = Product::where('new_product', 1)->orWhere('hit_product', 1)->get();
 
         $sliders = PageHome::all();
-        $popup = Popup::where('active', 1)->first();
 
         if(null !== $pageId) {
             $pageModel = Page::find($pageId);
@@ -26,8 +25,7 @@ class HomeController extends Base
         return view('front.home.index')
             ->with('pageModel', $pageModel)
             ->with('hitAndNewProducts', $hitAndNewProducts)
-            ->with('sliders', $sliders)
-            ->with('popup', $popup);
+            ->with('sliders', $sliders);
 
     }
 }

@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Front\Auth;
 use App\Events\UserRegisteredEvent;
 use App\Http\Controllers\Controller;
 use App\Models\Database\Address;
-use App\Models\Database\Popup;
 use App\Models\Database\Subscriber;
 use App\Models\Database\User;
 use Bestmomo\LaravelEmailConfirmation\Traits\RegistersUsers;
@@ -91,11 +90,7 @@ class RegisterController extends Controller
 
         }
 
-        $popup = Popup::where('active', 1)->first();
-
-        return view('front.auth.verification',[
-            'popup' => $popup
-        ]);
+        return view('front.auth.verification');
 
     }
     /**
@@ -137,10 +132,7 @@ class RegisterController extends Controller
 
     public function showRegistrationForm()
     {
-
-        $popup = Popup::where('active', 1)->first();
-        return view('front.auth.register')
-            ->with('popup',$popup);
+        return view('front.auth.register');
     }
 
     public function verify($token)

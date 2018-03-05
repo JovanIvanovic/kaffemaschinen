@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Database\Page;
-use App\Models\Database\Popup;
 use App\Models\Database\Product;
 use App\Jobs\SendContactEmail;
 use Illuminate\Http\Request;
@@ -21,15 +20,12 @@ class ProductViewController extends Controller
 
         $product = $this->_getProductBySlug($slug);
 
-        $popup = Popup::where('active', 1)->first();
-
         $images = $product->getImages();
 
         $view = view('front.catalog.product.view')
             ->with('metaTitle', 'test')
             ->with('product', $product)
-            ->with('images', $images)
-            ->with('popup', $popup);
+            ->with('images', $images);
 
         $title = $product->page_title;
         $description = $product->page_description;

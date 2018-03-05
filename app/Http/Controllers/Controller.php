@@ -9,6 +9,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
+use App\Models\Database\Popup;
 
 
 class Controller extends BaseController
@@ -23,6 +24,9 @@ class Controller extends BaseController
             $fileViewFinder = View::getFinder();
             $fileViewFinder->prependLocation($path);
         }
+
+        $popup = Popup::where('active', 1)->first();
+        View::share('popup', $popup);
 
     }
 }

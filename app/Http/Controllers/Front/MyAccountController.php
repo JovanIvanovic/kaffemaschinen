@@ -11,26 +11,22 @@ use Illuminate\Support\Facades\Auth;
 use App\Image\Facade as Image;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
-use App\Models\Database\Popup;
 
 class MyAccountController extends Controller
 {
     public function home()
     {
         $user = Auth::user();
-        $popup = Popup::where('active', 1)->first();
 
         return view('front.user.my-account.home')
-            ->with('user', $user)
-            ->with('popup', $popup);
+            ->with('user', $user);
     }
 
     public function edit()
     {
         $user = Auth::user();
- $popup = Popup::where('active', 1)->first();
         return view('front.user.my-account.edit')
-            ->with('user', $user)->with('popup', $popup);
+            ->with('user', $user);
     }
 
     /**
@@ -89,12 +85,10 @@ class MyAccountController extends Controller
     {
         $user = Auth::user();
         $orders = Order::where('user_id', '=', $user->id)->get();
-        $popup = Popup::where('active', 1)->first();
 
         return view('front.user.my-account.orders')
             ->with('orders', $orders)
-            ->with('user', $user)
-            ->with('popup', $popup);
+            ->with('user', $user);
     }
 
     /**
@@ -104,10 +98,9 @@ class MyAccountController extends Controller
     {
         $user = Auth::user();
         $order = Order::where('id', '=', $id)->first();
- $popup = Popup::where('active', 1)->first();
         return view('front.user.my-account.orderView')
             ->with('order', $order)
-            ->with('user', $user)->with('popup', $popup);
+            ->with('user', $user);
     }
 
     /**
@@ -116,11 +109,9 @@ class MyAccountController extends Controller
     public function changePassword()
     {
         $user = Auth::user();
-        $popup = Popup::where('active', 1)->first();
         
         return view('front.user.my-account.change-password')
-            ->with('user', $user)
-            ->with('popup', $popup);
+            ->with('user', $user);
     }
 
     public function changePasswordPost(ChangePasswordRequest $request)
