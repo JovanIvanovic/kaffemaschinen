@@ -27,8 +27,9 @@
             @include('admin.forms.text',['name' => 'slug','label' => __('lang.slug')])
         @endif
     </div>
+    
     <div class="col-6">
-        @include('admin.forms.text',['name' => 'product_no','label' => __('lang.product-number')])
+        @include('admin.forms.select',['name' => 'status','label' => 'Status', 'options' => ['1' => "Online",'0' => "Offline"]])
     </div>
 </div>
 
@@ -39,9 +40,7 @@
     <div class="col-6">
         @include('admin.forms.text',['name' => 'price','label' => __('lang.order-price')])
     </div>
-    <div class="col-6">
-        @include('admin.forms.select',['name' => 'status','label' => 'Status', 'options' => ['1' => "Online",'0' => "Offline"]])
-    </div>
+
 </div>
 
 <div class="row">
@@ -82,17 +81,6 @@
 <div class="row">
     <div class="col-4">
         <div class="form-group">
-            <label for="contact_only">{{ __('lang.contact-only') }}</label>
-            <div class="checkbox">
-                <label style="margin-left: 20px;">
-                    <input id="contact_only_toggle" name="contact_only_toggle" type="checkbox" data-toggle="toggle" data-on="{{ __('front.yes') }}" data-off="{{ __('front.no') }}" @if ($model['new_product'] === 1) checked @endif>
-                    <input hidden id="contact_only" type="number" name="contact_only" value="{{ $model['contact_only'] }}" />
-                </label>
-            </div>
-        </div>
-    </div>
-    <div class="col-4">
-        <div class="form-group">
             <label for="new_product">{{ __('lang.new-product') }}</label>
             <div class="checkbox">
                 <label style="margin-left: 20px;">
@@ -109,6 +97,17 @@
                 <label style="margin-left: 20px;">
                     <input id="hit_toggle" name="hit_product_toggle" type="checkbox" data-toggle="toggle" data-on="{{ __('front.yes') }}" data-off="{{ __('front.no') }}" @if ($model['hit_product'] === 1) checked @endif>
                     <input hidden id="hit_product" type="number" name="hit_product" value="{{ $model['hit_product'] }}" />
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="form-group">
+            <label for="contact_only">{{ __('lang.contact-only') }}</label>
+            <div class="checkbox">
+                <label style="margin-left: 20px;">
+                    <input id="contact_only_toggle" name="contact_only_toggle" type="checkbox" data-toggle="toggle" data-on="{{ __('front.yes') }}" data-off="{{ __('front.no') }}" @if ($model['new_product'] === 1) checked @endif>
+                    <input hidden id="contact_only" type="number" name="contact_only" value="{{ $model['contact_only'] }}" />
                 </label>
             </div>
         </div>

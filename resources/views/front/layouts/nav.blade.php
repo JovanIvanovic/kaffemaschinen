@@ -19,6 +19,11 @@
         </a>
     </li>
     <li>
+        <a href="{{ URL::to('category?slug=mokador') }}" class="{{ $__env->yieldContent('nav_active_category') == 'mokador' ? 'active' : '' }}">
+            Mokador
+        </a>
+    </li>
+    <li>
         <a href="{{ URL::to('category?slug=gastro')  }}" class="{{ $__env->yieldContent('nav_active_category') == 'gastro' ? 'active' : '' }}">
             Gastro
         </a>
@@ -32,6 +37,11 @@
     <li>
         <a href="{{ URL::to('category?slug=zubehor') }}" class="{{ $__env->yieldContent('nav_active_category') == 'zubehor' ? 'active' : '' }}">
             Zubehör
+        </a>
+    </li>
+    <li>
+        <a href="{{ 'partner' }}" class="">
+            Partner
         </a>
     </li>
 </ul>

@@ -43,9 +43,17 @@
                                         <thead>
                                         <tr>
                                             <th>ID</th>
+                                        </tr>
+                                        <tr>
                                             <th>Titel</th>
+                                        </tr>
+                                        <tr>
                                             <th>Menge</th>
+                                        </tr>
+                                        <tr>
                                             <th>Preis</th>
+                                        </tr>
+                                        <tr>
                                             <th>Gesamt</th>
                                         </tr>
                                         </thead>

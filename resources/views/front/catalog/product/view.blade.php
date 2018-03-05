@@ -49,8 +49,14 @@
             
             <div class="prod-cont">
                 <h1 class="main-ttl"><span>{{ $product->name }}</span></h1>
-                <h4 style="color: #fff;">Artikel Nr. {{ $product->product_no }}</h4>
-
+            <!--<h4 style="color: #fff;">Artikel Nr. {{ $product->status }}</h4>-->
+                @if($product->qty < 1)
+                    <h3 class="available_grid"><span style="color:#fff;" >{{ __('front.unavailable') }}</span></h3>
+                @else
+                    <h3 class="available_grid"><span style="color:#fff;" >{{ __('front.available') }}</span></h3>
+                @endif
+                
+                
                 <br>
                 <div class="prod-cont-txt">
                     {!! $product->description !!}
