@@ -91,7 +91,11 @@ class RegisterController extends Controller
 
         }
 
-        return view('front.auth.verification');
+        $popup = Popup::where('active', 1)->first();
+
+        return view('front.auth.verification',[
+            'popup' => $popup
+        ]);
 
     }
     /**
