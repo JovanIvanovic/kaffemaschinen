@@ -119,7 +119,7 @@ INSERT INTO `categories` (`id`, `parent_id`, `name`, `slug`, `created_at`, `upda
 (28, 3, 'Mokador Cialde', 'mokador_cialde', '2017-12-07 09:12:34', '2018-02-20 09:28:46'),
 (29, 3, 'Mokador Nespresso kompatibel', 'mokador_nespresso_kompatibel', '2017-12-07 09:13:40', '2018-02-20 09:30:53'),
 (30, 3, 'Mokador Kaffebohnen', 'mokador_kaffebohnen', '2017-12-07 09:14:03', '2018-02-20 09:31:35'),
-(31, 3, 'Mokador Kaffemaschinen', 'mokador_kaffemaschinen', '2017-12-07 09:14:23', '2018-02-20 09:32:19'),
+(31, 3, 'Mokador Kaffemaschinen', 'mokador_kaffemaschinen', '2017-12-07 09:14:23', '2018-02-20 09:32:19');
 
 -- ----------------------------
 -- Table structure for category_product
