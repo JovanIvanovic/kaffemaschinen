@@ -28,6 +28,8 @@ class OrderController extends Controller
 				'billing_postcode' => 'required',
 				'billing_city' => 'required',
 				'email' => 'required|email|unique:users',
+				'is_company' => 'required',
+                'company_name' =>'required_if:is_company,1',
 				'password' => 'required|confirmed',
 				'password_confirmation' => 'required',
 				'shipping_first_name' => 'required_with:use_different_shipping_address',
@@ -55,6 +57,8 @@ class OrderController extends Controller
                 $user->title = "Her";
 				$user->first_name = request('billing_first_name');
 				$user->last_name = request('billing_last_name');
+				$user->is_company = request('is_company');
+				$user->company_name = request('company_name');
 				$user->phone = request('billing_phone');
 				$user->email = request('email');
 				$user->password = bcrypt(request('password'));
@@ -184,13 +188,13 @@ class OrderController extends Controller
 					'currency' => 'chf',
 				]);
 
-//				foreach ($cartItems as $key => $data){
-//				    $product = Product::findorfail($data['id']);
-//                    $product->qty -= $data['qty'];
-//                    $product->update();
-//                }
+				foreach ($cartItems as $key => $data){
+				    $product = Product::findorfail($data['id']);
+                    $product->qty -= $data['qty'];
+                    $product->update();
+                }
 
-                //dispatch(new SendOrderMail($orders));
+                //dispatch(new SendOrderMail($orders)); ovo aktivirati kad dobijemo info za mail;
 
 				Session::forget('cart');
 				Session::flash('order_made', __('front.order_successfully_made'));

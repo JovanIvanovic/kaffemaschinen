@@ -6174,7 +6174,7 @@ body .cart-total .cart-summ b {
 }
 
 .popup_cover {
-    background-image: url('/assets/img/popup_test_1.jpg');
+    background-image: url('../img/popup_test_1.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -6252,8 +6252,8 @@ body .cart-total .cart-summ b {
     border-radius: 50%;
     line-height: 100px;
     text-align: center;
-    transition: all .4s;
-    letter-spacing: .5px;
+    transition: all 0.4s;
+    letter-spacing: 0.5px;
     font-size: 18px;
     text-decoration: line-through;
     opacity: 0;
@@ -8222,7 +8222,8 @@ Login
 
 .auth-wrap .auth-col input[type=email],
 .auth-wrap .auth-col input[type=password],
-.auth-wrap .auth-col input[type=text] {
+.auth-wrap .auth-col input[type=text],
+.auth-wrap .auth-col select {
     padding: 0 15px;
     color: #373d54;
     background: #f8fafc;
@@ -8966,7 +8967,6 @@ a:hover {
 
 .checkout-input::placeholder {
     text-transform: uppercase;
-    color: ;
 }
 
 .single_prduct_price {

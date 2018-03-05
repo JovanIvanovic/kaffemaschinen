@@ -108,6 +108,9 @@ return [
     'out-of-stock' => 'nicht genug auf Lager',
     'unavailable' => 'Nicht verfügbar',
     'available' => 'Verfügbar',
+    'please-select' => 'Bitte auswählen',
+    'private-customer' => 'Privatkunde',
+    'business-customer' => 'Geschäftskunde',
 //
 //Save changes = Änderungen speichern (ilisamo „speichern“)     '' => '',  {{ __('front.') }}
 
