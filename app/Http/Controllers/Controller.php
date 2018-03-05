@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Database\Category;
 use App\Models\Database\Configuration;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
@@ -28,5 +29,7 @@ class Controller extends BaseController
         $popup = Popup::where('active', 1)->first();
         View::share('popup', $popup);
 
+        $navs = Category::where('parent_id', null)->get();
+        View::share('navs', $navs);
     }
 }
