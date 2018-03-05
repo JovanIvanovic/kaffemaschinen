@@ -73,6 +73,11 @@ class RegisterController extends Controller
     {
         $this->validator($request->all())->validate();
         event(new Registered($user = $this->create($request->all())));
+
+        $user->is_company = $request->is_company;
+        $user->company_name = $request->company_name;
+        $user->save();
+
         dispatch(new SendVerificationEmail($user));
 
         if ($request->subscribe){
