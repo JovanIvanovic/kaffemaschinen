@@ -96,12 +96,16 @@
         function checkCompany() {
             var check = document.getElementById('is_company');
             var action = document.getElementById('check_company');
+            var input = document.getElementById('company_name');
             var value = check.options[check.selectedIndex].value;
 
             if (value == 1) {
                 action.style.display = 'block';
+                input.setAttribute('required', '');
+
             } else {
                 action.style.display = 'none';
+                input.removeAttribute('required');
             }
         }
     </script>
