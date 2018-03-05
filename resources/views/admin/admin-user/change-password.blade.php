@@ -1,3 +1,4 @@
+@php($page_name = 'Passwort ändern')
 @extends('admin.layouts.app')
 @section('content')
     <div class="container">

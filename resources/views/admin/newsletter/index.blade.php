@@ -1,5 +1,12 @@
+@php($page_name = 'Newsletter')
 @extends('admin.layouts.app')
 @section('content')
+   
+        <h1>
+            <span class="main-title-wrap">{{ __('lang.newsletter.index.title') }}</span>
+            
+        </h1>
+   
     <div class="container">
         {!! $dataGrid->render() !!}
         <div class="text-right">

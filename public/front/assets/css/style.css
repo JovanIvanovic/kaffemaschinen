@@ -3517,15 +3517,18 @@ Catalog | Gallery View
     font-size: 14px;
     transition: all 0.2s;
     color: #fff;
-    position: relative;
-    display: inline-block;
+    display: block;
     vertical-align: top;
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+    right: 0;
+    left: 0;
 }
 
 .prod-items .prodlist-i-add {
     padding: 10px 18px 11px;
     display: inline-block;
-    margin: 0 0 15px;
     font-size: 13px;
     letter-spacing: 1px;
     font-weight: 500;
@@ -3533,7 +3536,7 @@ Catalog | Gallery View
     text-transform: uppercase;
     color: #fff;
     background: #583520;
-    position: relative;
+    margin: 0 15% 1%;
 }
 
 .prod-items .prodlist-i-notavailable {
@@ -6544,8 +6547,6 @@ body .component-ttl-ct span:after {
 body .component-desc {
     margin: 0 0 45px;
     font-size: 15px;
-    font-family: 'PT Serif';
-    font-style: italic;
     letter-spacing: 0.05em;
 }
 
@@ -8708,20 +8709,19 @@ a:hover {
 }
 
 .add_to_cart_gastro {
-    display: block;
-    border: none;
-    transition: all 0.2s;
-    font-weight: 500;
-    background: #583520;
-    padding: 10px 35px;
-    color: #ffffff;
-    letter-spacing: 0.01em;
-    cursor: pointer;
-    text-transform: uppercase;
+    padding: 10px 18px 11px;
+    display: inline-block;
+    font-size: 13px;
     letter-spacing: 1px;
-    font-size: 14px;
-    width: 100%;
-    transition: all .2s;
+    font-weight: 500;
+    transition: all 0.2s;
+    text-transform: uppercase;
+    color: #fff;
+    background: #583520;
+    position: relative;
+}
+
+.prodlist-i-addwrap_gastro {
     text-align: center;
 }
 
@@ -9001,6 +9001,20 @@ a:hover {
     font-weight: 500!important;
 }
 
+.bestel_table > tbody > tr > td {
+    background: #fff;
+}
+
+.bestel_table > tbody > tr > td > h3, .h5 {
+    color: #000;
+    margin: 0;
+}
+
+.bestel_table > tbody > tr > td:last-child {
+        border-top: 1px solid #ddd;
+}
+
+
 /************************
     MEIDA
 ************************/
@@ -9120,6 +9134,10 @@ Media
     .button_war_popup {
         padding-right: 15px;
         margin-top: 20px;
+    }
+    
+    .bestel_table {
+        width: 48%;
     }
 
 }

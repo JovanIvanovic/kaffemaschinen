@@ -17,10 +17,25 @@
                         <h3 class="main-ttl"><span>Bestellansicht</span></h3>
                         <div class="row space">
                             <div class="auth-wrap">
-                                <h3 class="fet">Grundinformationen bestellen</h3>
-                                <label class="h5">Bestellnummer: {{ $order->id }}</label><br>
+                               <table class="bestel_table">
+                                   <tr>
+                                       <td>
+                                            <h3 class="fet">Grundinformationen bestellen</h3>
+                                       </td>
+                                            
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label class="h5">Bestellnummer: {{ $order->id }}</label><br>
+                                        </td>
+                                    </tr>
+                               </table>
+                               
+                               
+                               <!--
                                 <label class="h5">Geschlossen / Offen: {{ $order->payment_option }}</label><br>
                                 <label class="h5">Bestellnummer: {{ $order->orderStatusTitle  }}</label><br>
+-->
                                 <h3 class="fet" style="padding-top: 20px">Bestellinformationen</h3>
                                 <div class="table-responsive">
                                     <table class="table order_view_table">

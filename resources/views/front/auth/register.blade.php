@@ -41,6 +41,16 @@
                             <input id="lastname" placeholder="{{ __('front.account-last-name') }}" type="text" name="last_name" value="{{ old('last_name') }}" required autofocus>
                         </p>
                         <p>
+                            <select onchange="checkCompany()" name="is_company" id="is_company">
+                                <option selected>Choose role</option>
+                                <option value="0">Covek</option>
+                                <option value="1">Firma</option>
+                            </select>
+                        </p>
+                        <p id="check_company" style="display: none">
+                            <input id="company_name" placeholder="Company name" type="text" name="company_name" value="{{ old('company_name') }}">
+                        </p>
+                        <p>
                             <input id="reg_email" placeholder="Adresse" type="text" name="address" value="{{ old('address') }}" required>
                         </p>
                         <p>
@@ -63,7 +73,7 @@
                         </p>
                         <div class="remember_me_register">
                            <input id="subscribe" type="checkbox" name="subscribe" style="display:none">
-                            <label class="labelcina" for="subscribe">{{ __('front.i-want-to-subscribe') }}<span class="required">*</span></label>
+                            <label class="labelcina" for="subscribe">{{ __('front.i-want-to-subscribe') }}<span class="required"></span></label>
                             
                         </div>
                         <p class="auth-submit">
@@ -79,4 +89,20 @@
     </main>
     <!-- Main Content - end -->
 
+@endsection
+
+@section('scripts')
+    <script>
+        function checkCompany() {
+            var check = document.getElementById('is_company');
+            var action = document.getElementById('check_company');
+            var value = check.options[check.selectedIndex].value;
+
+            if (value == 1) {
+                action.style.display = 'block';
+            } else {
+                action.style.display = 'none';
+            }
+        }
+    </script>
 @endsection

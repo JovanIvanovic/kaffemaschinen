@@ -18,10 +18,14 @@
         <h3>
             <a href="{{ route('product.view', $product->slug)}}">{{ $product->name }}</a>
         </h3>
+        
+        @if($_REQUEST['slug'] != "gastro" )
+        
         @if($product->qty < 1)
             <h3 class="available_grid"><span style="color:red;" >{{ __('front.unavailable') }}</span></h3>
         @else
             <h3 class="available_grid"><span style="color:green;" >{{ __('front.available') }}</span></h3>
+        @endif
         @endif
         <div class="prodlist-i-txt">
             {!! substr($product->description, 0, 200) !!}...

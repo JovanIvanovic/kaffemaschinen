@@ -1,3 +1,4 @@
+@php($page_name = 'Home')
 @extends('admin.layouts.app')
 @section('content')
     <div class="main-content p-3" style="margin-left: 200px; ">

@@ -1,3 +1,4 @@
+@php($page_name = 'Popup')
 @extends('admin.layouts.app')
 
 @push('styles')

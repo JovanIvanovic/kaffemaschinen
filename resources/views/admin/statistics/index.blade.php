@@ -1,3 +1,4 @@
+@php($page_name = 'Statistik')
 @extends('admin.layouts.app')
 
 @section('content')

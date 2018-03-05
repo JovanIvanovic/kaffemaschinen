@@ -91,7 +91,7 @@ return [
     'terms-conditions' => 'gelesen und akzeptiert.',
 
     'with_vat' => 'inkl. MwSt 7.7%',
-    'contain_vat' => 'enthalten 7.7% MwSt.',
+    'contain_vat' => 'inkl. MwSt 7.7%',
 
     'name_asc' => 'name a-z',
     'name_desc' => 'name z-a',

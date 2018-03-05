@@ -1,3 +1,4 @@
+@php($page_name = 'Kategorien')
 @extends('admin.layouts.app')
 
 @section('content')

@@ -1,3 +1,4 @@
+@php($page_name = 'Admin-Benutzer')
 @extends('admin.layouts.app')
 @section('content')
     <div class="container">
