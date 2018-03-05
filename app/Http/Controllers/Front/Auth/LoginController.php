@@ -106,8 +106,6 @@ class LoginController extends Controller
 
     public function showLoginForm()
     {
-        $popup = Popup::where('active', 1)->first();
-        return view('front.auth.login')
-            ->with('popup', $popup);
+        return view('front.auth.login');
     }
 }
