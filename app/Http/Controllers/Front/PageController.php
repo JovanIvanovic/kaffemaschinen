@@ -7,7 +7,6 @@ use App\Jobs\SendContactEmail;
 use App\Models\Database\Page;
 use App\Models\Database\PageUberUns;
 use App\Models\Database\PageWirKaufen;
-use App\Models\Database\Popup;
 use App\Models\Database\Subscriber;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -107,11 +106,9 @@ class PageController extends Controller
     public function contact()
     {
         $page = Page::where('slug', '=', 'contact')->first();
-        $popup = Popup::where('active', 1)->first();
 
         return view('front.page.contact')
-            ->with('page', $page)
-            ->with('popup', $popup);
+            ->with('page', $page);
     }
 
     public function sendContactEmail(Request $request)

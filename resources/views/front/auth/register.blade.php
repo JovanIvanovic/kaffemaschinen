@@ -27,6 +27,16 @@
                     <form class="register" role="form" method="POST" action="{{ url('/register') }}">
                         {{ csrf_field() }}
                         <p>
+                            <select onchange="checkCompany()" name="is_company" id="is_company">
+                                <option selected disabled>{{ __('front.please-select') }}</option>
+                                <option value="0">{{ __('front.private-customer') }}</option>
+                                <option value="1">{{ __('front.business-customer') }}</option>
+                            </select>
+                        </p>
+                        <p id="check_company" style="display: none">
+                            <input id="company_name" placeholder="Name der Firma" type="text" name="company_name" value="{{ old('company_name') }}">
+                        </p>
+                        <p>
                             <label for="title">{{ __('front.account-title') }}<span class="required"></span></label>
                             <label class="radio-inline">
                                 <input class="herr_frau" type="radio" name="title" value="Herr" required>Herr
@@ -40,6 +50,7 @@
                         <p>
                             <input id="lastname" placeholder="{{ __('front.account-last-name') }}" type="text" name="last_name" value="{{ old('last_name') }}" required autofocus>
                         </p>
+
                         <p>
                             <input id="reg_email" placeholder="Adresse" type="text" name="address" value="{{ old('address') }}" required>
                         </p>
@@ -79,4 +90,24 @@
     </main>
     <!-- Main Content - end -->
 
+@endsection
+
+@section('scripts')
+    <script>
+        function checkCompany() {
+            var check = document.getElementById('is_company');
+            var action = document.getElementById('check_company');
+            var input = document.getElementById('company_name');
+            var value = check.options[check.selectedIndex].value;
+
+            if (value == 1) {
+                action.style.display = 'block';
+                input.setAttribute('required', '');
+
+            } else {
+                action.style.display = 'none';
+                input.removeAttribute('required');
+            }
+        }
+    </script>
 @endsection

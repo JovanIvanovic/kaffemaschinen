@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Front;
 
-use App\Models\Database\Popup;
 use DB;
 use App\Http\Controllers\Controller;
 use App\Models\Database\Category;
@@ -36,14 +35,12 @@ class CategoryViewController extends Controller
             $request->flash();
 
             $search = 1;
-            $popup = Popup::where('active', 1)->first();
             return view('front.catalog.view')
                 ->with('params', $request->all())
                 ->with('products', $products)
                 ->with('mode', $mode)
                 ->with('maxPrice', $maxPrice)
-                ->with('search', $search)
-                ->with('popup', $popup);
+                ->with('search', $search);
         }
 
         if ($request->has('price_from') && $request->has('price_to')) {
@@ -58,7 +55,6 @@ class CategoryViewController extends Controller
 
         $collection = isset($orderBy) ? $collection->orderBy(getBeforeLastChar($orderBy, '_'), getAfterLastChar($orderBy, '_')) : $collection;
         $products = $collection->where('status', '=', '1')->paginate($view);
-        $popup = Popup::where('active', 1)->first();
 
         $request->flash();
 
@@ -67,8 +63,7 @@ class CategoryViewController extends Controller
             ->with('products', $products)
             ->with('mode', $mode)
             ->with('maxPrice', $maxPrice)
-            ->with('category', isset($category) ? $category : null)
-            ->with('popup', $popup);
+            ->with('category', isset($category) ? $category : null);
     }
 
     public function getPriceRanges(Request $request)

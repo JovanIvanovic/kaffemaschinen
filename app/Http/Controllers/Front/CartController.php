@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
-use App\Models\Database\Popup;
 use App\Models\Database\Product;
 use App\Models\Database\Package;
 use Illuminate\Http\Request;
@@ -104,10 +103,8 @@ class CartController extends Controller
             }
             $cartItems = $arr;
         }
-        $popup = Popup::where('active', 1)->first();
         return view('front.cart.view')
-            ->with('cartItems', $cartItems)
-            ->with('popup', $popup);
+            ->with('cartItems', $cartItems);
             
     }
 
