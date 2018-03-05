@@ -90,36 +90,35 @@ CREATE TABLE `categories` (
 -- ----------------------------
 -- Records of categories
 -- ----------------------------
-INSERT INTO `categories` (`id`, `parent_id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
-(1, NULL, 'Lavazza', 'lavazza', '2017-12-07 09:04:17', '2018-02-20 09:25:59'),
-(2, NULL, 'Borbone', 'borbone', '2017-12-07 09:04:56', '2018-02-20 09:26:11'),
-(3, NULL, 'Mokador', 'mokador', '2017-12-07 09:04:56', '2018-02-20 09:26:11'),
-(4, NULL, 'Gastro', 'gastro', '2017-12-07 09:07:56', '2018-02-20 09:26:22'),
-(5, NULL, 'Kaffebohnen', 'kaffebohnen', '2017-12-07 09:08:17', '2018-02-24 11:54:40'),
-(6, NULL, 'Zubehör', 'zubehor', '2018-02-20 12:36:55', '2018-02-20 12:36:55');
-(9, 1, 'Lavazza Point', 'lavazza_point', '2017-12-07 09:11:48', '2018-02-20 09:27:44'),
-(10, 1, 'Lavazza Blu', 'lavazza_blu', '2017-12-07 09:12:03', '2018-02-20 09:28:06'),
-(11, 1, 'Lavazza A modo mio', 'lavazza_a_modo_mio', '2017-12-07 09:12:34', '2018-02-20 09:28:46'),
-(12, 1, 'Lavazza Cialde', 'lavazza_cialde', '2017-12-07 09:13:40', '2018-02-20 09:30:53'),
-(13, 1, 'Lavazza Nesrpresso kompatibel', 'lavazza_nesrpresso_kompatibel', '2017-12-07 09:14:03', '2018-02-20 09:31:35'),
-(14, 1, 'Lavazza Kaffemaschinen', 'lavazza_kaffemaschinen', '2017-12-07 09:14:23', '2018-02-20 09:32:19'),
-(15, 2, 'Borbone Cialde', 'borbone_cialde', '2018-02-20 09:33:14', '2018-02-20 09:33:14'),
-(16, 2, 'Borbone Nespresso kompatibel', 'borbone_nespresso_kompatibel', '2018-02-20 09:45:09', '2018-02-20 09:45:09'),
-(17, 2, 'Borbone Lavazza kompatibel', 'borbone_lavazza_kompatibel', '2018-02-20 09:45:09', '2018-02-20 09:45:52'),
-(18, 2, 'Borbone A modo mio kompatibel', 'borbone_a_modo_mio_kompatibel', '2018-02-20 09:45:09', '2018-02-20 09:46:13'),
-(19, 2, 'Borbone Dolce Gusto kompatibel', 'borbone_dolce_gusto_kompatibel', '2018-02-20 09:45:09', '2018-02-20 09:46:30'),
-(20, 2, 'Borbone Donna Regina', 'borbone_donna_regina', '2018-02-20 09:45:09', '2018-02-20 10:02:08'),
-(21, 2, 'Borbone Kafemaschinen', 'borbone_kafemaschinen', '2018-02-20 09:45:09', '2018-02-20 10:02:17'),
-(22, 4, 'Gastro Kaffemaschinen', 'gastro_kaffemaschinen', '2018-02-20 10:10:55', '2018-02-20 10:10:55'),
-(23, 4, 'Gastro Kaffemühlen', 'gastro_kaffemühlen', '2018-02-20 10:10:55', '2018-02-20 10:10:55'),
-(24, 5, 'Kaffeebohnen Borbone', 'kaffeebohnen_orbone', '2018-02-20 10:13:13', '2018-02-20 10:13:13'),
-(25, 5, 'Kaffeebohnen Lavazza', 'kaffeebohnen_lavazza', '2018-02-20 10:13:13', '2018-02-20 10:13:13'),
-(26, 5, 'Kaffeebohnen Diverse', 'kaffeebohnen_diverse', '2018-02-20 10:13:13', '2018-02-20 10:13:13'),
-(27, 3, 'Mokador Kapseln', 'mokador_kapseln', '2017-12-07 09:12:03', '2018-02-20 09:28:06'),
-(28, 3, 'Mokador Cialde', 'mokador_cialde', '2017-12-07 09:12:34', '2018-02-20 09:28:46'),
-(29, 3, 'Mokador Nespresso kompatibel', 'mokador_nespresso_kompatibel', '2017-12-07 09:13:40', '2018-02-20 09:30:53'),
-(30, 3, 'Mokador Kaffebohnen', 'mokador_kaffebohnen', '2017-12-07 09:14:03', '2018-02-20 09:31:35'),
-(31, 3, 'Mokador Kaffemaschinen', 'mokador_kaffemaschinen', '2017-12-07 09:14:23', '2018-02-20 09:32:19');
+INSERT INTO `categories` VALUES (1, NULL, 'Lavazza', 'lavazza', '2017-12-07 09:04:17', '2018-02-20 09:25:59');
+INSERT INTO `categories` VALUES (2, NULL, 'Borbone', 'borbone', '2017-12-07 09:04:56', '2018-02-20 09:26:11');
+INSERT INTO `categories` VALUES (3, NULL, 'Mokador', 'mokador', '2017-12-07 09:04:56', '2018-02-20 09:26:11');
+INSERT INTO `categories` VALUES (4, NULL, 'Gastro', 'gastro', '2017-12-07 09:07:56', '2018-02-20 09:26:22');
+INSERT INTO `categories` VALUES (5, NULL, 'Kaffebohnen', 'kaffebohnen', '2017-12-07 09:08:17', '2018-02-24 11:54:40');
+INSERT INTO `categories` VALUES (6, NULL, 'Zubehör', 'zubehor', '2018-02-20 12:36:55', '2018-02-20 12:36:55');
+INSERT INTO `categories` VALUES (9, 1, 'Lavazza Point', 'lavazza_point', '2017-12-07 09:11:48', '2018-02-20 09:27:44');
+INSERT INTO `categories` VALUES (10, 1, 'Lavazza Blu', 'lavazza_blu', '2017-12-07 09:12:03', '2018-02-20 09:28:06');
+INSERT INTO `categories` VALUES (11, 1, 'Lavazza A modo mio', 'lavazza_a_modo_mio', '2017-12-07 09:12:34', '2018-02-20 09:28:46');
+INSERT INTO `categories` VALUES (12, 1, 'Lavazza Cialde', 'lavazza_cialde', '2017-12-07 09:13:40', '2018-02-20 09:30:53');
+INSERT INTO `categories` VALUES (13, 1, 'Lavazza Nesrpresso kompatibel', 'lavazza_nesrpresso_kompatibel', '2017-12-07 09:14:03', '2018-02-20 09:31:35');
+INSERT INTO `categories` VALUES (14, 1, 'Lavazza Kaffemaschinen', 'lavazza_kaffemaschinen', '2017-12-07 09:14:23', '2018-02-20 09:32:19');
+INSERT INTO `categories` VALUES (15, 2, 'Borbone Cialde', 'borbone_cialde', '2018-02-20 09:33:14', '2018-02-20 09:33:14');
+INSERT INTO `categories` VALUES (16, 2, 'Borbone Nespresso kompatibel', 'borbone_nespresso_kompatibel', '2018-02-20 09:45:09', '2018-02-20 09:45:09');
+INSERT INTO `categories` VALUES (17, 2, 'Borbone Lavazza kompatibel', 'borbone_lavazza_kompatibel', '2018-02-20 09:45:09', '2018-02-20 09:45:52');
+INSERT INTO `categories` VALUES (18, 2, 'Borbone A modo mio kompatibel', 'borbone_a_modo_mio_kompatibel', '2018-02-20 09:45:09', '2018-02-20 09:46:13');
+INSERT INTO `categories` VALUES (19, 2, 'Borbone Dolce Gusto kompatibel', 'borbone_dolce_gusto_kompatibel', '2018-02-20 09:45:09', '2018-02-20 09:46:30');
+INSERT INTO `categories` VALUES (20, 2, 'Borbone Donna Regina', 'borbone_donna_regina', '2018-02-20 09:45:09', '2018-02-20 10:02:08');
+INSERT INTO `categories` VALUES (21, 2, 'Borbone Kafemaschinen', 'borbone_kafemaschinen', '2018-02-20 09:45:09', '2018-02-20 10:02:17');
+INSERT INTO `categories` VALUES (22, 4, 'Gastro Kaffemaschinen', 'gastro_kaffemaschinen', '2018-02-20 10:10:55', '2018-02-20 10:10:55');
+INSERT INTO `categories` VALUES (23, 4, 'Gastro Kaffemühlen', 'gastro_kaffemühlen', '2018-02-20 10:10:55', '2018-02-20 10:10:55');
+INSERT INTO `categories` VALUES (24, 5, 'Kaffeebohnen Borbone', 'kaffeebohnen_orbone', '2018-02-20 10:13:13', '2018-02-20 10:13:13');
+INSERT INTO `categories` VALUES (25, 5, 'Kaffeebohnen Lavazza', 'kaffeebohnen_lavazza', '2018-02-20 10:13:13', '2018-02-20 10:13:13');
+INSERT INTO `categories` VALUES (26, 5, 'Kaffeebohnen Diverse', 'kaffeebohnen_diverse', '2018-02-20 10:13:13', '2018-02-20 10:13:13');
+INSERT INTO `categories` VALUES (27, 3, 'Mokador Kapseln', 'mokador_kapseln', '2017-12-07 09:12:03', '2018-02-20 09:28:06');
+INSERT INTO `categories` VALUES (28, 3, 'Mokador Cialde', 'mokador_cialde', '2017-12-07 09:12:34', '2018-02-20 09:28:46');
+INSERT INTO `categories` VALUES (29, 3, 'Mokador Nespresso kompatibel', 'mokador_nespresso_kompatibel', '2017-12-07 09:13:40', '2018-02-20 09:30:53');
+INSERT INTO `categories` VALUES (30, 3, 'Mokador Kaffebohnen', 'mokador_kaffebohnen', '2017-12-07 09:14:03', '2018-02-20 09:31:35');
+INSERT INTO `categories` VALUES (31, 3, 'Mokador Kaffemaschinen', 'mokador_kaffemaschinen', '2017-12-07 09:14:23', '2018-02-20 09:32:19');
 
 -- ----------------------------
 -- Table structure for category_product
