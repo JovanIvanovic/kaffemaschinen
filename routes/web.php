@@ -91,6 +91,8 @@ Route::get('/phpinfo', function() { phpinfo(); });
             Route::get('/page/{slug}', ['as' => 'page.show', 'uses' => 'PageController@show']);
 
             Route::post('/subscribe', ['as' => 'subscribe', 'uses' => 'PageController@subscribe']);
+
+            Route::get('/partner', ['as' => 'page.partner', 'uses' => 'PageController@partner']);
         });
 
     Route::middleware(['web'])

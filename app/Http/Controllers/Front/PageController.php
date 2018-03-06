@@ -146,4 +146,8 @@ class PageController extends Controller
         return redirect()->back()
             ->with('notificationText', __('front.subscribe-success-sent'));
     }
+    public function partner(){
+
+        return view('front.page.partner');
+    }
 }

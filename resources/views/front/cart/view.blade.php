@@ -67,7 +67,10 @@
                                                 <a href="{{ route('product.view', $cartItem['slug'])}}">{{ $cartItem['name'] }}</a>
                                                 <p>Status: <span class="text-success"><strong>{{ __('front.in-stock') }}</strong></span></p>
                                             </td>
-                                            <?php $total += ($cartItem['price'] * $cartItem['qty']) + $cartItem['delivery_price']; ?>
+                                            <?php ($cartItem['price'] < 100) ? $cena = $cartItem['price'] + 8.5 : $cena = $cartItem['price']  ?>
+
+
+                                            <?php $total += ($cena * $cartItem['qty']) + $cartItem['delivery_price']; ?>
 
                                             <td class="cart-price price">
                                                 <b>CHF <span style="color: #252525;">{{ number_format($cartItem['price'],2) }}</span></b>
@@ -109,6 +112,7 @@
                                                     <p><span style="color: #aaa;">{{ $product->name }} - <del>CHF {{ $product->price }}</del></span></p>
                                                 @endforeach
                                             </td>
+
                                             <?php $total += ($cartItem['price'] * $cartItem['qty']) + $cartItem['delivery_price']; ?>
 
                                             <td class="cart-price price">
@@ -127,10 +131,10 @@
                                             </td>
                                             <td class="cart-summ price-and-quantity">
                                                 <b>CHF <span style="color: #252525;" class="paq">{{ number_format($cartItem['price'] * $cartItem['qty'] ,2)}}</span></b>
-                                                <section class="single-tax">
-                                                    <span style="color: #252525;">CHF</span>
-                                                    <span style="color: #252525;">test</span> // umesto postarine iz baze promenjeno u test jer nema vise to polje u bazi. RESITI i obrisati JS!
-                                                </section>
+                                                {{--<section class="single-tax">--}}
+                                                    {{--<span style="color: #252525;">CHF</span>--}}
+                                                    {{--<span style="color: #252525;">test</span> // umesto postarine iz baze promenjeno u test jer nema vise to polje u bazi. RESITI i obrisati JS!--}}
+                                                {{--</section>--}}
                                             </td>
                                             <td class="cart-del">
                                                 <a class="cart-remove" href="{{ route('cart.destroy', ['id' => $cartItem['id'], 'type' => $type])}}"></a>
@@ -142,9 +146,13 @@
                         </table>
                     </div>
                     <ul class="cart-total">
+                        <li class="notification" style="float: left;">
+                            If cart sum is lower than 100CHF shipping price is included
+                        </li>
                         <li class="cart-summ">
                             {{ __('front.total') }}: <b>CHF <span style="color: #ff0000;" class="total-sum-price">{{ number_format(($total),2) }}</span></b>
-                            <p class="cart_pdv">inkl. MwSt: 7.7%</p>
+                            <?php echo ($cartItem['price'] < 100) ? '<p class="cart_pdv">Shipping price included</p>' : '<p class="cart_pdv">Shipping price not included</p>' ?>
+
                         </li>
                     </ul>
                     <div class="cart-submit">

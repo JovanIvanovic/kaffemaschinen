@@ -4,7 +4,7 @@
 @section('content')
     <div class="container">
         <div class="h1">
-            {{ __('lang.category.index.title') }} <span class="text-muted" style="font-size: 18px">(Die maximale Anzahl der Hauptkategorien ist 11)</span>
+            {{ __('lang.category.index.title') }} <span class="text-muted" style="font-size: 18px">(Die maximale Anzahl der Hauptkategorien ist 9)</span>
             <a style="" href="{{ route('admin.category.create') }}" class="btn-schoen float-right">{{ __('lang.category.index.create') }}</a>
         </div>
 
