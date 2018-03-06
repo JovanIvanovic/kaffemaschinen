@@ -74,7 +74,7 @@ return [
     'start-shopping' => 'beginnend mit dem Kauf',
     'continue-shopping' => 'mit dem Einkaufen fortfahren',
     'checkout' => 'Zur Kasse',
-    'personal-details' => 'Deine Persönlichen Details',
+    'personal-details' => 'Ihre Angaben',
     'unit-price' => 'Einzelpreis',
     'sub-total' => 'Zwischensumme',
     'shipping-option' => 'Versandkosten',
