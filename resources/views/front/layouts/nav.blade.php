@@ -14,5 +14,10 @@
         </a>
     </li>
     @endforeach
+    <li>
+        <a href="{{ 'partner' }}" class="">
+            Partner
+        </a>
+    </li>
 </ul>
 <!-- Main menu - end -->
