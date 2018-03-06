@@ -50,7 +50,7 @@
             <div class="prod-cont">
                 <h1 class="main-ttl"><span>{{ $product->name }}</span></h1>
             <!--<h4 style="color: #fff;">Artikel Nr. {{ $product->status }}</h4>-->
-                @if($product->qty < 1)
+                @if(!$product->available)
                     <h3 class="available_grid"><span style="color:#fff;" >{{ __('front.unavailable') }}</span></h3>
                 @else
                     <h3 class="available_grid"><span style="color:#fff;" >{{ __('front.available') }}</span></h3>
@@ -65,7 +65,7 @@
 
                 @if ($product->has_packaging == true)
                 <div class="prod-info">
-                    {{ __('front.packaging') }} : &nbsp;{{ $product->packaging }}
+                    {{ __('front.packaging', ['num' => $product->packaging]) }}
                 </div>
                 @endif
                 @if ($product->contact_only == 1)
@@ -73,9 +73,9 @@
                     {{ __('front.contact-us-button') }}
                 </a>
                 @else
-                    @if($product->qty < 1)
-                    <div class="prod-info text-center" style="font-size: 30px; color: #de5421;">
-                        {{ __('front.sold-out') }}
+                    @if(!$product->available)
+                    <div class="prod-info text-center" style="font-size: 30px; color: #fff; word-wrap: break-word;">
+                        {{ $product->unavailable_text }}
                     </div>
                     @else
 
@@ -88,7 +88,9 @@
                             </span>
                             @else
                             <b class="single_prduct_price">CHF {{ number_format($product->price,2) }}</b><br>
-                            <del></del> @endif inkl. MwSt 7,7%
+                            <del></del>
+                            @endif
+                            inkl. MwSt {{ number_format($product->pdv, 1) }}%
                         </p>
 
                         <form method="post" class="single_product_form" action="{{ route('cart.add-to-cart') }}">

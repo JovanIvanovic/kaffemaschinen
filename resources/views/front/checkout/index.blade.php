@@ -66,7 +66,7 @@
                                 </select>
                             </div>
                             <div class="form-group col-sm-6" id="check_company" style="display: none;">
-                                <input id="company_name" class="form-control checkout-input" placeholder="Company name" type="text" name="company_name" value="{{ old('company_name') }}">
+                                <input id="company_name" class="form-control checkout-input" placeholder="Unternehmen" type="text" name="company_name" value="{{ old('company_name') }}">
                             </div>
                         </div>
                         <div class="form-group">
@@ -330,9 +330,7 @@
                             <div class="buttons clearfix">
                                 <div class="float-right" style="margin:15px 0; color: #fff; font-size: 13px;">
                                     <input type="checkbox" name="billing_terms_and_conditions" id="agree" />
-                                    {{ __('front.i-have-read-and-agree-to-the') }}
-                                    <a href="{{ $termConditionPageUrl }}" target="_blank" class="agree"><b>{{ __('front.terms-conditions') }}</b></a>
-                                    &nbsp;
+                                    Ich habe die <a href="{{ $termConditionPageUrl }}" target="_blank" class="agree"><b>AGB's</b></a> gelesen und akzeptiert.                                    &nbsp;
                                 </div>
                             </div>
 

@@ -56,7 +56,7 @@ return [
     'product-name' => 'Produktname',
     'product-per-page' => 'Produkt pro Seite',
 
-    'packaging' => 'Stück pro Verpackung',
+    'packaging' => 'Karton à :num Stück',
     'product' => 'Produkt',
     'package' => 'Angebot',
     'delivery' => 'Lieferung',
@@ -106,7 +106,7 @@ return [
     'all_done' => 'Erledigt!',
 	'contact-us-button' => 'Kontaktieren Sie uns',
     'out-of-stock' => 'nicht genug auf Lager',
-    'unavailable' => 'Nicht verfügbar',
+    'unavailable' => 'Ausverkauft',
     'available' => 'Verfügbar',
     'please-select' => 'Bitte auswählen',
     'private-customer' => 'Privatkunde',

@@ -129,7 +129,7 @@
                                                 <b>CHF <span style="color: #252525;" class="paq">{{ number_format($cartItem['price'] * $cartItem['qty'] ,2)}}</span></b>
                                                 <section class="single-tax">
                                                     <span style="color: #252525;">CHF</span>
-                                                    <span style="color: #252525;">{{ $cartItem['delivery_price'] ? $cartItem['delivery_price'] : '' }}</span>
+                                                    <span style="color: #252525;">test</span> // umesto postarine iz baze promenjeno u test jer nema vise to polje u bazi. RESITI i obrisati JS!
                                                 </section>
                                             </td>
                                             <td class="cart-del">

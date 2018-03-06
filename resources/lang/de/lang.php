@@ -64,10 +64,12 @@ return [
     'body' => 'Inhalt',
     'banner-name' => 'Banner Titel',
     'color' => 'Farbe',
+    'message' => 'Nachricht',
     'statistics' => 'Statistik',
     'title' => 'Titel',
-    'has-packaging' => 'Verpackung',
-    'packaging' => 'Menge pro Verpackung',
+    'pdv' => 'MwSt.',
+    'has-packaging' => 'Karton',
+    'packaging' => 'Karton à Stück',
     'contact-only' => 'Kontaktformular',
 
 
@@ -142,5 +144,7 @@ return [
     'of-visits' => '# von Besuchen',
     'update-success' => 'Erfolgreich aktualisiert',
     'main-category' => 'Hauptkategorie',
+    'unavailable' => 'Ausverkauft',
+    'available' => 'Verfügbar',
 
 ];

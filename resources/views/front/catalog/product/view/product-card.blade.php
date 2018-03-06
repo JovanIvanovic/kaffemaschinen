@@ -24,12 +24,12 @@
             </a>
         </p>
     @else
-    @if($product->qty < 1)
+    @if(!$product->available)
 
             <h3 class="available_grid"><span style="color:red;" >{{ __('front.unavailable') }}</span></h3>
 
             <p class="prod-i-price">
-            <b>{{ __('front.sold-out') }}</b>
+            <b>{{ strlen($product->unavailable_text) > 20 ? substr($product->unavailable_text, 0, 20) . "..." : $product->unavailable_text }}</b>
         </p>
     @else
 

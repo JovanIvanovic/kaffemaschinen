@@ -21,7 +21,7 @@
         
         @if($_REQUEST['slug'] != "gastro" )
         
-        @if($product->qty < 1)
+        @if(!$product->available)
             <h3 class="available_grid"><span style="color:red;" >{{ __('front.unavailable') }}</span></h3>
         @else
             <h3 class="available_grid"><span style="color:green;" >{{ __('front.available') }}</span></h3>
@@ -35,11 +35,11 @@
                 {{ __('front.contact-us-button') }}
             </a>
         @else
-        @if($product->qty < 1)
+        @if(!$product->available)
             <div class="prodlist-i-action">
 
                 <span class="prodlist-i-price">
-                    <b>{{ __('front.sold-out') }}</b>
+                    <b>{{ strlen($product->unavailable_text) > 44 ? substr($product->unavailable_text, 0, 44) . "..." : $product->unavailable_text }}</b>
                 </span>
             </div>
         @else
@@ -61,12 +61,12 @@
                     <span class="prodlist-i-price">
                         <b>CHF {{ number_format($product->discount_price, 2) }}</b><br>
                         <span style="text-decoration:line-through">CHF {{ number_format($product->price,2) }}</span><span class="price-off">-{{ number_format(100-($product->discount_price/$product->price*100), 0) }}%</span><br>
-                        {{--<span>inkl. MwSt 7,7%</span>--}}
+                        <span>inkl. MwSt {{ $product->pdv }}%</span>
                      </span>
                 @else
                     <span class="prodlist-i-price">
                         <b>CHF {{ number_format($product->price,2) }}</b><br>
-                        {{--<span>inkl. MwSt 7,7%</span>--}}
+                        <span>inkl. MwSt {{ $product->pdv }}%</span>
                     </span>
                 @endif
             </form>
