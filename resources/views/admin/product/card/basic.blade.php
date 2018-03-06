@@ -40,7 +40,9 @@
     <div class="col-6">
         @include('admin.forms.text',['name' => 'price','label' => __('lang.order-price')])
     </div>
-
+    <div class="col-6">
+        @include('admin.forms.select',['name' => 'pdv', 'label' => __('lang.pdv'), 'options' => ['2.5' => '2.5%', '7.7' => '7.7%']])
+    </div>
 </div>
 
 <div class="row">
@@ -53,7 +55,7 @@
 </div>
 
 <div class="row">
-    <div class="col-2">
+    <div class="col-1">
         <div class="form-group">
             <label for="has_packaging">{{ __('lang.has-packaging') }}</label>
             <div class="checkbox">
@@ -64,17 +66,25 @@
             </div>
         </div>
     </div>
-    <div class="col-4">
+    <div class="col-3">
         @include('admin.forms.text',['name' => 'packaging','label' => __('lang.packaging')])
     </div>
-    <div class="col-6">
-        @include('admin.forms.text',['name' => 'delivery_price','label' => __('lang.delivery-price')])
+    <div class="col-3">
+        <div class="form-group">
+            <label for="new_product">{{ __('lang.available').' / '.__('lang.unavailable') }}</label>
+            <div class="checkbox">
+                <label style="margin-left: 20px;">
+                    <input id="available_toggle" name="available_toggle" type="checkbox" data-toggle="toggle" data-on="{{ __('front.yes') }}" data-off="{{ __('front.no') }}" @if ($model['available'] === 1) checked @endif>
+                    <input hidden id="available" type="number" name="available" value="{{ $model['available'] }}" />
+                </label>
+            </div>
+        </div>
     </div>
-</div>
-
-<div class="row">
-    <div class="col-6">
-        @include('admin.forms.text',['name' => 'qty','label' => __('lang.quantity')])
+    <div class="col-5">
+        <div class="form-group">
+            <label for="unavailable_text" >{{ __('lang.message') }}</label>
+            <input type="text" class="form-control" id="unavailable_text" name="unavailable_text" {{ $model['available'] ? 'disabled' : '' }} value="{{ $model['unavailable_text'] }}">
+        </div>
     </div>
 </div>
 
@@ -106,7 +116,7 @@
             <label for="contact_only">{{ __('lang.contact-only') }}</label>
             <div class="checkbox">
                 <label style="margin-left: 20px;">
-                    <input id="contact_only_toggle" name="contact_only_toggle" type="checkbox" data-toggle="toggle" data-on="{{ __('front.yes') }}" data-off="{{ __('front.no') }}" @if ($model['new_product'] === 1) checked @endif>
+                    <input id="contact_only_toggle" name="contact_only_toggle" type="checkbox" data-toggle="toggle" data-on="{{ __('front.yes') }}" data-off="{{ __('front.no') }}" @if ($model['contact_only'] === 1) checked @endif>
                     <input hidden id="contact_only" type="number" name="contact_only" value="{{ $model['contact_only'] }}" />
                 </label>
             </div>

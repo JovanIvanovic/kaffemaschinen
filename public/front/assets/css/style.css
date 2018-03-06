@@ -3248,6 +3248,7 @@ Catalog | Gallery View
 ----------------------------------*/
 
 .prod-items .prodlist-i {
+    height: 250px;
     border: 1px solid #e0e4f6;
     transition: all 0.2s;
     position: relative;

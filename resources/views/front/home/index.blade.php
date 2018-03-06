@@ -53,7 +53,7 @@
                         <h3>
                             <a href="{{ route('product.view', $product->slug)}}" title="{{ $product->name }}">{{ $product->name }}</a>
                         </h3>
-                        @if($product->qty < 1)
+                        @if(!$product->available)
                             <h3 class="available_grid"><span style="color:red;" >{{ __('front.unavailable') }}</span></h3>
                         @else
                             <h3 class="available_grid"><span style="color:green;" >{{ __('front.available') }}</span></h3>

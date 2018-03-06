@@ -101,6 +101,15 @@
                     $('#hit_product').val(1);
                 }
             });
+            $("input[name=available_toggle]").on('change', function () {
+                if ($('#available').val() == 1) {
+                    $('#available').val(0);
+                    $('#unavailable_text').removeAttr('disabled').attr('required', '');
+                } else {
+                    $('#available').val(1);
+                    $('#unavailable_text').attr('disabled', '').removeAttr('required');
+                }
+            });
 
         });
         // Example starter JavaScript for disabling form submissions if there are invalid fields

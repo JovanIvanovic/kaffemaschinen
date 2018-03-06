@@ -188,11 +188,11 @@ class OrderController extends Controller
 					'currency' => 'chf',
 				]);
 
-				foreach ($cartItems as $key => $data){
-				    $product = Product::findorfail($data['id']);
-                    $product->qty -= $data['qty'];
-                    $product->update();
-                }
+//				foreach ($cartItems as $key => $data){
+//				    $product = Product::findorfail($data['id']);
+//                    $product->qty -= $data['qty'];
+//                    $product->update();
+//                }
 
                 //dispatch(new SendOrderMail($orders)); ovo aktivirati kad dobijemo info za mail;
 
