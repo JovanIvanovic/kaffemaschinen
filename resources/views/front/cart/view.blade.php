@@ -84,14 +84,9 @@
                                                     <a class="cart-plus prod-plus change-qty"><i class="fa fa-angle-up"></i></a>
                                                     <a class="cart-minus prod-minus change-qty"><i class="fa fa-angle-down"></i></a>
                                                 </p>
-                                                <div class="help-block" style="margin: 0; color: red;"></div>
                                             </td>
                                             <td class="cart-summ price-and-quantity">
                                                 <b>CHF <span style="color: #252525;" class="paq">{{ number_format($cartItem['price'] * $cartItem['qty'] ,2)}}</span></b>
-                                                <section class="single-tax">
-                                                    <span style="color: #252525;">CHF</span>
-                                                    <span style="color: #252525;">{{ $cartItem['delivery_price'] ? $cartItem['delivery_price'] : '' }}</span>
-                                                </section>
                                             </td>
                                             <td class="cart-del">
                                                 <a class="cart-remove" href="{{ route('cart.destroy', ['id' => $cartItem['id'], 'type' => $type])}}"></a>
@@ -127,14 +122,9 @@
                                                     <a class="cart-plus prod-plus change-qty"><i class="fa fa-angle-up"></i></a>
                                                     <a class="cart-minus prod-minus change-qty"><i class="fa fa-angle-down"></i></a>
                                                 </p>
-                                                <div class="help-block" style="margin: 0; color: red;"></div>
                                             </td>
                                             <td class="cart-summ price-and-quantity">
                                                 <b>CHF <span style="color: #252525;" class="paq">{{ number_format($cartItem['price'] * $cartItem['qty'] ,2)}}</span></b>
-                                                {{--<section class="single-tax">--}}
-                                                    {{--<span style="color: #252525;">CHF</span>--}}
-                                                    {{--<span style="color: #252525;">test</span> // umesto postarine iz baze promenjeno u test jer nema vise to polje u bazi. RESITI i obrisati JS!--}}
-                                                {{--</section>--}}
                                             </td>
                                             <td class="cart-del">
                                                 <a class="cart-remove" href="{{ route('cart.destroy', ['id' => $cartItem['id'], 'type' => $type])}}"></a>
@@ -197,12 +187,7 @@
                 var sum = 0;
                 priceAndQuantity.each(function() {
                     var that = $(this);
-                    var taxEl = that.closest('.price-and-quantity').find('.single-tax span:last-child')
-                    var taxVal = toFloat(taxEl.text());
                     var thatPlusDelivery = toFloat(that.text());
-                    if (taxEl.is(':visible')) {
-                        var thatPlusDelivery = thatPlusDelivery + taxVal;
-                    }
                     sum += thatPlusDelivery;
                 });
                 totalPrice.text(number_format(sum, 2));
@@ -218,17 +203,10 @@
                     type: 'post',
                     success: function (data) {
                         var checkoutButton = $('#button-checkout');
-                        var errorHelpBlock = that.parent('p.cart-qnt').siblings('.help-block');
                         if (data.status) {
                             checkoutButton.attr('disabled', false);
-                            errorHelpBlock.text('');
                             return true;
-                        } else {
-                            errorHelpBlock.text(data.error);
-                            checkoutButton.attr('disabled', true);
-                            return false;
                         }
-                        console.log(data);
                     },
                 });
             });
@@ -255,12 +233,7 @@
                 var sum = 0;
                 priceAndQuantity.each(function() {
                     var that = $(this);
-                    var taxEl = that.closest('.price-and-quantity').find('.single-tax span:last-child')
-                    var taxVal = toFloat(taxEl.text());
                     var thatPlusDelivery = toFloat(that.text());
-                    if (taxEl.is(':visible')) {
-                        var thatPlusDelivery = thatPlusDelivery + taxVal;
-                    }
                     sum += thatPlusDelivery;
                 });
                 totalPrice.text(number_format(sum, 2));
@@ -276,15 +249,9 @@
                     type: 'post',
                     success: function (data) {
                         var checkoutButton = $('#button-checkout');
-                        var errorHelpBlock = that.parent('p.cart-qnt').siblings('.help-block');
                         if (data.status) {
                             checkoutButton.attr('disabled', false);
-                            errorHelpBlock.text('');
                             return true;
-                        } else {
-                            errorHelpBlock.text(data.error);
-                            checkoutButton.attr('disabled', true);
-                            return false;
                         }
                     }
                 });

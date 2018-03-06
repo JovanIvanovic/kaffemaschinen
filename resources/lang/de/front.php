@@ -90,8 +90,8 @@ return [
     'i-have-read-and-agree-to-the' => 'Ich habe die AGB\'s ',
     'terms-conditions' => 'gelesen und akzeptiert.',
 
-    'with_vat' => 'inkl. MwSt 7.7%',
-    'contain_vat' => 'inkl. MwSt 7.7%',
+    'with_vat' => 'inkl. MwSt :vat%',
+    'contain_vat' => 'inkl. MwSt :vat%',
 
     'name_asc' => 'name a-z',
     'name_desc' => 'name z-a',

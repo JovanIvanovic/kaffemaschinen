@@ -45,6 +45,7 @@ class CartController extends Controller
                     'slug' => $product->slug,
                     'delivery' => $product->delivery,
                     'delivery_price' => $product->delivery_price,
+                    'pdv' => $product->pdv
                 ]);
             }
         } elseif ($request->get('type') == 'package') {
@@ -115,13 +116,6 @@ class CartController extends Controller
 
         if ($request->get('type') == 'product') {
             $product = Product::find(request('id'));
-
-            if ($qty > $product->qty) {
-                return JsonResponse::create([
-                    'status' => false,
-                    'error' => __('front.out-of-stock'),
-                ]);
-            }
 
             if (!is_numeric($qty)) {
                 $item = $cartData->pull('product:'.$request->get('id'));

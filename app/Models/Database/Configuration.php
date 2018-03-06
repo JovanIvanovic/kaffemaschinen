@@ -10,7 +10,6 @@ class Configuration extends Model
 
     public function getValue($key)
     {
-
         $row = $this->where('configuration_key', '=', $key)->first();
         if ($row != null) {
             return $row->configuration_value;
