@@ -281,7 +281,7 @@
                                 } elseif ($cartItem['pdv'] == '7.7') {
                                     $subTotal77 += $cartItem['qty'] * $cartItem['price'];
                                 }
-                                        
+
                                 $subTotal += $subTotal25 + $subTotal77;
 
                                 ?>

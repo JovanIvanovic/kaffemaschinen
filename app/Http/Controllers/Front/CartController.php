@@ -44,7 +44,6 @@ class CartController extends Controller
                     'name' => $product->name,
                     'slug' => $product->slug,
                     'delivery' => $product->delivery,
-                    'delivery_price' => $product->delivery_price,
                     'pdv' => $product->pdv
                 ]);
             }
@@ -62,7 +61,7 @@ class CartController extends Controller
                     'price' => $price,
                     'image' => asset('front/assets/img/package-default.png'),
                     'name' => $package->name,
-                    'delivery_price' => $package->delivery_price,
+                    'pdv' => $package->pdv
                 ]);
             }
         }

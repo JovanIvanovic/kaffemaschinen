@@ -25,7 +25,7 @@
                 @include('admin.forms.text',['value' => $model->price, 'name' => 'price','label' => __('front.price')])
             </div>
             <div class="col-3">
-                @include('admin.forms.text',['value' => $model->delivery_price, 'name' => 'delivery_price','label' => __('lang.delivery-price')])
+                @include('admin.forms.select',['name' => 'pdv', 'label' => __('lang.pdv'), 'options' => ['2.5' => '2.5%', '7.7' => '7.7%']])
             </div>
         </div>
 

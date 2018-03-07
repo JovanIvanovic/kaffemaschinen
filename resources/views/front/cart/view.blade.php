@@ -33,6 +33,7 @@
             @if(count($cartItems) <= 0)
                 <p style="color:#fff;">{{ __('front.product-no-found') }}</p>
             @else
+                <?php $shipping = (float)\App\Models\Database\Configuration::getConfiguration('delivery_price'); ?>
                 <form method="post" action="{{ route('cart.update.delivery') }}" id="cart-form" style="border-radius: 4px; background-color: white; padding: 15px;">
                     {{ csrf_field() }}
                     <div class="cart-items-wrap">
@@ -67,10 +68,10 @@
                                                 <a href="{{ route('product.view', $cartItem['slug'])}}">{{ $cartItem['name'] }}</a>
                                                 <p>Status: <span class="text-success"><strong>{{ __('front.in-stock') }}</strong></span></p>
                                             </td>
-                                            <?php ($cartItem['price'] < 100) ? $cena = $cartItem['price'] + 8.5 : $cena = $cartItem['price']  ?>
+                                            <?php ($cartItem['price'] < 100) ? $cena = $cartItem['price'] + $shipping : $cena = $cartItem['price']  ?>
 
 
-                                            <?php $total += ($cena * $cartItem['qty']) + $cartItem['delivery_price']; ?>
+                                            <?php $total += ($cena * $cartItem['qty']); ?>
 
                                             <td class="cart-price price">
                                                 <b>CHF <span style="color: #252525;">{{ number_format($cartItem['price'],2) }}</span></b>
@@ -107,8 +108,9 @@
                                                     <p><span style="color: #aaa;">{{ $product->name }} - <del>CHF {{ $product->price }}</del></span></p>
                                                 @endforeach
                                             </td>
+                                            <?php ($cartItem['price'] < 100) ? $cena = $cartItem['price'] + $shipping : $cena = $cartItem['price']  ?>
 
-                                            <?php $total += ($cartItem['price'] * $cartItem['qty']) + $cartItem['delivery_price']; ?>
+                                            <?php $total += ($cena * $cartItem['qty']); ?>
 
                                             <td class="cart-price price">
                                                 <b>CHF <span style="color: #252525;">{{ number_format($cartItem['price'],2) }}</span></b>

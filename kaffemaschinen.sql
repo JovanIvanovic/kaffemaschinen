@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 06, 2018 at 04:35 PM
+-- Generation Time: Mar 07, 2018 at 02:34 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -686,7 +686,7 @@ CREATE TABLE `packages` (
   `name` varchar(255) NOT NULL,
   `description` text NOT NULL,
   `price` decimal(11,2) NOT NULL,
-  `delivery_price` decimal(11,2) DEFAULT NULL,
+  `pdv` decimal(11,1) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `deleted_at` timestamp NULL DEFAULT NULL
@@ -696,16 +696,9 @@ CREATE TABLE `packages` (
 -- Dumping data for table `packages`
 --
 
-INSERT INTO `packages` (`id`, `name`, `description`, `price`, `delivery_price`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'asd', '<p>asd</p>', '123.00', NULL, '2018-02-21 14:14:01', '2018-02-21 14:47:17', '2018-02-21 14:47:17'),
-(2, 'asd', '<p>asd</p>', '123.00', NULL, '2018-02-21 14:16:13', '2018-02-21 14:47:20', '2018-02-21 14:47:20'),
-(3, 'asd', '<p>asd</p>', '123.00', NULL, '2018-02-21 14:18:10', '2018-02-21 14:47:22', '2018-02-21 14:47:22'),
-(4, 'asd', '<p>asd</p>', '123.00', NULL, '2018-02-21 14:21:32', '2018-02-21 14:47:30', '2018-02-21 14:47:30'),
-(5, 'asd', '<p>asd</p>', '123.00', NULL, '2018-02-21 14:22:15', '2018-02-21 14:47:25', '2018-02-21 14:47:25'),
-(6, '123', '<p>123</p>', '123.00', NULL, '2018-02-21 14:22:54', '2018-02-21 14:47:28', '2018-02-21 14:47:28'),
-(7, 'Package', '<p>Package Description</p>', '15000.00', '7.00', '2018-02-21 15:07:16', '2018-02-24 11:42:25', '2018-02-24 11:42:25'),
-(8, 'asd', '<p>asd</p>', '12.00', '7.00', '2018-02-23 18:46:08', '2018-02-23 18:46:08', NULL),
-(9, 'test', '<p>jdvbilididsnvdsnvdniv</p>', '123.00', '123.00', '2018-02-24 21:08:32', '2018-02-24 21:08:32', NULL);
+INSERT INTO `packages` (`id`, `name`, `description`, `price`, `pdv`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(8, 'asd', '<p>asd</p>', '12.00', '2.5', '2018-02-23 18:46:08', '2018-03-07 13:27:56', NULL),
+(9, 'test', '<p>jdvbilididsnvdsnvdniv</p>', '123.00', '7.7', '2018-02-24 21:08:32', '2018-03-07 13:27:45', NULL);
 
 -- --------------------------------------------------------
 
@@ -5666,7 +5659,43 @@ INSERT INTO `visitors` (`id`, `ip_address`, `url`, `agent`, `user_id`, `created_
 (4524, '127.0.0.1', 'checkout', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-06 15:26:09', '2018-03-06 15:26:09'),
 (4525, '127.0.0.1', 'checkout', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-06 15:26:43', '2018-03-06 15:26:43'),
 (4526, '127.0.0.1', 'checkout', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-06 15:27:16', '2018-03-06 15:27:16'),
-(4527, '127.0.0.1', 'checkout', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-06 15:30:23', '2018-03-06 15:30:23');
+(4527, '127.0.0.1', 'checkout', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-06 15:30:23', '2018-03-06 15:30:23'),
+(4528, '127.0.0.1', 'admin', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:15:16', '2018-03-07 13:15:16'),
+(4529, '127.0.0.1', 'admin/login', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:15:18', '2018-03-07 13:15:18'),
+(4530, '127.0.0.1', 'admin/js/jquery-3.2.1.min.js', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:15:20', '2018-03-07 13:15:20'),
+(4531, '127.0.0.1', 'admin/login', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:15:23', '2018-03-07 13:15:23'),
+(4532, '127.0.0.1', 'admin', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:15:25', '2018-03-07 13:15:25'),
+(4533, '127.0.0.1', 'admin/product', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:15:26', '2018-03-07 13:15:26'),
+(4534, '127.0.0.1', 'admin/package', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:15:39', '2018-03-07 13:15:39'),
+(4535, '127.0.0.1', 'admin/package/9/edit', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:15:43', '2018-03-07 13:15:43'),
+(4536, '127.0.0.1', 'admin/package/searchProducts', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:16:12', '2018-03-07 13:16:12'),
+(4537, '127.0.0.1', 'admin/package/searchProducts', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:16:13', '2018-03-07 13:16:13'),
+(4538, '127.0.0.1', 'admin/package/9/edit', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:17:16', '2018-03-07 13:17:16'),
+(4539, '127.0.0.1', 'admin/package/9/edit', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:27:39', '2018-03-07 13:27:39'),
+(4540, '127.0.0.1', 'admin/package/9', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:27:44', '2018-03-07 13:27:44'),
+(4541, '127.0.0.1', 'admin/package', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:27:45', '2018-03-07 13:27:45'),
+(4542, '127.0.0.1', 'admin/package/9/edit', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:27:48', '2018-03-07 13:27:48'),
+(4543, '127.0.0.1', 'admin/package/8/edit', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:27:54', '2018-03-07 13:27:54'),
+(4544, '127.0.0.1', 'admin/package/8', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:27:56', '2018-03-07 13:27:56'),
+(4545, '127.0.0.1', 'admin/package', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:27:57', '2018-03-07 13:27:57'),
+(4546, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:28:18', '2018-03-07 13:28:18'),
+(4547, '127.0.0.1', 'add-to-cart', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:28:24', '2018-03-07 13:28:24'),
+(4548, '127.0.0.1', 'add-to-cart', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:28:40', '2018-03-07 13:28:40'),
+(4549, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:28:41', '2018-03-07 13:28:41'),
+(4550, '127.0.0.1', 'cart/view', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:28:45', '2018-03-07 13:28:45'),
+(4551, '127.0.0.1', 'cart/update', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:29:03', '2018-03-07 13:29:03'),
+(4552, '127.0.0.1', 'cart/update', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:29:04', '2018-03-07 13:29:04'),
+(4553, '127.0.0.1', 'cart/view', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:29:06', '2018-03-07 13:29:06'),
+(4554, '127.0.0.1', 'cart/view', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:33:39', '2018-03-07 13:33:39'),
+(4555, '127.0.0.1', 'cart/update', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:33:44', '2018-03-07 13:33:44'),
+(4556, '127.0.0.1', 'cart/update', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:33:45', '2018-03-07 13:33:45'),
+(4557, '127.0.0.1', 'cart/update', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:33:46', '2018-03-07 13:33:46'),
+(4558, '127.0.0.1', 'cart/update', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:33:46', '2018-03-07 13:33:46'),
+(4559, '127.0.0.1', 'cart/update/delivery', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:33:49', '2018-03-07 13:33:49'),
+(4560, '127.0.0.1', 'checkout', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:33:50', '2018-03-07 13:33:50'),
+(4561, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:34:07', '2018-03-07 13:34:07'),
+(4562, '127.0.0.1', 'admin/package', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:34:09', '2018-03-07 13:34:09'),
+(4563, '127.0.0.1', 'admin/package/9/edit', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:34:12', '2018-03-07 13:34:12');
 
 --
 -- Indexes for dumped tables
@@ -5904,7 +5933,7 @@ ALTER TABLE `visitors`
 -- AUTO_INCREMENT for table `addresses`
 --
 ALTER TABLE `addresses`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `admin_users`
 --
@@ -6034,17 +6063,17 @@ ALTER TABLE `subscriptions`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `user_viewed_products`
 --
 ALTER TABLE `user_viewed_products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `visitors`
 --
 ALTER TABLE `visitors`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4528;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4564;
 --
 -- Constraints for dumped tables
 --
