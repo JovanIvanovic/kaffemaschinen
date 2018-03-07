@@ -30,7 +30,6 @@ class ProductController extends Controller
             ->onlineColumn('status', ['sortable' => true, 'label' => ''])
             ->imageColumn('image', ['sortable' => false, 'label' => __('lang.images')])
             ->column('name', ['sortable' => true, 'label' => __('lang.name')])
-            ->column('product_no', ['sortable' => true, 'label' => __('lang.product-number')])
             ->column('created_at', ['sortable' => true, 'label' => __('lang.created-at')])
             ->linkColumn(__('lang.edit'), [], function ($model) {
                 return "<a href='" . route('admin.product.edit', $model->id) . "' >".__('lang.edit')."</a>";
