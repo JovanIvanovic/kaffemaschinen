@@ -106,7 +106,7 @@
         <div class="info">
             <p>Brock GmbH - Birmensdorferstrasse 430 - CH-8055 Zürich</p>
             <p>Tel. +41 (0) 44 450 21 02 - <a href="mailto:shop@schoengebraucht.ch">shop@schoengebraucht.ch</a> - <a href="">www.schoengebraucht.ch</a> </p>
-            <p> MwSt-Nr. CHE-115.174.365 </p>
+            <p> MwSt Nr. 154.601.224 </p>
         </div>
     </div>
 
