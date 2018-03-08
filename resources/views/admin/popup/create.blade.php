@@ -40,7 +40,7 @@
 
                                         <div class="col-6">
                                             <div class="form-group">
-                                                <label for="end_date" >{{ __('lang.date') }}</label>
+                                                <label for="end_date" >{{ __('lang.end-date') }}</label>
                                                 <input type="date" class="form-control" id="slug" name="end_date" value="{{ old('end_date') }}" required>
                                             </div>
                                         </div>

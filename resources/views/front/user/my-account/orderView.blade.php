@@ -20,7 +20,7 @@
                                <table class="bestel_table">
                                    <tr>
                                        <td>
-                                            <h3 class="fet">Grundinformationen bestellen</h3>
+                                            <h3 class="fet">Grundinformation Ihrer Bestellung</h3>
                                        </td>
                                             
                                     </tr>

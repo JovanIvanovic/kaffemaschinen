@@ -14,7 +14,7 @@
                 <h2> Search Results for: {{ $queryParam }}</h2>
                 <div class="prod-items section-items">
                     @if(count($products) <= 0)
-                        <p>Das Produkt wurde nicht gefunden</p>
+                        <p>Momentan sind keine Produkte vorhanden</p>
                     @else
 
                         @foreach($products as $product)

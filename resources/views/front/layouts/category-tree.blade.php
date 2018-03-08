@@ -6,7 +6,7 @@
 @if(count($childCategories) > 0)
     <li>
         <a
-           href="{{ url('category?slug=' . $category['object']->slug) }}"
+           href="{{ url('shop?slug=' . $category['object']->slug) }}"
            title="{{ $category['object']->name }}">
             {{ $category['object']->name }}
         </a>
@@ -15,7 +15,7 @@
 
     <li class="">
         <a
-           href="{{ url('category?slug=' . $category['object']->slug) }}"
+           href="{{ url('shop?slug=' . $category['object']->slug) }}"
            title="{{ $category['object']->name }}">
             {{ $category['object']->name }}
         </a>

@@ -66,7 +66,7 @@
                                 </select>
                             </div>
                             <div class="form-group col-sm-6" id="check_company" style="display: none;">
-                                <input id="company_name" class="form-control checkout-input" placeholder="Unternehmen" type="text" name="company_name" value="{{ old('company_name') }}">
+                                <input id="company_name" class="form-control checkout-input" placeholder="Firmenname" type="text" name="company_name" value="{{ old('company_name') }}">
                             </div>
                         </div>
                         <div class="form-group">

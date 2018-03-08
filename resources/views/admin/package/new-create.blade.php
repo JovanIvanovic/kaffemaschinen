@@ -3,58 +3,69 @@
 
 
 @section('content')
-    <div class="row">
-        <div class="col-12">
-            <div class="h1">{{ __("lang.package.create.text") }}</div>
+    <div class="main-content p-3">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-lg-offset-0 text-center">
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="h1">{{ __("lang.package.create.text") }}</div>
+                    </div>
+                </div>
+                <form
+                        id="package-save-form"
+                        action="{{ route('admin.package.store') }}"
+                        method="post"
+                        enctype="multipart/form-data">
+
+                    {{ csrf_field() }}
+
+                    <div class="row">
+                        <div class="col-6">
+                            @include("admin.forms.text",['name'=> 'name','label' => __('lang.name')])
+                        </div>
+                        <div class="col-3">
+                            @include('admin.forms.text',['name' => 'price','label' => __('front.price')])
+                        </div>
+                        <div class="col-3">
+                            @include('admin.forms.select',['name' => 'pdv', 'label' => __('lang.pdv'), 'options' => ['2.5' => '2.5%', '7.7' => '7.7%']])
+                        </div>
+                    </div>
+
+                    @include('admin.forms.textarea',['name' => 'description','label' => __('lang.description'),
+                                                                'attributes' => ['class' => 'ckeditor','id' => 'description']])
+
+
+
+                    <div class="row">
+                        <div class="col-6">
+                            @include('admin.forms.autocomplete',['placeholder' => __('front.product-search-products'), 'name' => 'product-search', 'label' => __('front.product'), 'class' => 'autocomplete-input'])
+                        </div>
+                    </div>
+
+                    <script>
+                        function removeProduct(self) {
+                            var productElement = $(self).parent().parent();
+                            productElement.remove();
+                        }
+                    </script>
+                    <div class="product-list"></div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn-schoen">{{ __('lang.create') }}</button>
+                        <button type="button"
+                                onclick="location='{{ route('admin.package.index') }}'"
+                                class="btn">{{ __('lang.cancel') }}
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-    <form
-            id="package-save-form"
-            action="{{ route('admin.package.store') }}"
-            method="post"
-            enctype="multipart/form-data">
-
-        {{ csrf_field() }}
-
-        <div class="row">
-            <div class="col-6">
-                @include("admin.forms.text",['name'=> 'name','label' => __('lang.name')])
-            </div>
-            <div class="col-3">
-                @include('admin.forms.text',['name' => 'price','label' => __('front.price')])
-            </div>
-            <div class="col-3">
-                @include('admin.forms.text',['name' => 'delivery_price','label' => __('lang.delivery-price')])
-            </div>
-        </div>
-
-        @include('admin.forms.textarea',['name' => 'description','label' => __('lang.description'),
-                                                    'attributes' => ['class' => 'ckeditor','id' => 'description']])
-
-
-
-        <div class="row">
-            <div class="col-6">
-                @include('admin.forms.autocomplete',['placeholder' => __('front.product-search-products'), 'name' => 'product-search', 'label' => __('front.product'), 'class' => 'autocomplete-input'])
-            </div>
-        </div>
-
-        <script>
-            function removeProduct(self) {
-                var productElement = $(self).parent().parent();
-                productElement.remove();
-            }
-        </script>
-        <div class="product-list"></div>
-
-        <div class="form-group">
-            <button type="submit" class="btn-schoen">{{ __('lang.create') }}</button>
-            <button type="button"
-                    onclick="location='{{ route('admin.package.index') }}'"
-                    class="btn">{{ __('lang.cancel') }}
-            </button>
-        </div>
-    </form>
 @endsection
 
 @push('styles')

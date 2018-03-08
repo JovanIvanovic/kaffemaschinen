@@ -13,10 +13,11 @@
         <div class="fr-slider-wrap">
             <div class="fr-slider">
                 <ul class="slides">
-                    <li>
-                        <img src="front/assets/img/slider/slide1.jpg" alt="">
-                    </li>
-
+                    @foreach($sliders as $slider)
+                        <li>
+                            <img src="{{ $slider->image }}" alt="">
+                        </li>
+                    @endforeach
                 </ul>
             </div>
         </div>
@@ -27,8 +28,42 @@
         </div>
             <!-- Catalog Categories - end -->
         <div class="section-cont">
-
-
+            <!-- Catalog Topbar - start -->
+            <div class="section-top">
+                <!-- View Mode -->
+                <ul class="section-mode">
+                    <li class="section-mode-gallery {{ $mode == 'grid' ? 'active' : '' }}">
+                        <a title="Gallery" href="{{ urldecode(route('all.category.view', array_merge(request()->query(), ['mode' => 'grid']), false)) }}"></a>
+                    </li>
+                    <li class="section-mode-list {{ $mode == 'list' ? 'active' : '' }}">
+                        <a title="List" href="{{ urldecode(route('all.category.view', array_merge(request()->query(), ['mode' => 'list']), false)) }}"></a>
+                    </li>
+                </ul>
+                <!-- Sorting -->
+                <div class="section-sortby">
+                    <p>{{ old('order_by') ? __('front.' . old('order_by')) : 'sortierung' }}</p>
+                    <ul>
+                        @foreach(getOrderBy() as $key => $value)
+                            <li>
+                                <a href="{{ urldecode(route('all.category.view', array_merge(request()->query(), ['order_by' => $key]), false)) }}">{{ $value }}</a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+                <!-- Count per page -->
+                <div class="section-count">
+                    <p>{{ old('view') ? old('view') : 12 }}</p>
+                    <ul>
+                        @foreach(getshowNumbers() as $num)
+                            <li>
+                                <a href="{{ urldecode(route('all.category.view', array_merge(request()->query(), ['view' => $num]), false)) }}">{{ $num }}</a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="section-cont">
             <!-- Catalog Topbar - end -->
             <div class="prod-items section-items">
                 @php($num = 1)
@@ -82,6 +117,7 @@
                     </div>
                 @endforeach
             </div>
+            {{ $hitAndNewProducts->appends(request()->input())->links('front.pagination.bootstrap-4') }}
         </div>
     </section>
 </main>

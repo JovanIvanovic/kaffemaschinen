@@ -9,7 +9,7 @@
     </li>
     @foreach($navs as $nav)
     <li>
-        <a href="{{ URL::to('category?slug=' . $nav->slug) }}" class="{{ $__env->yieldContent('nav_active_category') == $nav->slug ? 'active' : '' }}">
+        <a href="{{ URL::to('shop?slug=' . $nav->slug) }}" class="{{ $__env->yieldContent('nav_active_category') == $nav->slug ? 'active' : '' }}">
             {{ $nav->name }}
         </a>
     </li>

@@ -34,7 +34,7 @@
                             </select>
                         </p>
                         <p id="check_company" style="display: none">
-                            <input id="company_name" placeholder="Unternehmen" type="text" name="company_name" value="{{ old('company_name') }}">
+                            <input id="company_name" placeholder="Firmenname" type="text" name="company_name" value="{{ old('company_name') }}">
                         </p>
                         <p>
                             <label for="title">{{ __('front.account-title') }}<span class="required"></span></label>

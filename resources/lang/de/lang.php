@@ -21,7 +21,7 @@ return [
     'category' => 'Kategorien',
     'sales' => 'Bestellungen',
     'orders' => 'Aufträge',
-    'orders-sold' => 'Artikel verkauft',
+    'orders-sold' => 'Bestellungen',
     'system' => 'System',
     'admin-users' => 'Admin-Benutzer',
     'change-password' => 'Passwort ändern',
@@ -31,7 +31,7 @@ return [
     'first-name' => 'Vorname',
     'last-name' => 'Nachname',
     'product-number' => 'Artikel Nr.',
-    'date' => 'Verkaufsdatum',
+    'end-date' => 'Angebot gültig bis',
     'customer' => 'Kunden',
     'buyer-id' => 'Kunden-ID',
     'delivery' => 'Lieferung',
@@ -69,7 +69,7 @@ return [
     'title' => 'Titel',
     'pdv' => 'MwSt.',
     'has-packaging' => 'Karton',
-    'packaging' => 'Karton à Stück',
+    'packaging' => 'Stück à Karton',
     'contact-only' => 'Kontaktformular',
 
 

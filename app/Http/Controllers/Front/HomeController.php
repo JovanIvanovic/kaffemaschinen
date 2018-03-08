@@ -7,14 +7,22 @@ use App\Models\Database\Configuration;
 use App\Models\Database\Page;
 use App\Models\Database\PageHome;
 use App\Models\Database\Product;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $pageModel = null;
         $pageId = Configuration::getConfiguration('general_home_page');
-        $hitAndNewProducts = Product::where('new_product', 1)->orWhere('hit_product', 1)->get();
+
+        $view = request('view') ? request('view') : 12;
+        $mode = request('mode') == 'list' ? 'list' : 'grid';
+        $orderBy = $request->order_by ? $request->order_by : null;
+
+        $hitAndNewProducts = Product::where('new_product', 1)->orWhere('hit_product', 1);
+        $hitAndNewProducts = isset($orderBy) ? $hitAndNewProducts->orderBy(getBeforeLastChar($orderBy, '_'), getAfterLastChar($orderBy, '_')) : $hitAndNewProducts;
+        $hitAndNewProducts = $hitAndNewProducts->paginate($view);
 
         $sliders = PageHome::all();
 
@@ -25,6 +33,7 @@ class HomeController extends Controller
         return view('front.home.index')
             ->with('pageModel', $pageModel)
             ->with('hitAndNewProducts', $hitAndNewProducts)
+            ->with('mode', $mode)
             ->with('sliders', $sliders);
 
     }

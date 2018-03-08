@@ -40,8 +40,8 @@
 
                                                     <td> {{ $order->id }}</td>
                                                     <td> {{ $order->created_at }} </td>
-<!--                                                    <td> {{ $order->payment_option }}</td>-->
-                                                    <td> {{ $order->order_status_title }} </td>
+                                                    {{--<td> {{ $order->payment_option }}</td>--}}
+                                                    <td> {{ $order->order_status_title == 'Verkauft' ? 'Gekauft' : $order->order_status_title }} </td>
                                                     <td><a href="{{ route('my-account.order.view', $order->id) }}" style="color: cornflowerblue">Ansicht</a></td>
                                                 </tr>
                                             @endforeach

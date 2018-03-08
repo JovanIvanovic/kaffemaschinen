@@ -49,7 +49,7 @@ return [
     'account-register' => 'Registrierung',
     'account-email' => 'Email',
     'account-password' => 'Passwort',
-    'profile-details-panel' => 'Profildetails Panel',
+    'profile-details-panel' => 'Profilangaben',
 
     'product-search-products' => 'Produktsuche',
     'product-no-found' => 'Entschuldigung Kein Produkt gefunden',
