@@ -514,7 +514,7 @@
     });
     $('#place-order-form').on('submit', function (e) {
         stripe.open({
-            name: 'Schoengebraucht',
+            name: 'Kaffemaschinen',
             description: 'Billing',
         });
         e.preventDefault();

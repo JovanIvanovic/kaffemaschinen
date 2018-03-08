@@ -35,7 +35,7 @@ class Address extends BaseModel
             return $this->attributes['country_id'];
         }
 
-        $defaultCountry = Configuration::getConfiguration('schoengebraucht_address_default_country');
+        $defaultCountry = Configuration::getConfiguration('kaffemaschinen_address_default_country');
 
         if (isset($defaultCountry)) {
             return $defaultCountry;

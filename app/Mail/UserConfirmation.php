@@ -27,8 +27,8 @@ class UserConfirmation extends Mailable
      */
     public function build()
     {
-        return $this->from('shop@schoengebraucht.ch')
-                    ->subject('Verifizierungsmail für schoengebraucht.ch')
+        return $this->from('shop@kaffemaschinen.ch')
+                    ->subject('Verifizierungsmail für kaffemaschinen.ch')
                     ->view('front.emails.confirmation')
                     ->with(['token' => $this->user->token,]);
     }

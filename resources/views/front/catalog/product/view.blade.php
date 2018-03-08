@@ -113,7 +113,7 @@
 
                     <div class="row">--}} {{--
                         <div class="col-xs-6" id="prodart"><a class="qview-btn prod-i-qview" data-toggle="modal" data-target="#exampleModal" style="color: dodgerblue; cursor: pointer"><span>Frage Zum Artikel</span></a></div>--}} {{--
-                        <div class="col-xs-6" id="prodart"><a href="mailto:?Subject=Schoengebraucht&amp;Body={{ Request::url() }}" style="color: dodgerblue; cursor: pointer">Artikel weiterempfehlen</a></div>--}} {{--
+                        <div class="col-xs-6" id="prodart"><a href="mailto:?Subject=Kaffemaschinen&amp;Body={{ Request::url() }}" style="color: dodgerblue; cursor: pointer">Artikel weiterempfehlen</a></div>--}} {{--
                     </div>--}}
                     <!-- Share Links -->
 

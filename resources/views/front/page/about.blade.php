@@ -57,7 +57,7 @@
                                 </li>
 
                                 <li>
-                                    <a data-toggle="tooltip" title="Share on Instagram" onclick="popUp=window.open('https://www.instagram.com/schoengebraucht.ch');popUp.focus();return false;" href="javascript:;">
+                                    <a data-toggle="tooltip" title="Share on Instagram" onclick="popUp=window.open('https://www.instagram.com/kaffemaschinen.ch');popUp.focus();return false;" href="javascript:;">
                                         <i class="fa fa-instagram"></i>
                                     </a>
                                 </li>

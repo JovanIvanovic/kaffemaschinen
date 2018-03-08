@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'mail@schoengebraucht.ch'),
-        'name' => env('MAIL_FROM_NAME', 'Schoengebraucht'),
+        'address' => env('MAIL_FROM_ADDRESS', 'mail@kaffemaschinen.ch'),
+        'name' => env('MAIL_FROM_NAME', 'Kaffemaschinen'),
     ],
 
     /*

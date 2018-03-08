@@ -25,7 +25,7 @@ class Provider extends ServiceProvider
     }
 
     /**
-     * Registering Schoengebraucht E-commerce Middleware
+     * Registering Kaffemaschinen E-commerce Middleware
      */
     protected function registerMiddleware()
     {

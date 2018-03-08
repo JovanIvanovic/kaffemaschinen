@@ -13,7 +13,7 @@ class CategoryViewController extends Controller
 {
     public function allCategoryView(Request $request)
     {
-        $productOnCategoryPage = Configuration::getConfiguration('schoengebraucht_catalog_no_of_product_category_page');
+        $productOnCategoryPage = Configuration::getConfiguration('kaffemaschinen_catalog_no_of_product_category_page');
 
         if ($request->has('slug')) {
             $category = Category::where('slug', '=', $request->slug)->get()->first();

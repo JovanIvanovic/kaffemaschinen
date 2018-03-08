@@ -106,7 +106,7 @@
                         <div class="social-wrap">
                             <div class="social-list">
                                 <div class="social-i">
-                                    <a rel="nofollow" target="_blank" href="https://de-de.facebook.com/schoengebraucht.ch/">
+                                    <a rel="nofollow" target="_blank" href="https://de-de.facebook.com/kaffemaschinen.ch/">
                                         <p class="social-i-img">
                                             <i class="fa fa-facebook"></i>
                                         </p>
@@ -115,7 +115,7 @@
                                 </div>
 
                                 <div class="social-i">
-                                    <a rel="nofollow" target="_blank" href="https://www.instagram.com/schoengebraucht.ch/">
+                                    <a rel="nofollow" target="_blank" href="https://www.instagram.com/kaffemaschinen.ch/">
                                         <p class="social-i-img">
                                             <i class="fa fa-instagram"></i>
                                         </p>
