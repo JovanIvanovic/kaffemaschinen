@@ -145,58 +145,6 @@
         });
     });
 </script> --}}
-<script>
-    // Range Slider
-    var range_slider = $('#range-slider');
-    var initialPriceFrom = '{{ old('price_from') }}';
-    var initialPriceTo = '{{ old('price_to') }}' != '' ? '{{ old('price_to') }}' : '{{ round($maxPrice) }}';
-    range_slider.ionRangeSlider({
-        type: "double",
-        // grid: range_slider.data('grid'),
-        min: 0,
-        max: '{{ round($maxPrice) }}',
-        from: initialPriceFrom,
-        to: initialPriceTo,
-        prefix: range_slider.data('prefix'),
-        onFinish: function (data) {
-            var priceInputsWrapper = $('.price-inputs');
-            var $priceFrom = priceInputsWrapper.find('input:first-child').val(data.from);
-            var $priceTo = priceInputsWrapper.find('input:last-child').val(data.to);
-
-            var $url = getUrl('/get_price_ranges');
-
-            var requestQueryString = '{{ is_array(request()->query()) && !empty(request()->query()) ? json_encode(request()->query()) : "{}" }}';
-
-            var requestQueryClearedJSON = requestQueryString.replace(/&quot;/gi,"\"")
-            .replace(/\[/gi,"")
-            .replace(/\]/gi,"");
-
-            var requestQueryObj = JSON.parse(requestQueryClearedJSON);
-
-            delete requestQueryObj.price_to;
-            delete requestQueryObj.price_from;
-
-            var requestData = Object.assign({
-                price_from: $priceFrom.val(), 
-                price_to: $priceTo.val()
-            }, requestQueryObj);
-
-            $.ajax({
-                data: requestData,
-                url: $url,
-                dataType: 'json',
-                method: 'get',
-                success: function (data) {
-                        // console.log(data.url);
-                        window.location.href = data.url;
-                    },
-                    error: function (data) {
-                        // console.log('error');
-                    }
-                });
-        },
-    });
-</script>
 
 <script>
     function updateQueryStringParameter(uri, key, value) {

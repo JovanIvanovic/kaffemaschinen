@@ -33,30 +33,30 @@
                 <!-- View Mode -->
                 <ul class="section-mode">
                     <li class="section-mode-gallery {{ $mode == 'grid' ? 'active' : '' }}">
-                        <a title="Gallery" href="{{ urldecode(route('all.category.view', array_merge(request()->query(), ['mode' => 'grid']), false)) }}"></a>
+                        <a title="Gallery" href="{{ urldecode(route('home', array_merge(request()->query(), ['mode' => 'grid']), false)) }}"></a>
                     </li>
                     <li class="section-mode-list {{ $mode == 'list' ? 'active' : '' }}">
-                        <a title="List" href="{{ urldecode(route('all.category.view', array_merge(request()->query(), ['mode' => 'list']), false)) }}"></a>
+                        <a title="List" href="{{ urldecode(route('home', array_merge(request()->query(), ['mode' => 'list']), false)) }}"></a>
                     </li>
                 </ul>
                 <!-- Sorting -->
                 <div class="section-sortby">
-                    <p>{{ old('order_by') ? __('front.' . old('order_by')) : 'sortierung' }}</p>
+                    <p>{{ request()->input('order_by') ? __('front.' . request()->input('order_by')) : 'sortierung' }}</p>
                     <ul>
                         @foreach(getOrderBy() as $key => $value)
                             <li>
-                                <a href="{{ urldecode(route('all.category.view', array_merge(request()->query(), ['order_by' => $key]), false)) }}">{{ $value }}</a>
+                                <a href="{{ urldecode(route('home', array_merge(request()->query(), ['order_by' => $key]), false)) }}">{{ $value }}</a>
                             </li>
                         @endforeach
                     </ul>
                 </div>
                 <!-- Count per page -->
                 <div class="section-count">
-                    <p>{{ old('view') ? old('view') : 12 }}</p>
+                    <p>{{ request()->input('view') ? request()->input('view') : 12 }}</p>
                     <ul>
                         @foreach(getshowNumbers() as $num)
                             <li>
-                                <a href="{{ urldecode(route('all.category.view', array_merge(request()->query(), ['view' => $num]), false)) }}">{{ $num }}</a>
+                                <a href="{{ urldecode(route('home', array_merge(request()->query(), ['view' => $num]), false)) }}">{{ $num }}</a>
                             </li>
                         @endforeach
                     </ul>
@@ -66,58 +66,36 @@
         <div class="section-cont">
             <!-- Catalog Topbar - end -->
             <div class="prod-items section-items">
-                @php($num = 1)
-                @php($count = count($hitAndNewProducts))
-                @foreach($hitAndNewProducts as $product)
-                    <?php
-                    $image = $product->image;
-                    $imageType = (isset($imageType)) ? $imageType : "medUrl";
-                    ?>
-                    <div class="prod-i">
-                        <div class="prod-i-top">
-                            <a href="{{ route('product.view', $product->slug)}}" class="prod-i-img"><img src="{{ $image->$imageType }}"></a>
-                            <div class="prod-sticker">
-                                @if($product->new_product == 1)
-                                    <div class="item-new-badge">new</div>
-                                @endif
-                                @if($product->hit_product == 1)
-                                <div class="item-hit-badge"><i class="fa fa-star"></i> hit</div>
-                                @endif
-                            </div>
-                        </div>
-                        <h3>
-                            <a href="{{ route('product.view', $product->slug)}}" title="{{ $product->name }}">{{ $product->name }}</a>
-                        </h3>
-                        @if(!$product->available)
-                            <h3 class="available_grid"><span style="color:red;" >{{ __('front.unavailable') }}</span></h3>
+                @if($mode == 'grid')
+                    <div class="prod-items section-items {{ $mode == 'grid' ? 'is-active' : '' }}" id="catalog-gallery">
+                        @if(count($hitAndNewProducts) <= 0)
+                            <p>Momentan sind keine Produkte vorhanden</p>
                         @else
-                            <h3 class="available_grid"><span style="color:green;" >{{ __('front.available') }}</span></h3>
+                            @foreach($hitAndNewProducts as $product)
+                                <?php
+                                $image = $product->image;
+                                $imageType = (isset($imageType)) ? $imageType : "medUrl"
+                                ?>
+                                @include('front.catalog.product.view.product-card',['imageType' => 'medUrl'])
+                            @endforeach
+                            <div class="clearfix"></div>
+                            {{ $hitAndNewProducts->appends(request()->input())->links('front.pagination.bootstrap-4') }}
                         @endif
-                        <p class="prod-i-price">
-                            @if($product->discount == 1)
-                                <b>CHF {{ number_format($product->discount_price, 2) }}</b><br>
-                                <del>CHF {{ number_format($product->price,2) }}</del>
-                            @php($priceOff = 100-($product->discount_price*100)/$product->price)
-                                <span style="color: red">-{{ number_format($priceOff,0) }}%</span>
-                            @else
-                                <b>CHF {{ number_format($product->price,2) }}</b><br>
-                                <del></del>
-                                <span></span>
-                            @endif
-                                <form method="post" action="{{ route('cart.add-to-cart') }}" style="text-align:center;">
-                                    {{ csrf_field() }}
-                                    <input type="hidden" name="id" value="{{ $product->id }}"/>
-                                    <input type="hidden" name="type" value="product"/>
-                        <p class="prodlist-i-addwrap">
-                            <button type="submit" class="prodlist-i-add">In den Warenkorb</button>
-                        </p>
-                        </form>
-                        </p>
-
                     </div>
-                @endforeach
+                @elseif($mode == 'list')
+                    <div class="prod-items section-items {{ $mode == 'list' ? 'is-active' : '' }}" id="catalog-list">
+                        @foreach($hitAndNewProducts as $product)
+                            <?php
+                            $image = $product->image;
+                            $imageType = (isset($imageType)) ? $imageType : "medUrl"
+                            ?>
+                            @include('front.catalog.product.view.product-card-list',['imageType' => 'medUrl'])
+                        @endforeach
+                        <div class="clearfix"></div>
+                        {{ $hitAndNewProducts->appends(request()->input())->links('front.pagination.bootstrap-4') }}
+                    </div>
+                @endif
             </div>
-            {{ $hitAndNewProducts->appends(request()->input())->links('front.pagination.bootstrap-4') }}
         </div>
     </section>
 </main>
