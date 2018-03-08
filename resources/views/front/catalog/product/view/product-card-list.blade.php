@@ -18,15 +18,7 @@
         <h3>
             <a href="{{ route('product.view', $product->slug)}}">{{ $product->name }}</a>
         </h3>
-        
-        @if($_REQUEST['slug'] != "gastro" )
-        
-        @if(!$product->available)
-            <h3 class="available_grid"><span style="color:red;" >{{ __('front.unavailable') }}</span></h3>
-        @else
-            <h3 class="available_grid"><span style="color:green;" >{{ __('front.available') }}</span></h3>
-        @endif
-        @endif
+
         <div class="prodlist-i-txt">
             {!! substr($product->description, 0, 200) !!}...
         </div>
@@ -35,44 +27,49 @@
                 {{ __('front.contact-us-button') }}
             </a>
         @else
-        @if(!$product->available)
-            <div class="prodlist-i-action">
+            @if(!$product->available)
+                <h3 class="available_grid"><span style="color:red;" >{{ __('front.unavailable') }}</span></h3>
+            @else
+                <h3 class="available_grid"><span style="color:green;" >{{ __('front.available') }}</span></h3>
+            @endif
+            @if(!$product->available)
+                <div class="prodlist-i-action">
 
-                <span class="prodlist-i-price">
-                    <b>{{ strlen($product->unavailable_text) > 44 ? substr($product->unavailable_text, 0, 44) . "..." : $product->unavailable_text }}</b>
-                </span>
-            </div>
-        @else
-        <div class="prodlist-i-action">
-            <form method="post" action="{{ route('cart.add-to-cart') }}">
-                {{ csrf_field() }}
-                <input type="hidden" name="id" value="{{ $product->id }}"/>
-                <input type="hidden" name="type" value="product"/>
-                <p class="prodlist-i-qnt">
-                    <input id="prodQnt" class="prod-qty" name="qty" value="1" type="text" data-max="{{ $product->qty }}">
-                    <a id="prodPlus" class="prod-plus prodlist-i-plus"><i class="fa fa-angle-up"></i></a>
-                    <a id="prodMinus" class="prod-minus prodlist-i-minus"><i class="fa fa-angle-down"></i></a>
-                </p>
-                <p class="prodlist-i-addwrap">
-                    <button type="submit" class="prodlist-i-add">In den Warenkorb</button>
-                    
-                </p>
-                @if($product->discount == 1)
                     <span class="prodlist-i-price">
-                        <b>CHF {{ number_format($product->discount_price, 2) }}</b><br>
-                        <span style="text-decoration:line-through">CHF {{ number_format($product->price,2) }}</span><span class="price-off">-{{ number_format(100-($product->discount_price/$product->price*100), 0) }}%</span><br>
-                        <span>inkl. MwSt {{ $product->pdv }}%</span>
-                     </span>
-                @else
-                    <span class="prodlist-i-price">
-                        <b>CHF {{ number_format($product->price,2) }}</b><br>
-                        <span>inkl. MwSt {{ $product->pdv }}%</span>
+                        <b>{{ strlen($product->unavailable_text) > 44 ? substr($product->unavailable_text, 0, 44) . "..." : $product->unavailable_text }}</b>
                     </span>
-                @endif
-            </form>
-        </div>
-        @endif
-@endif
+                </div>
+            @else
+            <div class="prodlist-i-action">
+                <form method="post" action="{{ route('cart.add-to-cart') }}">
+                    {{ csrf_field() }}
+                    <input type="hidden" name="id" value="{{ $product->id }}"/>
+                    <input type="hidden" name="type" value="product"/>
+                    <p class="prodlist-i-qnt">
+                        <input id="prodQnt" class="prod-qty" name="qty" value="1" type="text" data-max="{{ $product->qty }}">
+                        <a id="prodPlus" class="prod-plus prodlist-i-plus"><i class="fa fa-angle-up"></i></a>
+                        <a id="prodMinus" class="prod-minus prodlist-i-minus"><i class="fa fa-angle-down"></i></a>
+                    </p>
+                    <p class="prodlist-i-addwrap">
+                        <button type="submit" class="prodlist-i-add">In den Warenkorb</button>
+
+                    </p>
+                    @if($product->discount == 1)
+                        <span class="prodlist-i-price">
+                            <b>CHF {{ number_format($product->discount_price, 2) }}</b><br>
+                            <span style="text-decoration:line-through">CHF {{ number_format($product->price,2) }}</span><span class="price-off">-{{ number_format(100-($product->discount_price/$product->price*100), 0) }}%</span><br>
+                            <span>inkl. MwSt {{ $product->pdv }}%</span>
+                         </span>
+                    @else
+                        <span class="prodlist-i-price">
+                            <b>CHF {{ number_format($product->price,2) }}</b><br>
+                            <span>inkl. MwSt {{ $product->pdv }}%</span>
+                        </span>
+                    @endif
+                </form>
+            </div>
+            @endif
+    @endif
     </div>
 </div>
 
