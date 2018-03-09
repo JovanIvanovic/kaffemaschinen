@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 07, 2018 at 02:34 PM
--- Server version: 10.1.26-MariaDB
--- PHP Version: 7.1.8
+-- Generation Time: Mar 09, 2018 at 01:23 PM
+-- Server version: 10.1.30-MariaDB
+-- PHP Version: 7.1.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -180,7 +180,23 @@ INSERT INTO `category_product` (`id`, `category_id`, `product_id`, `created_at`,
 (40, 4, 56, '2018-03-01 15:23:41', '2018-03-01 15:23:41'),
 (41, 23, 56, '2018-03-01 15:23:41', '2018-03-01 15:23:41'),
 (42, 4, 57, '2018-03-01 15:24:15', '2018-03-01 15:24:15'),
-(43, 23, 57, '2018-03-01 15:24:15', '2018-03-01 15:24:15');
+(43, 23, 57, '2018-03-01 15:24:15', '2018-03-01 15:24:15'),
+(44, 3, 58, '2018-03-09 12:11:07', '2018-03-09 12:11:07'),
+(45, 28, 58, '2018-03-09 12:11:07', '2018-03-09 12:11:07'),
+(46, 3, 59, '2018-03-09 12:13:10', '2018-03-09 12:13:10'),
+(47, 28, 59, '2018-03-09 12:13:10', '2018-03-09 12:13:10'),
+(48, 3, 60, '2018-03-09 12:14:04', '2018-03-09 12:14:04'),
+(49, 28, 60, '2018-03-09 12:14:04', '2018-03-09 12:14:04'),
+(50, 3, 61, '2018-03-09 12:15:24', '2018-03-09 12:15:24'),
+(51, 30, 61, '2018-03-09 12:15:24', '2018-03-09 12:15:24'),
+(52, 3, 62, '2018-03-09 12:16:07', '2018-03-09 12:16:07'),
+(53, 30, 62, '2018-03-09 12:16:08', '2018-03-09 12:16:08'),
+(54, 3, 63, '2018-03-09 12:17:07', '2018-03-09 12:17:07'),
+(55, 30, 63, '2018-03-09 12:17:07', '2018-03-09 12:17:07'),
+(56, 3, 64, '2018-03-09 12:19:06', '2018-03-09 12:19:06'),
+(57, 27, 64, '2018-03-09 12:19:06', '2018-03-09 12:19:06'),
+(58, 3, 65, '2018-03-09 12:21:18', '2018-03-09 12:21:18'),
+(59, 29, 65, '2018-03-09 12:21:18', '2018-03-09 12:21:18');
 
 -- --------------------------------------------------------
 
@@ -918,7 +934,15 @@ INSERT INTO `products` (`id`, `type`, `name`, `slug`, `description`, `pdv`, `sta
 (54, 'BASIC', 'ESPRESSO RICCO', 'espresso-ricco', '<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', '7.7', 1, 1, NULL, NULL, NULL, 0, 0, NULL, NULL, NULL, 0, '81.00', NULL, 1, NULL, 1, '2018-03-01 15:12:08', '2018-03-06 11:01:34', NULL),
 (55, 'BASIC', 'Kaffemaschinen num.2.', 'kaffemaschinen-num2', '<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', '2.5', 1, 1, NULL, NULL, NULL, 1, 0, NULL, NULL, NULL, 1, '463.00', '430.00', 1, NULL, NULL, '2018-03-01 15:16:55', '2018-03-06 12:35:12', NULL),
 (56, 'BASIC', 'Kaffemühlen num 1', 'kaffemuhlen-num-1', '<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', '7.7', 1, 1, NULL, NULL, NULL, 1, 0, NULL, NULL, NULL, 0, '231.00', NULL, 1, NULL, NULL, '2018-03-01 15:23:16', '2018-03-06 11:01:38', NULL),
-(57, 'BASIC', 'Kaffemühlen num 2', 'kaffemuhlen-num-2', '<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', '2.5', 1, 1, 'test', NULL, NULL, 0, 0, NULL, NULL, NULL, 0, '623.00', NULL, 1, 0, 0, '2018-03-01 15:23:52', '2018-03-06 12:19:11', NULL);
+(57, 'BASIC', 'Kaffemühlen num 2', 'kaffemuhlen-num-2', '<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', '2.5', 1, 1, 'test', NULL, NULL, 0, 0, NULL, NULL, NULL, 0, '623.00', NULL, 1, 0, 0, '2018-03-01 15:23:52', '2018-03-06 12:19:11', NULL),
+(58, 'BASIC', 'Aroma Top', 'mokador', '<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', '2.5', 1, 1, NULL, NULL, NULL, 0, 0, NULL, NULL, NULL, 0, '34.00', NULL, 1, NULL, 1, '2018-03-09 12:09:14', '2018-03-09 12:11:49', NULL),
+(59, 'BASIC', '100% Arabica', '100-arabica', '<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', '2.5', 1, 1, NULL, NULL, NULL, 0, 0, NULL, NULL, NULL, 0, '53.00', NULL, 1, NULL, 1, '2018-03-09 12:12:17', '2018-03-09 12:13:10', NULL),
+(60, 'BASIC', 'Decaffeinato', 'decaffeinato', '<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', '2.5', 1, 1, NULL, NULL, NULL, 0, 0, NULL, NULL, NULL, 0, '245.00', NULL, 1, NULL, 1, '2018-03-09 12:13:42', '2018-03-09 12:14:04', NULL),
+(61, 'BASIC', 'Mokador Florita 1 kg Bohne', 'mokador-florita-1-kg-bohne', '<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', '2.5', 1, 1, NULL, NULL, NULL, 0, 0, NULL, NULL, NULL, 0, '67.00', NULL, 1, NULL, 1, '2018-03-09 12:14:50', '2018-03-09 12:15:24', NULL),
+(62, 'BASIC', 'Florita', 'florita', '<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', '2.5', 1, 1, NULL, NULL, NULL, 0, 0, NULL, NULL, NULL, 0, '68.00', NULL, 1, NULL, 1, '2018-03-09 12:15:39', '2018-03-09 12:16:07', NULL),
+(63, 'BASIC', 'Mokador G.M.M. Gran Miscela 1 kg Bohne', 'mokador-gmm-gran-miscela-1-kg-bohne', '<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', '2.5', 1, 1, NULL, NULL, NULL, 0, 0, NULL, NULL, NULL, 0, '56.00', NULL, 1, NULL, 1, '2018-03-09 12:16:39', '2018-03-09 12:17:07', NULL),
+(64, 'BASIC', 'Mokador Kapseln Aroma TOP 100 Stück', 'mokador-kapseln-aroma-top-100-stuck', '<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', '2.5', 1, 1, NULL, NULL, NULL, 0, 1, 100, NULL, NULL, 0, '11.00', NULL, 1, NULL, 1, '2018-03-09 12:17:49', '2018-03-09 12:19:06', NULL),
+(65, 'BASIC', '10 Mokador Nespresso Arabica', '10-mokador-nespresso-arabica', '<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', '2.5', 1, 1, NULL, NULL, NULL, 0, 0, NULL, NULL, NULL, 0, '56.00', NULL, 1, NULL, 0, '2018-03-09 12:20:34', '2018-03-09 12:21:18', NULL);
 
 -- --------------------------------------------------------
 
@@ -978,7 +1002,15 @@ INSERT INTO `product_images` (`id`, `product_id`, `path`, `filters`, `is_main_im
 (76, 54, 'uploads/catalog/images/k/n/g/ESPRESSO RICCO.jpg', 'none', 1, '2018-03-01 15:12:41', '2018-03-01 15:12:41'),
 (77, 55, 'uploads/catalog/images/e/z/4/10032096_UK_0001_titel___Klarstein_Aromatica_Kaffeemaschine_Mahlwerk_Glas.jpg', 'none', 1, '2018-03-01 15:18:34', '2018-03-01 15:18:34'),
 (78, 56, 'uploads/catalog/images/d/0/7/gorenje_SMK150B.jpg', 'none', 1, '2018-03-01 15:23:41', '2018-03-01 15:23:41'),
-(79, 57, 'uploads/catalog/images/l/a/9/nc3685_0.jpg', 'none', 1, '2018-03-01 15:24:15', '2018-03-06 12:15:44');
+(79, 57, 'uploads/catalog/images/l/a/9/nc3685_0.jpg', 'none', 1, '2018-03-01 15:24:15', '2018-03-06 12:15:44'),
+(80, 58, 'uploads/catalog/images/w/y/y/AROMA TOP.jpg', 'none', 1, '2018-03-09 12:11:07', '2018-03-09 12:11:48'),
+(81, 59, 'uploads/catalog/images/b/c/h/100% ARABICA.jpg', 'none', 1, '2018-03-09 12:13:10', '2018-03-09 12:13:10'),
+(82, 60, 'uploads/catalog/images/0/n/1/DECAFFEINATO.jpg', 'none', 1, '2018-03-09 12:14:04', '2018-03-09 12:14:04'),
+(83, 61, 'uploads/catalog/images/m/a/o/Mokador Florita, 1 kg Bohne .jpg', 'none', 1, '2018-03-09 12:15:24', '2018-03-09 12:15:24'),
+(84, 62, 'uploads/catalog/images/m/x/r/FLORITA .jpeg', 'none', 1, '2018-03-09 12:16:07', '2018-03-09 12:16:07'),
+(85, 63, 'uploads/catalog/images/d/f/1/Mokador G.M.M. Gran Miscela, 1 kg Bohne .jpg', 'none', 1, '2018-03-09 12:17:07', '2018-03-09 12:17:07'),
+(86, 64, 'uploads/catalog/images/j/q/b/Mokador Kapseln Aroma TOP 100 Stück.jpg', 'none', 1, '2018-03-09 12:19:06', '2018-03-09 12:20:05'),
+(87, 65, 'uploads/catalog/images/g/9/l/10 Mokador Nespresso® compatible capsules Cremoso .jpg', 'none', 1, '2018-03-09 12:21:18', '2018-03-09 12:21:18');
 
 -- --------------------------------------------------------
 
@@ -5695,7 +5727,290 @@ INSERT INTO `visitors` (`id`, `ip_address`, `url`, `agent`, `user_id`, `created_
 (4560, '127.0.0.1', 'checkout', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:33:50', '2018-03-07 13:33:50'),
 (4561, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:34:07', '2018-03-07 13:34:07'),
 (4562, '127.0.0.1', 'admin/package', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:34:09', '2018-03-07 13:34:09'),
-(4563, '127.0.0.1', 'admin/package/9/edit', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:34:12', '2018-03-07 13:34:12');
+(4563, '127.0.0.1', 'admin/package/9/edit', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', NULL, '2018-03-07 13:34:12', '2018-03-07 13:34:12'),
+(4564, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 11:53:54', '2018-03-08 11:53:54'),
+(4565, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 11:54:05', '2018-03-08 11:54:05'),
+(4566, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 11:54:07', '2018-03-08 11:54:07'),
+(4567, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 11:54:09', '2018-03-08 11:54:09'),
+(4568, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 11:54:11', '2018-03-08 11:54:11'),
+(4569, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 11:54:13', '2018-03-08 11:54:13'),
+(4570, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 11:54:22', '2018-03-08 11:54:22'),
+(4571, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 11:54:25', '2018-03-08 11:54:25'),
+(4572, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 11:54:27', '2018-03-08 11:54:27'),
+(4573, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 11:54:30', '2018-03-08 11:54:30'),
+(4574, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 11:54:32', '2018-03-08 11:54:32'),
+(4575, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 11:54:34', '2018-03-08 11:54:34'),
+(4576, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 11:54:37', '2018-03-08 11:54:37'),
+(4577, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 11:54:54', '2018-03-08 11:54:54'),
+(4578, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 11:55:00', '2018-03-08 11:55:00'),
+(4579, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 11:55:03', '2018-03-08 11:55:03'),
+(4580, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 11:55:06', '2018-03-08 11:55:06'),
+(4581, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 11:55:21', '2018-03-08 11:55:21'),
+(4582, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 11:55:24', '2018-03-08 11:55:24'),
+(4583, '127.0.0.1', 'front/assets/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 11:55:45', '2018-03-08 11:55:45'),
+(4584, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 11:56:54', '2018-03-08 11:56:54'),
+(4585, '127.0.0.1', 'front/assets/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 11:56:58', '2018-03-08 11:56:58'),
+(4586, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 11:56:58', '2018-03-08 11:56:58'),
+(4587, '127.0.0.1', 'front/assets/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 11:57:01', '2018-03-08 11:57:01'),
+(4588, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 11:58:45', '2018-03-08 11:58:45'),
+(4589, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 11:58:51', '2018-03-08 11:58:51'),
+(4590, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 11:59:09', '2018-03-08 11:59:09'),
+(4591, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 11:59:41', '2018-03-08 11:59:41'),
+(4592, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 11:59:44', '2018-03-08 11:59:44'),
+(4593, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 11:59:46', '2018-03-08 11:59:46'),
+(4594, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 11:59:58', '2018-03-08 11:59:58'),
+(4595, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:00:00', '2018-03-08 12:00:00'),
+(4596, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:00:48', '2018-03-08 12:00:48'),
+(4597, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:00:50', '2018-03-08 12:00:50'),
+(4598, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:00:55', '2018-03-08 12:00:55'),
+(4599, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:01:10', '2018-03-08 12:01:10'),
+(4600, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:01:15', '2018-03-08 12:01:15'),
+(4601, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:01:29', '2018-03-08 12:01:29'),
+(4602, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:01:33', '2018-03-08 12:01:33'),
+(4603, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:01:37', '2018-03-08 12:01:37'),
+(4604, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:01:50', '2018-03-08 12:01:50'),
+(4605, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:01:55', '2018-03-08 12:01:55'),
+(4606, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:02:16', '2018-03-08 12:02:16'),
+(4607, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:02:26', '2018-03-08 12:02:26'),
+(4608, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:02:33', '2018-03-08 12:02:33'),
+(4609, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:02:38', '2018-03-08 12:02:38'),
+(4610, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:02:43', '2018-03-08 12:02:43'),
+(4611, '127.0.0.1', 'admin', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:03:51', '2018-03-08 12:03:51'),
+(4612, '127.0.0.1', 'admin/login', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:03:51', '2018-03-08 12:03:51'),
+(4613, '127.0.0.1', 'admin/js/jquery-3.2.1.min.js', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:03:52', '2018-03-08 12:03:52'),
+(4614, '127.0.0.1', 'admin/js/jquery-3.2.1.min.js', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:03:53', '2018-03-08 12:03:53'),
+(4615, '127.0.0.1', 'admin/login', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:03:54', '2018-03-08 12:03:54'),
+(4616, '127.0.0.1', 'admin', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:03:55', '2018-03-08 12:03:55'),
+(4617, '127.0.0.1', 'admin/product', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:03:56', '2018-03-08 12:03:56'),
+(4618, '127.0.0.1', 'admin/category', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:04:00', '2018-03-08 12:04:00'),
+(4619, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:04:20', '2018-03-08 12:04:20'),
+(4620, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:04:24', '2018-03-08 12:04:24'),
+(4621, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:04:49', '2018-03-08 12:04:49'),
+(4622, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:04:54', '2018-03-08 12:04:54'),
+(4623, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:07:20', '2018-03-08 12:07:20'),
+(4624, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:07:49', '2018-03-08 12:07:49'),
+(4625, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:08:18', '2018-03-08 12:08:18'),
+(4626, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:08:21', '2018-03-08 12:08:21'),
+(4627, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:08:26', '2018-03-08 12:08:26'),
+(4628, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:09:21', '2018-03-08 12:09:21'),
+(4629, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:09:24', '2018-03-08 12:09:24'),
+(4630, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:12:46', '2018-03-08 12:12:46'),
+(4631, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:12:50', '2018-03-08 12:12:50'),
+(4632, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:12:55', '2018-03-08 12:12:55'),
+(4633, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:13:01', '2018-03-08 12:13:01'),
+(4634, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:13:06', '2018-03-08 12:13:06'),
+(4635, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:13:09', '2018-03-08 12:13:09'),
+(4636, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:13:11', '2018-03-08 12:13:11'),
+(4637, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:13:13', '2018-03-08 12:13:13'),
+(4638, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:13:18', '2018-03-08 12:13:18'),
+(4639, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:13:20', '2018-03-08 12:13:20'),
+(4640, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:13:23', '2018-03-08 12:13:23'),
+(4641, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:15:34', '2018-03-08 12:15:34'),
+(4642, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:16:25', '2018-03-08 12:16:25'),
+(4643, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:16:49', '2018-03-08 12:16:49'),
+(4644, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:17:45', '2018-03-08 12:17:45'),
+(4645, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:17:53', '2018-03-08 12:17:53'),
+(4646, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:17:56', '2018-03-08 12:17:56'),
+(4647, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:17:59', '2018-03-08 12:17:59'),
+(4648, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:18:02', '2018-03-08 12:18:02'),
+(4649, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:19:29', '2018-03-08 12:19:29'),
+(4650, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:19:33', '2018-03-08 12:19:33'),
+(4651, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:19:42', '2018-03-08 12:19:42'),
+(4652, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:21:50', '2018-03-08 12:21:50'),
+(4653, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:22:16', '2018-03-08 12:22:16'),
+(4654, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:22:33', '2018-03-08 12:22:33'),
+(4655, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:22:37', '2018-03-08 12:22:37'),
+(4656, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:24:07', '2018-03-08 12:24:07'),
+(4657, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:24:10', '2018-03-08 12:24:10'),
+(4658, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:24:14', '2018-03-08 12:24:14'),
+(4659, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:24:16', '2018-03-08 12:24:16'),
+(4660, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:24:18', '2018-03-08 12:24:18'),
+(4661, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:45:41', '2018-03-08 12:45:41'),
+(4662, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:45:53', '2018-03-08 12:45:53'),
+(4663, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:46:02', '2018-03-08 12:46:02'),
+(4664, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:46:11', '2018-03-08 12:46:11'),
+(4665, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:46:57', '2018-03-08 12:46:57'),
+(4666, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:47:13', '2018-03-08 12:47:13'),
+(4667, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:47:26', '2018-03-08 12:47:26'),
+(4668, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:47:34', '2018-03-08 12:47:34'),
+(4669, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:47:40', '2018-03-08 12:47:40'),
+(4670, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:48:16', '2018-03-08 12:48:16'),
+(4671, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:48:18', '2018-03-08 12:48:18'),
+(4672, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:52:00', '2018-03-08 12:52:00'),
+(4673, '127.0.0.1', 'front/assets/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:52:05', '2018-03-08 12:52:05'),
+(4674, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:54:22', '2018-03-08 12:54:22'),
+(4675, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:56:10', '2018-03-08 12:56:10'),
+(4676, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:56:58', '2018-03-08 12:56:58'),
+(4677, '127.0.0.1', 'front/assets/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:57:02', '2018-03-08 12:57:02'),
+(4678, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 12:57:04', '2018-03-08 12:57:04'),
+(4679, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 13:01:59', '2018-03-08 13:01:59'),
+(4680, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 13:02:06', '2018-03-08 13:02:06'),
+(4681, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 13:02:09', '2018-03-08 13:02:09'),
+(4682, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 13:03:34', '2018-03-08 13:03:34'),
+(4683, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 13:11:32', '2018-03-08 13:11:32'),
+(4684, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 13:12:07', '2018-03-08 13:12:07'),
+(4685, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 13:12:40', '2018-03-08 13:12:40'),
+(4686, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 13:12:45', '2018-03-08 13:12:45'),
+(4687, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 13:13:28', '2018-03-08 13:13:28'),
+(4688, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 13:15:15', '2018-03-08 13:15:15'),
+(4689, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 13:15:24', '2018-03-08 13:15:24'),
+(4690, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 13:15:30', '2018-03-08 13:15:30'),
+(4691, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 13:15:49', '2018-03-08 13:15:49'),
+(4692, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 13:39:59', '2018-03-08 13:39:59'),
+(4693, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 13:40:02', '2018-03-08 13:40:02'),
+(4694, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 13:40:05', '2018-03-08 13:40:05'),
+(4695, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 13:40:18', '2018-03-08 13:40:18'),
+(4696, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 13:40:21', '2018-03-08 13:40:21'),
+(4697, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 13:40:43', '2018-03-08 13:40:43');
+INSERT INTO `visitors` (`id`, `ip_address`, `url`, `agent`, `user_id`, `created_at`, `updated_at`) VALUES
+(4698, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 13:40:45', '2018-03-08 13:40:45'),
+(4699, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 13:41:09', '2018-03-08 13:41:09'),
+(4700, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 13:41:13', '2018-03-08 13:41:13'),
+(4701, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 13:41:37', '2018-03-08 13:41:37'),
+(4702, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 13:41:40', '2018-03-08 13:41:40'),
+(4703, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 13:42:49', '2018-03-08 13:42:49'),
+(4704, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 13:42:52', '2018-03-08 13:42:52'),
+(4705, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 13:42:55', '2018-03-08 13:42:55'),
+(4706, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 13:42:57', '2018-03-08 13:42:57'),
+(4707, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 13:43:02', '2018-03-08 13:43:02'),
+(4708, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 13:43:27', '2018-03-08 13:43:27'),
+(4709, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 13:43:30', '2018-03-08 13:43:30'),
+(4710, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 14:44:25', '2018-03-08 14:44:25'),
+(4711, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 14:44:29', '2018-03-08 14:44:29'),
+(4712, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 14:44:35', '2018-03-08 14:44:35'),
+(4713, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 14:44:41', '2018-03-08 14:44:41'),
+(4714, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 14:44:45', '2018-03-08 14:44:45'),
+(4715, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-08 14:44:50', '2018-03-08 14:44:50'),
+(4716, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:07:13', '2018-03-09 12:07:13'),
+(4717, '127.0.0.1', 'admin', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:07:41', '2018-03-09 12:07:41'),
+(4718, '127.0.0.1', 'admin/login', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:07:41', '2018-03-09 12:07:41'),
+(4719, '127.0.0.1', 'admin/js/jquery-3.2.1.min.js', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:07:42', '2018-03-09 12:07:42'),
+(4720, '127.0.0.1', 'admin/js/jquery-3.2.1.min.js', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:07:43', '2018-03-09 12:07:43'),
+(4721, '127.0.0.1', 'admin/login', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:07:44', '2018-03-09 12:07:44'),
+(4722, '127.0.0.1', 'admin', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:07:45', '2018-03-09 12:07:45'),
+(4723, '127.0.0.1', 'admin/product', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:07:45', '2018-03-09 12:07:45'),
+(4724, '127.0.0.1', 'admin/product', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:07:52', '2018-03-09 12:07:52'),
+(4725, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:07:56', '2018-03-09 12:07:56'),
+(4726, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:08:02', '2018-03-09 12:08:02'),
+(4727, '127.0.0.1', 'admin/category', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:08:06', '2018-03-09 12:08:06'),
+(4728, '127.0.0.1', 'admin/product', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:08:16', '2018-03-09 12:08:16'),
+(4729, '127.0.0.1', 'admin/product/create', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:08:18', '2018-03-09 12:08:18'),
+(4730, '127.0.0.1', 'admin/product', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:09:14', '2018-03-09 12:09:14'),
+(4731, '127.0.0.1', 'admin/product/58/edit', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:09:15', '2018-03-09 12:09:15'),
+(4732, '127.0.0.1', 'back/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:10:05', '2018-03-09 12:10:05'),
+(4733, '127.0.0.1', 'admin/product-image/upload', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:11:03', '2018-03-09 12:11:03'),
+(4734, '127.0.0.1', 'admin/product/58', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:11:07', '2018-03-09 12:11:07'),
+(4735, '127.0.0.1', 'admin/product', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:11:08', '2018-03-09 12:11:08'),
+(4736, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:11:10', '2018-03-09 12:11:10'),
+(4737, '127.0.0.1', 'admin/product/58/edit', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:11:21', '2018-03-09 12:11:21'),
+(4738, '127.0.0.1', 'back/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:11:30', '2018-03-09 12:11:30'),
+(4739, '127.0.0.1', 'admin/product/58', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:11:48', '2018-03-09 12:11:48'),
+(4740, '127.0.0.1', 'admin/product', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:11:49', '2018-03-09 12:11:49'),
+(4741, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:11:50', '2018-03-09 12:11:50'),
+(4742, '127.0.0.1', 'admin/product/58/edit', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:11:55', '2018-03-09 12:11:55'),
+(4743, '127.0.0.1', 'admin/product', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:12:01', '2018-03-09 12:12:01'),
+(4744, '127.0.0.1', 'admin/product/create', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:12:03', '2018-03-09 12:12:03'),
+(4745, '127.0.0.1', 'admin/product', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:12:17', '2018-03-09 12:12:17'),
+(4746, '127.0.0.1', 'admin/product/59/edit', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:12:18', '2018-03-09 12:12:18'),
+(4747, '127.0.0.1', 'admin/product-image/upload', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:12:41', '2018-03-09 12:12:41'),
+(4748, '127.0.0.1', 'admin/product-image/delete', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:12:43', '2018-03-09 12:12:43'),
+(4749, '127.0.0.1', 'admin/product-image/upload', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:12:45', '2018-03-09 12:12:45'),
+(4750, '127.0.0.1', 'admin/product/59', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:12:47', '2018-03-09 12:12:47'),
+(4751, '127.0.0.1', 'admin/product/59/edit', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:12:48', '2018-03-09 12:12:48'),
+(4752, '127.0.0.1', 'admin/product-image/upload', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:13:08', '2018-03-09 12:13:08'),
+(4753, '127.0.0.1', 'admin/product/59', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:13:10', '2018-03-09 12:13:10'),
+(4754, '127.0.0.1', 'admin/product', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:13:10', '2018-03-09 12:13:10'),
+(4755, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:13:13', '2018-03-09 12:13:13'),
+(4756, '127.0.0.1', 'admin/product/create', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:13:18', '2018-03-09 12:13:18'),
+(4757, '127.0.0.1', 'admin/product', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:13:42', '2018-03-09 12:13:42'),
+(4758, '127.0.0.1', 'admin/product/60/edit', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:13:42', '2018-03-09 12:13:42'),
+(4759, '127.0.0.1', 'admin/product-image/upload', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:14:02', '2018-03-09 12:14:02'),
+(4760, '127.0.0.1', 'admin/product/60', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:14:04', '2018-03-09 12:14:04'),
+(4761, '127.0.0.1', 'admin/product', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:14:04', '2018-03-09 12:14:04'),
+(4762, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:14:08', '2018-03-09 12:14:08'),
+(4763, '127.0.0.1', 'admin/product/create', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:14:11', '2018-03-09 12:14:11'),
+(4764, '127.0.0.1', 'admin/product', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:14:50', '2018-03-09 12:14:50'),
+(4765, '127.0.0.1', 'admin/product/61/edit', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:14:51', '2018-03-09 12:14:51'),
+(4766, '127.0.0.1', 'admin/product-image/upload', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:15:20', '2018-03-09 12:15:20'),
+(4767, '127.0.0.1', 'admin/product/61', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:15:24', '2018-03-09 12:15:24'),
+(4768, '127.0.0.1', 'admin/product', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:15:24', '2018-03-09 12:15:24'),
+(4769, '127.0.0.1', 'admin/product/create', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:15:26', '2018-03-09 12:15:26'),
+(4770, '127.0.0.1', 'admin/product', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:15:39', '2018-03-09 12:15:39'),
+(4771, '127.0.0.1', 'admin/product/62/edit', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:15:39', '2018-03-09 12:15:39'),
+(4772, '127.0.0.1', 'admin/product-image/upload', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:16:06', '2018-03-09 12:16:06'),
+(4773, '127.0.0.1', 'admin/product/62', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:16:07', '2018-03-09 12:16:07'),
+(4774, '127.0.0.1', 'admin/product', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:16:08', '2018-03-09 12:16:08'),
+(4775, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:16:11', '2018-03-09 12:16:11'),
+(4776, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:16:14', '2018-03-09 12:16:14'),
+(4777, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:16:16', '2018-03-09 12:16:16'),
+(4778, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:16:18', '2018-03-09 12:16:18'),
+(4779, '127.0.0.1', 'admin/product/create', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:16:27', '2018-03-09 12:16:27'),
+(4780, '127.0.0.1', 'admin/product', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:16:39', '2018-03-09 12:16:39'),
+(4781, '127.0.0.1', 'admin/product/63/edit', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:16:39', '2018-03-09 12:16:39'),
+(4782, '127.0.0.1', 'admin/product-image/upload', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:17:04', '2018-03-09 12:17:04'),
+(4783, '127.0.0.1', 'admin/product/63', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:17:06', '2018-03-09 12:17:06'),
+(4784, '127.0.0.1', 'admin/product', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:17:07', '2018-03-09 12:17:07'),
+(4785, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:17:28', '2018-03-09 12:17:28'),
+(4786, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:17:30', '2018-03-09 12:17:30'),
+(4787, '127.0.0.1', 'admin/product/create', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:17:38', '2018-03-09 12:17:38'),
+(4788, '127.0.0.1', 'admin/product', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:17:49', '2018-03-09 12:17:49'),
+(4789, '127.0.0.1', 'admin/product/64/edit', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:17:50', '2018-03-09 12:17:50'),
+(4790, '127.0.0.1', 'back/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:18:23', '2018-03-09 12:18:23'),
+(4791, '127.0.0.1', 'admin/product-image/upload', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:18:41', '2018-03-09 12:18:41'),
+(4792, '127.0.0.1', 'admin/product-image/delete', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:18:45', '2018-03-09 12:18:45'),
+(4793, '127.0.0.1', 'admin/product-image/upload', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:18:49', '2018-03-09 12:18:49'),
+(4794, '127.0.0.1', 'admin/product-image/delete', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:18:53', '2018-03-09 12:18:53'),
+(4795, '127.0.0.1', 'admin/product-image/upload', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:18:59', '2018-03-09 12:18:59'),
+(4796, '127.0.0.1', 'admin/product-image/delete', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:19:02', '2018-03-09 12:19:02'),
+(4797, '127.0.0.1', 'admin/product-image/upload', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:19:04', '2018-03-09 12:19:04'),
+(4798, '127.0.0.1', 'admin/product/64', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:19:06', '2018-03-09 12:19:06'),
+(4799, '127.0.0.1', 'admin/product', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:19:07', '2018-03-09 12:19:07'),
+(4800, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:19:09', '2018-03-09 12:19:09'),
+(4801, '127.0.0.1', 'admin/product/64/edit', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:19:21', '2018-03-09 12:19:21'),
+(4802, '127.0.0.1', 'admin/product-image/delete', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:19:23', '2018-03-09 12:19:23'),
+(4803, '127.0.0.1', 'admin/product-image/upload', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:19:27', '2018-03-09 12:19:27'),
+(4804, '127.0.0.1', 'admin/product-image/delete', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:19:29', '2018-03-09 12:19:29'),
+(4805, '127.0.0.1', 'admin/product-image/upload', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:19:35', '2018-03-09 12:19:35'),
+(4806, '127.0.0.1', 'admin/product-image/delete', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:19:37', '2018-03-09 12:19:37'),
+(4807, '127.0.0.1', 'admin/product-image/upload', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:19:41', '2018-03-09 12:19:41'),
+(4808, '127.0.0.1', 'admin/product-image/delete', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:19:43', '2018-03-09 12:19:43'),
+(4809, '127.0.0.1', 'admin/product-image/upload', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:19:45', '2018-03-09 12:19:45'),
+(4810, '127.0.0.1', 'admin/product/64', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:19:47', '2018-03-09 12:19:47'),
+(4811, '127.0.0.1', 'admin/product/64/edit', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:19:47', '2018-03-09 12:19:47'),
+(4812, '127.0.0.1', 'uploads/catalog/images/j/q/b/small-Mokador%20Kapseln%20Aroma%20TOP%20100%20Stu%CC%88ck.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:19:48', '2018-03-09 12:19:48'),
+(4813, '127.0.0.1', 'admin/product/64', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:19:54', '2018-03-09 12:19:54'),
+(4814, '127.0.0.1', 'admin/product', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:19:54', '2018-03-09 12:19:54'),
+(4815, '127.0.0.1', 'uploads/catalog/images/j/q/b/small-Mokador%20Kapseln%20Aroma%20TOP%20100%20Stu%CC%88ck.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:19:55', '2018-03-09 12:19:55'),
+(4816, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:19:57', '2018-03-09 12:19:57'),
+(4817, '127.0.0.1', 'uploads/catalog/images/j/q/b/med-Mokador%20Kapseln%20Aroma%20TOP%20100%20Stu%CC%88ck.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:19:58', '2018-03-09 12:19:58'),
+(4818, '127.0.0.1', 'admin/product/64/edit', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:20:02', '2018-03-09 12:20:02'),
+(4819, '127.0.0.1', 'uploads/catalog/images/j/q/b/small-Mokador%20Kapseln%20Aroma%20TOP%20100%20Stu%CC%88ck.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:20:02', '2018-03-09 12:20:02'),
+(4820, '127.0.0.1', 'admin/product/64', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:20:05', '2018-03-09 12:20:05'),
+(4821, '127.0.0.1', 'admin/product/64/edit', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:20:06', '2018-03-09 12:20:06'),
+(4822, '127.0.0.1', 'uploads/catalog/images/j/q/b/small-Mokador%20Kapseln%20Aroma%20TOP%20100%20Stu%CC%88ck.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:20:06', '2018-03-09 12:20:06'),
+(4823, '127.0.0.1', 'admin/product', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:20:09', '2018-03-09 12:20:09'),
+(4824, '127.0.0.1', 'uploads/catalog/images/j/q/b/small-Mokador%20Kapseln%20Aroma%20TOP%20100%20Stu%CC%88ck.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:20:10', '2018-03-09 12:20:10'),
+(4825, '127.0.0.1', 'admin/product/64/edit', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:20:11', '2018-03-09 12:20:11'),
+(4826, '127.0.0.1', 'uploads/catalog/images/j/q/b/small-Mokador%20Kapseln%20Aroma%20TOP%20100%20Stu%CC%88ck.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:20:12', '2018-03-09 12:20:12'),
+(4827, '127.0.0.1', 'admin/product', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:20:13', '2018-03-09 12:20:13'),
+(4828, '127.0.0.1', 'uploads/catalog/images/j/q/b/small-Mokador%20Kapseln%20Aroma%20TOP%20100%20Stu%CC%88ck.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:20:13', '2018-03-09 12:20:13'),
+(4829, '127.0.0.1', 'admin/product/create', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:20:14', '2018-03-09 12:20:14'),
+(4830, '127.0.0.1', 'admin/product', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:20:34', '2018-03-09 12:20:34'),
+(4831, '127.0.0.1', 'admin/product/65/edit', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:20:34', '2018-03-09 12:20:34'),
+(4832, '127.0.0.1', 'admin/product-image/upload', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:21:03', '2018-03-09 12:21:03'),
+(4833, '127.0.0.1', 'admin/product-image/delete', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:21:09', '2018-03-09 12:21:09'),
+(4834, '127.0.0.1', 'admin/product-image/upload', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:21:11', '2018-03-09 12:21:11'),
+(4835, '127.0.0.1', 'admin/product-image/delete', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:21:13', '2018-03-09 12:21:13'),
+(4836, '127.0.0.1', 'admin/product-image/upload', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:21:15', '2018-03-09 12:21:15'),
+(4837, '127.0.0.1', 'admin/product/65', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:21:18', '2018-03-09 12:21:18'),
+(4838, '127.0.0.1', 'admin/product', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:21:18', '2018-03-09 12:21:18'),
+(4839, '127.0.0.1', 'uploads/catalog/images/j/q/b/small-Mokador%20Kapseln%20Aroma%20TOP%20100%20Stu%CC%88ck.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:21:19', '2018-03-09 12:21:19'),
+(4840, '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:21:21', '2018-03-09 12:21:21'),
+(4841, '127.0.0.1', 'uploads/catalog/images/j/q/b/med-Mokador%20Kapseln%20Aroma%20TOP%20100%20Stu%CC%88ck.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:21:22', '2018-03-09 12:21:22'),
+(4842, '127.0.0.1', 'admin/product', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:21:39', '2018-03-09 12:21:39'),
+(4843, '127.0.0.1', 'uploads/catalog/images/j/q/b/small-Mokador%20Kapseln%20Aroma%20TOP%20100%20Stu%CC%88ck.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:21:40', '2018-03-09 12:21:40'),
+(4844, '127.0.0.1', 'partner', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:21:48', '2018-03-09 12:21:48'),
+(4845, '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', NULL, '2018-03-09 12:21:50', '2018-03-09 12:21:50');
 
 --
 -- Indexes for dumped tables
@@ -5934,146 +6249,175 @@ ALTER TABLE `visitors`
 --
 ALTER TABLE `addresses`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `admin_users`
 --
 ALTER TABLE `admin_users`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+
 --
 -- AUTO_INCREMENT for table `category_product`
 --
 ALTER TABLE `category_product`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+
 --
 -- AUTO_INCREMENT for table `configurations`
 --
 ALTER TABLE `configurations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- AUTO_INCREMENT for table `countries`
 --
 ALTER TABLE `countries`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=251;
+
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
 --
 -- AUTO_INCREMENT for table `oauth_clients`
 --
 ALTER TABLE `oauth_clients`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `oauth_personal_access_clients`
 --
 ALTER TABLE `oauth_personal_access_clients`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
 -- AUTO_INCREMENT for table `order_statuses`
 --
 ALTER TABLE `order_statuses`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `packages`
 --
 ALTER TABLE `packages`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
 --
 -- AUTO_INCREMENT for table `package_products`
 --
 ALTER TABLE `package_products`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
 --
 -- AUTO_INCREMENT for table `pages`
 --
 ALTER TABLE `pages`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
 -- AUTO_INCREMENT for table `page_home`
 --
 ALTER TABLE `page_home`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `page_uber_uns`
 --
 ALTER TABLE `page_uber_uns`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 --
 -- AUTO_INCREMENT for table `page_wir_kaufen`
 --
 ALTER TABLE `page_wir_kaufen`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `popups`
 --
 ALTER TABLE `popups`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+
 --
 -- AUTO_INCREMENT for table `product_combinations`
 --
 ALTER TABLE `product_combinations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `product_images`
 --
 ALTER TABLE `product_images`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
+
 --
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `subscribers`
 --
 ALTER TABLE `subscribers`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
 --
 -- AUTO_INCREMENT for table `subscriptions`
 --
 ALTER TABLE `subscriptions`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `user_viewed_products`
 --
 ALTER TABLE `user_viewed_products`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `visitors`
 --
 ALTER TABLE `visitors`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4564;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4846;
+
 --
 -- Constraints for dumped tables
 --
