@@ -34,7 +34,7 @@
 </nav>
 <div class="container-fluid">
     <div class="row justify-content-center align-items-center" style="height: 100vh;" >
-        <div class="col-8" style="max-width: 650px">
+        <div class="col-lg-8 col-sm-12" style="max-width: 650px">
             <div class="card card-default">
                 <div class="card-header">
 
