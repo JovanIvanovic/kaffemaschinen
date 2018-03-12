@@ -50,6 +50,15 @@ class CategoryController extends AdminController
      */
     public function store(CategoryRequest $request)
     {
+        if ($request->parent_id == ''){
+
+            $allCat = Category::where('parent_id', null)->count();
+
+            if ($allCat >= 9){
+                return redirect()->back()->with('category', __('front.category-max'));
+            }
+        }
+
         Category::create($request->all());
 
         return redirect()->route('admin.category.index');
@@ -89,6 +98,15 @@ class CategoryController extends AdminController
      */
     public function update(CategoryRequest $request, $id)
     {
+        if (empty($request->parent_id)){
+
+            $allCat = Category::where('parent_id', null)->count();
+
+            if ($allCat >= 9){
+                return redirect()->back()->with('category', __('front.category-max'));
+            }
+        }
+
         $category = Category::findorfail($id);
         $category->update($request->all());
 

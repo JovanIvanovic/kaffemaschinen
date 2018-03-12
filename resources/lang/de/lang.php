@@ -147,4 +147,7 @@ return [
     'unavailable' => 'Ausverkauft',
     'available' => 'Verfügbar',
 
+
+    'slug-unique-fail' => 'Dieser URL-Link ist bereits vergeben. Bitte einen neuen URL-Link eingeben.',
+
 ];

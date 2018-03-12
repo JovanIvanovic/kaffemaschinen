@@ -241,7 +241,7 @@
                                     <th class="text-left">{{ __('front.product-name') }}</th>
                                     <th class="text-right">{{ __('front.quantity') }}</th>
                                     <th class="text-right">{{ __('front.unit-price') }}</th>
-<!--                                    <th class="text-right">{{ __('front.delivery_option') }}</th>-->
+                                    {{--<th class="text-right">{{ __('front.delivery_option') }}</th>--}}
                                     <th class="text-right">{{ __('front.total') }}</th>
                                 </tr>
                             </thead>
@@ -264,11 +264,11 @@
                                     <td class="text-right">{{ $cartItem['qty'] }}</td>
                                     <td class="text-right">
                                     CHF {{ number_format($cartItem['price'],2) }}</td>
-<!--
-                                    <td class="text-center">
-                                        {{ $cartItem['for_delivery'] ? __('front.delivery') : __('front.pick_up') }}
-                                    </td>
--->
+
+                                    {{--<td class="text-center">--}}
+                                        {{--{{ $cartItem['for_delivery'] ? __('front.delivery') : __('front.pick_up') }}--}}
+                                    {{--</td>--}}
+
                                     <td class="text-right">
                                     CHF {{ number_format($cartItem['qty'] * $cartItem['price'], 2) }}</td>
                                 </tr>
@@ -285,13 +285,6 @@
                                 $subTotal += $subTotal25 + $subTotal77;
 
                                 ?>
-
-                                @if($cartItem['for_delivery'])
-                                <tr>
-                                    <td colspan="3" class="text-right">{{ __('front.delivery_cost') }}</td>
-                                    <td class="text-right" {!! $subTotal > 100 ? 'style="text-decoration: line-through;"' : '' !!}>{{ 'CHF ' . (float)\App\Models\Database\Configuration::getConfiguration('delivery_price') }}</td>
-                                </tr>
-                                @endif
 
                                 <input type="hidden" name="products[]" value="{{ $cartItem['id'] }}"/>
                                 @endforeach
@@ -313,10 +306,13 @@
                             Session::put('deliveryTotal', $deliveryTotal);
                             Session::put('pickupTotal', $pickupTotal);
                             @endphp
+
+                            @if($subTotal < 100)
                             <tr class=" shipping-row">
                                 <td colspan="4" class="text-right  hidden-xs"><strong>{{ __('front.shipping-option') }}:</strong></td>
-                                <td class="text-right shipping-cost" data-shipping-cost="{{ $shipping }}" {!! $subTotal > 100 ? 'style="text-decoration: line-through;"' : '' !!}>CHF {{ number_format($shipping, 2) }}</td>
+                                <td class="text-right shipping-cost" data-shipping-cost="{{ $shipping }}">CHF {{ number_format($shipping, 2) }}</td>
                             </tr>
+                            @endif
                             {{--
                             <tr>
                                 <td colspan="4" class="text-right  hidden-xs"><strong>{{ __('front.tax-amount') }}:</strong></td>

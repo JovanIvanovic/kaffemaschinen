@@ -26,3 +26,29 @@
     </div>
 
 @endsection
+@push('scripts')
+<script>
+    function showDeleteModal(id, name) {
+        var url = "{{ URL::to('admin/category') }}";
+        var action = url + '/' + id;
+        $('#modal_form').attr('action', action);
+        $('#category_name').html(name);
+        $('#myModal').modal('show');
+    }
+</script>
+
+<script>
+    $(document).ready(function () {
+
+        @if(session()->has('category'))
+        $.notify({
+            // options
+            message: '{{ session('category') }}'
+        },{
+            // settings
+            type: 'danger'
+        });
+        @endif
+    });
+</script>
+@endpush

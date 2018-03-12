@@ -139,11 +139,11 @@
                     </div>
                     <ul class="cart-total">
                         <li class="notification" style="float: left;">
-                            If cart sum is lower than 100CHF shipping price is included
+                            {{ __('front.cart-lower-100-shipping-included') }}
                         </li>
                         <li class="cart-summ">
                             {{ __('front.total') }}: <b>CHF <span style="color: #ff0000;" class="total-sum-price">{{ number_format(($total),2) }}</span></b>
-                            <?php echo ($cartItem['price'] < 100) ? '<p class="cart_pdv">Shipping price included</p>' : '<p class="cart_pdv">Shipping price not included</p>' ?>
+                            {!!   ($cartItem['price'] < 100) ? '<p class="cart_pdv">'. __('front.shipping-included') .'</p>' : '<p class="cart_pdv">'. __('front.shipping-not-included') .'</p>' !!}
 
                         </li>
                     </ul>
