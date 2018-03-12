@@ -3,7 +3,7 @@
 
 @section('content')
     <div class="row mb-4">
-        <div onclick="showhide('myChart3')" class="col-3">
+        <div onclick="showhide('myChart3')" class="col-lg-3 col-sm-12">
             <div class="card" style="min-height: 95px;">
                 <div class="card-body">
                     <div class="row">
@@ -19,7 +19,7 @@
             </div>
         </div>
 
-        <div onclick="showhide('myChart2')" class="col-3">
+        <div onclick="showhide('myChart2')" class="col-lg-3 col-sm-12">
             <div class="card" style="min-height: 95px;">
                 <div class="card-body" style="min-height: 90px;">
                     <div class="row">
@@ -35,7 +35,7 @@
             </div>
         </div>
 
-        <div onclick="showhide('myChart4')" class="col-3">
+        <div onclick="showhide('myChart4')" class="col-lg-3 col-sm-12">
             <div class="card" style="min-height: 95px;">
                 <div class="card-body">
                     <div class="row">
@@ -51,7 +51,7 @@
             </div>
         </div>
 
-        <div onclick="showhide('myChart')" class="col-3">
+        <div onclick="showhide('myChart')" class="col-lg-3 col-sm-12">
             <div class="card" style="min-height: 95px;">
                 <div class="card-body" style="min-height: 90px;">
                     <div class="row">
@@ -97,7 +97,7 @@
     </div>
 
     <div class="row">
-        <div class="col-8" style="min-height: 800px;">
+        <div class="col-lg-8 col-sm-12" style="min-height: 800px;">
             <canvas class="hide" id="myChart"></canvas>
 
             <canvas class="hide" id="myChart2"></canvas>

@@ -3,7 +3,7 @@
 
 
 @section('content')
-    <div class="main-content p-3">
+    <div class="main-content">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12 col-lg-offset-0 text-center">
@@ -26,13 +26,13 @@
                     {{ method_field('put') }}
 
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-lg-6 col-sm-12">
                             @include("admin.forms.text",['value' => $model->name, 'name'=> 'name','label' => __('lang.name')])
                         </div>
-                        <div class="col-3">
+                        <div class="col-lg-3 col-sm-12">
                             @include('admin.forms.text',['value' => $model->price, 'name' => 'price','label' => __('front.price')])
                         </div>
-                        <div class="col-3">
+                        <div class="col-lg-3 col-sm-12">
                             @include('admin.forms.select',['name' => 'pdv', 'label' => __('lang.pdv'), 'options' => ['2.5' => '2.5%', '7.7' => '7.7%']])
                         </div>
                     </div>
@@ -43,7 +43,7 @@
 
 
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-lg-6 col-sm-12">
                             @include('admin.forms.autocomplete',['placeholder' => __('front.product-search-products'), 'name' => 'product-search', 'label' => __('front.product'), 'class' => 'autocomplete-input'])
                         </div>
                     </div>
@@ -89,10 +89,16 @@
     }
 
     .product-list > .product-item-wrapper {
-        width: calc(100% / 6);
+        width: calc(100% / 2);
         float: left;
         padding-right: 8px;
         padding-bottom: 8px;
+    }
+
+    @media screen (min-width: 992) {
+        .product-list > .product-item-wrapper {
+            width: calc(100% / 6);
+        }
     }
 
     .product-list > .product-item-wrapper > .product-item {

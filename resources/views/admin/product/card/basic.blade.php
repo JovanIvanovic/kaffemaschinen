@@ -1,8 +1,8 @@
 <div class="row">
-    <div class="col-6">
+    <div class="col-lg-6 col-sm-12">
         @include('admin.forms.text',['name' => 'name','label' => 'Name'])
     </div>
-    <div class="col-6">
+    <div class="col-lg-6 col-sm-12">
         @if(!isset($productCategories))
             <?php $productCategories = []; ?>
         @endif
@@ -22,13 +22,13 @@
 
 
 <div class="row">
-    <div class="col-6">
+    <div class="col-lg-6 col-sm-12">
         @if(isset($editMethod) && $editMethod)
             @include('admin.forms.text',['name' => 'slug','label' => __('lang.slug')])
         @endif
     </div>
     
-    <div class="col-6">
+    <div class="col-lg-6 col-sm-12">
         @include('admin.forms.select',['name' => 'status','label' => 'Status', 'options' => ['1' => "Online",'0' => "Offline"]])
     </div>
 </div>
@@ -37,25 +37,25 @@
                                             'attributes' => ['class' => 'ckeditor','id' => 'description']])
 
 <div class="row">
-    <div class="col-6">
+    <div class="col-lg-6 col-sm-12">
         @include('admin.forms.text',['name' => 'price','label' => __('lang.order-price')])
     </div>
-    <div class="col-6">
+    <div class="col-lg-6 col-sm-12">
         @include('admin.forms.select',['name' => 'pdv', 'label' => __('lang.pdv'), 'options' => ['2.5' => '2.5%', '7.7' => '7.7%']])
     </div>
 </div>
 
 <div class="row">
-    <div class="col-6">
+    <div class="col-lg-6 col-sm-12">
         @include('admin.forms.select',['name' => 'discount','label' => __('lang.discount'), 'options' => ['1' => "Ja",'0' => "Nein"]])
     </div>
-    <div class="col-6">
+    <div class="col-lg-6 col-sm-12">
         @include('admin.forms.text',['name' => 'discount_price', 'label' => __('lang.discount-price')])
     </div>
 </div>
 
 <div class="row">
-    <div class="col-1">
+    <div class="col-lg-1 col-sm-12">
         <div class="form-group">
             <label for="has_packaging">{{ __('lang.has-packaging') }}</label>
             <div class="checkbox">
@@ -66,10 +66,10 @@
             </div>
         </div>
     </div>
-    <div class="col-3">
+    <div class="col-lg-3 col-sm-12">
         @include('admin.forms.text',['name' => 'packaging','label' => __('lang.packaging')])
     </div>
-    <div class="col-3">
+    <div class="col-lg-3 col-sm-12">
         <div class="form-group">
             <label for="new_product">{{ __('lang.available').' / '.__('lang.unavailable') }}</label>
             <div class="checkbox">
@@ -80,7 +80,7 @@
             </div>
         </div>
     </div>
-    <div class="col-5">
+    <div class="col-lg-5 col-sm-12">
         <div class="form-group">
             <label for="unavailable_text" >{{ __('lang.message') }}</label>
             <input type="text" class="form-control" id="unavailable_text" name="unavailable_text" {{ $model['available'] ? 'disabled' : '' }} value="{{ $model['unavailable_text'] }}">
@@ -89,7 +89,7 @@
 </div>
 
 <div class="row">
-    <div class="col-4">
+    <div class="col-lg-4 col-sm-12">
         <div class="form-group">
             <label for="new_product">{{ __('lang.new-product') }}</label>
             <div class="checkbox">
@@ -100,7 +100,7 @@
             </div>
         </div>
     </div>
-    <div class="col-4">
+    <div class="col-lg-4 col-sm-12">
         <div class="form-group">
             <label for="hit_product">{{ __('lang.hit-product') }}</label>
             <div class="checkbox">
@@ -111,7 +111,7 @@
             </div>
         </div>
     </div>
-    <div class="col-4">
+    <div class="col-lg-4 col-sm-12">
         <div class="form-group">
             <label for="contact_only">{{ __('lang.contact-only') }}</label>
             <div class="checkbox">

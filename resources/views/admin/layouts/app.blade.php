@@ -32,11 +32,16 @@
 
 @include("admin.layouts.nav")
 
+<div class="container-fluid" style="padding: 0;">
+    <div class="row">
+        <div class="col-lg-2">
+            <aside class="" style="">
+                @include("admin.layouts.left-nav")
+            </aside>
+        </div>
 
-<aside class="" style="position: absolute; left: 0px;width: 200px;">
-    @include("admin.layouts.left-nav")
-</aside>
-<div class="main-content p-3" style="margin-left: 200px; ">
+        <div class="col-lg-10">
+            <div class="main-content" style="padding-top: 1rem;">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12 col-lg-offset-0 text-center">
@@ -56,6 +61,14 @@
 
     @include('admin.layouts.footer')
 </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
 
 
 <script src="{{ asset('back/js/jquery-3.2.1.min.js') }}"></script>

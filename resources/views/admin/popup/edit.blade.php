@@ -6,7 +6,7 @@
 @endpush
 
 @section('content')
-    <div class="main-content p-3">
+    <div class="main-content">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12 col-lg-offset-0 text-center">
@@ -32,14 +32,14 @@
                                 </div>
                                 <div class="card-body collapse show" id="basic">
                                     <div class="row">
-                                        <div class="col-6">
+                                        <div class="col-lg-6 col-sm-12">
                                             <div class="form-group">
                                                 <label for="title" >{{ __('lang.title') }}</label>
                                                 <input type="text" class="form-control" id="name" name="title" value="{{ $popup->title }}" required>
                                             </div>
                                         </div>
 
-                                        <div class="col-6">
+                                        <div class="col-lg-6 col-sm-12">
                                             <div class="form-group">
                                                 <label for="end_date" >{{ __('lang.end-date') }}</label>
                                                 <input type="date" class="form-control" id="end_date" name="end_date" value="{{ $popup->end_date->format('Y-m-d') }}" required>
@@ -48,7 +48,7 @@
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-6">
+                                        <div class="col-lg-6 col-sm-12">
                                             <div class="form-group">
                                                 <label for="package_id" >{{ __('lang.package') }}</label>
                                                 <select name="package_id" class="form-control" required>
@@ -58,7 +58,7 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="col-6">
+                                        <div class="col-lg-6 col-sm-12">
                                             <div class="form-group">
                                                 <label for="active">{{ __('lang.popup-active') }}</label>
                                                 <div class="checkbox">
@@ -73,7 +73,7 @@
 
                                     @if ($errors->any())
                                         <div class="row justify-content-center text-center">
-                                            <div class="col-6 alert alert-danger">
+                                            <div class="col-lg-6 col-sm-12 alert alert-danger">
                                                 <ul>
                                                     @foreach ($errors->all() as $error)
                                                         <li>{{ $error }}</li>
