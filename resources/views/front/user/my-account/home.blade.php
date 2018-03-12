@@ -13,12 +13,12 @@
 
                 @include('front.user.my-account.sidebar')
 
-                <div class="col-sm-8 profile-info">
+                <div class="col-sm-7 profile-info">
                     <h3 class="main-ttl"><span>{{ __('front.profile-details-panel') }}</span></h3>
                     <div class="row space">
                         <div class="auth-wrap">
 
-                            <div class="col-sm-10 profile-info">
+                            <div class="col-sm-12 profile-info">
                                 <div class="row">
                                     <div class="table-responsive">
                                         <table class="table myacc_table">

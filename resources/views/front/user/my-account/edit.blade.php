@@ -13,7 +13,7 @@
 
                     @include('front.user.my-account.sidebar')
 
-                    <div class="col-sm-8 profile-info">
+                    <div class="col-sm-7 profile-info">
                         <h3 class="main-ttl">
                             <span>{{ __('front.account-profile-edit') }}</span>
                         </h3>
@@ -38,7 +38,7 @@
                                             @endif
                                         </p>
                                         <p>
-                                            <input placeholder="{{ __('front.account-first-name') }}" id="firstname" type="text" value="{{ $user->first_name }}"
+                                            <input class="change_passwort" placeholder="{{ __('front.account-first-name') }}" id="firstname" type="text" value="{{ $user->first_name }}"
                                                    name="first_name">
                                             @if ($errors->has('first_name'))
                                                 <span class="help-block">
@@ -47,7 +47,7 @@
                                             @endif
                                         </p>
                                         <p>
-                                            <input placeholder="{{ __('front.account-last-name') }}" id="lastname" type="text" value="{{ $user->last_name}}"
+                                            <input class="change_passwort" placeholder="{{ __('front.account-last-name') }}" id="lastname" type="text" value="{{ $user->last_name}}"
                                                    name="last_name">
                                             @if ($errors->has('last_name'))
                                                 <span class="help-block">
@@ -56,7 +56,7 @@
                                             @endif
                                         </p>
                                         <p>
-                                            <input placeholder="{{ __('front.email') }}" id="email" type="text" disabled="true"
+                                            <input class="change_passwort" placeholder="{{ __('front.email') }}" id="email" type="text" disabled="true"
                                                    value="{{ $user->email }}"
                                                    name="email">
                                             @if ($errors->has('email'))
@@ -66,7 +66,7 @@
                                             @endif
                                         </p>
                                         <p>
-                                            <input placeholder="{{ __('front.phone') }}" id="tel" type="text"
+                                            <input class="change_passwort" placeholder="{{ __('front.phone') }}" id="tel" type="text"
                                                    value="{{ $user->phone }}"
                                                    name="phone">
                                             @if ($errors->has('phone'))
@@ -76,7 +76,7 @@
                                             @endif
                                         </p>
                                         <p>
-                                            <input placeholder="{{ __('front.account-company-name') }}" id="company" type="text"
+                                            <input class="change_passwort" placeholder="{{ __('front.account-company-name') }}" id="company" type="text"
                                                    value="{{ $user->company_name }}"
                                                    name="company_name">
                                             @if ($errors->has('company_name'))
