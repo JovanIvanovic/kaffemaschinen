@@ -63,7 +63,7 @@
                     @else
                         <span class="prodlist-i-price">
                             <b>CHF {{ number_format($product->price,2) }}</b><br>
-                            <span>inkl. MwSt {{ $product->pdv }}%</span>
+                            <span>exkl. MwSt {{ $product->pdv }}%</span>
                         </span>
                     @endif
                 </form>
