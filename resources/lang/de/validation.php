@@ -100,8 +100,8 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'description' => [
+            'required' => 'Bitte das Feld Beschreibung',
         ],
     ],
 

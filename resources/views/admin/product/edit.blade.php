@@ -110,6 +110,15 @@
                     $('#unavailable_text').attr('disabled', '').removeAttr('required');
                 }
             });
+            @if(session()->has('slug'))
+                $.notify({
+                // options
+                message: '{{ session('slug') }}'
+            },{
+                // settings
+                type: 'danger'
+            });
+            @endif
 
         });
         // Example starter JavaScript for disabling form submissions if there are invalid fields

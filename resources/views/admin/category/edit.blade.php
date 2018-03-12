@@ -14,7 +14,7 @@
 
                         @include('admin.category._fields')
 
-                        <button type="submit" disabled class="btn-schoen">{{ __('lang.category-index-edit') }}</button>
+                        <button type="submit" class="btn-schoen">{{ __('lang.category-index-edit') }}</button>
 
                         <a href="{{ route('admin.category.index') }}" class="btn btn-default">{{ __('lang.cancel') }}</a>
                     </form>
@@ -23,3 +23,29 @@
         </div>
     </div>
 @endsection
+@push('scripts')
+<script>
+    function showDeleteModal(id, name) {
+        var url = "{{ URL::to('admin/category') }}";
+        var action = url + '/' + id;
+        $('#modal_form').attr('action', action);
+        $('#category_name').html(name);
+        $('#myModal').modal('show');
+    }
+</script>
+
+<script>
+    $(document).ready(function () {
+
+        @if(session()->has('category'))
+        $.notify({
+            // options
+            message: '{{ session('category') }}'
+        },{
+            // settings
+            type: 'danger'
+        });
+        @endif
+    });
+</script>
+@endpush

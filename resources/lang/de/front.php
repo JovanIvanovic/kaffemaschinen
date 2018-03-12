@@ -89,6 +89,10 @@ return [
     'shopping-cart-store' => 'Einkaufswagen für Abholung vom Geschäft',
     'i-have-read-and-agree-to-the' => 'Ich habe die AGB\'s ',
     'terms-conditions' => 'gelesen und akzeptiert.',
+    'cart-lower-100-shipping-included' => 'Bei einem Warenwert von 100 CHF sind die Lieferkosten inbegriffen',
+    'shipping-included' => 'Lieferkosten inbegriffen',
+    'shipping-not-included' => 'Lieferkosten nicht inbegriffen',
+    'category-max' => 'Sie haben die max. Anzahl an Kategorien erreicht',
 
     'with_vat' => 'inkl. MwSt :vat%',
     'contain_vat' => 'inkl. MwSt :vat%',
