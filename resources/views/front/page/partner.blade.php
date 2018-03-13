@@ -10,105 +10,32 @@
 
 	<div class="container">
 		<ul class="b-crumbs">
+			<li>
+				<a href="{{ route('home') }}">
+					Home
+				</a>
+			</li>
             <li>
-                <a href="http://kaffe.test:8000">
-                    Home
-                </a>
+                <span>Partner</span>
             </li>
-            <li>
-                <a href="http://kaffe.test:8000/shop">
-                    Shop
-                </a>
-            </li>
-                                        <li>
-                <span>Lavazza</span>
-            </li>
-                                </ul>
+        </ul>
 		<h1 class="main-ttl" style="margin: 0;"><span>Partners</span></h1>
 		<div class="partners_wrap">
-			<div class="section_items">
-			<div class="partners_item">
-				<div class="partners_img">
-					<img class="partners_img_inner" src="/front/assets/img/mpsoft_logo.jpg" alt="">
+			@foreach ($partners->chunk(4) as $chunk)
+				<div class="section_items">
+					@foreach ($chunk as $partner)
+						<div class="partners_item">
+							<div class="partners_img">
+								<img class="partners_img_inner" src="{{ asset($partner->image) }}" alt="">
+							</div>
+								<div class="partners_caption">
+									<h3><a target="_blank" href="{{ $partner->website }}">{{ $partner->name }}</a></h3>
+									<p>{!! $partner->description !!}</p>
+								</div>
+						</div>
+					@endforeach
 				</div>
-					<div class="partners_caption">
-						<h3><a href="">Company name</a></h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia illum perspiciatis, minus debitis, ipsam sed possimus modi deleniti, nihil odit molestias dolor. Ad vero beatae, maxime, similique delectus soluta saepe.</p>
-					</div>
-			</div>
-
-			<div class="partners_item">
-				<div class="partners_img">
-					<img class="partners_img_inner" src="/front/assets/img/mpsoft_logo.jpg" alt="">
-				</div>
-					<div class="partners_caption">
-						<h3><a href="">Company name</a></h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia illum perspiciatis, minus debitis, ipsam sed possimus modi deleniti, nihil odit molestias dolor. Ad vero beatae, maxime, similique delectus soluta saepe.</p>
-					</div>
-			</div>
-
-			<div class="partners_item">
-				<div class="partners_img">
-					<img class="partners_img_inner" src="/front/assets/img/mpsoft_logo.jpg" alt="">
-				</div>
-					<div class="partners_caption">
-						<h3><a href="">Company name</a></h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia illum perspiciatis, minus debitis, ipsam sed possimus modi deleniti, nihil odit molestias dolor. Ad vero beatae, maxime, similique delectus soluta saepe.</p>
-					</div>
-			</div>
-
-			<div class="partners_item">
-				<div class="partners_img">
-					<img class="partners_img_inner" src="/front/assets/img/mpsoft_logo.jpg" alt="">
-				</div>
-					<div class="partners_caption">
-						<h3><a href="">Company name</a></h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia illum perspiciatis, minus debitis, ipsam sed possimus modi deleniti, nihil odit molestias dolor. Ad vero beatae, maxime, similique delectus soluta saepe.</p>
-					</div>
-			</div>
-			</div>
-
-			<div class="section_items">
-			<div class="partners_item">
-				<div class="partners_img">
-					<img class="partners_img_inner" src="/front/assets/img/mpsoft_logo.jpg" alt="">
-				</div>
-					<div class="partners_caption">
-						<h3><a href="">Company name</a></h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia illum perspiciatis, minus debitis, ipsam sed possimus modi deleniti, nihil odit molestias dolor. Ad vero beatae, maxime, similique delectus soluta saepe.</p>
-					</div>
-			</div>
-
-			<div class="partners_item">
-				<div class="partners_img">
-					<img class="partners_img_inner" src="/front/assets/img/mpsoft_logo.jpg" alt="">
-				</div>
-					<div class="partners_caption">
-						<h3><a href="">Company name</a></h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia illum perspiciatis, minus debitis, ipsam sed possimus modi deleniti, nihil odit molestias dolor. Ad vero beatae, maxime, similique delectus soluta saepe.</p>
-					</div>
-			</div>
-
-			<div class="partners_item">
-				<div class="partners_img">
-					<img class="partners_img_inner" src="/front/assets/img/mpsoft_logo.jpg" alt="">
-				</div>
-					<div class="partners_caption">
-						<h3><a href="">Company name</a></h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia illum perspiciatis, minus debitis, ipsam sed possimus modi deleniti, nihil odit molestias dolor. Ad vero beatae, maxime, similique delectus soluta saepe.</p>
-					</div>
-			</div>
-
-			<div class="partners_item">
-				<div class="partners_img">
-					<img class="partners_img_inner" src="/front/assets/img/mpsoft_logo.jpg" alt="">
-				</div>
-					<div class="partners_caption">
-						<h3><a href="">Company name</a></h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia illum perspiciatis, minus debitis, ipsam sed possimus modi deleniti, nihil odit molestias dolor. Ad vero beatae, maxime, similique delectus soluta saepe.</p>
-					</div>
-			</div>
-			</div>
+			@endforeach
 		</div>
 	</div>
 	</section>

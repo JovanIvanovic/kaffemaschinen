@@ -96,6 +96,8 @@ return [
     'admin-create-admin-user-button-title' => 'Benutzer hinzufügen',
     'admin-create-new-popup' => 'Neuen Popup erstellen',
     'admin-edit-popup' => ' Popup aktualisieren',
+    'admin-create-new-partner' => 'Neuen Partner erstellen',
+    'admin-edit-partner' => ' Partner aktualisieren',
     'admin-create-new-banner' => 'Neuen Banner erstellen',
     'admin-edit-banner' => ' Banner aktualisieren',
     'admin-update-text' => 'Text aktualisieren',
