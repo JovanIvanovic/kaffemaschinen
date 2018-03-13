@@ -1,4 +1,5 @@
-function getUrl(route = null) {
+function getUrl(route) {
+	route = typeof route !== 'undefined' ? route : null;
 	var $url = location.protocol + '//' + location.host;
 	return route !== null ? $url + route : $url;
 }
@@ -30,9 +31,9 @@ function toFloat(num) {
 		return parseFloat(num.replace(/[^\d]/g, ""));
 	}
 	return parseFloat(
-		num.substr(0, sep).replace(/[^\d]/g, "") + '.' + 
+		num.substr(0, sep).replace(/[^\d]/g, "") + '.' +
 		num.substr(sep+Number(1), num.length).replace(/[^\d]/g, "")
-		);
+	);
 }
 
 function number_format (number, decimals, dec_point, thousands_sep) {
