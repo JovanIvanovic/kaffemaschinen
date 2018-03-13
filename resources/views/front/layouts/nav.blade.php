@@ -15,7 +15,7 @@
     </li>
     @endforeach
     <li>
-        <a href="{{ 'partner' }}" class="">
+        <a href="{{ route('page.partner') }}" class="">
             Partner
         </a>
     </li>
