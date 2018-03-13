@@ -77,13 +77,10 @@
 
     <div class="wrapper">
         <div class="header">
-            <div class="logo">
-                <img id="logo" src="http://kaffemaschinen.ch/public/front/assets/img/logo.png" alt="">
-            </div>
 
             <div class="info">
                 <p>Brock GmbH - Birmensdorferstrasse 430 - CH-8055 Zürich</p>
-                <p>Tel. +41 (0) 44 450 21 02 - <a href="mailto:shop@kaffemaschinen.ch">shop@kaffemaschinen.ch</a> - <a href="http://kaffemaschinen.ch/" target="_blank">www.kaffemaschinen.ch</a> </p>
+                <p>Tel. +41 (0) 44 450 21 02 - <a href="mailto:shop@centrocaffe.ch">shop@centrocaffe.ch</a> - <a href="http://centrocaffe.ch/" target="_blank">www.centrocaffe.ch</a> </p>
                 <p> MwSt-Nr. CHE-115.174.365 </p>
             </div>
         </div>

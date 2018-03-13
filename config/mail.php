@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'mail@kaffemaschinen.ch'),
-        'name' => env('MAIL_FROM_NAME', 'Kaffemaschinen'),
+        'address' => env('MAIL_FROM_ADDRESS', 'mail@centrocaffe.ch'),
+        'name' => env('MAIL_FROM_NAME', 'Centrocaffe'),
     ],
 
     /*

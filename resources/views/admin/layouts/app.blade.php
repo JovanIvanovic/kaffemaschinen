@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Admin - Kaffemaschinen E-commerce</title>
+    <title>Admin - Centrocaffe E-commerce</title>
 
 
     <link href="{{ asset('back/css/bootstrap.min.css') }}" rel="stylesheet">

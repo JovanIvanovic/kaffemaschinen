@@ -90,7 +90,7 @@ return [
     'order-address-info' => 'Kundendaten',
     'order-shipping-info' => 'Versandinformation',
 
-    'admin-login-card-title' => 'Kaffemaschinen Administrator Anmeldung',
+    'admin-login-card-title' => 'Centrocaffe Administrator Anmeldung',
     'admin-login-forget-password-link' => 'Haben Sie Ihr Passwort vergessen?',
     'admin-login-button-title' => 'Anmeldung',
     'admin-password-label' => 'Passwort',

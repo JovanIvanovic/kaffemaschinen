@@ -1,7 +1,7 @@
 @extends('front.layouts.app')
 
 @section('meta_title', __('front.account-lost-your-password'))
-@section('meta_description', 'My Account Management System for Kaffemaschinen E Commerce')
+@section('meta_description', 'My Account Management System for Centrocaffe E Commerce')
 
 @section('content')
     <!-- Main Content - start -->

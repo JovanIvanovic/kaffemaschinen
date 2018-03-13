@@ -1,7 +1,7 @@
 @extends('front.layouts.app')
 
 @section('meta_title', 'Registration')
-@section('meta_description', 'Mein Account Management System für Kaffemaschinen')
+@section('meta_description', 'Mein Account Management System für Centrocaffe')
 
 @section('content')
     <!-- Main Content - start -->

@@ -46,8 +46,8 @@ class NewsletterController extends AdminController
 
             $title = 'Newsletter';
             
-            $spreadsheet->getProperties()->setCreator('Kaffemaschinen')
-                ->setLastModifiedBy('Kaffemaschinen')
+            $spreadsheet->getProperties()->setCreator('Centrocaffe')
+                ->setLastModifiedBy('Centrocaffe')
                 ->setTitle($title)
                 ->setSubject($title)
                 ->setDescription($title)

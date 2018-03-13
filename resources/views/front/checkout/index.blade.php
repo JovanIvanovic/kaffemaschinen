@@ -510,7 +510,7 @@
     });
     $('#place-order-form').on('submit', function (e) {
         stripe.open({
-            name: 'Kaffemaschinen',
+            name: 'Centrocaffe',
             description: 'Billing',
         });
         e.preventDefault();

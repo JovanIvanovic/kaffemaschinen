@@ -51,7 +51,7 @@ return [
     'order-address-info' => 'Order Address Info',
     'order-shipping-info' => 'Shipping Info',
 
-    'admin-login-card-title' => 'Kaffemaschinen Admin Login',
+    'admin-login-card-title' => 'Centrocaffe Admin Login',
     'admin-login-forget-password-link' => 'Forgot your Password?',
     'admin-login-button-title' => 'Login',
     'admin-password-label' => 'Password',
