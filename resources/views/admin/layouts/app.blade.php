@@ -33,7 +33,7 @@
 @include("admin.layouts.nav")
 
 <div class="container-fluid" style="padding: 0;">
-    <div class="row">
+    <div class="row" style="width: 100%;">
         <div class="col-lg-2">
             <aside class="" style="">
                 @include("admin.layouts.left-nav")
