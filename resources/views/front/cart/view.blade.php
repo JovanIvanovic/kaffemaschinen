@@ -43,7 +43,7 @@
                                     <td class="cart-image" style="text-align: center;">{{ __('front.photo') }}</td>
                                     <td class="cart-ttl">{{ __('front.product') }}/{{ __('front.package') }}</td>
                                     <td class="cart-price">{{ __('front.price') }}</td>
-                                    <td class="cart-quantity" style="text-align: center">{{ __('front.quantity') }}</td>
+                                    <td class="cart-quantity">{{ __('front.quantity') }}</td>
                                     <td class="cart-summ">{{ __('front.total') }}</td>
                                     <td class="cart-del">&nbsp;</td>
                                 </tr>
