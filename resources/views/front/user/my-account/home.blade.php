@@ -21,7 +21,7 @@
                             <div class="col-sm-12 profile-info">
                                 <div class="row">
                                     <div class="table-responsive">
-                                        <table class="table myacc_table">
+                                        <table class="table myacc_table lwr">
                                             <tbody>
                                             <tr>
                                                 <td>{{ __('front.account-title') }}</td>
@@ -59,4 +59,13 @@
         </div>
     </div>
 </main>
+
+<style>
+    @media (min-width: 992px) {
+        .lwr {
+            width: 70%;
+        }
+    }
+</style>
+
 @endsection

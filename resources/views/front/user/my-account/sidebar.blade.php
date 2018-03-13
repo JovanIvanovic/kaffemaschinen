@@ -1,4 +1,4 @@
-<div class="col-sm-3 col-sm-offset-1 vertical-menu">
+<div class="col-sm-3 col-sm-offset-2 vertical-menu">
     <div class="section-sb profile_section-sb">
         <div class="section-sb-current">
             <ul class="section-sb-list profile_section-sb-list" id="section-sb-list">
