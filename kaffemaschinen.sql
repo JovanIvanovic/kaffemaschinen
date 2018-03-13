@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 100128
 File Encoding         : 65001
 
-Date: 2018-03-12 12:01:35
+Date: 2018-03-13 13:27:47
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -71,7 +71,7 @@ CREATE TABLE `admin_users` (
 -- ----------------------------
 -- Records of admin_users
 -- ----------------------------
-INSERT INTO `admin_users` VALUES ('2', '1', '1', 'Webtory', 'Test', 'test@webtory.rs', '$2y$10$iXLAB7gQfjYkbIdAsvfW4.eqw0yeaceuL8CvxPnh4S12on9.CTgfC', 'en', 'VS1AutXNQRSplFbbQIrr6vLG9ndKBui2cSzLJQtLVS8g0SmduU3bjCUGP7Lp', '2017-12-03 22:36:39', '2018-02-26 09:16:43');
+INSERT INTO `admin_users` VALUES ('2', '1', '1', 'Webtory', 'Test', 'test@webtory.rs', '$2y$10$iXLAB7gQfjYkbIdAsvfW4.eqw0yeaceuL8CvxPnh4S12on9.CTgfC', 'en', 'Zf1l55bWpELTl5uXgPuIQwtjluKySrKhybD3yjkSzviGHZlhVHdHQBkOdbSQ', '2017-12-03 22:36:39', '2018-03-12 20:16:25');
 
 -- ----------------------------
 -- Table structure for categories
@@ -811,6 +811,26 @@ CREATE TABLE `page_wir_kaufen` (
 INSERT INTO `page_wir_kaufen` VALUES ('1', 'Sie haben Waren, die Sie gerne verkaufen möchten? Bei uns sind Sie immer herzlich Willkommen. Wir kaufen Waren jeglicher Art und sind stets interessiert an neuen Angeboten. Gerne können Sie durch unser Kontaktformular mit den nötigen Informationen und Bildern, die Ware zuschicken. Wir werden Ihr Angebot innert 72 Stunden prüfen und Sie darauf kontaktieren.', '2018-01-24 04:25:09', '2018-01-24 04:25:09');
 
 -- ----------------------------
+-- Table structure for partners
+-- ----------------------------
+DROP TABLE IF EXISTS `partners`;
+CREATE TABLE `partners` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `website` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of partners
+-- ----------------------------
+INSERT INTO `partners` VALUES ('2', 'Webtory', '<p>Webtory</p>', '/uploads/partner/1520943665Kafa.png', 'http://www.webtory.rs', '2018-03-13 13:21:05', '2018-03-13 13:21:05');
+
+-- ----------------------------
 -- Table structure for password_resets
 -- ----------------------------
 DROP TABLE IF EXISTS `password_resets`;
@@ -1092,7 +1112,7 @@ CREATE TABLE `users` (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES ('1', 'Herr', 'Webtory', 'Test', 'test@webtory.rs', '$2y$10$j4lFvm2pUkoxtfnGCOincO8Z6MnQlAcdhwAC2hM8s/qm6eT2NGA5W', null, null, null, null, 'LIVE', '2mUte82jNZIMCvX43l2l8b0T7MRUgDGqUUBx9B9bgB9pBAtbt96XjwAlkqSQ', 'cus_CNWZiq3hD6Y8Tc', null, null, '2018-03-05 13:26:28', '2017-11-14 09:44:42', '2018-03-05 13:26:28', '1', null);
+INSERT INTO `users` VALUES ('1', 'Herr', 'Webtory', 'Test', 'test@webtory.rs', '$2y$10$j4lFvm2pUkoxtfnGCOincO8Z6MnQlAcdhwAC2hM8s/qm6eT2NGA5W', null, null, null, null, 'LIVE', 'eJYucYbWXtYfIyHE6oKTDd0vRN9bdcB8y9Abq9XJEIgmDb8k01MmeC1IzpFU', 'cus_CNWZiq3hD6Y8Tc', null, null, '2018-03-12 20:14:56', '2017-11-14 09:44:42', '2018-03-12 20:14:56', '1', null);
 INSERT INTO `users` VALUES ('2', 'Herr', 'Test', 'Test', 'test@test.com', '$2y$10$0QvoqWf4WjdBC0GqhQy3DuOqcTrWgWpyO7v.F9xxs3X.9mKyjCUa2', null, null, null, null, 'LIVE', null, null, null, null, null, '2018-02-24 12:49:10', '2018-02-24 12:49:10', '0', 'dGVzdEB0ZXN0LmNvbQ==');
 
 -- ----------------------------
@@ -1131,8 +1151,60 @@ CREATE TABLE `visitors` (
   PRIMARY KEY (`id`),
   KEY `visitors_user_id_foreign` (`user_id`),
   CONSTRAINT `visitors_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of visitors
 -- ----------------------------
+INSERT INTO `visitors` VALUES ('1', '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-12 12:03:47', '2018-03-12 12:03:47');
+INSERT INTO `visitors` VALUES ('2', '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-12 12:03:54', '2018-03-12 12:03:54');
+INSERT INTO `visitors` VALUES ('3', '127.0.0.1', 'uploads/catalog/images/j/q/b/med-Mokador%20Kapseln%20Aroma%20TOP%20100%20Stu%CC%88ck.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-12 12:03:54', '2018-03-12 12:03:54');
+INSERT INTO `visitors` VALUES ('4', '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-12 20:14:38', '2018-03-12 20:14:38');
+INSERT INTO `visitors` VALUES ('5', '127.0.0.1', 'login', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-12 20:14:44', '2018-03-12 20:14:44');
+INSERT INTO `visitors` VALUES ('6', '127.0.0.1', 'login', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-12 20:14:52', '2018-03-12 20:14:52');
+INSERT INTO `visitors` VALUES ('7', '127.0.0.1', 'my-account', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-12 20:14:53', '2018-03-12 20:14:53');
+INSERT INTO `visitors` VALUES ('8', '127.0.0.1', 'logout', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-12 20:14:56', '2018-03-12 20:14:56');
+INSERT INTO `visitors` VALUES ('9', '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-12 20:14:57', '2018-03-12 20:14:57');
+INSERT INTO `visitors` VALUES ('10', '127.0.0.1', 'my-account/edit', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-12 20:15:04', '2018-03-12 20:15:04');
+INSERT INTO `visitors` VALUES ('11', '127.0.0.1', 'login', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-12 20:15:04', '2018-03-12 20:15:04');
+INSERT INTO `visitors` VALUES ('12', '127.0.0.1', 'admin', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-12 20:16:00', '2018-03-12 20:16:00');
+INSERT INTO `visitors` VALUES ('13', '127.0.0.1', 'admin/login', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-12 20:16:00', '2018-03-12 20:16:00');
+INSERT INTO `visitors` VALUES ('14', '127.0.0.1', 'admin/js/jquery-3.2.1.min.js', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-12 20:16:02', '2018-03-12 20:16:02');
+INSERT INTO `visitors` VALUES ('15', '127.0.0.1', 'admin/login', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-12 20:16:09', '2018-03-12 20:16:09');
+INSERT INTO `visitors` VALUES ('16', '127.0.0.1', 'my-account/edit', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-12 20:16:11', '2018-03-12 20:16:11');
+INSERT INTO `visitors` VALUES ('17', '127.0.0.1', 'login', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-12 20:16:12', '2018-03-12 20:16:12');
+INSERT INTO `visitors` VALUES ('18', '127.0.0.1', 'admin', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-12 20:16:20', '2018-03-12 20:16:20');
+INSERT INTO `visitors` VALUES ('19', '127.0.0.1', 'admin/product', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-12 20:16:20', '2018-03-12 20:16:20');
+INSERT INTO `visitors` VALUES ('20', '127.0.0.1', 'uploads/catalog/images/j/q/b/small-Mokador%20Kapseln%20Aroma%20TOP%20100%20Stu%CC%88ck.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-12 20:16:23', '2018-03-12 20:16:23');
+INSERT INTO `visitors` VALUES ('21', '127.0.0.1', 'admin/logout', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-12 20:16:25', '2018-03-12 20:16:25');
+INSERT INTO `visitors` VALUES ('22', '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-12 20:16:25', '2018-03-12 20:16:25');
+INSERT INTO `visitors` VALUES ('23', '127.0.0.1', 'admin/product/63/edit', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-12 20:16:33', '2018-03-12 20:16:33');
+INSERT INTO `visitors` VALUES ('24', '127.0.0.1', 'admin/login', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-12 20:16:34', '2018-03-12 20:16:34');
+INSERT INTO `visitors` VALUES ('25', '127.0.0.1', 'admin/js/jquery-3.2.1.min.js', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-12 20:16:34', '2018-03-12 20:16:34');
+INSERT INTO `visitors` VALUES ('26', '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-13 09:29:03', '2018-03-13 09:29:03');
+INSERT INTO `visitors` VALUES ('27', '127.0.0.1', 'admin', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-13 09:30:17', '2018-03-13 09:30:17');
+INSERT INTO `visitors` VALUES ('28', '127.0.0.1', 'admin/login', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-13 09:30:18', '2018-03-13 09:30:18');
+INSERT INTO `visitors` VALUES ('29', '127.0.0.1', 'admin/js/jquery-3.2.1.min.js', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-13 09:30:19', '2018-03-13 09:30:19');
+INSERT INTO `visitors` VALUES ('30', '127.0.0.1', 'admin/login', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-13 09:30:25', '2018-03-13 09:30:25');
+INSERT INTO `visitors` VALUES ('31', '127.0.0.1', 'admin', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-13 09:30:26', '2018-03-13 09:30:26');
+INSERT INTO `visitors` VALUES ('32', '127.0.0.1', 'admin/product', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-13 09:30:27', '2018-03-13 09:30:27');
+INSERT INTO `visitors` VALUES ('33', '127.0.0.1', 'uploads/catalog/images/j/q/b/small-Mokador%20Kapseln%20Aroma%20TOP%20100%20Stu%CC%88ck.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-13 09:30:29', '2018-03-13 09:30:29');
+INSERT INTO `visitors` VALUES ('34', '127.0.0.1', 'admin/product', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-13 09:31:15', '2018-03-13 09:31:15');
+INSERT INTO `visitors` VALUES ('35', '127.0.0.1', 'uploads/catalog/images/j/q/b/small-Mokador%20Kapseln%20Aroma%20TOP%20100%20Stu%CC%88ck.jpg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-13 09:31:16', '2018-03-13 09:31:16');
+INSERT INTO `visitors` VALUES ('36', '127.0.0.1', 'admin/category', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-13 09:32:51', '2018-03-13 09:32:51');
+INSERT INTO `visitors` VALUES ('37', '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-13 09:34:07', '2018-03-13 09:34:07');
+INSERT INTO `visitors` VALUES ('38', '127.0.0.1', 'partner', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-13 09:34:14', '2018-03-13 09:34:14');
+INSERT INTO `visitors` VALUES ('39', '127.0.0.1', 'admin/page/home', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-13 09:35:18', '2018-03-13 09:35:18');
+INSERT INTO `visitors` VALUES ('40', '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-13 09:47:55', '2018-03-13 09:47:55');
+INSERT INTO `visitors` VALUES ('41', '127.0.0.1', 'partner', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-13 13:18:37', '2018-03-13 13:18:37');
+INSERT INTO `visitors` VALUES ('42', '127.0.0.1', '/', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-13 13:18:41', '2018-03-13 13:18:41');
+INSERT INTO `visitors` VALUES ('43', '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-13 13:19:13', '2018-03-13 13:19:13');
+INSERT INTO `visitors` VALUES ('44', '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-13 13:19:15', '2018-03-13 13:19:15');
+INSERT INTO `visitors` VALUES ('45', '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-13 13:19:21', '2018-03-13 13:19:21');
+INSERT INTO `visitors` VALUES ('46', '127.0.0.1', 'front/assets/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-13 13:19:28', '2018-03-13 13:19:28');
+INSERT INTO `visitors` VALUES ('47', '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-13 13:19:46', '2018-03-13 13:19:46');
+INSERT INTO `visitors` VALUES ('48', '127.0.0.1', 'front/assets/css/bootstrap.min.css.map', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-13 13:19:47', '2018-03-13 13:19:47');
+INSERT INTO `visitors` VALUES ('49', '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-13 13:20:07', '2018-03-13 13:20:07');
+INSERT INTO `visitors` VALUES ('50', '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-13 13:20:30', '2018-03-13 13:20:30');
+INSERT INTO `visitors` VALUES ('51', '127.0.0.1', 'shop', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-13 13:20:32', '2018-03-13 13:20:32');
+INSERT INTO `visitors` VALUES ('52', '127.0.0.1', 'product/lavazza-pienaroma-6xverpackungen-6-kg', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0', null, '2018-03-13 13:23:54', '2018-03-13 13:23:54');
