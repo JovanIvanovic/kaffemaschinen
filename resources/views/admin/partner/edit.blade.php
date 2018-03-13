@@ -16,7 +16,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <div class="h1">{{ __('lang.admin-create-new-partner') }}</div>
+                        <div class="h1">{{ __('lang.admin-edit-partner') }}</div>
                     </div>
                 </div>
 
@@ -34,7 +34,7 @@
                                     <div class="row">
                                         <div class="col-lg-6 col-sm-12">
                                             <div class="form-group">
-                                                <label for="name" >{{ __('lang.name ') }}</label>
+                                                <label for="name" >{{ __('lang.company-name') }}</label>
                                                 <input type="text" class="form-control" id="name" name="name" value="{{ $model->name }}" required>
                                             </div>
                                         </div>
@@ -68,7 +68,7 @@
 
                     <div class="form-group">
                         <button type="submit" class="btn-schoen">
-                            {{ __('lang.partner-edit') }}
+                            {{ __('lang.admin-edit-partner') }}
                         </button>
                         <a href="{{ route('admin.partner.index') }}" class="btn ">{{ __('lang.cancel') }}</a>
                     </div>

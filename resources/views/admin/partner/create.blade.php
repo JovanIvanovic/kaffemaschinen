@@ -33,7 +33,7 @@
                                     <div class="row">
                                         <div class="col-lg-6 col-sm-12">
                                             <div class="form-group">
-                                                <label for="name" >{{ __('lang.name ') }}</label>
+                                                <label for="name" >{{ __('lang.company-name') }}</label>
                                                 <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" required>
                                             </div>
                                         </div>
