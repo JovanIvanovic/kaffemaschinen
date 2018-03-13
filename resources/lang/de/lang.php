@@ -71,6 +71,8 @@ return [
     'has-packaging' => 'Karton',
     'packaging' => 'Stück à Karton',
     'contact-only' => 'Kontaktformular',
+    'company-name' => 'Firmenname',
+    'website' => 'Webseite',
 
 
     'order-view' => 'Bestellansicht',

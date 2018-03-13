@@ -14,7 +14,7 @@ class PartnerController extends Controller
     public function index()
     {
         $dataGrid = DataGrid::model(Partner::query())
-            ->column('name', ['sortable' => true, 'label' => __('lang.name')])
+            ->column('name', ['sortable' => true, 'label' => __('lang.company-name')])
             ->linkColumn(__('lang.edit'), [], function ($model) {
                 return "<a href='" . route('admin.partner.edit', $model->id) . "' >".__('lang.edit')."</a>";
             })

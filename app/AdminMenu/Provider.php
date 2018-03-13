@@ -85,7 +85,7 @@ class Provider extends ServiceProvider
          * Add Menu Partner
          */
         AdminMenuFacade::add('partner')
-            ->label(__('lang.partner'))
+            ->label(__('Partner'))
             ->route('admin.partner.index');
 
         /**
