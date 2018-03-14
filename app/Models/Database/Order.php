@@ -15,12 +15,12 @@ class Order extends BaseModel
 
     public function products()
     {
-        return $this->morphedByMany(Product::class, 'orderable', 'order_items')->withTrashed()->withPivot('price', 'qty', 'tax_amount');
+        return $this->morphedByMany(Product::class, 'orderable', 'order_items')->withTrashed()->withPivot('price', 'qty');
     }
 
     public function packages()
     {
-        return $this->morphedByMany(Package::class, 'orderable', 'order_items')->withTrashed()->withPivot('price', 'qty', 'tax_amount');
+        return $this->morphedByMany(Package::class, 'orderable', 'order_items')->withTrashed()->withPivot('price', 'qty');
     }
 
     public function user()

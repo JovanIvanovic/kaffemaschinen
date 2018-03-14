@@ -86,14 +86,11 @@
         </div>
 
         <?php
-            $first_name = auth()->user()->first_name;
-            $last_name = auth()->user()->last_name;
+            $first_name = $orders['deliveryOrder']->user->first_name;
+            $last_name = $orders['deliveryOrder']->user->last_name;
             $full_name =  $first_name . ' ' . $last_name;
 
             setlocale(LC_ALL, 'de_DE@euro', 'de_DE', 'de', 'ge');
-
-            $tax = 0;
-
 
             $hasDeliveryOrder = isset($orders['deliveryOrder']);
             $hasPickupOrder = isset($orders['pickupOrder']);
@@ -108,6 +105,7 @@
                 $orderNumber = $orders['pickupOrder']->id;
             }
 
+            $shipping_price = (float)\App\Models\Database\Configuration::getConfiguration('delivery_price');
 
             if ($hasDeliveryOrder == true )
                 $orderForAddresses = 'deliveryOrder';
@@ -127,6 +125,7 @@
                         <th style="border:none;">
                             @if(isset($billing))
                             <div class="left_info">
+                                {!! $orders['deliveryOrder']->user->is_company ? '<p>'.$orders['deliveryOrder']->user->company_name.'</p>' : '' !!}
                                 <p>{{ $full_name }}</p>
                                 <p>{{ $billing->address1 }}</p>
                                 @if($billing->address2 != '/')
@@ -175,7 +174,7 @@
                         @foreach($orders['pickupOrder']->products as $product)
                             <tr>
                                 <td>
-                                    <p>{{ $product->product_no }}</p> Lieferart: {{ $orders['pickupOrder']->payment_option }}
+                                    <p>{{ $product->id }}</p> }}
                                 </td>
                                 <td>{{ $product->name }}</td>
                                 <td>{{ $product->pivot->qty }}</td>
@@ -188,15 +187,12 @@
                         @foreach($orders['deliveryOrder']->products as $product)
                             <tr>
                                 <td>
-                                    <p>{{ $product->product_no }}</p> Lieferart: {{ $orders['deliveryOrder']->payment_option }}</td>
+                                    <p>{{ $product->id }}</p></td>
                                 <td>{{ $product->name }}</td>
                                 <td>{{ $product->pivot->qty }}</td>
                                 <td>{{ $product->discount == 1 ? $product->discount_price : $product->price }}</td>
-                                <td>{{ ($product->discount == 1 ? $product->discount_price : $product->price) * ($product->pivot->qty) }}
-                                    <p>Versandgebühr {{ $product->delivery_price }}CHF</p>
-                                </td>
+                                <td>{{ number_format(($product->discount == 1 ? $product->discount_price : $product->price) * ($product->pivot->qty), 2) }}</td>
                             </tr>
-                    <?php $tax += $product->delivery_price ?>
                         @endforeach
                     @endif
 
@@ -205,22 +201,22 @@
                         <td></td>
                         <td></td>
                         <td>
-                            <p>Subtotal </p>
-                            <p>Total Versandgebühren</p>
-                            <p>enthalten MwSt 7,7%</p>
+                            <p>Versandgebühren</p>
+                            <p>inkl. MwSt 2,5%</p>
+                            <p>inkl. MwSt 7,7%</p>
                             <p class="bold">Total</p>
 
                         </td>
 
                         <?php
                             $subtotal = (isset($orders['pickupOrder']) ? $orders['pickupOrder']->total_amount : 0) + (isset($orders['deliveryOrder']) ? $orders['deliveryOrder']->total_amount : 0);
-                            $sub_pdv = ($subtotal + $tax) * 0.077;
-                            $total = $subtotal + $tax;
+                            $sub_pdv = ($subtotal) * 0.077;
+                            $total = $subtotal;
                         ?>
                         <td>
-                            <p>{{ number_format($subtotal, 2) }}</p>
-                            <p>{{ number_format($tax, 2) }} CHF </p>
-                            <p>{{ number_format($sub_pdv, 2) }} CHF </p>
+                            <p>{{ number_format($subtotal > 100 ? 0 : $shipping_price, 2) }} CHF</p>
+                            <p>{{ number_format($orders['deliveryOrder']->tax_25, 2) }} CHF</p>
+                            <p>{{ number_format($orders['deliveryOrder']->tax_77, 2) }} CHF</p>
                             <p class="bold">{{ number_format($total, 2) }} CHF</p>
                         </td>
                     </tr>

@@ -35,6 +35,6 @@ class SendOrderMail implements ShouldQueue
     {
         $email = new OrderMail($this->orders);
 
-        Mail::to(auth()->user()->email)->send($email);
+        Mail::to('igor.nikolic@webtory.rs')->send($email);
     }
 }

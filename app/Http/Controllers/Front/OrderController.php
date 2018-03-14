@@ -146,7 +146,9 @@ class OrderController extends Controller
 				$orderForDelivery->shipping_address_id = isset($shippingAddress) ? $shippingAddress->id : null;
 				$orderForDelivery->payment_option = 'Lieferung';
 				$orderForDelivery->order_status_id = 1;
-				$orderForDelivery->total_amount = Session::get('deliveryTotal');
+				$orderForDelivery->total_amount = Session::get('total');
+				$orderForDelivery->tax_25 = Session::get('totalTax25');
+				$orderForDelivery->tax_77 = Session::get('totalTax77');
 				$orderForDelivery->save();
 
 				$orderForDelivery->products()->sync($deliverySyncedDataProducts, false);
@@ -192,7 +194,7 @@ class OrderController extends Controller
 //                    $product->update();
 //                }
 
-                //dispatch(new SendOrderMail($orders)); ovo aktivirati kad dobijemo info za mail;
+                dispatch(new SendOrderMail($orders)); //ovo aktivirati kad dobijemo info za mail;
 
 				Session::forget('cart');
 				Session::flash('order_made', __('front.order_successfully_made'));

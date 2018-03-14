@@ -108,8 +108,6 @@
                                                     <p><span style="color: #aaa;">{{ $product->name }} - <del>CHF {{ $product->price }}</del></span></p>
                                                 @endforeach
                                             </td>
-                                            <?php ($cartItem['price'] < 100) ? $cena = $cartItem['price'] + $shipping : $cena = $cartItem['price']  ?>
-
                                             <?php $total += ($cena * $cartItem['qty']); ?>
 
                                             <td class="cart-price price">
@@ -142,8 +140,8 @@
                             {{ __('front.cart-lower-100-shipping-included') }}
                         </li>
                         <li class="cart-summ">
-                            {{ __('front.total') }}: <b>CHF <span style="color: #ff0000;" class="total-sum-price">{{ number_format(($total),2) }}</span></b>
-                            {!!   ($total < 100) ? '<p class="cart_pdv">'. __('front.shipping-included') .'</p>' : '<p class="cart_pdv">'. __('front.shipping-not-included') .'</p>' !!}
+                            {{ __('front.total') }}: <b>CHF <span style="color: #ff0000;" class="total-sum-price">{{ number_format(($total > 100 ? $total : $total + $shipping),2) }}</span></b>
+                            {!! ($total < 100) ? '<p class="cart_pdv">'. __('front.shipping-included') .'</p>' : '<p class="cart_pdv">'. __('front.shipping-not-included') .'</p>' !!}
 
                         </li>
                     </ul>
@@ -170,12 +168,15 @@
                 var typeField = that.siblings('input[name="type"]');
                 var type = typeField.val();
                 var qty = parseInt(qtyField.val());
-
+                var shipping = {{ (float)\App\Models\Database\Configuration::getConfiguration('delivery_price') }};
                 if (qty <= 0 || isNaN(qty)) {
                     qty = 1;
                 }
                 qty = addOrSubstractQty(qty, that.attr('class'));
                 qtyField.val(qty);
+
+                var shippingIncludedText = "{{ __('front.shipping-included') }}";
+                var shippingNotIncludedText = "{{ __('front.shipping-not-included') }}";
 
                 var closestTd = that.closest('td');
                 var price = closestTd.siblings('td.price').find('span');
@@ -192,7 +193,8 @@
                     var thatPlusDelivery = toFloat(that.text());
                     sum += thatPlusDelivery;
                 });
-                totalPrice.text(number_format(sum, 2));
+                totalPrice.text(number_format(sum > 100 ? sum : sum + shipping, 2));
+                $('.cart_pdv').text(sum > 100 ? shippingNotIncludedText : shippingIncludedText);
 
                 var idField = that.siblings('input[name="id"]')
                 var token = idField.attr('data-token');
@@ -218,10 +220,14 @@
                 var qty = that.val();
                 var typeField = that.siblings('input[name="type"]');
                 var type = typeField.val();
+                var shipping = {{ (float)\App\Models\Database\Configuration::getConfiguration('delivery_price') }};
 
                 if (qty != '' && qty <= 0 || isNaN(qty)) {
                     qty = 1;
                 }
+
+                var shippingIncludedText = "{{ __('front.shipping-included') }}";
+                var shippingNotIncludedText = "{{ __('front.shipping-not-included') }}";
 
                 var closestTd = that.closest('td');
                 var price = closestTd.siblings('td.price').find('span');
@@ -238,7 +244,8 @@
                     var thatPlusDelivery = toFloat(that.text());
                     sum += thatPlusDelivery;
                 });
-                totalPrice.text(number_format(sum, 2));
+                totalPrice.text(number_format(sum > 100 ? sum : sum + shipping, 2));
+                $('.cart_pdv').text(sum > 100 ? shippingNotIncludedText : shippingIncludedText);
 
                 var idField = that.siblings('input[name="id"]')
                 var token = idField.attr('data-token');

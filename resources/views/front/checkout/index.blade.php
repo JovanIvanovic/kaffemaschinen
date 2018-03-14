@@ -282,12 +282,13 @@
                                     $subTotal77 += $cartItem['qty'] * $cartItem['price'];
                                 }
 
-                                $subTotal += $subTotal25 + $subTotal77;
                                 ?>
 
                                 <input type="hidden" name="products[]" value="{{ $cartItem['id'] }}"/>
                                 @endforeach
                                 <?php
+                                    $subTotal = ($subTotal25 + $subTotal77);
+
                                     $totalTax25 = ($subTotal25 / 100) * 2.5;
                                     $totalTax77 = ($subTotal77 / 100) * 7.7;
                                 ?>
@@ -302,6 +303,8 @@
                             Session::put('total', $total);
                             Session::put('deliveryTotal', $deliveryTotal);
                             Session::put('pickupTotal', $pickupTotal);
+                            Session::put('totalTax25', $totalTax25);
+                            Session::put('totalTax77', $totalTax77);
                             @endphp
 
                             @if($subTotal < 100)
