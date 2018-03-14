@@ -56,9 +56,18 @@ class CategoryViewController extends Controller
         $collection = isset($orderBy) ? $collection->orderBy(getBeforeLastChar($orderBy, '_'), getAfterLastChar($orderBy, '_')) : $collection;
         $products = $collection->where('status', '=', '1')->paginate($view);
 
+
+        $cat = Category::where('slug', $request->slug)->first();
+        if($cat->parent != null) {
+            $side_bar_active = $cat->parent->slug;
+        } else {
+            $side_bar_active = $cat->slug;
+        }
+
         $request->flash();
 
         return view('front.catalog.view')
+            ->with('side_bar_active', $side_bar_active)
             ->with('params', $request->all())
             ->with('products', $products)
             ->with('mode', $mode)

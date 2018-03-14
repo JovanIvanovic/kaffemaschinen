@@ -9,7 +9,7 @@
                 href="{{ url('shop?slug=' . $category['object']->slug) }}"
                 title="{{ $category['object']->name }}">
             <span class="categ-1-label">{{ $category['object']->name }}</span>
-            <span class="section-sb-toggle {{ $__env->yieldContent('nav_active_category') == $category['object']->slug ? 'opened' : '' }}"><span class="section-sb-ico"></span></span>
+            <span class="section-sb-toggle {{ $__env->yieldContent('nav_active_category') == $side_bar_active ? 'opened' : '' }}"><span class="section-sb-ico"></span></span>
         </a>
 @else
 
@@ -17,7 +17,7 @@
         <a
                 href="{{ url('shop?slug=' . $category['object']->slug) }}"
                 title="{{ $category['object']->name }}">
-            <span class="categ-1-label">{{ $category['object']->name }}</span>
+            <span class="categ-1-label" >{{ $category['object']->name }}</span>
         </a>
         @endif
 
@@ -34,7 +34,7 @@
         $category['object'] = NULL;
         ?>
         <?php if (count($childCategories) > 0): ?>
-        <ul style="{{ $__env->yieldContent('nav_active_category') == $slug ? 'display: block;' : '' }}">
+        <ul style="{{ $__env->yieldContent('nav_active_category') == $side_bar_active ? 'display: block;' : '' }}">
             @include('front.layouts.category-tree-categories',['categories' => $childCategories])
         </ul>
         <?php endif; ?>

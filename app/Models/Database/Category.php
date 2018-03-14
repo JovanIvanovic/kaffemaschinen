@@ -79,6 +79,11 @@ class Category extends BaseModel
     {
         return $this->where('parent_id', '=', $id)->get();
     }
+
+    public function getActiveClass($slug)
+    {
+        dd($slug);
+    }
 /*
     public function getFilters()
     {

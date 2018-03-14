@@ -32,7 +32,10 @@
             @endif
             @endif
         </ul>
+
         <h1 class="main-ttl"><span>Kategorie</span></h1>
+
+
         <!-- Catalog Sidebar - start -->
         <div class="section-sb">
             @include('front.catalog.category.options')
