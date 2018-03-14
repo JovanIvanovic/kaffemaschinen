@@ -3,7 +3,7 @@
 
 @if(!isset($search))
     @if($category)
-    @section('nav_active_category', $category->slug)
+    @section('nav_active_category', $category->topParent()->slug)
     @section('meta_title')
         {{ $category->name }}
     @endsection

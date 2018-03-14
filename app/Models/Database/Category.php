@@ -20,6 +20,14 @@ class Category extends BaseModel
         return $options;
     }
 
+    public function topParent()
+    {
+        if ($this->parentCategory)
+            return $this->parentCategory->topParent();
+
+        return $this;
+    }
+    
     public function getMainCategoryAttribute()
     {
         $mainCategory = $this->where('id', '=', $this->attributes['parent_id'])->get()->first();
