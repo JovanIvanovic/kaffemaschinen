@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 100128
 File Encoding         : 65001
 
-Date: 2018-03-13 17:13:06
+Date: 2018-03-14 17:44:18
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -614,6 +614,8 @@ CREATE TABLE `orders` (
   `shipping_option` varchar(255) COLLATE utf8_unicode_ci DEFAULT '',
   `payment_option` varchar(255) COLLATE utf8_unicode_ci DEFAULT '',
   `order_status_id` int(10) unsigned DEFAULT NULL,
+  `tax_25` decimal(11,2) NOT NULL,
+  `tax_77` decimal(11,2) NOT NULL,
   `total_amount` decimal(11,2) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -624,14 +626,11 @@ CREATE TABLE `orders` (
   KEY `orders_user_id_foreign` (`user_id`),
   CONSTRAINT `orders_billing_address_id_foreign` FOREIGN KEY (`billing_address_id`) REFERENCES `addresses` (`id`),
   CONSTRAINT `orders_order_status_id_foreign` FOREIGN KEY (`order_status_id`) REFERENCES `order_statuses` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of orders
 -- ----------------------------
-INSERT INTO `orders` VALUES ('6', null, '1', '1', '', 'Lieferung', '1', '75314.00', '2018-02-23 19:15:38', '2018-02-23 19:15:38');
-INSERT INTO `orders` VALUES ('7', null, '1', '1', '', 'Lieferung', '1', '15114.00', '2018-02-23 19:44:04', '2018-02-23 19:44:04');
-INSERT INTO `orders` VALUES ('8', null, '1', '1', '', 'Lieferung', '1', '107.00', '2018-02-25 18:13:54', '2018-02-25 18:13:54');
 
 -- ----------------------------
 -- Table structure for order_items
@@ -644,21 +643,17 @@ CREATE TABLE `order_items` (
   `order_id` int(10) unsigned NOT NULL,
   `qty` int(11) NOT NULL,
   `price` decimal(11,6) NOT NULL,
-  `tax_amount` decimal(11,6) NOT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `order_product_order_id_foreign` (`order_id`),
   KEY `order_product_product_id_foreign` (`orderable_id`),
   CONSTRAINT `order_items_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of order_items
 -- ----------------------------
-INSERT INTO `order_items` VALUES ('5', '3', 'App\\Models\\Database\\Product', '6', '3', '100.000000', '7.000000', '2018-02-23 19:15:38', '2018-02-23 19:15:38');
-INSERT INTO `order_items` VALUES ('6', '3', 'App\\Models\\Database\\Product', '7', '1', '100.000000', '7.000000', '2018-02-23 19:44:04', '2018-02-23 19:44:04');
-INSERT INTO `order_items` VALUES ('7', '39', 'App\\Models\\Database\\Product', '8', '5', '20.000000', '7.000000', '2018-02-25 18:13:55', '2018-02-25 18:13:55');
 
 -- ----------------------------
 -- Table structure for order_statuses
@@ -1112,7 +1107,7 @@ CREATE TABLE `users` (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES ('1', 'Herr', 'Webtory', 'Test', 'test@webtory.rs', '$2y$10$j4lFvm2pUkoxtfnGCOincO8Z6MnQlAcdhwAC2hM8s/qm6eT2NGA5W', null, null, null, null, 'LIVE', 't3MNZa7FF4mD6OPvqJGzDaw2FlwnF0ScMfcvXqgTMiExKCmAkDnZl5LPLJKU', 'cus_CNWZiq3hD6Y8Tc', null, null, '2018-03-13 15:09:34', '2017-11-14 09:44:42', '2018-03-13 15:09:34', '1', null);
+INSERT INTO `users` VALUES ('1', 'Herr', 'Webtory', 'Test', 'test@webtory.rs', '$2y$10$j4lFvm2pUkoxtfnGCOincO8Z6MnQlAcdhwAC2hM8s/qm6eT2NGA5W', null, null, null, null, 'LIVE', 's7Lw9IPg0h0o2p8llndeelFNowRFBdP1KRPxHjVrftPxigrUTS1d6joKyJpv', 'cus_CUbH8jeQbQ6S2z', null, null, '2018-03-14 17:04:06', '2017-11-14 09:44:42', '2018-03-14 17:04:06', '1', null);
 INSERT INTO `users` VALUES ('2', 'Herr', 'Test', 'Test', 'test@test.com', '$2y$10$0QvoqWf4WjdBC0GqhQy3DuOqcTrWgWpyO7v.F9xxs3X.9mKyjCUa2', null, null, null, null, 'LIVE', null, null, null, null, null, '2018-02-24 12:49:10', '2018-02-24 12:49:10', '0', 'dGVzdEB0ZXN0LmNvbQ==');
 
 -- ----------------------------
@@ -1130,11 +1125,13 @@ CREATE TABLE `user_viewed_products` (
   KEY `user_viewed_products_user_id_foreign` (`user_id`),
   CONSTRAINT `user_viewed_products_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE,
   CONSTRAINT `user_viewed_products_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of user_viewed_products
 -- ----------------------------
+INSERT INTO `user_viewed_products` VALUES ('1', '1', '37', '2018-03-14 16:23:43', '2018-03-14 16:23:43');
+INSERT INTO `user_viewed_products` VALUES ('2', '1', '37', '2018-03-14 16:23:45', '2018-03-14 16:23:45');
 
 -- ----------------------------
 -- Table structure for visitors

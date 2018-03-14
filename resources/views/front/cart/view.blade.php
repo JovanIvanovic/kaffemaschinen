@@ -108,6 +108,7 @@
                                                     <p><span style="color: #aaa;">{{ $product->name }} - <del>CHF {{ $product->price }}</del></span></p>
                                                 @endforeach
                                             </td>
+                                            <?php $cena = $cartItem['price'];  ?>
                                             <?php $total += ($cena * $cartItem['qty']); ?>
 
                                             <td class="cart-price price">

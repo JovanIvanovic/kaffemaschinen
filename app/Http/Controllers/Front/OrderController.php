@@ -107,27 +107,27 @@ class OrderController extends Controller
 				$type = explode(':', $id)[0];
 				$itemId = explode(':', $id)[1];
 				if ($type == 'product') {
-					if (array_key_exists('for_delivery', $item)) {
-						if ($item['for_delivery'] === true) {
-							$cartItemsForDelivery[] = $item;
-							$deliverySyncedDataProducts[$itemId] = [
-								'qty' => $item['qty'],
-								'price' => $item['price'],
-							];
-						}
-					} elseif ($type == 'package') {
-						if (array_key_exists('for_delivery', $item)) {
-							if ($item['for_delivery'] === true) {
-								$cartItemsForDelivery[] = $item;
-								$deliverySyncedDataPackages[$itemId] = [
-									'qty' => $item['qty'],
-									'price' => $item['price'],
-								];
-							}
-						}
-					}
-				}
-			}
+                    if (array_key_exists('for_delivery', $item)) {
+                        if ($item['for_delivery'] === true) {
+                            $cartItemsForDelivery[] = $item;
+                            $deliverySyncedDataProducts[$itemId] = [
+                                'qty' => $item['qty'],
+                                'price' => $item['price'],
+                            ];
+                        }
+                    }
+                } elseif ($type == 'package') {
+                    if (array_key_exists('for_delivery', $item)) {
+                        if ($item['for_delivery'] === true) {
+                            $cartItemsForDelivery[] = $item;
+                            $deliverySyncedDataPackages[$itemId] = [
+                                'qty' => $item['qty'],
+                                'price' => $item['price'],
+                            ];
+                        }
+                    }
+                }
+            }
 //					else if ($item['for_delivery'] === false) {
 //						$cartItemsForPickup[] = $item;
 //						$pickupSyncedData[$id] = [
@@ -138,7 +138,6 @@ class OrderController extends Controller
 //					}
 
 			$orders = [];
-
 			if (!empty($cartItemsForDelivery)) {
 				$orderForDelivery = new Order;
 				$orderForDelivery->user_id = $user->id;
@@ -194,7 +193,7 @@ class OrderController extends Controller
 //                    $product->update();
 //                }
 
-                dispatch(new SendOrderMail($orders)); //ovo aktivirati kad dobijemo info za mail;
+                dispatch(new SendOrderMail($orders));
 
 				Session::forget('cart');
 				Session::flash('order_made', __('front.order_successfully_made'));

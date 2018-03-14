@@ -58,7 +58,12 @@ class CategoryViewController extends Controller
 
 
         $cat = Category::where('slug', $request->slug)->first();
-        $side_bar_active = $cat->topParent()->slug;
+
+        if ($request->has('slug')){
+            $side_bar_active = $cat->topParent()->slug;
+        } else {
+            $side_bar_active = null;
+        }
 
         $request->flash();
 

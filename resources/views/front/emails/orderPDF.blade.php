@@ -170,19 +170,19 @@
                         <th>Preis pro Stück CHF</th>
                         <th>Preis CHF</th>
                     </tr>
-                    @if(isset($orders['pickupOrder']))
-                        @foreach($orders['pickupOrder']->products as $product)
-                            <tr>
-                                <td>
-                                    <p>{{ $product->id }}</p> }}
-                                </td>
-                                <td>{{ $product->name }}</td>
-                                <td>{{ $product->pivot->qty }}</td>
-                                <td>{{ $product->discount == 1 ? $product->discount_price : $product->price }}</td>
-                                <td>{{ ($product->discount == 1 ? $product->discount_price : $product->price) * ($product->pivot->qty) }}</td>
-                            </tr>
-                        @endforeach
-                    @endif
+                    {{--@if(isset($orders['pickupOrder']))--}}
+                        {{--@foreach($orders['pickupOrder']->products as $product)--}}
+                            {{--<tr>--}}
+                                {{--<td>--}}
+                                    {{--<p>{{ $product->id }}</p> }}--}}
+                                {{--</td>--}}
+                                {{--<td>{{ $product->name }}</td>--}}
+                                {{--<td>{{ $product->pivot->qty }}</td>--}}
+                                {{--<td>{{ $product->discount == 1 ? $product->discount_price : $product->price }}</td>--}}
+                                {{--<td>{{ ($product->discount == 1 ? $product->discount_price : $product->price) * ($product->pivot->qty) }}</td>--}}
+                            {{--</tr>--}}
+                        {{--@endforeach--}}
+                    {{--@endif--}}
                     @if(isset($orders['deliveryOrder']))
                         @foreach($orders['deliveryOrder']->products as $product)
                             <tr>
@@ -192,6 +192,15 @@
                                 <td>{{ $product->pivot->qty }}</td>
                                 <td>{{ $product->discount == 1 ? $product->discount_price : $product->price }}</td>
                                 <td>{{ number_format(($product->discount == 1 ? $product->discount_price : $product->price) * ($product->pivot->qty), 2) }}</td>
+                            </tr>
+                        @endforeach
+                        @foreach($orders['deliveryOrder']->packages as $product)
+                            <tr>
+                                <td><p>{{ $product->id }}</p></td>
+                                <td>{{ $product->name }}</td>
+                                <td>{{ $product->pivot->qty }}</td>
+                                <td>{{ $product->price }}</td>
+                                <td>{{ number_format(($product->price) * ($product->pivot->qty), 2) }}</td>
                             </tr>
                         @endforeach
                     @endif

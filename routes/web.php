@@ -66,13 +66,6 @@ Route::middleware(['web'])
         Route::post('/subscribe', ['as' => 'subscribe', 'uses' => 'PageController@subscribe']);
 
         Route::get('/partner', ['as' => 'page.partner', 'uses' => 'PartnerController@index']);
-
-        Route::get('/email', function() {
-            $orders['deliveryOrder'] = \App\Models\Database\Order::find(6);
-
-            return view('front.emails.orderPDF')
-                ->with('orders', $orders);
-        });
     });
 
 Route::middleware(['web'])
