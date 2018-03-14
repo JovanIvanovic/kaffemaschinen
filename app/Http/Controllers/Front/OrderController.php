@@ -113,7 +113,6 @@ class OrderController extends Controller
 							$deliverySyncedDataProducts[$itemId] = [
 								'qty' => $item['qty'],
 								'price' => $item['price'],
-								'tax_amount' => $item['delivery_price']
 							];
 						}
 					} elseif ($type == 'package') {
@@ -123,7 +122,6 @@ class OrderController extends Controller
 								$deliverySyncedDataPackages[$itemId] = [
 									'qty' => $item['qty'],
 									'price' => $item['price'],
-									'tax_amount' => $item['delivery_price']
 								];
 							}
 						}

@@ -68,7 +68,7 @@
                                                 <a href="{{ route('product.view', $cartItem['slug'])}}">{{ $cartItem['name'] }}</a>
                                                 <p>Status: <span class="text-success"><strong>{{ __('front.in-stock') }}</strong></span></p>
                                             </td>
-                                            <?php ($cartItem['price'] < 100) ? $cena = $cartItem['price'] + $shipping : $cena = $cartItem['price']  ?>
+                                            <?php $cena = $cartItem['price'];  ?>
 
 
                                             <?php $total += ($cena * $cartItem['qty']); ?>
@@ -143,7 +143,7 @@
                         </li>
                         <li class="cart-summ">
                             {{ __('front.total') }}: <b>CHF <span style="color: #ff0000;" class="total-sum-price">{{ number_format(($total),2) }}</span></b>
-                            {!!   ($cartItem['price'] < 100) ? '<p class="cart_pdv">'. __('front.shipping-included') .'</p>' : '<p class="cart_pdv">'. __('front.shipping-not-included') .'</p>' !!}
+                            {!!   ($total < 100) ? '<p class="cart_pdv">'. __('front.shipping-included') .'</p>' : '<p class="cart_pdv">'. __('front.shipping-not-included') .'</p>' !!}
 
                         </li>
                     </ul>
