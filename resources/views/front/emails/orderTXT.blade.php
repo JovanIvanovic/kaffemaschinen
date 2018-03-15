@@ -1,6 +1,6 @@
 <?php
-$first_name = auth()->user()->first_name;
-$last_name = auth()->user()->last_name;
+$first_name = $orders['deliveryOrder']->user->first_name;
+$last_name = $orders['deliveryOrder']->user->last_name;
 $full_name =  $first_name . ' ' . $last_name;
 ?>
 <p style="padding: 20px;">

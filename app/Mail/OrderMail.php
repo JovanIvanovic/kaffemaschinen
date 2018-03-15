@@ -26,7 +26,7 @@ class OrderMail extends Mailable
      */
     public function build()
     {
-        $email = $this->view('front.emails.orderTXT');
+        $email = $this->view('front.emails.orderTXT')->with('orders', $this->orders);
         $email->from('sale@centrocaffe.ch');
 
         $pdf = PDF::loadView('front.emails.orderPDF', ['orders' => $this->orders]);
