@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : MySQL
-Source Server Version : 100128
+Source Server         : local
+Source Server Version : 100130
 Source Host           : localhost:3306
 Source Database       : kaffemaschinen
 
 Target Server Type    : MYSQL
-Target Server Version : 100128
+Target Server Version : 100130
 File Encoding         : 65001
 
-Date: 2018-03-14 17:44:18
+Date: 2018-03-15 16:46:28
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -135,7 +135,7 @@ CREATE TABLE `category_product` (
   KEY `category_product_category_id_foreign` (`category_id`),
   CONSTRAINT `category_product_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE,
   CONSTRAINT `category_product_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of category_product
@@ -187,6 +187,20 @@ INSERT INTO `category_product` VALUES ('56', '3', '64', '2018-03-09 13:19:06', '
 INSERT INTO `category_product` VALUES ('57', '27', '64', '2018-03-09 13:19:06', '2018-03-09 13:19:06');
 INSERT INTO `category_product` VALUES ('58', '3', '65', '2018-03-09 13:21:18', '2018-03-09 13:21:18');
 INSERT INTO `category_product` VALUES ('59', '29', '65', '2018-03-09 13:21:18', '2018-03-09 13:21:18');
+INSERT INTO `category_product` VALUES ('60', '3', '66', '2018-03-14 16:12:17', '2018-03-14 16:12:17');
+INSERT INTO `category_product` VALUES ('61', '31', '66', '2018-03-14 16:12:17', '2018-03-14 16:12:17');
+INSERT INTO `category_product` VALUES ('62', '3', '67', '2018-03-14 16:13:32', '2018-03-14 16:13:32');
+INSERT INTO `category_product` VALUES ('63', '31', '67', '2018-03-14 16:13:32', '2018-03-14 16:13:32');
+INSERT INTO `category_product` VALUES ('64', '3', '68', '2018-03-14 16:14:12', '2018-03-14 16:14:12');
+INSERT INTO `category_product` VALUES ('65', '31', '68', '2018-03-14 16:14:12', '2018-03-14 16:14:12');
+INSERT INTO `category_product` VALUES ('66', '3', '69', '2018-03-14 16:14:48', '2018-03-14 16:14:48');
+INSERT INTO `category_product` VALUES ('67', '31', '69', '2018-03-14 16:14:48', '2018-03-14 16:14:48');
+INSERT INTO `category_product` VALUES ('68', '2', '70', '2018-03-14 16:35:01', '2018-03-14 16:35:01');
+INSERT INTO `category_product` VALUES ('69', '15', '70', '2018-03-14 16:35:01', '2018-03-14 16:35:01');
+INSERT INTO `category_product` VALUES ('70', '2', '71', '2018-03-14 16:37:17', '2018-03-14 16:37:17');
+INSERT INTO `category_product` VALUES ('71', '15', '71', '2018-03-14 16:37:17', '2018-03-14 16:37:17');
+INSERT INTO `category_product` VALUES ('72', '2', '72', '2018-03-14 16:39:04', '2018-03-14 16:39:04');
+INSERT INTO `category_product` VALUES ('73', '15', '72', '2018-03-14 16:39:05', '2018-03-14 16:39:05');
 
 -- ----------------------------
 -- Table structure for configurations
@@ -626,7 +640,7 @@ CREATE TABLE `orders` (
   KEY `orders_user_id_foreign` (`user_id`),
   CONSTRAINT `orders_billing_address_id_foreign` FOREIGN KEY (`billing_address_id`) REFERENCES `addresses` (`id`),
   CONSTRAINT `orders_order_status_id_foreign` FOREIGN KEY (`order_status_id`) REFERENCES `order_statuses` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of orders
@@ -649,7 +663,7 @@ CREATE TABLE `order_items` (
   KEY `order_product_order_id_foreign` (`order_id`),
   KEY `order_product_product_id_foreign` (`orderable_id`),
   CONSTRAINT `order_items_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of order_items
@@ -910,12 +924,12 @@ CREATE TABLE `products` (
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=73 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of products
 -- ----------------------------
-INSERT INTO `products` VALUES ('37', 'BASIC', 'Dek Cremaso', 'dek-cremaso', '<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', '7.7', '1', '1', null, null, null, '0', '0', null, null, null, '1', '346.00', '300.00', '1', '1', '1', '2018-02-24 12:32:51', '2018-03-06 12:00:00', null);
+INSERT INTO `products` VALUES ('37', 'BASIC', 'Dek Cremaso', 'dek-cremaso', '<p>Lavazza hat ein&nbsp;<strong>Restyling der Produkte A Modo Mio&nbsp;</strong>unternommen. Ab Mai 2015 sind die Namen und das Design der alten Kapseln&nbsp;<strong>Soavemente A Modo Mio auf&nbsp;Soaveo&nbsp;</strong>ge&auml;ndert worden. Die Mischungen bleiben doch dieselben. Die Kapseln A Modo Mio Soavemente, Farbe violett, sind eine Mischung von 100% Arabicas aus Brasilien und Zentralamerika. Durch die delikate mittlere R&ouml;stung erhalten Sie einen angenehm weichen Espresso f&uuml;r Kaffeeliebhaber die einen leichten und zarten Geschmack bevorzugen. Das organoleptische Profil kann es best&auml;tigen: Aroma 3/5, K&ouml;rper 2/5 und Intensit&auml;t 2,5/5.</p><p>SOAVE soave, con corpo leggero e note floreali. Cos&igrave; &egrave; Soavemente A Modo Mio. Una miscela di dolci Arabica brasiliani impreziosita da pregiati Arabica dell&rsquo;America Centrale, gustosi e dalle note floreali; queste qualit&agrave;, unitamente alla tostatura delicata e alla particolare macinatura, danno vita a un espresso soave ed equilibrato, per gli amanti di un gusto pi&ugrave; morbido e leggero. 100% Arabica.</p><p>&nbsp;</p>', '7.7', '1', '1', null, null, null, '0', '0', null, null, null, '1', '346.00', '300.00', '1', '1', '1', '2018-02-24 12:32:51', '2018-03-14 16:25:26', null);
 INSERT INTO `products` VALUES ('40', 'BASIC', 'Donna Regina Classico Napoletano', 'donna-regina-classico-napoletano', '<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', '7.7', '1', '1', null, null, null, '0', '0', null, null, null, '0', '55.00', null, '1', '1', '1', '2018-02-24 12:48:56', '2018-03-06 12:00:01', null);
 INSERT INTO `products` VALUES ('41', 'BASIC', 'Borbone Blu Espresso Point 10 Kapseln', 'borbone-blu-espresso-point-10-kapseln', '<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', '7.7', '1', '1', null, null, null, '0', '1', '100', null, null, '1', '10.00', '8.00', '1', '1', '1', '2018-02-24 12:50:18', '2018-03-06 12:00:03', null);
 INSERT INTO `products` VALUES ('42', 'BASIC', 'Borbone Blu Espresso 100er Pack', 'borbone-blu-espresso-100er-pack', '<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', '2.5', '1', '0', 'test', null, null, '0', '1', '100', null, null, '0', '4.00', null, '1', '1', '1', '2018-02-24 12:51:49', '2018-03-06 13:35:01', null);
@@ -938,8 +952,15 @@ INSERT INTO `products` VALUES ('60', 'BASIC', 'Decaffeinato', 'decaffeinato', '<
 INSERT INTO `products` VALUES ('61', 'BASIC', 'Mokador Florita 1 kg Bohne', 'mokador-florita-1-kg-bohne', '<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', '2.5', '1', '1', null, null, null, '0', '0', null, null, null, '0', '67.00', null, '1', null, '1', '2018-03-09 13:14:50', '2018-03-09 13:15:24', null);
 INSERT INTO `products` VALUES ('62', 'BASIC', 'Florita', 'florita', '<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', '2.5', '1', '1', null, null, null, '0', '0', null, null, null, '0', '68.00', null, '1', null, '1', '2018-03-09 13:15:39', '2018-03-09 13:16:07', null);
 INSERT INTO `products` VALUES ('63', 'BASIC', 'Mokador G.M.M. Gran Miscela 1 kg Bohne', 'mokador-gmm-gran-miscela-1-kg-bohne', '<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', '2.5', '1', '1', null, null, null, '0', '0', null, null, null, '0', '56.00', null, '1', null, '1', '2018-03-09 13:16:39', '2018-03-09 13:17:07', null);
-INSERT INTO `products` VALUES ('64', 'BASIC', 'Mokador Kapseln Aroma TOP 100 Stück', 'mokador-kapseln-aroma-top-100-stuck', '<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', '2.5', '1', '1', null, null, null, '0', '1', '100', null, null, '0', '11.00', null, '1', null, '1', '2018-03-09 13:17:49', '2018-03-09 13:19:06', null);
-INSERT INTO `products` VALUES ('65', 'BASIC', '10 Mokador Nespresso Arabica', '10-mokador-nespresso-arabica', '<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', '2.5', '1', '1', null, null, null, '0', '0', null, null, null, '0', '56.00', null, '1', null, '0', '2018-03-09 13:20:34', '2018-03-09 13:21:18', null);
+INSERT INTO `products` VALUES ('64', 'BASIC', 'Mokador Kapseln Aroma TOP 100 Stück', 'mokador-kapseln-aroma-top-100-stuck', '<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', '2.5', '1', '1', null, null, null, '0', '1', '100', null, null, '0', '11.00', null, '1', null, '1', '2018-03-09 13:17:49', '2018-03-14 16:06:09', '2018-03-14 16:06:09');
+INSERT INTO `products` VALUES ('65', 'BASIC', '10 Mokador Nespresso Arabica', '10-mokador-nespresso-arabica', '<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', '2.5', '1', '1', null, null, null, '0', '0', null, null, null, '0', '56.00', null, '1', null, '0', '2018-03-09 13:20:34', '2018-03-14 16:06:05', '2018-03-14 16:06:05');
+INSERT INTO `products` VALUES ('66', 'BASIC', 'Dado Optima', 'dado-optima', '<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', '2.5', '1', '1', null, null, null, '0', '0', null, null, null, '0', '460.00', null, '1', null, '1', '2018-03-14 16:10:29', '2018-03-14 16:12:17', null);
+INSERT INTO `products` VALUES ('67', 'BASIC', 'Elle', 'elle', '<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', '2.5', '1', '1', null, null, null, '0', '0', null, null, null, '0', '470.00', null, '1', null, null, '2018-03-14 16:13:02', '2018-03-14 16:13:32', null);
+INSERT INTO `products` VALUES ('68', 'BASIC', 'Tata', 'tata', '<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', '2.5', '1', '1', null, null, null, '0', '0', null, null, null, '0', '500.00', null, '1', null, null, '2018-03-14 16:13:42', '2018-03-14 16:14:12', null);
+INSERT INTO `products` VALUES ('69', 'BASIC', 'Xelle', 'xelle', '<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', '2.5', '1', '1', null, null, null, '0', '0', null, null, null, '0', '450.00', null, '1', null, null, '2018-03-14 16:14:23', '2018-03-14 16:14:47', null);
+INSERT INTO `products` VALUES ('70', 'BASIC', 'Borbone red 50 filtro ese 44 mm', 'borbone-red-50-filtro-ese-44-mm', '<p>Kr&auml;ftiger starker Kaffee mit vollem Geschmack. Einen Energieschub f&uuml;r Sie.&nbsp;&nbsp; </p><p>Cialde Miscela ROSSA Borbone Filtrocarta ESE 44mm</p><p>Grazie all&#39;equilibrato dosaggio tra Arabica e Robusta e al perfetto grado di tostatura, questa &egrave; la miscela adatta a chi oltre all&#39;aroma apprezza la cremosit&agrave; del caff&egrave; in tazza</p>', '2.5', '1', '1', null, null, null, '0', '0', null, null, null, '0', '32.00', null, '1', null, '1', '2018-03-14 16:33:04', '2018-03-14 16:35:01', null);
+INSERT INTO `products` VALUES ('71', 'BASIC', 'Borbone Cialda Oro 50 filtro ese 44 mm', 'borbone-cialda-oro-50-filtro-ese-44-mm', '<p>Der Kaffee f&uuml;r echte Kenner. Der h&ouml;chste Ausdruck der neapolitanischen Tradition</p><p>Caff&egrave; per veri intenditori, dal gusto classico e inimitabile, rappresenta la tradizione dell&#39;espresso napoletano.</p>', '2.5', '1', '1', null, null, null, '0', '1', '50', null, null, '0', '70.00', null, '1', null, null, '2018-03-14 16:35:34', '2018-03-14 16:37:17', null);
+INSERT INTO `products` VALUES ('72', 'BASIC', 'Borbone Cialda Dek 50 filtro ese 44 mm', 'borbone-cialda-dek-50-filtro-ese-44-mm', '<p>Entkoffeinierter neapolitanischer Espresso</p><p>&nbsp;</p>', '2.5', '1', '1', null, null, null, '0', '1', '50', null, null, '0', '48.00', null, '1', '1', '1', '2018-03-14 16:37:55', '2018-03-14 16:39:04', null);
 
 -- ----------------------------
 -- Table structure for product_combinations
@@ -977,13 +998,11 @@ CREATE TABLE `product_images` (
   PRIMARY KEY (`id`),
   KEY `product_images_product_id_foreign` (`product_id`),
   CONSTRAINT `product_images_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=88 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=96 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of product_images
 -- ----------------------------
-INSERT INTO `product_images` VALUES ('51', '37', 'uploads/catalog/images/h/3/h/DEK CREMOSO.jpg', 'none', '1', '2018-02-24 12:43:35', '2018-02-24 13:26:51');
-INSERT INTO `product_images` VALUES ('52', '37', 'uploads/catalog/images/l/8/7/ESPRESSO DIVINO.jpg', 'none', '0', '2018-02-24 12:43:35', '2018-02-24 13:26:51');
 INSERT INTO `product_images` VALUES ('57', '40', 'uploads/catalog/images/s/m/y/Donna Regina Classico Napoletano.jpg', 'none', '1', '2018-02-24 12:49:51', '2018-02-24 13:26:20');
 INSERT INTO `product_images` VALUES ('58', '40', 'uploads/catalog/images/k/8/w/Donna Regina Forte Napoletano.jpg', 'none', '0', '2018-02-24 12:49:51', '2018-02-24 13:26:20');
 INSERT INTO `product_images` VALUES ('59', '41', 'uploads/catalog/images/0/k/5/Borbone Blu Espresso Point 10 Kapseln.jpg', 'none', '1', '2018-02-24 12:51:24', '2018-02-24 13:26:09');
@@ -1014,6 +1033,14 @@ INSERT INTO `product_images` VALUES ('84', '62', 'uploads/catalog/images/m/x/r/F
 INSERT INTO `product_images` VALUES ('85', '63', 'uploads/catalog/images/d/f/1/Mokador G.M.M. Gran Miscela, 1 kg Bohne .jpg', 'none', '1', '2018-03-09 13:17:07', '2018-03-09 13:17:07');
 INSERT INTO `product_images` VALUES ('86', '64', 'uploads/catalog/images/j/q/b/Mokador Kapseln Aroma TOP 100 Stück.jpg', 'none', '1', '2018-03-09 13:19:06', '2018-03-09 13:20:05');
 INSERT INTO `product_images` VALUES ('87', '65', 'uploads/catalog/images/g/9/l/10 Mokador Nespresso® compatible capsules Cremoso .jpg', 'none', '1', '2018-03-09 13:21:18', '2018-03-09 13:21:18');
+INSERT INTO `product_images` VALUES ('88', '66', 'uploads/catalog/images/b/e/n/3.jpg', 'none', '1', '2018-03-14 16:12:17', '2018-03-14 16:12:17');
+INSERT INTO `product_images` VALUES ('89', '67', 'uploads/catalog/images/d/i/y/5.jpg', 'none', '1', '2018-03-14 16:13:32', '2018-03-14 16:13:32');
+INSERT INTO `product_images` VALUES ('90', '68', 'uploads/catalog/images/s/h/t/6.jpg', 'none', '1', '2018-03-14 16:14:12', '2018-03-14 16:14:12');
+INSERT INTO `product_images` VALUES ('91', '69', 'uploads/catalog/images/n/n/b/1.jpg', 'none', '1', '2018-03-14 16:14:48', '2018-03-14 16:14:48');
+INSERT INTO `product_images` VALUES ('92', '37', 'uploads/catalog/images/7/1/g/Lavazza Soave.png', 'none', '1', '2018-03-14 16:25:26', '2018-03-14 16:25:26');
+INSERT INTO `product_images` VALUES ('93', '70', 'uploads/catalog/images/m/x/a/Borbone Borbone.Cialda.red.50 filtro ese 44 mm.jpeg', 'none', '1', '2018-03-14 16:35:01', '2018-03-14 16:35:01');
+INSERT INTO `product_images` VALUES ('94', '71', 'uploads/catalog/images/r/t/b/Borbone Borbone.Cialda.Oro.50 filtro ese 44 mm.jpeg', 'none', '1', '2018-03-14 16:37:17', '2018-03-14 16:37:17');
+INSERT INTO `product_images` VALUES ('95', '72', 'uploads/catalog/images/l/u/i/Borbone Borbone.Cialda.Dek.50 filtro ese 44 mm.jpeg', 'none', '1', '2018-03-14 16:39:04', '2018-03-14 16:39:04');
 
 -- ----------------------------
 -- Table structure for roles
@@ -1107,7 +1134,7 @@ CREATE TABLE `users` (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES ('1', 'Herr', 'Webtory', 'Test', 'test@webtory.rs', '$2y$10$j4lFvm2pUkoxtfnGCOincO8Z6MnQlAcdhwAC2hM8s/qm6eT2NGA5W', null, null, null, null, 'LIVE', 's7Lw9IPg0h0o2p8llndeelFNowRFBdP1KRPxHjVrftPxigrUTS1d6joKyJpv', 'cus_CUbH8jeQbQ6S2z', null, null, '2018-03-14 17:04:06', '2017-11-14 09:44:42', '2018-03-14 17:04:06', '1', null);
+INSERT INTO `users` VALUES ('1', 'Herr', 'Webtory', 'Test', 'test@webtory.rs', '$2y$10$j4lFvm2pUkoxtfnGCOincO8Z6MnQlAcdhwAC2hM8s/qm6eT2NGA5W', null, null, null, null, 'LIVE', 't3MNZa7FF4mD6OPvqJGzDaw2FlwnF0ScMfcvXqgTMiExKCmAkDnZl5LPLJKU', 'cus_CNWZiq3hD6Y8Tc', null, null, '2018-03-13 15:09:34', '2017-11-14 09:44:42', '2018-03-13 15:09:34', '1', null);
 INSERT INTO `users` VALUES ('2', 'Herr', 'Test', 'Test', 'test@test.com', '$2y$10$0QvoqWf4WjdBC0GqhQy3DuOqcTrWgWpyO7v.F9xxs3X.9mKyjCUa2', null, null, null, null, 'LIVE', null, null, null, null, null, '2018-02-24 12:49:10', '2018-02-24 12:49:10', '0', 'dGVzdEB0ZXN0LmNvbQ==');
 
 -- ----------------------------
@@ -1125,13 +1152,11 @@ CREATE TABLE `user_viewed_products` (
   KEY `user_viewed_products_user_id_foreign` (`user_id`),
   CONSTRAINT `user_viewed_products_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE,
   CONSTRAINT `user_viewed_products_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of user_viewed_products
 -- ----------------------------
-INSERT INTO `user_viewed_products` VALUES ('1', '1', '37', '2018-03-14 16:23:43', '2018-03-14 16:23:43');
-INSERT INTO `user_viewed_products` VALUES ('2', '1', '37', '2018-03-14 16:23:45', '2018-03-14 16:23:45');
 
 -- ----------------------------
 -- Table structure for visitors
