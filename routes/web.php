@@ -147,10 +147,8 @@ Route::middleware(['web', 'admin.auth'])
             'uses' => 'PackageController@getSingleProduct']);
 
         Route::resource('popup', 'PopupController', ['as' => 'admin']);
-        Route::get('popup/destroy/{id}', ['as' => 'admin.popup.destroy', 'uses' => 'PopupController@destroy']);
 
         Route::resource('partner', 'PartnerController', ['as' => 'admin']);
-        Route::get('partner/destroy/{id}', ['as' => 'admin.partner.destroy', 'uses' => 'PartnerController@destroy']);
 
         Route::resource('/admin-user', 'AdminUserController', ['as' => 'admin']);
         Route::resource('/change-password', 'ChangePasswordController', ['as' => 'admin']);

@@ -18,8 +18,8 @@ class PartnerController extends Controller
             ->linkColumn(__('lang.edit'), [], function ($model) {
                 return "<a href='" . route('admin.partner.edit', $model->id) . "' >".__('lang.edit')."</a>";
             })
-            ->linkColumn('destroy', ['label' => __('lang.destroy')], function ($model) {
-                return  "<a href=' " . route('admin.partner.destroy', $model->id) . " ' >".__('lang.destroy')."</a>";
+            ->linkColumn(__('lang.delete'), [], function ($model) {
+                return "<a href='#' onclick='showDeleteModal({$model->id}, \"{$model->name}\")'>". __('lang.delete') ."</a>";
             })
             ->setPagination(100);
 

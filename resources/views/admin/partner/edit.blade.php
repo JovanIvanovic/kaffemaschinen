@@ -28,7 +28,7 @@
                         <div class="col-12 mb-2 mt-2">
                             <div class="card product-card  mb-2 mt-2">
                                 <div class="card-header">
-                                    Popup Details
+                                    Partner Details
                                 </div>
                                 <div class="card-body collapse show" id="basic">
                                     <div class="row">
