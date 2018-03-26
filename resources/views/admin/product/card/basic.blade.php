@@ -60,7 +60,7 @@
             <label for="has_packaging">{{ __('lang.has-packaging') }}</label>
             <div class="checkbox">
                 <label style="margin-left: 20px;">
-                    <input id="has_packaging_toggle" name="has_packaging_toggle" type="checkbox" data-toggle="toggle" data-on="{{ __('front.yes') }}" data-off="{{ __('front.no') }}" @if ($model['new_product'] === 1) checked @endif>
+                    <input id="has_packaging_toggle" name="has_packaging_toggle" type="checkbox" data-toggle="toggle" data-on="{{ __('front.yes') }}" data-off="{{ __('front.no') }}" @if ($model['has_packaging'] === 1) checked @endif>
                     <input hidden id="has_packaging" type="number" name="has_packaging" value="{{ $model['has_packaging'] }}" />
                 </label>
             </div>
