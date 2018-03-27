@@ -10,16 +10,16 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="{{asset('favicon.ico')}}">
     <meta name="theme-color" content="#583520">
-    <meta name="description" content="Kaffeemaschine ist ein Online Shop rundum für Ihren Kaffeegenuss.
+    <meta name="description" content="Centrocaffe ist ein Online Shop rundum für Ihren Kaffeegenuss.
 Wir bieten eine grosse Auswahl an Kaffeeprodukten und Kaffeegeräten.">
     <meta name="keywords" content="lavazza,gastro,borbone,kaffebohnen,kaffemaschines,diverse,donna regina,">
-    <meta name="author" content="Kaffemaschines">
+    <meta name="author" content="Centrocaffe">
     <meta name="language" content="de">
-    <meta property="og:title" content="Kaffemaschines">
-    <meta property="og:site_name" content="Kaffemaschines">
+    <meta property="og:title" content="Centrocaffe">
+    <meta property="og:site_name" content="Centrocaffe">
     <meta property="og:image" content="{{asset('front/assets/img/slider/1.jpg')}}"><!-- Google kartica slika-->
-    <meta property="og:url" content="https://www.kaffemaschines.ch/">
-    <meta property="og:description" content="Kaffeemaschine ist ein Online Shop rundum für Ihren Kaffeegenuss.
+    <meta property="og:url" content="https://www.centrocaffe.ch/">
+    <meta property="og:description" content="Centrocaffe ist ein Online Shop rundum für Ihren Kaffeegenuss.
 Wir bieten eine grosse Auswahl an Kaffeeprodukten und Kaffeegeräten.">
 
     <!-- CSRF Token -->
